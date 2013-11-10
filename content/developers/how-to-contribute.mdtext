@@ -1,0 +1,240 @@
+Title: How To Contribute
+"Contributing" to an Apache project is about more than just writing code --
+it's about doing what you can to make the project better.  There are lots
+of ways to contribute....
+
+{toc:style=disc|indent=20px}
+
+
+<a name="HowToContribute-BeInvolved"></a>
+## Be Involved
+
+Contributors should join the [Mahout mailing lists](https://cwiki.apache.org/confluence/display/MAHOUT/Mailing+Lists%2C+IRC+and+Archives)
+.  In particular:
+* The user list (to help others)
+* The commit list (to see changes as they are made)
+* The dev list (to join discussions of changes)  -- This is the best place
+to understand where we are headed.
+
+Please keep discussions about Mahout on list so that everyone benefits. 
+Emailing individual committers with questions about specific Mahout issues
+is discouraged.  See [http://people.apache.org/~hossman/#private_q](http://people.apache.org/~hossman/#private_q)
+.
+
+You can also [track issues that you've raised](https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&jqlQuery=resolution+%3D+Unresolved+AND+reporter+%3D+currentUser%28%29)
+ in JIRA.
+
+<a name="HowToContribute-WhattoWorkOn?"></a>
+## What to Work On?
+
+What do you like to work on?  There are a ton of things in Mahout that we
+would love to have contributions for.  Data ingestion, data visualization,
+documentation, new algorithms, performance improvements, better tests, etc.
+ The best place to start is by looking in JIRA under the Mahout project and
+seeing what bugs have been reported and seeing if any look like you could
+take them on.  Small, well written, well tested patches are a great way to
+get your feet wet.  It could be something as simple as fixing a typo.  The
+more important piece is you are showing you understand the necessary steps
+for making changes to the code.  Mahout is a pretty big beast at this
+point, so changes, especially from non-committers, need to be evolutionary
+not revolutionary since it is often very difficult to evaluate the merits
+of a very large patch.	Think small, at least to start\!
+
+Beyond JIRA, hang out on the dev@ mailing list.  That's where we discuss
+what we are working on in the internals and where you can get a sense of
+where people are working.
+
+Also, documentation is a great way to familiarize yourself with the code
+and is always a welcome addition to the codebase and to this Wiki.
+
+Also, check out the [MAHOUT_INTRO_CONTRIBUTE](https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&jqlQuery=labels+%3D+MAHOUT_INTRO_CONTRIBUTE)
+ items in JIRA, as these have been deemed to be fairly easy to start on.
+
+Also feel free to jump in on the [backlog](https://issues.apache.org/jira/browse/MAHOUT/fixforversion/12318886--juststartingtobefilledin)
+ or on a the [next version|https://issues.apache.org/jira/browse/MAHOUT/fixforversion/12316364]
+
+If you are interested in working towards being a committer, [general guidelines are available online](https://cwiki.apache.org/confluence/display/MAHOUT/How+To+Become+A+Committer)
+.
+
+<a name="HowToContribute-ContributingCode(Features,BigFixes,Tests,etc...)"></a>
+## Contributing Code (Features, Big Fixes, Tests, etc...)
+
+This section identifies the ''optimal'' steps community member can take to
+submit a changes or additions to the Mahout code base.	This can be new
+features, bug fixes optimizations of existing features, or tests of
+existing code to prove it works as advertised (and to make it more robust
+against possible future changes).
+
+Please note that these are the "optimal" steps, and community members that
+don't have the time or resources to do everything outlined on this below
+should not be discouraged from submitting their ideas "as is" per "Yonik
+Seeley's (Solr committer) Law of Patches" ...
+
+{quote}
+A half-baked patch in Jira, with no documentation, no tests
+and no backwards compatibility is better than no patch at all.
+{quote}
+
+Just because you may not have the time to write unit tests, or cleanup
+backwards compatibility issues, or add documentation, doesn't mean other
+people don't. Putting your patch out there allows other people to try it
+and possibly improve it.
+
+<a name="HowToContribute-Gettingthesourcecode"></a>
+### Getting the source code
+
+First of all, you need the Mahout source code.
+
+Get the source code on your local drive using [SVN](http://lucene.apache.org/mahout/developer-resources.html)
+.  Most development is done on the "trunk":
+
+{quote}
+> svn checkout [http://svn.apache.org/repos/asf/mahout/trunk](http://svn.apache.org/repos/asf/mahout/trunk)
+ mahout-trunk
+{quote}
+
+Note that committers have to use https instead of http here, but http is
+fine for read-only access to the trunk code.
+
+<a name="HowToContribute-MakingChanges"></a>
+### Making Changes
+
+Before you start, you should send a message to the [Mahout developer mailing list](http://lucene.apache.org/mahout/mailinglists.html)
+ (Note: you have to subscribe before you can post), or file a bug in [Jira|http://issues.apache.org/jira/browse/MAHOUT]
+.  Describe your proposed changes and check that they fit in with what
+others are doing and have planned for the project.  Be patient, it may take
+folks a while to understand your requirements.
+
+Modify the source code and add some (very) nice features using your
+favorite IDE.
+
+But take care about the following points
+* All public classes and methods should have informative [Javadoc comments](http://java.sun.com/j2se/javadoc/writingdoccomments/)
+.
+* Code should be formatted according to [Sun's conventions](http://java.sun.com/docs/codeconv/)
+, with one exception:
+* indent two spaces per level, not four.
+* Contributions should pass existing unit tests.
+* New [unit tests](http://www.junit.org)
+ should be provided to demonstrate bugs and fixes.
+
+<a name="HowToContribute-Generatingapatch"></a>
+### Generating a patch
+
+A "patch file" is the format that all good contributions come in.  It
+bundles up everything that is being added, removed, or changed in your
+contribution.
+
+<a name="HowToContribute-UnitTests"></a>
+#### Unit Tests
+
+Please make sure that all unit tests succeed before constructing your
+patch.
+
+{quote}
+> cd mahout-trunk
+> mvn clean test
+{quote}
+After a while, if you see
+{quote}
+BUILD SUCCESSFUL
+{quote}
+all is ok, but if you see
+{quote}
+BUILD FAILED
+{quote}
+please, read carefully the errors messages and check your code.
+
+<a name="HowToContribute-Creatingthepatchfile"></a>
+#### Creating the patch file
+
+Check to see what files you have modified with:
+{quote}
+svn stat
+{quote}
+
+Add any new files with:
+{quote}
+svn add src/.../MyNewClass.java
+{quote}
+
+Subversions "add" command only modifies your local copy, so it doess not
+require commit permissions.  By using "svn add", your entire comtribution
+can be included in a single patch file, without needing to submit a
+seperate set of "new" files.
+
+Edit the ''CHANGES.txt'' file, adding a description of your change,
+including the bug number it fixes.
+
+In order to create a patch, just type:
+
+{quote}
+svn diff > MAHOUT-$issuenumber.patch
+{quote}
+
+$issuenumber here should be the number of the JIRA issue the patch is
+supposed to fix. This will report all modifications done on Mahout sources
+on your local disk and save them into the ''MAHOUT-$issuenumber.patch''
+file.  Read the patch file. Make sure it includes ONLY the modifications
+required to fix a single issue.
+
+Please do not:
+* reformat code unrelated to the bug being fixed: formatting changes should
+be separate patches/commits.
+* comment out code that is now obsolete: just remove it.
+* insert comments around each change, marking the change: folks can use
+subversion to figure out what's changed and by whom.
+* make things public which are not required by end users.
+
+Please do:
+* try to adhere to the coding style of files you edit;
+* comment code whose function or rationale is not obvious;
+* update documentation (e.g., ''package.html'' files, this wiki, etc.)
+
+<a name="HowToContribute-Contributingyourwork"></a>
+#### Contributing your work
+
+Finally, patches should be attached to a bug report in [Jira](http://issues.apache.org/jira/browse/MAHOUT)
+.  If you are revising an existing patch, please re-use the exact same name
+as the previous attachment, Jira will "grey out" the older versions so it's
+clear which version is the newest.
+
+Please be patient.  Committers are busy people too.  If no one responds to
+your patch after a few days, please make friendly reminders.  Please
+incorporate other's suggestions into into your patch if you think they're
+reasonable.  Finally, remember that even a patch that is not committed is
+useful to the community.
+
+
+<a name="HowToContribute-Review/ImproveExistingPatches"></a>
+# Review/Improve Existing Patches
+
+If there's a Jira issue that already has a patch you think is really good,
+and works well for you -- please add a comment saying so.   If there's room
+for improvement (more tests, better javadocs, etc...) then make the changes
+and attach it as well.	If a lot of people review a patch and give it a
+thumbs up, that's a good sign for committers when deciding if it's worth
+spending time on the patch -- and if other people have already put in
+effort to improve the docs/tests for a patch, that helps even more.
+
+<a name="HowToContribute-Applyingapatch"></a>
+## Applying a patch
+
+From the base directory (assuming that is where the patch is generated
+from), run:
+
+    patch -p 0 -i <PATH TO PATCH> [--dry-run]
+
+
+<a name="HowToContribute-HelpfulResources"></a>
+# Helpful Resources
+
+The following resources may prove helpful when developing Mahout
+contributions.	(These are not an endorsement of any specific development
+tools).  Note, these are the same code styles that Lucene and Solr use.
+
+* [Eclipse codestyle.xml file for Mahout's coding conventions, same as Lucene](http://svn.apache.org/viewvc/mahout/trunk/buildtools/Eclipse-Lucene-Codestyle.xml?view=co)
+
+* [IntelliJ IDEA codestyle.xml file for Mahout's coding conventions](http://wiki.apache.org/solr/HowToContribute?action=AttachFile&do=view&target=IntelliJ.codestyle.xml)
+ (deprecated - Please don't use this. You are welcome to change this file
+to match the checkstyle and remove this notice)

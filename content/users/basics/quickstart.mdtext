@@ -1,0 +1,64 @@
+Title: Quickstart
+<a name="Quickstart-DownloadandInstallation"></a>
+# Download and Installation
+
+* [Download and installation](buildingmahout.html)
+
+<a name="Quickstart-RunningtheExamples"></a>
+# Running the Examples
+
+Mahout runs on [Apache Hadoop ](-http://hadoop.apache.org.html)
+. So, to run these examples, install the latest compatible{footnote}When
+using a release, see the release notes{footnote}{footnote}When using trunk,
+see _parent/pom.xml_{footnote} [Hadoop Common release | http://www.apache.org/dyn/closer.cgi/hadoop/common/]
+. 
+
+{display-footnotes}
+
+<a name="Quickstart-Clustering"></a>
+## Clustering
+
+* [Clustering of synthetic control data](clustering-of-synthetic-control-data.html)
+* [Visualizing Sample Clusters](visualizing-sample-clusters.html)
+* [Clustering Seinfeld Episodes](clustering-seinfeld-episodes.html)
+
+
+<a name="Quickstart-Classification"></a>
+## Classification
+
+* [Twenty Newsgroups](twenty-newsgroups.html)
+* [Wikipedia Bayes Example](wikipedia-bayes-example.html)
+
+<a name="Quickstart-GeneticProgramming"></a>
+## Genetic Programming
+
+* [Watchmaker](mahout.ga.tutorial.html)
+
+<a name="Quickstart-DecisionForest"></a>
+## Decision Forest
+
+* [Breiman Example](breiman-example.html)
+* [Partial Implementation](partial-implementation.html)
+
+<a name="Quickstart-Recommendationmining"></a>
+## Recommendation mining
+
+This package comes with four examples based on netflix data, bookcrossing,
+grouplens and jester data.
+
+* [RecommendationExamples](recommendationexamples.html)
+
+<a name="Quickstart-WheretoGoNext"></a>
+# Where to Go Next
+
+* If you are working with text, read more on [Creating Vectors from Text](creating-vectors-from-text.html)
+* To learn more on grouping items by similarity and identifying clusters
+read more on [Clustering your data](clusteringyourdata.html)
+* If you want to classify incoming items into predefinied categories read
+more on [Classifying your data ](classifyingyourdata.html)
+* To know how to Mine frequent patterns from your data read more on [Parallel Frequent Pattern Mining](parallel-frequent-pattern-mining.html)
+* To read more on building recommendation engines have a look at the [Recommender (Taste) documentation ](recommender-documentation.html)
+ and [Taste hadoop commandline|TasteCommandLine]
+
+Go back to the [Main Wiki Page](mahout-wiki.html)
+ for more information. 

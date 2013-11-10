@@ -1,0 +1,36 @@
+Title: Version Control
+The Mahout source code resides in the [Apache Subversion (SVN)](http://subversion.tigris.org/)
+ repository. The command-line SVN client can be obtained [here|http://subversion.tigris.org/project_packages.html]
+. The TortoiseSVN GUI client for Windows can be obtained [here|http://tortoisesvn.tigris.org/]
+. There are also SVN plugins available for both [Eclipse|http://subclipse.tigris.org/]
+ and [IntelliJ IDEA|http://svnup.tigris.org/]
+. 
+
+There is also a [git](http://git-scm.com/)
+ repository for Mahout available [at Apache|http://git.apache.org/]
+.
+
+<a name="VersionControl-WebAccess(read-only)"></a>
+## Web Access (read-only)
+
+The source code can be browsed via the Web at [http://svn.apache.org/viewvc/mahout/](http://svn.apache.org/viewvc/mahout/)
+. No SVN client software is required. 
+
+<a name="VersionControl-AnonymousAccess(read-only)"></a>
+## Anonymous Access (read-only)
+
+The SVN URL for anonymous users is [http://svn.apache.org/repos/asf/mahout/trunk](http://svn.apache.org/repos/asf/mahout/trunk)
+. Instructions for anonymous SVN access are here. 
+
+<a name="VersionControl-CommitterAccess(read-write)"></a>
+## Committer Access (read-write)
+
+The SVN URL for committers is [https://svn.apache.org/repos/asf/mahout/trunk](https://svn.apache.org/repos/asf/mahout/trunk)
+. Instructions for committer SVN access are [here|https://cwiki.apache.org/confluence/display/MAHOUT/IssueTracker]
+. 
+
+<a name="VersionControl-Issues"></a>
+## Issues
+
+All bugs, improvements, patches, etc. should be logged in [JIRA](http://issues.apache.org/jira/browse/MAHOUT)
+.

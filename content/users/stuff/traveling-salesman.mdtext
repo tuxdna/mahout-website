@@ -1,0 +1,24 @@
+Title: Traveling Salesman
+<a name="TravelingSalesman-Intro"></a>
+# Intro
+
+The Traveling Salesman Problem (TSP) is a classic computer science question
+classified as NP-Hard.	See
+http://en.wikipedia.org/wiki/Travelling_salesman_problem for background
+information.
+
+<a name="TravelingSalesman-EvolutionaryExample"></a>
+# Evolutionary Example
+
+As an example of evolutionary programming, Mahout has an example
+implementation that attempts to solve TSP.  It should be noted that the
+implementation of evolutionary programming in Mahout has not been
+maintained for some time and may be removed in the future due to lack of
+interest.
+
+To run the example, do:
+
+1. cd <MAHOUT_HOME>
+1. mvn install
+1. Run the Job: {code}./bin/mahout
+org.apache.mahout.ga.watchmaker.travellingsalesman.TravellingSalesman{code}

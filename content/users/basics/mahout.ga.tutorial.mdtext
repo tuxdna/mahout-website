@@ -1,0 +1,36 @@
+Title: Mahout.GA.Tutorial
+<a name="Mahout.GA.Tutorial-HowtodistributethefitnessevaluationusingMahout.GA"></a>
+# How to distribute the fitness evaluation using Mahout.GA
+
+In any Watchmaker program, you'll have to create an instance of a
+StandaloneEvolutionEngine. For the TSP example this is done in the
+EvolutionaryTravellingSalesman class:
+
+{code:java}
+private EvolutionEngine<List<String>>
+getEngine(CandidateFactory<List<String>> candidateFactory,
+EvolutionaryOperator<List<?>> pipeline, Random rng) {
+  return new StandaloneEvolutionEngine<List<String>>(candidateFactory,
+pipeline, new RouteEvaluator(distances), selectionStrategy, rng);
+}
+
+    
+    The RouteEvaluator class is where the fitness of each individual is
+evaluated, if we want to distribute the evaluation over a Hadoop Cluster,
+all we have to is wrap the evaluator in a MahoutFitnessEvaluator, and
+instead of a StandaloneEvolutionEngine we'll use a STEvolutionEngine :
+    
+    {code:java}
+    private EvolutionEngine<List<String>>
+getEngine(CandidateFactory<List<String>> candidateFactory,
+EvolutionaryOperator<List<?>> pipeline, Random rng) {
+      MahoutFitnessEvaluator<List<String>> evaluator = new
+MahoutFitnessEvaluator<List<String>>(new RouteEvaluator(distances));
+      return new STEvolutionEngine<List<String>>(candidateFactory, pipeline,
+evaluator, selectionStrategy, rng);
+    }
+
+
+And voila! your code is ready to run on Hadoop. The complete running
+example is available with the examples in the
+org/apache/mahout/ga/watchmaker/travellingsalesman directory

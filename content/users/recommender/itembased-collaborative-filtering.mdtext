@@ -1,0 +1,122 @@
+Title: Itembased Collaborative Filtering
+Itembased Collaborative Filtering is a popular way of doing Recommendation
+Mining.
+
+<a name="ItembasedCollaborativeFiltering-Terminology"></a>
+### Terminology
+
+We have *users* that interact with *items* (which can be pretty much
+anything like books, videos, news, other users,...). Those users express
+*preferences* towards the items which can either be boolean (just modelling
+that a user likes an item) or numeric (by having a rating value assigned to
+the preference). Typically only a small number of preferences is known for
+each single user.
+
+<a name="ItembasedCollaborativeFiltering-Algorithmicproblems"></a>
+### Algorithmic problems
+
+Collaborative Filtering algorithms aim to solve the *prediction* problem
+where the task is to estimate the preference of a user towards an item
+which he/she has not yet seen.
+
+Once an algorithm can predict preferences it can also be used to do
+*Top-N-Recommendation* where the task is to find the N items a given user
+might like best. This is usually done by isolating a set of candidate
+items, computing the predicted preferences of the given user towards them
+and returning the highest scoring ones.
+
+If we look at the problem from a mathematical perspective, a
+*user-item-matrix* is created from the preference data and the task is to
+predict the missing entries by finding patterns in the known entries.
+
+<a name="ItembasedCollaborativeFiltering-ItembasedCollaborativeFiltering"></a>
+### Itembased Collaborative Filtering
+
+A popular approach called "Itembased Collaborative Filtering" estimates a
+user's preference towards an item by looking at his/her preferences towards
+similar items, be aware that similarity must be thought of as similarity of
+rating behaviour not similarity of content in this context.
+
+The standard procedure is to pairwisely compare the columns of the
+user-item-matrix (the item-vectors) using a similarity measure like
+pearson-correlation, cosine or loglikelihood to obtain similar items and
+use those together with the user's ratings to predict his/her preference
+towards unknown items.
+
+
+<a name="ItembasedCollaborativeFiltering-Map/Reduceimplementations"></a>
+### Map/Reduce implementations
+
+Mahout offers two Map/Reduce jobs aimed to support Itembased Collaborative
+Filtering.
+
+*org.apache.mahout.cf.taste.hadoop.similarity.item.ItemSimilarityJob*
+computes all similar items. It expects a .csv file with the preference data
+as input, where each line represents a single preference in the form
+_userID,itemID,value_ and outputs pairs of itemIDs with their associated
+similarity value.
+
+_job specific options_
+
+<table>
+<tr><td>input</td><td>path to input directory</td></tr>
+<tr><td>output</td><td>path to output directory</td></tr>
+<tr><td>similarityClassname</td><td>Name of distributed similarity class to instantiate,  
+							alternatively use
+one of the predefined similarities					   
+		  (SIMILARITY_COOCCURRENCE, SIMILARITY_EUCLIDEAN_DISTANCE, 
+							 
+SIMILARITY_LOGLIKELIHOOD, SIMILARITY_PEARSON_CORRELATION,		   
+				    SIMILARITY_TANIMOTO_COEFFICIENT,
+SIMILARITY_UNCENTERED_COSINE,						   
+	     SIMILARITY_UNCENTERED_ZERO_ASSUMING_COSINE)</td></tr>
+<tr><td>maxSimilaritiesPerItem</td><td>try to cap the number of similar items per item to
+this number</td></tr>
+<tr><td>maxPrefsPerUser</td><td>max number of preferences to consider per user, users with
+more preferences will be sampled down</td></tr>
+<tr><td>minPrefsPerUser</td><td>ignore users with less preferences than this</td></tr>
+<tr><td>booleanData</td><td>treat input as having no preference values</td></tr>
+<tr><td>threshold</td><td>discard item pairs with a similarity value below this</td></tr>
+</table>
+
+*org.apache.mahout.cf.taste.hadoop.item.RecommenderJob* is a completely
+distributed itembased recommender. It expects a .csv file with the
+preference data as input, where each line represents a single preference in
+the form _userID,itemID,value_ and outputs userIDs with associated
+recommended itemIDs and their scores.
+
+_job specific options_
+
+<table>
+<tr><td>input</td><td>path to input directory</td></tr>
+<tr><td>output</td><td>path to output directory</td></tr>
+<tr><td>numRecommendations</td><td>number of recommendations per user</td></tr>
+<tr><td>usersFile</td><td>file of users to recommend for</td></tr>
+<tr><td>itemsFile</td><td>file of items to recommend for</td></tr>
+<tr><td>filterFile</td><td>file containing comma-separated userID,itemID pairs. Used to
+exclude the item from the recommendations for that user (optional)</td></tr>
+<tr><td>maxPrefsPerUser</td><td>maximum number of preferences considered per user in final
+recommendation phase</td></tr>
+<tr><td>similarityClassname</td><td>Name of distributed similarity class to instantiate,  
+							alternatively use
+one of the predefined similarities					   
+		  (SIMILARITY_COOCCURRENCE, SIMILARITY_EUCLIDEAN_DISTANCE, 
+							 
+SIMILARITY_LOGLIKELIHOOD, SIMILARITY_PEARSON_CORRELATION,		   
+				    SIMILARITY_TANIMOTO_COEFFICIENT,
+SIMILARITY_UNCENTERED_COSINE,						   
+	     SIMILARITY_UNCENTERED_ZERO_ASSUMING_COSINE)</td></tr>
+<tr><td>maxSimilaritiesPerItem</td><td>try to cap the number of similar items per item to
+this number</td></tr>
+<tr><td>maxPrefsPerUserInItemSimilarity</td><td>max number of preferences to consider per
+user, users with more preferences will be sampled down</td></tr>
+<tr><td>minPrefsPerUser</td><td>ignore users with less preferences than this</td></tr>
+<tr><td>booleanData</td><td>treat input as having no preference values</td></tr>
+<tr><td>threshold</td><td>discard item pairs with a similarity value below this</td></tr>
+</table>
+
+<a name="ItembasedCollaborativeFiltering-Resources"></a>
+### Resources
+
+* [Sarwar et al.:Item-Based Collaborative Filtering Recommendation Algorithms ](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.144.9927&rep=rep1&type=pdf)
+* [Slides: Distributed Itembased Collaborative Filtering with Apache Mahout](http://www.slideshare.net/sscdotopen/mahoutcf)

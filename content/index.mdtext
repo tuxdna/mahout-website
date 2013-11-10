@@ -1,0 +1,161 @@
+<h1>What is Apache Mahout?</h1>
+<h2>The Apache Mahout™ machine learning library's goal is to build scalable machine learning libraries.</h2>
+  <div class="highlights">
+    <h4>Mahout currently has</h4>
+    <ul>
+      <li>Collaborative Filtering</li>
+      <li>User and Item based recommenders</li>
+      <li>K-Means, Fuzzy K-Means clustering</li>
+      <li>Mean Shift clustering</li>
+      <li>Dirichlet process clustering</li>
+      <li>Latent Dirichlet Allocation</li>
+      <li>Singular value decomposition</li>
+      <li>Parallel Frequent Pattern mining</li>
+      <li>Complementary Naive Bayes classifier</li>
+      <li>Random forest decision tree based classifier</li>
+      <li>High performance java collections (previously colt collections)</li>
+      <li>A vibrant community</li>
+      <li>and many more cool stuff to come by this summer thanks to Google summer of code</li>
+    </ul>
+  </div>
+  <p>With scalable we mean:</p>
+  <p>Scalable to reasonably large data sets. Our core algorithms for clustering, classfication and batch based
+    collaborative filtering are implemented on top of Apache Hadoop using the map/reduce paradigm. However we do not
+    restrict contributions to Hadoop based implementations: Contributions that run on a single node or on a non-Hadoop
+    cluster are welcome as well. The core libraries are highly optimized to allow for good performance also for
+    non-distributed algorithms</p>
+  <p>Scalable to support your business case. Mahout is distributed under a commercially friendly Apache Software
+    license.</p>
+  <p>Scalable community. The goal of Mahout is to build a vibrant, responsive, diverse community to facilitate
+    discussions not only on the project itself but also on potential use cases. Come to the mailing lists to find out
+    more.</p>
+
+  <p>Currently Mahout supports mainly four use cases: Recommendation mining takes users' behavior and from that tries to
+    find items users might like. Clustering takes e.g. text documents and groups them into groups of topically related
+    documents. Classification learns from exisiting categorized documents what documents of a specific category look
+    like and is able to assign unlabelled documents to the (hopefully) correct category. Frequent itemset mining takes a
+    set of item groups (terms in a query session, shopping cart content) and identifies, which individual items usually
+    appear together.</p>
+
+  <p>Interested in helping? See the
+    <a href="http://cwiki.apache.org/confluence/display/MAHOUT/Developer+Resources">wiki</a> or join the
+    <a href="http://cwiki.apache.org/confluence/display/MAHOUT/Mailing+Lists%2C+IRC+and+Archives">mailing lists</a>.</p>
+
+  <h1>Mahout News</h1>
+
+  <h2 class="boxed">25 July 2013 - Apache Mahout 0.8 released</h2>
+
+  <p>Apache Mahout has reached version 0.8. All developers are encouraged to begin using version
+  0.8. Highlights include:</p>
+
+  <ul>
+    <li>Numerous performance improvements to Vector and Matrix implementations, API's and their iterators (see also MAHOUT-1192, MAHOUT-1202)</li>
+		<li>Numerous performance improvements to the recommender implementations (see also MAHOUT-1272, MAHOUT-1035, MAHOUT-1042, MAHOUT-1151, MAHOUT-1166, MAHOUT-1167, MAHOUT-1169, MAHOUT-1205, MAHOUT-1264)</li>
+		<li><a href="https://issues.apache.org/jira/browse/MAHOUT-1088" class="external-link" rel="nofollow">MAHOUT-1088</a>: Support for biased item-based recommender</li>
+		<li><a href="https://issues.apache.org/jira/browse/MAHOUT-1089" class="external-link" rel="nofollow">MAHOUT-1089</a>: SGD matrix factorization for rating prediction with user and item biases</li>
+		<li><a href="https://issues.apache.org/jira/browse/MAHOUT-1106" class="external-link" rel="nofollow">MAHOUT-1106</a>: Support for SVD++</li>
+		<li><a href="https://issues.apache.org/jira/browse/MAHOUT-944" class="external-link" rel="nofollow">MAHOUT-944</a>:  Support for converting one or more Lucene storage indexes to SequenceFiles as well as an upgrade of the supported Lucene version to Lucene 4.3.1.</li>
+		<li><a href="https://issues.apache.org/jira/browse/MAHOUT-1154" class="external-link" rel="nofollow">MAHOUT-1154</a> and friends: New streaming k-means implementation that offers on-line (and fast) clustering</li>
+		<li><a href="https://issues.apache.org/jira/browse/MAHOUT-833" class="external-link" rel="nofollow">MAHOUT-833</a>: Make conversion to SequenceFiles Map-Reduce, 'seqdirectory' can now be run as a MapReduce job.</li>
+		<li><a href="https://issues.apache.org/jira/browse/MAHOUT-1052" class="external-link" rel="nofollow">MAHOUT-1052</a>: Add an option to MinHashDriver that specifies the dimension of vector to hash (indexes or values).</li>
+		<li><a href="https://issues.apache.org/jira/browse/MAHOUT-884" class="external-link" rel="nofollow">MAHOUT-884</a>: Matrix Concat utility, presently only concatenates two matrices.</li>
+		<li><a href="https://issues.apache.org/jira/browse/MAHOUT-1187" class="external-link" rel="nofollow">MAHOUT-1187</a>: Upgraded to CommonsLang3</li>
+		<li><a href="https://issues.apache.org/jira/browse/MAHOUT-916" class="external-link" rel="nofollow">MAHOUT-916</a>: Speedup the Mahout build by making tests run in parallel.</li>
+		<li>The usual bug fixes.  See <a href="https://issues.apache.org/jira/issues/?jql=project%20%3D%20MAHOUT%20AND%20fixVersion%20%3D%20%220.8%22" class="external-link" rel="nofollow">JIRA</a> for more<br>
+	information on the 0.8 release.</li>
+  </ul>
+
+  <p>Changes in 0.8 are detailed in the <a href="http://svn.apache.org/viewvc/mahout/trunk/CHANGELOG?revision=1501110&view=markup">release notes</a>.</p>
+  
+  <p>Downloads of all releases available from <a href="http://www.apache.org/dyn/closer.cgi/mahout/">Apache mirrors</a>.</p>
+<p>FUTURE PLANS</p>
+
+<p>0.9</p>
+
+<p>As the project moves towards a 1.0 release, the community is working to clean up and/or remove parts of the code base that are under-supported or that underperform as well as to better focus the energy and contributions on key algorithms that are proven to scale in production and have seen wide-spread adoption.  To this end, in the next release, the project is planning on removing support for the following algorithms unless there is sustained support and improvement of them before the next release.</p>
+
+<p>The algorithms to be removed are:</p>
+<ul class="alternate" type="square">
+	<li>From Clustering:<br>
+	Dirichlet<br>
+	MeanShift<br>
+	MinHash<br>
+        Eigencuts</li>
+	<li>From Classification (both are sequential implementations)<br>
+	Winnow<br>
+	Perceptron</li>
+	<li>Frequent Pattern Mining</li>
+	<li>Collaborative Filtering<br>
+	All recommenders in org.apache.mahout.cf.taste.impl.recommender.knn<br>
+        SlopeOne implementations in org.apache.mahout.cf.taste.hadoop.slopeone and org.apache.mahout.cf.taste.impl.recommender.slopeone<br>
+        Distributed pseudo recommender in org.apache.mahout.cf.taste.hadoop.pseudo<br>
+        TreeClusteringRecommender in org.apache.mahout.cf.taste.impl.recommender</li>
+	<li>Mahout Math<br>
+        Lanczos in favour of SSVD<br>
+        Hadoop entropy stuff in org.apache.mahout.math.stats.entropy</li>
+</ul>
+
+
+<p>If you are interested in supporting 1 or more of these algorithms, please make it known on dev@mahout.apache.org and via JIRA issues that fix and/or improve them.  Please also provide supporting evidence as to their effectiveness for you in production.</p>
+
+<p>1.0 PLANS</p>
+
+<p>Our plans as a community are to focus 0.9 on cleanup of bugs and the removal of the code mentioned above and then to follow with a 1.0 release soon thereafter, at which point the community is committing to the support of the algorithms packaged in the 1.0 for at least two minor versions after their release.  In the case of removal, we will deprecate the functionality in the 1.(x+1) minor release and remove it in the 1.(x+2) release.  For instance, if feature X is to be removed after the 1.2 release, it will be deprecated in 1.3 and removed in 1.4.</p>
+       
+
+
+  <h2 class="boxed">16 June 2012 - Apache Mahout 0.7 released</h2>
+
+  <p>Apache Mahout has reached version 0.7. All developers are encouraged to begin using version
+  0.7. Highlights include:</p>
+
+  <ul>
+    <li>Outlier removal capability in K-Means, Fuzzy K, Canopy and Dirichlet Clustering</li>
+    <li>New Clustering implementation for K-Means, Fuzzy K, Canopy and Dirichlet using Cluster Classifiers</li>
+    <li>Collections and Math api consolidated</li>
+    <li>(Complementary) Naive Bayes refactored and cleaned</li>
+    <li>Watchmaker and Old Naive Bayes dropped.</li>
+    <li>Many bug fixes, refactorings, and other small improvements</li>
+  </ul>
+
+  <p>Changes in 0.7 are detailed in the <a href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310751&version=12319261">release notes</a>.</p>
+  
+  <p>Downloads of all releases available from <a href="http://www.apache.org/dyn/closer.cgi/mahout/">Apache mirrors</a>.</p>
+  
+  <h2 class="boxed">6 Feb 2012 - Apache Mahout 0.6 released</h2>
+
+  <p>Apache Mahout has reached version 0.6. All developers are encouraged to begin using version
+  0.6. Highlights include:</p>
+
+  <ul>
+    <li>Improved Decision Tree performance and added support for regression problems</li>
+    <li>New LDA implementation using Collapsed Variational Bayes 0th Derivative Approximation</li>
+    <li>Reduced runtime of LanczosSolver tests</li>
+    <li>K-Trusses, Top-Down and Bottom-Up clustering, Random Walk with Restarts implementation</li>
+    <li>Reduced runtime of dot product between vectors</li>
+    <li>Added MongoDB and Cassandra DataModel support</li>
+    <li>Increased efficiency of parallel ALS matrix factorization</li>
+    <li>SSVD enhancements</li>
+    <li>Performance improvements in RowSimilarityJob, TransposeJob</li>
+    <li>Added numerous clustering display examples</li>
+    <li>Many bug fixes, refactorings, and other small improvements</li>
+  </ul>
+
+  <p>Changes in 0.6 are detailed in the <a href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310751&version=12316364">release notes</a>.</p>
+
+  <p>Downloads of all releases available from <a href="http://www.apache.org/dyn/closer.cgi/mahout/">Apache mirrors</a>.</p>
+
+  <h2 class="boxed">9 Oct 2011 - Mahout in Action released</h2>
+
+  <p>At last, the book Mahout in Action is available in print. Sean Owen, Robin Anil, Ted Dunning
+  and Ellen Friedman thank the community (especially those who were reviewers) for input during the
+  process and hope it is enjoyable.</p>
+
+  <p>Find it at your favorite bookstore, or
+  <a href="http://manning.com/owen/">order print and eBook copies from Manning</a> --
+  use discount code "mahout37" for 37% off.</p>
+
+  
+</div>
+
+

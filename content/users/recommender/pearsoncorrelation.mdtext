@@ -1,0 +1,24 @@
+Title: PearsonCorrelation
+{excerpt}The Pearson correlation measures the degree to which two series of
+numbers tend to move together -- values in corresponding positions tend to
+be high together, or low together. In particular it measures the strength
+of the linear relationship between the two series, the degree to which one
+can be estimated as a linear function of the other. It is often used in
+collaborative filtering as a similarity metric on users or items; users
+that tend to rate the same items high, or low, have a high Pearson
+correlation and therefore are "similar".{excerpt}
+
+The Pearson correlation can behave very badly when small counts are
+involved.  For example, if you compare any two sequences with two distinct
+values, you get a correlation of 1.  To some degree, this problem can be
+avoided by not computing correlations for short sequences (with less than,
+say, 10 values).  
+
+Pearson correlation is sometimes used in collaborative filtering to define
+similarity between the ratings of two users on a common set of items.  In
+this application, it is a reasonable measure if there is sufficient
+overlap.  It, unfortunately, is not able to take advantage of the degree of
+overlapping ratings relative to the sets of all ratings.
+
+See Also
+* [http://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient](http://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient)

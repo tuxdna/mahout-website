@@ -1,0 +1,29 @@
+Title: How To Update The Website
+<a name="HowToUpdateTheWebsite-SomeDo'sandDont'sofupdatingthewiki"></a>
+## Some Do's and Dont's of updating the wiki
+1. Keep the wiki cleanly formatted. Assume the title is of size h1
+1. Try to keep a single page for a topic instead of starting multiple one.
+If the topics are related, put it under as a child under the similar page.
+1. Notify the developers of orphaned or broken links.
+1. Use the page title to link pages so that they get correctly updated by
+when someone changes the title
+  eg:
+
+    Correct format
+    [Name of the link|How To Update The Website]
+    
+    The following is incorrect. Please change then when you encounter them
+    [Name of the link|http://<path to>/how to update the website.html]
+
+
+To update the pages, update the wiki directly. Do not change the title of
+top level pages without updating the same on the landing page.
+
+<a name="HowToUpdateTheWebsite-Howtoupdatethemahouthomepage"></a>
+## How to update the mahout home page
+(*NOTE:* _You need committer rights to modify the home page._)
+To update the home page
+1. Commit changes to the website landing page at
+https://svn.apache.org/repos/asf/mahout/site/new_website/
+1. Ensure all outgoing links from the landing page to the wiki are working
+1. The site will automatically be exported from svn as soon as its committed

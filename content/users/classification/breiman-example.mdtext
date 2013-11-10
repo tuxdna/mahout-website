@@ -1,0 +1,79 @@
+Title: Breiman Example
+<a name="BreimanExample-Introduction"></a>
+# Introduction
+
+This quick start page shows how to run the Breiman example. It implements
+the test procedure described in Breiman's paper [1](1.html)
+. 
+The basic algorithm is as follows :
+* repeat I iterations
+* foreach iteration do
+ ** 10% of the dataset is kept apart as a testing set 
+ ** build two forests using the training set, one with m=int(log2(M)+1)
+(called Random-Input) and one with m=1 (called Single-Input)
+ ** choose the forest that gave the lowest oob error estimation to compute
+the test set error
+ ** compute the test set error using the Single Input Forest (test error),
+this demonstrates that even with m=1, Decision Forests give comparable
+results to greater values of m
+ ** compute the mean test set error using every tree of the chosen forest
+(tree error). This should indicate how well a single Decision Tree performs
+* compute the mean test error for all iterations
+* compute the mean tree error for all iterations
+
+<a name="BreimanExample-Steps"></a>
+# Steps
+<a name="BreimanExample-Downloadthedata"></a>
+## Download the data
+* The current implementation is compatible with the UCI repository file
+format. Here are links to some of the datasets used in Breiman's paper:
+ ** glass : http://archive.ics.uci.edu/ml/datasets/Glass+Identification
+ ** breast cancer :
+http://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)
+ ** diabetes : http://archive.ics.uci.edu/ml/datasets/Pima+Indians+Diabetes
+ ** sonar :
+http://archive.ics.uci.edu/ml/datasets/Connectionist+Bench+(Sonar,+Mines+vs.+Rocks)
+ ** ionosphere : http://archive.ics.uci.edu/ml/datasets/Ionosphere
+ ** vehicle : [http://archive.ics.uci.edu/ml/datasets/Statlog+(Vehicle+Silhouettes)](http://archive.ics.uci.edu/ml/datasets/Statlog+(Vehicle+Silhouettes))
+ ** german : [http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)](http://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data))
+* Put the data in HDFS: {code}$HADOOP_HOME/bin/hadoop fs -put <PATH TO
+DATA> testdata{code}
+
+<a name="BreimanExample-BuildtheJobfiles"></a>
+## Build the Job files
+* In $MAHOUT_HOME/ run: {code}mvn install -DskipTests{code}
+
+<a name="BreimanExample-Generateafiledescriptorforthedataset:"></a>
+## Generate a file descriptor for the dataset: 
+for the glass dataset (glass.data), run :
+
+    $HADOOP_HOME/bin/hadoop jar
+$MAHOUT_HOME/core/target/mahout-core-<VERSION>-job.jar
+org.apache.mahout.classifier.df.tools.Describe -p testdata/glass.data -f
+testdata/glass.info -d I 9 N L
+
+The "I 9 N L" string indicates the nature of the variables. which means 1
+ignored(I) attribute, followed by 9 numerical(N) attributes, followed by
+the label(L)
+* you can also use C for categorical (nominal) attributes
+
+<a name="BreimanExample-Runtheexample"></a>
+## Run the example
+
+    $HADOOP_HOME/hadoop jar
+$MAHOUT_HOME/examples/target/mahout-examples-<VERSION>-job.jar
+org.apache.mahout.classifier.df.BreimanExample -d testdata/glass.data -ds
+testdata/glass.info -i 10 -t 100
+
+which builds 100 trees (-t argument) and repeats the test 10 iterations (-i
+argument) 
+* The example outputs the following results:
+** Selection error : mean test error for the selected forest on all
+iterations
+** Single Input error : mean test error for the single input forest on all
+iterations
+** One Tree error : mean single tree error on all iterations
+** Mean Random Input Time : mean build time for random input forests on all
+iterations
+** Mean Single Input Time : mean build time for single input forests on all
+iterations

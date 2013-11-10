@@ -1,0 +1,47 @@
+Title: ClassifyingYourData
++*Mahout_0.2*+
+
+After you've done the [Quickstart](quickstart.html)
+ and are familiar with the basics of Mahout, it is time to build a
+classifier from your own data. 
+
+The following pieces *may* be useful for in getting started:
+
+<a name="ClassifyingYourData-Input"></a>
+# Input
+
+For starters, you will need your data in an appropriate Vector format
+(which has changed since Mahout 0.1)
+
+* See [Creating Vectors](creating-vectors.html)
+
+<a name="ClassifyingYourData-TextPreparation"></a>
+## Text Preparation
+
+* See [Creating Vectors from Text](creating-vectors-from-text.html)
+*
+http://www.lucidimagination.com/search/document/4a0e528982b2dac3/document_clustering
+
+<a name="ClassifyingYourData-RunningtheProcess"></a>
+# Running the Process
+
+<a name="ClassifyingYourData-NaiveBayes"></a>
+## Naive Bayes
+
+Background: [Naive Bayes Classification ](-bayesian-.html)
+
+Documentation of running naive bayes from the command line: [bayesian-commandline](bayesian-commandline.html)
+
+<a name="ClassifyingYourData-C-Bayes"></a>
+## C-Bayes
+
+Background: [C-Bayes Classification ](-https://issues.apache.org/jira/browse/mahout-60-.html)
+
+Documentation of running c-bayes from the command line: [c-bayes-commandline](c-bayes-commandline.html)
+
+<a name="ClassifyingYourData-RandomForests"></a>
+## Random Forests
+
+Background: [Random Forests Classification ](-http://cwiki.apache.org/mahout/random-forests.html-.html)
+
+Documentation of running random forests from the command line: [Breiman Example](breiman-example.html)

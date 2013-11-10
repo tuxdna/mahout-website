@@ -1,0 +1,66 @@
+Title: Bayesian
+<a name="Bayesian-Intro"></a>
+# Intro
+
+Mahout currently has two implementations of Bayesian classifiers.  One is
+the traditional Naive Bayes approach, and the other is called Complementary
+Naive Bayes.
+
+<a name="Bayesian-Implementations"></a>
+# Implementations
+
+[NaiveBayes](naivebayes.html)
+ ([MAHOUT-9|http://issues.apache.org/jira/browse/MAHOUT-9])
+
+[Complementary Naive Bayes](complementary-naive-bayes.html)
+ ([MAHOUT-60|http://issues.apache.org/jira/browse/MAHOUT-60])
+
+The Naive Bayes implementations in Mahout follow the paper [http://people.csail.mit.edu/jrennie/papers/icml03-nb.pdf](http://people.csail.mit.edu/jrennie/papers/icml03-nb.pdf)
+ Before we get to the actual algorithm lets discuss the terminology
+
+Given, in an input set of classified documents: 
+1. j = 0 to N features 
+1. k = 0 to L labels
+
+Then:
+
+1. Normalized Frequency for a term(feature) in a document is calculated by
+dividing the term frequency by the root mean square of terms frequencies in
+that document
+1. Weight Normalized Tf for a given feature in a given label = sum of
+Normalized Frequency of the feature across all the documents in the label. 
+1. Weight Normalized Tf-Idf for a given feature in a label is the Tf-idf
+calculated using standard idf multiplied by the Weight Normalized Tf
+
+Once Weight Normalized Tf-idf(W-N-Tf-idf) is calculated, the final weight
+matrix for Bayes and Cbayes are calculated as follows
+
+We calculate the sum of W-N-Tf-idf for all the features in a label called
+as Sigma_k or sumLabelWeight
+
+For Bayes
+
+    Weight = Log [ ( W-N-Tf-Idf + alpha_i ) / ( Sigma_k + N  ) ]
+
+For CBayes
+
+We calculate the Sum of W-N-Tf-Idf across all labels for a given feature.
+We call this sumFeatureWeight of Sigma_j
+Also we sum the entire W-N-Tf-Idf weights for all feature,label pair in the
+train set. Call this Sigma_jSigma_k
+
+Final Weight is calculated as
+
+    Weight = Log [ ( Sigma_j - W-N-Tf-Idf + alpha_i ) / ( Sigma_jSigma_k - Sigma_k + N  ) ]
+
+
+<a name="Bayesian-Examples"></a>
+# Examples
+
+In Mahout's example code, there are two samples that can be used:
+
+1. [Wikipedia Bayes Example](wikipedia-bayes-example.html)
+ - Classify Wikipedia data.
+
+1. [Twenty Newsgroups](twenty-newsgroups.html)
+ - Classify the classic Twenty Newsgroups data.

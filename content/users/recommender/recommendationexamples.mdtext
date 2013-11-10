@@ -1,0 +1,47 @@
+Title: RecommendationExamples
+<a name="RecommendationExamples-Introduction"></a>
+# Introduction 
+
+This quick start page describes how to run the recommendation examples
+provided by Mahout. Mahout comes with four recommendation mining examples.
+They are based on netflixx, jester, grouplens and bookcrossing
+respectively.
+
+<a name="RecommendationExamples-Steps"></a>
+# Steps 
+
+<a name="RecommendationExamples-Testingitononesinglemachine"></a>
+## Testing it on one single machine 
+
+In the examples directory type: 
+
+    mvn -q exec:java
+-Dexec.mainClass="org.apache.mahout.cf.taste.example.bookcrossing.BookCrossingRecommenderEvaluatorRunner"
+-Dexec.args="<OPTIONS>" 
+    mvn -q exec:java
+-Dexec.mainClass="org.apache.mahout.cf.taste.example.netflix.NetflixRecommenderEvaluatorRunner"
+-Dexec.args="<OPTIONS>" 
+    mvn -q exec:java
+-Dexec.mainClass="org.apache.mahout.cf.taste.example.netflix.TransposeToByUser"
+-Dexec.args="<OPTIONS>" 
+    mvn -q exec:java
+-Dexec.mainClass="org.apache.mahout.cf.taste.example.jester.JesterRecommenderEvaluatorRunner"
+-Dexec.args="<OPTIONS>" 
+    mvn -q exec:java
+-Dexec.mainClass="org.apache.mahout.cf.taste.example.grouplens.GroupLensRecommenderEvaluatorRunner"
+-Dexec.args="<OPTIONS>" 
+
+
+Here, the command line options need only be:
+
+
+    -i [input file]
+
+
+
+Note that the GroupLens example is designed for the "1 million" data set,
+available at http://www.grouplens.org/node/73 . And  the "input file" above
+is the ratings.dat contained in the zipfile from the data set . This file
+has an unusual format and so has a special parser. The example code here
+can be easily modified to use a regular FileDataModel and thus work on more
+standard input, including the other data sets available at this site.

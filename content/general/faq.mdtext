@@ -1,0 +1,77 @@
+Title: FAQ
+The Official Mahout FAQ
+
+*General*
+
+1. [What is Apache Mahout?](#whatis.html)
+1. [What does the name mean?](#mean.html)
+1. [Where can I find the origins of the Mahout project? ](#historical.html)
+1. [Where can I download Mahout logo? ](#logo.html)
+1. [Where can I download Mahout slide presentations? ](#presentations.html)
+
+*Algorithms*
+1. [What algorithms are implemented in Mahout?](#algos.html)
+1. [What algorithms are missing from Mahout?](#todo.html)
+
+
+<a name="FAQ-*Answers*"></a>
+# *Answers*
+
+
+<a name="FAQ-General"></a>
+## General
+
+
+<a name="FAQ-{anchor:whatIs}WhatisApacheMahout?"></a>
+### {anchor:whatIs}What is Apache Mahout?
+
+Apache Mahout is a suite of machine learning libraries designed to be
+scalable and robust
+
+<a name="FAQ-{anchor:mean}Whatdoesthenamemean?"></a>
+### {anchor:mean}What does the name mean?
+
+The name [Mahout](http://en.wikipedia.org/wiki/Mahout)
+ was original chosen for it's association with the [Apache Hadoop|http://hadoop.apache.org]
+ project.  A Mahout is a person who drives an elephant (hint: Hadoop's logo
+is an elephant.)  We just wanted a name that complemented Hadoop but we see
+our project as a good driver of Hadoop in the sense that we will be using
+and testing it.  We are not, however, implying that we are controlling
+Hadoop's development.
+
+<a name="FAQ-{anchor:historical}WherecanIfindtheoriginsoftheMahoutproject?"></a>
+### {anchor:historical}Where can I find the origins of the Mahout project?
+
+See [http://ml-site.grantingersoll.com](http://ml-site.grantingersoll.com)
+ for old wiki and mailing list archives (all read-only)
+
+<a name="FAQ-{anchor:logo}WherecanIdownloadMahoutlogo?"></a>
+### {anchor:logo}Where can I download Mahout logo?
+
+See [MAHOUT-335](https://issues.apache.org/jira/browse/MAHOUT-335)
+
+
+<a name="FAQ-{anchor:presentations}WherecanIdownloadMahoutslidepresentations?"></a>
+### {anchor:presentations} Where can I download Mahout slide presentations?
+
+* [Books, Tutorials and Talks ](https://cwiki.apache.org/confluence/display/MAHOUT/Books+Tutorials+and+Talks)
+ Wiki page containing an overview of all presentations with links to slides
+where available.
+
+<a name="FAQ-Algorithms"></a>
+## Algorithms
+
+<a name="FAQ-{anchor:algos}WhatalgorithmsareimplementedinMahout?"></a>
+### {anchor:algos} What algorithms are implemented in Mahout?
+
+We are interested in a wide variety of machine learning algorithms. Many of
+which are already implemented in Mahout. You can find them [here ](http://cwiki.apache.org/confluence/display/MAHOUT/Algorithms)
+.
+
+<a name="FAQ-{anchor:todo}WhatalgorithmsaremissingfromMahout?"></a>
+### {anchor:todo} What algorithms are missing from Mahout?
+
+There are many machine learning algorithms that we would like to have in
+Mahout, including some from the paper [http://www.cs.stanford.edu/people/ang/papers/nips06-mapreducemulticore.pdf](http://www.cs.stanford.edu/people/ang/papers/nips06-mapreducemulticore.pdf)
+. If you have an algorithm or an improvement to an algorithm that you would
+like to implement, by all means submit a patch.

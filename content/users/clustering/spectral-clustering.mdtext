@@ -1,0 +1,262 @@
+Title: Spectral Clustering
+Spectral clustering, a more powerful and specialized algorithm (compared to
+K-means), derives its name from spectral analysis of a graph, which is how
+the data are represented. Each object to be clustered can initially be
+represented as an _n_\-dimensional numeric vector, but the difference with
+this algorithm is that there must also be some method for performing a
+comparison between each object and expressing this comparison as a scalar.
+
+This _n_ by _n_ comparison of all objects with all others forms the
+_affinity_ matrix, which can be intuitively thought of as a rough
+representation of an underlying undirected, weighted, and fully-connected
+graph whose edges express the relative relationships, or affinities,
+between each pair of objects in the original data. This affinity matrix
+forms the basis from which the two spectral clustering algorithms operate.
+
+The equation by which the affinities are calculated can vary depending on
+the user's circumstances; typically, the equation takes the form of:
+
+exp( _-d^2_ / _c_ )
+
+where _d_ is the Euclidean distance between a pair of points, and _c_ is a
+scaling factor. _c_ is often calculated relative to a _k_\-neighborhood of
+closest points to the current point; all other affinities are set to 0
+outside of the neighborhood. Again, this formula can vary depending on the
+situation (e.g. a fully-connected graph would ignore the _k_\-neighborhood
+and calculate affinities for all pairs of points).
+
+[Full overview on spectral clustering](http://spectrallyclustered.wordpress.com/2010/05/27/intro-and-spectral-clustering-101/)
+
+<a name="SpectralClustering-K-MeansSpectralClustering"></a>
+## K-Means Spectral Clustering
+
+<a name="SpectralClustering-Overview"></a>
+### Overview
+
+This consists of a few basic steps of generalized spectral clustering,
+followed by standard k-means clustering over the intermediate results.
+Again, this process begins with an affinity matrix *A* \- whether or not it
+is fully-connected depends on the user's need.
+
+*A* is then transformed into a pseudo-Laplacian matrix via a multiplication
+with a diagonal matrix whose entries consist of the sums of the rows of
+*A*. The sums are modified to be the inverse square root of their original
+values. The final operation looks something like:
+
+L = D^{-1/2} A D^{-1/2}
+
+*L* has some properties that are of interest to us; most importantly, while
+it is symmetric like *A*, it has a more stable eigen-decomposition. *L* is
+decomposed into its constituent eigenvectors and corresponding eigenvalues
+(though the latter will not be needed for future calculations); the matrix
+of eigenvectors, *U*, is what we are now interested in.
+
+Assuming *U* is a column matrix (the eigenvectors comprise the columns),
+then we will now use the _rows_ of *U* as proxy data for the original data
+points. We will run each row through standard K-means clustering, and the
+label that each proxy point receives will be transparently assigned to the
+corresponding original data point, resulting in the final clustering
+assignments.
+
+[Full overview on k-means spectral clustering](http://spectrallyclustered.wordpress.com/2010/06/05/sprint-1-k-means-spectral-clustering/)
+
+<a name="SpectralClustering-Implementation"></a>
+### Implementation
+
+The Mahout implementation consists of a single driver -
+SpectralKMeansDriver - calling upon several common utilities. The driver
+performs the operations in sequential fashion: reading in and constructing
+the affinity matrix, building the diagonal matrix, building the
+pseudo-Laplacian and decomposing it, and clustering the components.
+
+The affinity matrix input is the most important part of this algorithm. It
+consists of text files which follow a specific format: that of a weighted,
+undirected graph. In order to represent a graph in text files, each line of
+a text file represents a single directional edge between two nodes. There
+are three comma-separated values on the line. The first number indicates
+the source node, the second is the destination node, and the third is the
+weight. For example:
+
+0, 1, 2.5
+
+would indicate the directional edge from node 0 to node 1 has a weight of
+2.5. *Please note: as of 8/16/2010, Eigencuts assumes the affinity matrix
+is symmetric, hence there should be a corresponding line in the text file
+of: 1, 0, 2.5.* Also, each node should be an integer value.
+
+*note*: per MAHOUT-978 don't name your input file with leading '_' (or
+'.').
+
+M/R jobs written for SpectralKMeans:
+* AffinityMatrixInputJob (reads the raw input into a DistributedRowMatrix)
+* MatrixDiagonalizeJob (constructs the diagonal matrix)
+* UnitVectorizerJob (converts the eigenvector matrix *U* to unit rows)
+* VectorMatrixMultiplicationJob (multiplies *D* with *A*)
+
+M/R jobs already in Mahout that were used:
+* DistributedRowMatrix.transpose()
+* DistributedLanczosSolver
+* EigenVerfierJob
+* KMeansDriver
+
+<a name="SpectralClustering-EigencutsSpectralClustering"></a>
+## Eigencuts Spectral Clustering
+
+<a name="SpectralClustering-Overview"></a>
+### Overview
+
+Intuitively, Eigencuts can be thought of as part 2 of the K-means
+algorithm, in that it performs the same initial steps up until the k-means
+clustering. The algorithm uses the same affinity matrix *A*, constructs the
+same diagonal matrix *D*, performs the same multiplication to create the
+pseudo-Laplacian *L*, and conducts an eigen-decomposition on *L* to obtain
+the eigenvectors and eigenvalues. But here is where the two algorithms
+differentiate.
+
+For each eigenvector, we wish to determine how stable its flow of
+probability is within the underlying graph of the original data.
+Intuitively, this is intrinsically related to the min-cut, max-flow problem
+of finding bottlenecks: if we perturb the flow rate on a specific edge, and
+overall the flow is stable, then we can conclude that this edge was not a
+bottleneck. If, however, perturbing an edge significantly alters the
+overall flow, we know this edge's eigenflow is very unstable and is a
+bottleneck.
+
+We have an [explicit form](http://spectrallyclustered.files.wordpress.com/2010/07/sensitivityequation.png)
+ of this "sensitivity" calculation ([full post here, under "computing
+sensitivities"|http://spectrallyclustered.wordpress.com/2010/07/15/sprint-3-three-last-mr-tasks/]).
+The next step is called "non-maximal suppression", which effectively means
+we will ignore any of the calculated sensitivities for which there exists
+another more negative sensitivity in the same neighborhood as the current
+one, effectively "suppressing" it.
+
+This non-maximal suppression then plays a role in the final
+affinity-cutting step, where we "cut" the affinity (set to 0) between any
+two nodes (effectively destroying the edge between them) for which the
+sensitivity calculated at that edge passes some threshold, _and_ for which
+the sensitivity was _not_ suppressed in the previous step.
+
+Once the cutting has been completed, the process loops upon itself
+(starting with the recalculation of *D* using the modified *A*) until no
+new cuts in *A* are made in the final step.
+
+[Full overview on Eigencuts spectral clustering](http://spectrallyclustered.wordpress.com/2010/07/06/sprint-3-introduction-to-eigencuts/)
+
+<a name="SpectralClustering-Implementation"></a>
+### Implementation
+
+Since the first half of Eigencuts uses the same calculations as Spectral
+K-means, it uses the same common M/R tasks, both those specific to spectral
+clustering, as well as those general to Mahout. Unlike SpectralKMeans,
+however, there are no DistributedRowMatrix-specific operations performed,
+and hence there is no need for the data type at all; Mahout Vectors are
+used heavily instead.
+
+Once the initial affinity matrix is constructed, there is a loop within the
+EigencutsDriver over the calculation of *D*, the creation of *L* and its
+eigen-decomposition, the calculation of the sensitivities, and the actual
+affinity cuts, such that the loop terminates only when no cuts are made to
+the affinity matrix *A*. The final matrix *A* will then be representative
+of a graph structure whose data points exist in intra-connected clusters.
+
+M/R tasks specific to Eigencuts:
+* EigencutsSensitivityJob (calculates the perturbation effects on edge
+weights)
+* EigencutsAffinityCutsJob (sets edge weights to 0)
+
+M/R tasks within spectral clustering:
+* AffinityMatrixInputJob (reads the raw input into a DistributedRowMatrix)
+* MatrixDiagonalizeJob (constructs the diagonal matrix)
+* VectorMatrixMultiplicationJob (multiplies *D* with *A*)
+
+M/R tasks general to Mahout:
+* DistributedLanczosSolver
+* EigenVerifierJob
+
+<a name="SpectralClustering-Quickstart"></a>
+## Quickstart
+
+As noted before, the data for both these algorithms - the affinity matrix -
+is required to be symmetric. As of the first release, there is no built-in
+mechanism in Mahout for generating the affinities from raw data, as the
+formula this follows varies depending on the user's need, so it is left as
+an exercise to the user to generate the affinities prior to using these
+algorithms.
+
+The affinity input should follow the standard format for textual
+representation of a graph, namely:
+
+node_i, node_j, value_ij
+
+For example, the following 3x3 affinity matrix:
+
+<table>
+<tr><td> 0.0 </td><td> 0.8 </td><td> 0.5 </td></tr>
+<tr><td> 0.8 </td><td> 0.0 </td><td> 0.9 </td></tr>
+<tr><td> 0.5 </td><td> 0.9 </td><td> 0.0 </td></tr>
+</table>
+
+would have the following textual input format:
+
+0, 0, 0
+0, 1, 0.8
+0, 2, 0.5
+1, 0, 0.8
+1, 1, 0
+1, 2, 0.9
+2, 0, 0.5
+2, 1, 0.9
+2, 2, 0
+
+Then simply invoke Spectral K-means or Eigencuts, using the input directory
+and setting the other parameters as necessary (e.g. "k" for K-means, "beta"
+for Eigencuts, etc).
+
+Format *rules*: node count begins at zero, is continuous. avoid whitespace,
+comments etc.
+
+<a name="SpectralClustering-Examples"></a>
+## Examples
+
+*NOTE: Am still waiting for Carnegie Mellon/Univ. of Pittsburgh approval
+for official data set*
+
+For these algorithms, it is useful to have a viable example, so I have
+created a small but effective synthetic data set to show how these
+algorithms operate. The raw data was generated synthetically and [can be viewed here](http://dl.dropbox.com/u/1377610/rawdata.csv)
+. It consists of 450 two-dimensional points drawn from 3 separate gaussian
+distributions their own means and standard deviations ([here is an image of
+the plotted
+points|http://spectrallyclustered.files.wordpress.com/2010/07/clusters.png].
+This same data in affinity matrix form looks like this: [view the affinity data set|http://dl.dropbox.com/u/1377610/affinity.csv]
+
+In order to run the program, then, for spectral k-means:
+
+bin/mahout spectralkmeans \-i /path/to/directory/with/affinity/matrix \-o
+/output/path \-k 3 \-d 450
+
+and for eigencuts:
+
+bin/mahout eigencuts \-i /path/to/directory/with/affinity/matrix \-o
+/output/path \-b 2 \-d 450
+
+In both cases, the "-d" flag refers to the dimensionality of the affinity
+matrix; since there are 450 points, this value will be 450. In spectral
+k-means, the "-k" is the number of clusters to estimate. In Eigencuts, the
+"-b" refers to an initial estimate on the half-life of the flow of
+probability in the graph; higher estimates correspond to fewer clusters.
+
+Spectral k-means will eventually yield the clustering results, and there
+should only be a single mistake: point 54. This is because that particular
+point is in between the two left-hand clusters in the image, and so has
+high affinities with both clusters.
+
+[Full overview of example here](http://spectrallyclustered.wordpress.com/2010/07/14/sprint-3-quick-update/)
+
+<a name="SpectralClustering-Resources"></a>
+### Resources
+
+* [http://spectrallyclustered.wordpress.com/2010/05/27/intro-and-spectral-clustering-101/](http://spectrallyclustered.wordpress.com/2010/05/27/intro-and-spectral-clustering-101/)
+* [http://www.stanford.edu/class/ee378B/papers/luxburg-spectral.pdf](http://www.stanford.edu/class/ee378B/papers/luxburg-spectral.pdf)
+* [http://en.wikipedia.org/wiki/Laplacian_matrix](http://en.wikipedia.org/wiki/Laplacian_matrix)
+* [http://en.wikipedia.org/wiki/Cluster_analysis#Spectral_clustering](http://en.wikipedia.org/wiki/Cluster_analysis#Spectral_clustering)

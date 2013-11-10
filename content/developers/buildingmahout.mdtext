@@ -1,0 +1,306 @@
+Title: BuildingMahout
+<a name="BuildingMahout-PrerequisitesforBuildingMahout"></a>
+# Prerequisites for Building Mahout
+
+* Java JDK *1.6*
+* Maven *2.2* or higher ([http://maven.apache.org/](http://maven.apache.org/)
+).  Use *3.x* to build from SVN.
+
+<a name="BuildingMahout-GettheSourceCode"></a>
+# Get the Source Code
+
+<a name="BuildingMahout-Latest(Recommended)"></a>
+## Latest (Recommended)
+
+Use [Subversion](http://subversion.tigris.org)
+ to check out the code:
+
+    svn co http://svn.apache.org/repos/asf/mahout/trunk
+
+
+<a name="BuildingMahout-Release"></a>
+## Release
+
+[Download source ](http://www.apache.org/dyn/closer.cgi/mahout/)
+Maven artifacts should be in the usual place: [http://repo2.maven.org/maven2/org/apache/mahout/](http://repo2.maven.org/maven2/org/apache/mahout/)
+
+<a name="BuildingMahout-Compiling"></a>
+# Compiling
+
+* change directory to the checked out directory
+* mvn install
+
+{note:title=Important}
+
+If you are Compiling under Windows, make sure you installed Cygwin
+correctly. Here is a [good tutorial](http://hayesdavis.net/2008/06/14/running-hadoop-on-windows/)
+ on installing and configuring a Hadoop cluster on Windows, and it points
+out at antoher great tutorial about installing Cygwin. Here is another [good tutorial |http://ebiquity.umbc.edu/Tutorials/Hadoop/00%20-%20Intro.html]
+ for setting up Hadoop on Windows (via Cygwin) along with the corresponding
+Eclipse plugin for easier Map-Reduce development and deployment.
+Also if your Windows' Account name contains spaces (for example 'my
+account') some of the tests wont pass and the build will fail.
+The easiest solution is to create a new Windows' Account that contains no
+spaces (for example 'myaccount'), and use that account when Compiling.
+{note}This will run the default targets, which builds both the core and the
+examples, and also packages them.
+
+<a name="BuildingMahout-CompileCore"></a>
+## Compile Core
+
+* change to the core directory
+* mvn compile
+
+<a name="BuildingMahout-InstallCore"></a>
+## Install Core
+
+Note, you can do install instead of compile.
+
+* change to the core directory
+* mvn install
+
+<a name="BuildingMahout-CompileExamples"></a>
+## Compile Examples
+
+*You must "mvn install" the core before you can build the examples.  For
+some reason Maven doesn't know how to build sibling modules that are
+dependencies.*
+
+* change to the examples directory
+* mvn compile
+
+
+<a name="BuildingMahout-WorkingWithMaveninEclipse{anchor:mahout_maven_eclipse}"></a>
+## Working With Maven in Eclipse {anchor:mahout_maven_eclipse}
+
+We've used Eclipse Galileo and m2eclipse 0.9 and the 'import maven
+projects' feature. Check out the mahout sources into your workspace
+directory, do a full build on the command-line and then fire up the import
+in Eclipse from File > Import > Maven Projects. Point it at the mahout root
+directory. You are then given the opportunity to choose which sub-modules
+to import. You don't need to import them all, only the projects you are
+interested in working with.
+
+This sets up one Eclipse project for each of the mahout sub-modules you
+chose. Inter-project dependencies are automatically resolved. For example,
+if mahout-core and mahout-math are both open the m2eclipse plugin will
+automatically set up a project dependency on mahout-math in mahout-core. If
+you close mahout-math, the plugin will automatically revert to a jar
+dependency for mahout-math.
+
+If you are importing mahout-collections/mahout-math you will have to add
+the target/generated-sources directories to your build path manually and do
+a refresh on the dependent projects. Alternatively just avoid importing
+these (or close them) and they will be treated as a regular jar dependency.
+This works much better than doing the checkout into Eclipse directly via
+the m2eclipse 'check out maven projects from scm' importer.
+
+<a name="BuildingMahout-ForEclipseusersonMacOSXLeopard"></a>
+## For Eclipse users on Mac OS X Leopard
+
+These instructions work on  Mac OSX Leopard 10.5.6 and Eclipse 3.3.2
+1. Get the [source code](#get-the-source-code.html)
+. You can use [Subclipse plugin|http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA]
+ for Eclipse
+1. Install Maven plugin for eclipse through the update site present in [M2Eclipse](http://m2eclipse.codehaus.org/)
+1. JDK 1.6
+Since hadoop requires jdk 1.6, Mahout also needs jdk 1.6 and you would have
+to make sure JRE 1.6 is added to Eclipse.
+To use JRE 1.6 for Mahout, go to Preferences --> Java --> Installed JREs
+\--> Click Add and specify
+1. # JRE type as "standard VM"
+1. # JRE Name as "JVM 1.6" and
+1. # JRE home directory as
+/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home and click
+Ok
+1. # Select this new JVM (JVM 1.6) and click Ok
+1. Building Mahout - Right-click on the mahout project and choose "run as"
+\--> "maven project"
+
+<a name="BuildingMahout-CommonproblemsbuildingMahout"></a>
+## Common problems building Mahout
+
+Sometimes the compilation may fail. Depending on the error type the tips
+below may help.
+
+* Type 1: "artifact not found, please download and install it manually"
+\--> clean maven repository and try again
+
+    rm -rf ~/.m2/
+
+
+* Type 2: "build failed because of a single test - 1 test failed, Failures:
+1"  \--> retry compilation from clean (you may need to clean the \~/.m2
+directory above)
+
+    mvn clean install
+
+
+* Type 3 (MacOSX only): Wrong Java Version
+
+Problem: There is an error 'javac: invalid target release: 1.6' even though
+Java 6 is set to be the default in the Java Preferences. Even on the
+command line, 'java \-version' showed 1.6 as the version number. However,
+this did not carry over to Maven, as 'mvn \-v' confirmed.
+
+Solution: Explicitly set the 'JAVA_HOME' environment variable. Strangely
+enough, this does not happen automatically when changing the Java
+Preferences.  In my case, I set it via 'export
+JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home/'
+
+If you don't want to hard-code which java version you use, you can use
+this:
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+This makes use of whatever version of Java you have set on the Java control
+panel.
+
+
+* Type 4: Out of Memory when compiling
+
+Problem: 'java.lang.OutOfMemoryError: Java heap space' when compiling the
+core module of a current svn checkout of Mahout (not the release).
+
+Solution: Set the environment variable 'MAVEN_OPTS' to allow for more
+memory via 'export MAVEN_OPTS=-Xmx1024m'
+
+
+
+<a name="BuildingMahout-BuildingMahoutwiththeIBMJVM"></a>
+## Building Mahout with the IBM JVM
+Due to Hadoop using some Sun proprietary API's in version  0.20.203.0 (the
+version of Hadoop used by version of Mahout in trunk), some care must be
+taken when building Mahout from source. 
+
+To build Mahout: 
+
+1. using [Subversion](http://subversion.tigris.org)
+, check out the trunk:
+
+    svn co http://svn.apache.org/repos/asf/mahout/trunk
+
+Using trunk is required due to a failing unit test under the IBM JVM in
+Mahout .5.
+
+1. Set the environment variable JAVA_HOME to the correct location.
+1. Update the pom.xml in the project root directory to use Hadoop version
+0.20.2 by 
+ setting the version number for the Hadoop to the following:
+
+    <groupId>org.apache.hadoop</groupId>
+           <artifactId>hadoop-core</artifactId>				    
+           <version> 0.20.2</version>  
+
+1. mvn install will now build and test your Mahout distribution.
+ 
+
+
+
+
+<a name="BuildingMahout-Sometipstospeedupinstallationbyskippingtesting"></a>
+## Some tips to speed up installation by skipping testing
+
+Although we love testing and running the tests is strongly recommended for
+the first installation, there are instances when you may want to skip
+testing altogether, or only include a subset of them. This can shorten the
+lengthy installation time of nearly 15 minutes to a matter of 10 to 15
+seconds. Assuming MAHOUT_HOME is the directory of Mahout, to achieve fast
+installation you have the following options depending on your requirements:
+
+<a name="BuildingMahout-Avoidtestingcompletely."></a>
+### Avoid testing completely.
+
+This is useful when you've made changes to files which are NOT under the
+tests directory (MAHOUT_HOME/core/src/test/... or
+MAHOUT_HOME/math/src/test/...), or you have added new code under
+MAHOUT_HOME/core/src/main/ or MAHOUT_HOME/math/src/main/ and want to see if
+it compiles. Change to the MAHOUT_HOME directory, and type:
+
+
+    mvn -DskipTests install
+
+
+This will compile and install Mahout's classes, including your new code,
+and skip ALL tests.
+
+<a name="BuildingMahout-Runningonlyafewtests:MethodI"></a>
+### Running only a few tests: Method I
+
+Let's say you have implemented a new feature by making changes to a source
+file called MyNewFeature, and you have written some corresponding unit
+tests for it in the file called "TestMyNewFeature" under the tests
+directory. To only run the tests of TestMyNewFeature class, from the
+MAHOUT_HOME directory, type:
+
+
+    mvn -Dtest=TestMyNewFeature install
+
+
+The TestMyNewFeature class should be passed as an argument to Maven's mvn
+command without any path information. Just the class name is needed.
+
+To run multiple test classes, you can do:
+
+
+    mvn -Dtest=TestMyNewFeature,TestAnotherNewFeature install
+
+
+<a name="BuildingMahout-Runningonlyafewtests:MethodII"></a>
+### Running only a few tests: Method II
+
+The pom.xml file present in the MAHOUT_HOME directory contains all the
+information needed by the mvn (Maven) command to compile, test, install,
+package etc. It is one place from where you can control testing as well.
+Maven uses the Surefire plugin to run JUnit tests, so to modify the default
+testing behavior of running all tests, you can modify the pom.xml to
+<include> only the tests of TestMyNewFeature class, which was used as an
+example above. Open the pom.xml present in MAHOUT_HOME in your favorite
+editor, and find the following lines:
+
+
+    <plugin>
+    	<groupId>org.apache.maven.plugins</groupId>
+    	<artifactId>maven-surefire-plugin</artifactId>
+    	<configuration>
+    	  <forkMode>once</forkMode>
+    	  <argLine>-Xms256m -Xmx512m</argLine>
+    	  <testFailureIgnore>false</testFailureIgnore>
+    	  <redirectTestOutputToFile>true</redirectTestOutputToFile>	    
+    	</configuration>
+    </plugin>
+
+
+Modify these lines to include only the TestMyNewFeature class while
+testing, by using the <includes> and <include> tags:
+
+
+    <plugin>
+    	<groupId>org.apache.maven.plugins</groupId>
+    	<artifactId>maven-surefire-plugin</artifactId>
+    	<configuration>
+    	  <forkMode>once</forkMode>
+    	  <argLine>-Xms256m -Xmx512m</argLine>
+    	  <testFailureIgnore>false</testFailureIgnore>
+    	  <redirectTestOutputToFile>true</redirectTestOutputToFile>
+    	  <includes>
+    	    <include>**/TestMyNewFeature.java</include>
+    	  </includes>
+    	</configuration>
+    </plugin>
+
+
+Next, save the modified pom.xml file and from the MAHOUT_HOME directory
+type:
+
+
+    mvn install
+
+
+This will only run the tests in the TestMyNewFeature class and install
+Mahout for you. Note that now you don't have to mention
+-Dtest=TestMyNewFeature on the command line.
+
+
+ 
+
