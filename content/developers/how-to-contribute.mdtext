@@ -1,16 +1,15 @@
 Title: How To Contribute
+
 "Contributing" to an Apache project is about more than just writing code --
 it's about doing what you can to make the project better.  There are lots
 of ways to contribute....
-
-{toc:style=disc|indent=20px}
-
 
 <a name="HowToContribute-BeInvolved"></a>
 ## Be Involved
 
 Contributors should join the [Mahout mailing lists](https://cwiki.apache.org/confluence/display/MAHOUT/Mailing+Lists%2C+IRC+and+Archives)
 .  In particular:
+
 * The user list (to help others)
 * The commit list (to see changes as they are made)
 * The dev list (to join discussions of changes)  -- This is the best place
@@ -68,12 +67,9 @@ against possible future changes).
 Please note that these are the "optimal" steps, and community members that
 don't have the time or resources to do everything outlined on this below
 should not be discouraged from submitting their ideas "as is" per "Yonik
-Seeley's (Solr committer) Law of Patches" ...
+Seeley's (Solr committer) Law of Patches": 
 
-{quote}
-A half-baked patch in Jira, with no documentation, no tests
-and no backwards compatibility is better than no patch at all.
-{quote}
+> A half-baked patch in Jira, with no documentation, no tests and no backwards compatibility is better than no patch at all.
 
 Just because you may not have the time to write unit tests, or cleanup
 backwards compatibility issues, or add documentation, doesn't mean other
@@ -88,10 +84,10 @@ First of all, you need the Mahout source code.
 Get the source code on your local drive using [SVN](http://lucene.apache.org/mahout/developer-resources.html)
 .  Most development is done on the "trunk":
 
-{quote}
-> svn checkout [http://svn.apache.org/repos/asf/mahout/trunk](http://svn.apache.org/repos/asf/mahout/trunk)
+<code>
+svn checkout [http://svn.apache.org/repos/asf/mahout/trunk](http://svn.apache.org/repos/asf/mahout/trunk)
  mahout-trunk
-{quote}
+</code>
 
 Note that committers have to use https instead of http here, but http is
 fine for read-only access to the trunk code.
@@ -109,6 +105,7 @@ Modify the source code and add some (very) nice features using your
 favorite IDE.
 
 But take care about the following points
+
 * All public classes and methods should have informative [Javadoc comments](http://java.sun.com/j2se/javadoc/writingdoccomments/)
 .
 * Code should be formatted according to [Sun's conventions](http://java.sun.com/docs/codeconv/)
@@ -131,32 +128,34 @@ contribution.
 Please make sure that all unit tests succeed before constructing your
 patch.
 
-{quote}
-> cd mahout-trunk
-> mvn clean test
-{quote}
+<code>
+
+cd mahout-trunk
+
+mvn clean test
+
+</code>
+
 After a while, if you see
-{quote}
-BUILD SUCCESSFUL
-{quote}
+
+<code>BUILD SUCCESSFUL</code>
+
 all is ok, but if you see
-{quote}
-BUILD FAILED
-{quote}
+
+<code>BUILD FAILED</code>
+
 please, read carefully the errors messages and check your code.
 
 <a name="HowToContribute-Creatingthepatchfile"></a>
 #### Creating the patch file
 
 Check to see what files you have modified with:
-{quote}
-svn stat
-{quote}
+
+<code>svn stat</code>
 
 Add any new files with:
-{quote}
-svn add src/.../MyNewClass.java
-{quote}
+
+<code>svn add src/.../MyNewClass.java</code>
 
 Subversions "add" command only modifies your local copy, so it doess not
 require commit permissions.  By using "svn add", your entire comtribution
@@ -168,9 +167,7 @@ including the bug number it fixes.
 
 In order to create a patch, just type:
 
-{quote}
-svn diff > MAHOUT-$issuenumber.patch
-{quote}
+<code>svn diff > MAHOUT-$issuenumber.patch</code>
 
 $issuenumber here should be the number of the JIRA issue the patch is
 supposed to fix. This will report all modifications done on Mahout sources
@@ -179,6 +176,7 @@ file.  Read the patch file. Make sure it includes ONLY the modifications
 required to fix a single issue.
 
 Please do not:
+
 * reformat code unrelated to the bug being fixed: formatting changes should
 be separate patches/commits.
 * comment out code that is now obsolete: just remove it.
@@ -187,6 +185,7 @@ subversion to figure out what's changed and by whom.
 * make things public which are not required by end users.
 
 Please do:
+
 * try to adhere to the coding style of files you edit;
 * comment code whose function or rationale is not obvious;
 * update documentation (e.g., ''package.html'' files, this wiki, etc.)
