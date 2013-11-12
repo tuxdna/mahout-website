@@ -1,4 +1,7 @@
 Title: System Requirements
+
+# System Requirements
+
 * Java 1.6.x or greater.
 * Maven 3.x to build the source code.
 
