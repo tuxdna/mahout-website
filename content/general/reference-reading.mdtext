@@ -1,216 +1,148 @@
 Title: Reference Reading
+
+# Reference Reading
+
 <a name="ReferenceReading-GeneralClustering"></a>
-# General Clustering
+## Clustering
 
-<a name="ReferenceReading-Discussions"></a>
-## Discussions
+For a broader discussion on  [clustering tips and tricks ](http://markmail.org/thread/7dln43yv2nlnlqow) the dev/user list of Mahout is a good place to start. 
+Listing more references below.
 
-* [clustering tips and tricks ](http://www.lucidimagination.com/search/document/1c3561d17fc1b81c/clustering_techniques_tips_and_tricks)
-
-<a name="ReferenceReading-TextClustering"></a>
-# Text Clustering
-
-<a name="ReferenceReading-ClusteringaspartofSearch"></a>
-## Clustering as part of Search
-
-* See Chapters on Hierarchical and Flat Clustering as part of search in the [stanford ir book](http://nlp.stanford.edu/IR-book/html/htmledition/irbook.html)
+For more information on clustering as part of search see chapters on 
+Hierarchical and Flat Clustering as part of search in 
+the [stanford ir book](http://nlp.stanford.edu/IR-book/html/htmledition/irbook.html).
 
 <a name="ReferenceReading-GeneralBackgroundMaterials"></a>
-# General Background Materials
+## General Background Materials
 
-[Q:](http://mail-archives.apache.org/mod_mbox/mahout-user/201103.mbox/%3CAANLkTi=c8kGHjvbfTCt0GyjKvvMCq=EaFsCr=_s=ykDE@mail.gmail.com%3E)
-Can someone recommend me good books on Statistics and also on Linear
-Algebra
-and Analytic Geometry which will provide enough background for
-understanding
-machine learning algorithms?
-
-<a name="ReferenceReading-"></a>
-## 
-
-The answers below focus on general background knowledge, rather than
-specifics of Mahout and associated Apache tooling. Feel free to add useful
-resources (books, but also videos, online courseware, tools), particularly
-those that are available free online.
-
-This page originated in an email thread, and its different contributors
-might not all agree on the best approach (and they might not know what's
-best for any given learner), but the resources here should give some idea
-of suitable background reading. Check the mailing list [archives](http://mail-archives.apache.org/mod_mbox/mahout-user/)
- if you care to figure out who-said-what, or find other suggestions.
+> Can someone recommend me good books on Statistics and also on Linear
+> Algebra and Analytic Geometry which will provide enough background for
+> understanding machine learning algorithms?
 
 Don't be overwhelmed by all the maths, you can do a lot in Mahout with some
-basic knowledge. The resources given here will help you understand your
+basic knowledge. The books will help you understand your
 data better, and ask better questions both of Mahout's APIs, and also of
 the Mahout community. And unlike learning some particular software tool,
 these are skills that will remain useful decades later.
 
-h3. Books and supporting materials on statistics, machine learning,
-matrices etc.:
-
-[Gilbert Strang](http://www-math.mit.edu/~gs)
-'s [Introduction to Linear Algebra|http://math.mit.edu/linearalgebra/]
- (*full text* online, highly recommended by several on the mahout list).
+* [Gilbert Strang](http://www-math.mit.edu/~gs)
+'s [Introduction to Linear Algebra](http://math.mit.edu/linearalgebra/).
 ([openlibrary](http://openlibrary.org/works/OL3285486W/Introduction_to_linear_algebra)
-)
-His lectures are also [available online](http://web.mit.edu/18.06/www/)
- and are strongly recommended. See [http://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/]
+) His lectures are also [available online](http://web.mit.edu/18.06/www/)
+ and are strongly recommended. See [lecture](http://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/)
 
-
-"Mathematical Tools for Applied Mulitvariate Analysis" by J.Douglass
+* "Mathematical Tools for Applied Mulitvariate Analysis" by J.Douglass
 Carroll.
 ([amazon](http://www.amazon.com/Mathematical-Tools-Applied-Multivariate-Analysis/dp/0121609553/ref=sr_1_1?ie=UTF8&qid=1299602805&sr=8-1)
 )
 
 
-
-[Stanford Machine Learning online courseware](http://www.stanford.edu/class/cs229/)
-(cs229.stanford.edu):
-
-"It's a very nicely taught course with super helpful lecture notes - and
-you can get all the videos in youtube or [iTunesU](http://itunes.apple.com/itunes-u/machine-learning/id384233048)
-"
-
-"The [section notes](http://www.stanford.edu/class/cs229/materials.html)
+* [Stanford Machine Learning online courseware](http://www.stanford.edu/class/cs229/)
+(cs229.stanford.edu): Videos in youtube or [iTunesU](http://itunes.apple.com/itunes-u/machine-learning/id384233048). The [section notes](http://www.stanford.edu/class/cs229/materials.html)
  for this course will give you enough review material on linear algebra and
-probability theory to get you going."
+probability theory to get you going.
 
-[MIT Machine Learning online courseware](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006/)
- (6.867) has [Lecture notes in PDF|http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006/lecture-notes/]
+* [MIT Machine Learning online courseware](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006/)
+ (6.867) has [Lecture notes in PDF](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006/lecture-notes/)
  online.
 
-As a pre-requisite to probability and statistics, you'll need [basic calculus](http://en.wikipedia.org/wiki/Calculus)
+* As a pre-requisite to probability and statistics, you'll need [basic calculus](http://en.wikipedia.org/wiki/Calculus)
 .  A maths for scientists text might be useful here such as 'Mathematics
 for Engineers and Scientists', Alan Jeffrey, Chapman & Hall/CRC.
-([openlibrary](http://openlibrary.org/books/OL3305993M/Mathematics_for_engineers_and_scientists)
-)
+([openlibrary](http://openlibrary.org/books/OL3305993M/Mathematics_for_engineers_and_scientists))
 
-
-One of the best writers in the probability/statistics world is Sheldon
+* One of the best writers in the probability/statistics world is Sheldon
 Ross.  Try
 ''A First Course in Probability (8th Edition), Pearson'' ([amazon](http://www.pearsonhighered.com/educator/product/First-Course-in-Probability-A/9780136033134.page)
 ) and then move on to his ''Introduction to Probability Models (9th
 Edition), Academic
-Press.''([amazon|http://www.amazon.com/Introduction-Probability-Models-Sixth-Sheldon/dp/0125984707])
+Press.''([amazon](http://www.amazon.com/Introduction-Probability-Models-Sixth-Sheldon/dp/0125984707))
 
 
 Some good introductory alternatives here are:
 
-[Kahn Academy](http://www.khanacademy.org/)
- -- videos on stats, probability, linear algebra
+* [Kahn Academy](http://www.khanacademy.org/) -- videos on stats, probability, linear algebra
 
-Probability and Statistics (7th Edition), Jay L. Devore, Chapman.
-([amazon](http://www.amazon.com/Probability-Statistics-Engineering-Sciences-InfoTrac/dp/0534399339)
-)
+* Probability and Statistics (7th Edition), Jay L. Devore, Chapman.
+([amazon](http://www.amazon.com/Probability-Statistics-Engineering-Sciences-InfoTrac/dp/0534399339))
 
-Probability and Statistical Inference (7th Edition), Hogg and Tanis,
+* Probability and Statistical Inference (7th Edition), Hogg and Tanis,
 Pearson.
-([amazon](http://www.amazon.com/Probability-Statistical-Inference-Robert-Hogg/dp/0132546086)
-)
+([amazon](http://www.amazon.com/Probability-Statistical-Inference-Robert-Hogg/dp/0132546086))
 
 Once you have a grasp of the basics then there are a slew of great texts
-that you might consult:  for example,
+that you might consult:
 
-Statistical Inference,	Casell and Berger, Duxbury/Thomson Learning.
-([amazon](http://www.amazon.com/Statistical-Inference-George-Casella/dp/0534243126)
-)
+* Statistical Inference,	Casell and Berger, Duxbury/Thomson Learning.
+([amazon](http://www.amazon.com/Statistical-Inference-George-Casella/dp/0534243126))
 
-Most statistics books will have some sort of introduction to Bayesian
-methods, consider a specialist text, e.g.:
+* Introduction to Bayesian Statistics (2nd Edition), William H. Bolstad,
+Wiley. ([amazon](http://www.amazon.com/Introduction-Bayesian-Statistics-William-Bolstad/dp/0471270202))
 
-Introduction to Bayesian Statistics (2nd Edition), William H. Bolstad,
-Wiley.
-([amazon](http://www.amazon.com/Introduction-Bayesian-Statistics-William-Bolstad/dp/0471270202)
-)
-
-Then for the computational side of Bayesian (predominantly Markov chain
+* For the computational side of Bayesian (predominantly Markov chain
 Monte Carlo), e.g.
 Bolstad's Understanding Computational Bayesian Statistics, Wiley.
-([amazon](http://www.amazon.com/Understanding-Computational-Bayesian-Statistics-Wiley/dp/0470046090)
-)
+([amazon](http://www.amazon.com/Understanding-Computational-Bayesian-Statistics-Wiley/dp/0470046090))
 
-Then you might try [Bayesian Data Analysis, Gelman et al., Chapman &Hall/CRC](http://www.stat.columbia.edu/~gelman/book/)
+* [Bayesian Data Analysis, Gelman et al., Chapman &Hall/CRC](http://www.stat.columbia.edu/~gelman/book/)
 
-On top of the books, [R](http://en.wikipedia.org/wiki/R_(programming_language))
+* On top of the books, [R](http://en.wikipedia.org/wiki/R_(programming_language))
  \- is an indispensable software tool for visualizing distributions and
-doing calculations
+doing calculations.
 
 
 
-(another viewpoint)
+## For statistics related to machine learning, these are particularly helpful:
 
-For statistics related to machine learning, I would avoid normal
-statistical texts and go with these instead
+* [Pattern Recognition and Machine Learning by Chris Bishop](http://research.microsoft.com/en-us/um/people/cmbishop/PRML/index.htm)
 
-[Pattern Recognition and Machine Learning by Chris Bishop](http://research.microsoft.com/en-us/um/people/cmbishop/PRML/index.htm)
-
-[Elements of Statistical Learning](http://www-stat.stanford.edu/~tibs/ElemStatLearn/)
+* [Elements of Statistical Learning](http://www-stat.stanford.edu/~tibs/ElemStatLearn/)
  by Trevor Hastie, Robert Tibshirani, Jerome Friedman 
 
-Also [http://research.microsoft.com/en-us/um/people/cmbishop/PRML/index.htm](http://research.microsoft.com/en-us/um/people/cmbishop/PRML/index.htm)
+* [http://research.microsoft.com/en-us/um/people/cmbishop/PRML/index.htm](http://research.microsoft.com/en-us/um/people/cmbishop/PRML/index.htm)
  
-matrix computations/decomposition/factorization etc.?
 
-[How's this one?](http://www.amazon.com/gp/product/0801854148/ref=s9_simh_gw_p14_d0_i1?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=center-3&pf_rd_r=0ESQ3KDY8MJ1AWWG8PFR&pf_rd_t=101&pf_rd_p=470938811&pf_rd_i=507846)
-any idea? any other suggestion?
+## For matrix computations/decomposition/factorization etc.:
 
-I found the one by Peter V. O'Neil "Introduction to Linear Algebra", to be
-a great book for beginners
-(with some knowledge in calculus). It is not comprehensive, but, I believe,
+* Peter V. O'Neil "Introduction to Linear Algebra", great book for beginners
+(with some knowledge in calculus). It is not comprehensive, but,
 it will be a good place to start and the author starts by explaining the
 concepts with regards to vector spaces which I found to be a more natural
-way of explaining.[http://www.amazon.com/Introduction-Linear-Algebra-Theory-Applications/dp/053400606X](http://www.amazon.com/Introduction-Linear-Algebra-Theory-Applications/dp/053400606X)
+way of explaining. [amazon](http://www.amazon.com/Introduction-Linear-Algebra-Theory-Applications/dp/053400606X)
 
-David S. Watkins "Fundamentals of Matrix Computations (Pure and Applied
+* David S. Watkins "Fundamentals of Matrix Computations (Pure and Applied
 Mathematics: A Wiley Series of Texts, Monographs and Tracts)"
-[http://www.amazon.com/Fundamentals-Matrix-Computations-Applied-Mathematics/dp/0470528338/](http://www.amazon.com/Fundamentals-Matrix-Computations-Applied-Mathematics/dp/0470528338/)
+[amazon](http://www.amazon.com/Fundamentals-Matrix-Computations-Applied-Mathematics/dp/0470528338/)
+
+* The Gollub / Van Loan text is the classic text for numerical
+linear algebra.  Can't go wrong with it - great for researchers.  
+
+* Nick Trefethen's "Numerical Linear Algebra".  It's a bit more
+approachable for practitioners [html version](http://people.maths.ox.ac.uk/trefethen/books.html](http://people.maths.ox.ac.uk/trefethen/books.html)
+[amazon](http://www.amazon.com/Numerical-Linear-Algebra-Lloyd-Trefethen/dp/0898713617](http://www.amazon.com/Numerical-Linear-Algebra-Lloyd-Trefethen/dp/0898713617)
+Many chapters on SVD, there are even chapters on Lanczos.
 
 
+## Books specifically on R:
 
-The Gollub / Van Loan text you mention is the classic text for numerical
-linear algebra.  Can't go wrong with it.  However, I'd also suggest you
-look
-at Nick Trefethen's "Numerical Linear Algebra".  It's a bit more
-approachable for practitioners -- GVL is better suited for researchers.
-[http://people.maths.ox.ac.uk/trefethen/books.html](http://people.maths.ox.ac.uk/trefethen/books.html)
-[http://people.maths.ox.ac.uk/trefethen/text.html](http://people.maths.ox.ac.uk/trefethen/text.html)
- (with some online lecture notes)
+* Learning about R is a difficult thing.  The best
+introduction is in MASS [http://www.stats.ox.ac.uk/pub/MASS4/](http://www.stats.ox.ac.uk/pub/MASS4/)
+.  
 
-
-I think this is the most relevant book for matrix math on distributed
-systems:
-
-[http://www.amazon.com/Numerical-Linear-Algebra-Lloyd-Trefethen/dp/0898713617](http://www.amazon.com/Numerical-Linear-Algebra-Lloyd-Trefethen/dp/0898713617)
-Many chapters on SVD, there are even chapters on Lanczos
-
-
-BTW what about R? There is literally tons of books in R series devoted
-to rather isolated problems but what would be a good crush course
-book?
-
-
-Ted Dunning:
-
-"I have found that learning about R is a difficult thing.  The best
-introduction I have seen is, paradoxically, not really a book about R and
-assumes a statistical mind-set that I disagree with.  That introduction is
-in MASS [http://www.stats.ox.ac.uk/pub/MASS4/](http://www.stats.ox.ac.uk/pub/MASS4/)
-.  Other references also
-exist:
-
-[http://www.r-tutor.com/r-introduction](http://www.r-tutor.com/r-introduction)
-[http://cran.r-project.org/doc/manuals/R-intro.pdf](http://cran.r-project.org/doc/manuals/R-intro.pdf)
-[http://faculty.washington.edu/tlumley/Rcourse/](http://faculty.washington.edu/tlumley/Rcourse/)
+* [R Tutor](http://www.r-tutor.com/r-introduction)
+* [Manual](http://cran.r-project.org/doc/manuals/R-intro.pdf)
+* [R Course] (http://faculty.washington.edu/tlumley/Rcourse/)
 
 In addition, you should see how to plot data well:
 
-[http://www.statmethods.net/advgraphs/trellis.html](http://www.statmethods.net/advgraphs/trellis.html)
-[http://had.co.nz/ggplot2/](http://had.co.nz/ggplot2/)
+* [Trellis plotting](http://www.statmethods.net/advgraphs/trellis.html)
+* [ggplot2](http://had.co.nz/ggplot2/)
 
-Generally, I learn more about R by watching people and reading code than by
-reading books.	There are many small tricks like how to format data
-optimally, how to restructure data.frames, common ways to plot data, which
-libraries do what and so on that an introductory book cannot convey general
-principles that will see you through to success."
+Watch people and read code rather than reading books. Many small tricks
+like how to format data optimally, how to restructure data.frames,
+common ways to plot data, which libraries do what and so on that an 
+introductory book cannot convey general principles that will see you through to success."
 
-For Javascript/Web plotting: [http://www.1stwebdesigner.com/css/top-jquery-chart-libraries-interactive-charts/](http://www.1stwebdesigner.com/css/top-jquery-chart-libraries-interactive-charts/)
+## Web plotting
+
+* jQuery libs: [Chart libs](http://www.1stwebdesigner.com/css/top-jquery-chart-libraries-interactive-charts/)
