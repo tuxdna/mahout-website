@@ -1,4 +1,5 @@
 Title: GSOC
+
 <a name="GSOC-Introduction"></a>
 # Introduction
 
@@ -59,8 +60,10 @@ your career.
 <a name="GSOC-References"></a>
 # References
 
-[Mahout Mail Archives about GSOC](http://www.lucidimagination.com/search/?q=GSOC#/p:mahout)
+* [Mahout Mail Archives about GSOC](http://www.lucidimagination.com/search/?q=GSOC#/p:mahout) ... previous discussions on our lists
 
-[GSOC Home](http://code.google.com/soc/)
+* [GSOC Home](http://code.google.com/soc/) ... official GSoC page
 
-[GSOC FAQ](http://socghop.appspot.com/document/show/gsoc_program/google/gsoc2010/faqs)
+* [GSOC FAQ](http://socghop.appspot.com/document/show/gsoc_program/google/gsoc2010/faqs) ... official FAQ
+
+* [Apache GSoC coordination](http://community.apache.org/gsoc.html) ... also check out the official Apache GSoC documentation, in particular if you want to become a mentor
