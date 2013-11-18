@@ -1,4 +1,7 @@
 Title: Issue Tracker
+
+# Issue tracker
+
 Anything that is to be added to [the source code repository](http://svn.apache.org/viewvc/mahout/ )
  is first presented as a patch in the issue tracker. All conversations are
 echoed on the developer mailing list and people tend to respond or continue
