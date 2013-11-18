@@ -1,18 +1,19 @@
 Title: FAQ
-The Official Mahout FAQ
+
+# The Official Mahout FAQ
 
 *General*
 
 1. [What is Apache Mahout?](#whatis.html)
 1. [What does the name mean?](#mean.html)
 1. [Where can I find the origins of the Mahout project? ](#historical.html)
-1. [Where can I download Mahout logo? ](#logo.html)
+1. [Where can I download the Mahout logo? ](#logo.html)
 1. [Where can I download Mahout slide presentations? ](#presentations.html)
 
 *Algorithms*
 1. [What algorithms are implemented in Mahout?](#algos.html)
 1. [What algorithms are missing from Mahout?](#todo.html)
-
+1. [Do I need Hadoop to run Mahout?](#hadoop.html)
 
 <a name="FAQ-*Answers*"></a>
 # *Answers*
@@ -46,7 +47,7 @@ See [http://ml-site.grantingersoll.com](http://ml-site.grantingersoll.com)
  for old wiki and mailing list archives (all read-only)
 
 <a name="FAQ-{anchor:logo}WherecanIdownloadMahoutlogo?"></a>
-### {anchor:logo}Where can I download Mahout logo?
+### {anchor:logo}Where can I download the Mahout logo?
 
 See [MAHOUT-335](https://issues.apache.org/jira/browse/MAHOUT-335)
 
@@ -75,3 +76,12 @@ There are many machine learning algorithms that we would like to have in
 Mahout, including some from the paper [http://www.cs.stanford.edu/people/ang/papers/nips06-mapreducemulticore.pdf](http://www.cs.stanford.edu/people/ang/papers/nips06-mapreducemulticore.pdf)
 . If you have an algorithm or an improvement to an algorithm that you would
 like to implement, by all means submit a patch.
+
+<a name="FAQ-{anchor:hadoop}DoIneedHadooptorunMahout?"></a>
+### {anchor:hadoop} Do I need Hadoop to use Mahout?
+
+Apart from the possibility of running Hadoop jobs in a single node installation there are
+a couple of modules that require no Hadoop dependencies whatsoever (except maybe for
+vector and matrix serialisation). For recommendation those packages don't have Hadoop as
+part of their namespace. For classification checkout the sgd package. For clustering checkout
+the new kmeans++ stuff.
