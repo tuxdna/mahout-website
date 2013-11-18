@@ -1,14 +1,17 @@
 Title: Version Control
+
+# Version control access
+
 The Mahout source code resides in the [Apache Subversion (SVN)](http://subversion.tigris.org/)
- repository. The command-line SVN client can be obtained [here|http://subversion.tigris.org/project_packages.html]
-. The TortoiseSVN GUI client for Windows can be obtained [here|http://tortoisesvn.tigris.org/]
-. There are also SVN plugins available for both [Eclipse|http://subclipse.tigris.org/]
- and [IntelliJ IDEA|http://svnup.tigris.org/]
+ repository. There is a [command-line SVN client](http://subversion.tigris.org/project_packages.html), usually
+shipped as part of your regular Linux distribution. The [TortoiseSVN](http://tortoisesvn.tigris.org/) is a usable GUI client for Windows.
+. There are also SVN plugins available for both [Eclipse](http://subclipse.tigris.org/)
+ and [IntelliJ IDEA](http://svnup.tigris.org/)
 . 
 
 There is also a [git](http://git-scm.com/)
- repository for Mahout available [at Apache|http://git.apache.org/]
-.
+ repository for Mahout available [at Apache](http://git.apache.org/) which is mirrored to [github](https://github.com/apache/mahout). Note though
+that currently we do not accept pull requests - instead create patches and submit them through [jira](http://issues.apache.org/jira/browse/MAHOUT).
 
 <a name="VersionControl-WebAccess(read-only)"></a>
 ## Web Access (read-only)
@@ -32,5 +35,4 @@ The SVN URL for committers is [https://svn.apache.org/repos/asf/mahout/trunk](ht
 <a name="VersionControl-Issues"></a>
 ## Issues
 
-All bugs, improvements, patches, etc. should be logged in [JIRA](http://issues.apache.org/jira/browse/MAHOUT)
-.
+All bugs, improvements, patches, etc. should be logged in [JIRA](http://issues.apache.org/jira/browse/MAHOUT).
