@@ -1,4 +1,17 @@
 Title: How To Update The Website
+
+
+# How to update the Mahout Wiki and Website
+
+<a name="HowToUpdateTheWebsite-Howtoupdatethemahouthomepage"></a>
+## How to update the mahout home page
+1. If you are not a committer of Apache Mahout, please follow the [official contributor guidelines](http://www.apache.org/dev/cmsref.html#non-committer)
+1. If you are a committer:
+    1. Make sure you have the [Apache CMS bookmarklet](https://cms.apache.org/#bookmark) installed.
+    1. For all else refer to the [Apache CMS reference docs](http://www.apache.org/dev/cmsref.html).
+1. In particular ensure all outgoing links from the landing page to the wiki are working
+1. The site will automatically be exported from svn as soon as its committed
+
 <a name="HowToUpdateTheWebsite-SomeDo'sandDont'sofupdatingthewiki"></a>
 ## Some Do's and Dont's of updating the wiki
 1. Keep the wiki cleanly formatted. Assume the title is of size h1
@@ -19,11 +32,6 @@ when someone changes the title
 To update the pages, update the wiki directly. Do not change the title of
 top level pages without updating the same on the landing page.
 
-<a name="HowToUpdateTheWebsite-Howtoupdatethemahouthomepage"></a>
-## How to update the mahout home page
-(*NOTE:* _You need committer rights to modify the home page._)
-To update the home page
-1. Commit changes to the website landing page at
-https://svn.apache.org/repos/asf/mahout/site/new_website/
-1. Ensure all outgoing links from the landing page to the wiki are working
-1. The site will automatically be exported from svn as soon as its committed
+Note to non-committers: If you fail to edit the wiki pages send us a brief note on the
+mailing list - there have been lots of spamming attempts which forced us to shut down
+anonymous wiki editing.
