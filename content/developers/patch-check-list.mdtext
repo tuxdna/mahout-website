@@ -1,5 +1,9 @@
 Title: Patch Check List
-So, you want to apply a patch?	Here are tips, traps, etc. for dealing with
+
+# Patch Check List
+
+So, you want to apply a patch - or you want to know in more detail what committers look for in your patches?
+Here are tips, traps, etc. for dealing with
 patches (in no particular order):
 
 1. Get a fresh copy of trunk.  Or at least make sure you are up to date and
