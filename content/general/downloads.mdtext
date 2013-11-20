@@ -1,15 +1,43 @@
 Title: Downloads
+
 <a name="Downloads-OfficialRelease"></a>
 # Official Release
 
 Apache Mahout is an official Apache project and thus available from any of
 the Apache mirrors.
 
-The latest Mahout release is available for download at: *[http://www.apache.org/dyn/closer.cgi/mahout/](http://www.apache.org/dyn/closer.cgi/mahout/)
-*
+The latest Mahout release is available for download at: [http://www.apache.org/dyn/closer.cgi/mahout/](http://www.apache.org/dyn/closer.cgi/mahout/).
 
-[MAHOUT:System Requirements](mahout:system-requirements.html)
+
+[MAHOUT:System Requirements](../developers/system-requirements.html)
  are detailed online. 
+
+For Maven users please include the following snippet in your pom:
+
+    <dependency>
+        <groupId>org.apache.mahout</groupId>
+        <artifactId>mahout-core</artifactId>
+        <version>${mahout.version}</version>
+    </dependency>
+
+If you only need the math part of Mahout:
+
+    <dependency>
+        <groupId>org.apache.mahout</groupId>
+        <artifactId>mahout-math</artifactId>
+        <version>${mahout.version}</version>
+    </dependency>
+
+In case you would like to use some of our integration tooling (e.g. for generating vectors from Lucene):
+
+    <dependency>
+        <groupId>org.apache.mahout</groupId>
+        <artifactId>mahout-integration</artifactId>
+        <version>${mahout.version}</version>
+    </dependency>
+
+In case you are using Ivy, Gradle, Buildr, Grape or SBT you might want to directly head over to the official [Maven Repository search](http://mvnrepository.com/artifact/org.apache.mahout/mahout-core).
+
 
 <a name="Downloads-SnapshotReleases"></a>
 # Snapshot Releases
