@@ -39,29 +39,29 @@ implementation) please visit the following pages.
 Fully supported:
 
 
-* [Logistic Regression](logistic-regression.html) (SGD) - model parameter selection can be done in Hadoop
-* [Naive Bayes/ Complementary Naive Bayes](bayesian.html) - training runs on Hadoop
-* [Random Forests](random-forests.html)
- (integrated - [MAHOUT-122](http://issues.apache.org/jira/browse/MAHOUT-122), - training is done in Hadoop
+* [Logistic Regression](../classification/logistic-regression.html) (SGD) - model parameter selection can be done in Hadoop
+* [Naive Bayes/ Complementary Naive Bayes](../classification/bayesian.html) - training runs on Hadoop
+* [Random Forests](../classification/random-forests.html)
+ ([MAHOUT-122](http://issues.apache.org/jira/browse/MAHOUT-122), - training is done in Hadoop
  [MAHOUT-140](http://issues.apache.org/jira/browse/MAHOUT-140), [MAHOUT-145](http://issues.apache.org/jira/browse/MAHOUT-145)
-* [Hidden Markov Models](hidden-markov-models.html) (see MAHOUT-627, MAHOUT-396, MAHOUT-734) - training is done in
+* [Hidden Markov Models](../classification/hidden-markov-models.html) (see MAHOUT-627, MAHOUT-396, MAHOUT-734) - training is done in
 Map-Reduce
 
 
 Deprecated or drafts only:
 
-* [Support Vector Machines](support-vector-machines.html) (see [MAHOUT-14](http://issues.apache.org/jira/browse/MAHOUT-14)
+* [Support Vector Machines](../classification/support-vector-machines.html) (see [MAHOUT-14](http://issues.apache.org/jira/browse/MAHOUT-14)
 , [MAHOUT-232](http://issues.apache.org/jira/browse/MAHOUT-232)
  and [MAHOUT-334](https://issues.apache.org/jira/browse/MAHOUT-334) 
-* [Perceptron and Winnow](perceptron-and-winnow.html)
+* [Perceptron and Winnow](../classification/perceptron-and-winnow.html)
  (see [MAHOUT-85](http://issues.apache.org/jira/browse/MAHOUT-85))
-* [Neural Network](neural-network.html)
+* [Neural Network](../classification/neural-network.html)
  (see [MAHOUT-228](http://issues.apache.org/jira/browse/MAHOUT-228))
-* [Restricted Boltzmann Machines](restricted-boltzmann-machines.html)
+* [Restricted Boltzmann Machines](../classification/restricted-boltzmann-machines.html)
  (see [MAHOUT-375](http://issues.apache.org/jira/browse/MAHOUT-375))
-* [Online Passive Aggressive](online-passive-aggressive.html)
+* [Online Passive Aggressive](../classification/online-passive-aggressive.html)
  (see [MAHOUT-702](http://issues.apache.org/jira/browse/MAHOUT-702)
-* [Boosting](boosting.html) (see [MAHOUT-716](https://issues.apache.org/jira/browse/MAHOUT-716))
+* [Boosting](../classification/boosting.html) (see [MAHOUT-716](https://issues.apache.org/jira/browse/MAHOUT-716))
 
 
 <a name="Algorithms-Clustering"></a>
