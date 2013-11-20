@@ -1,19 +1,21 @@
 Title: Quickstart
 
+# Quickstart Instructions
+
 <a name="Quickstart-DownloadandInstallation"></a>
-# Download and Installation
+## Download and Installation
 
 * [Download and installation](../developers/buildingmahout.html)
 
 <a name="Quickstart-RunningtheExamples"></a>
-# Running the Examples
+## Running the Examples
 
 Many Mahout implementations run on [Apache Hadoop ](http://hadoop.apache.org.html). So, to
 run these examples, install the latest compatible (when using a release, see the release 
 notes, when using trunk, see parent/pom.xml) [Hadoop Common release](http://www.apache.org/dyn/closer.cgi/hadoop/common/). 
 
 <a name="Quickstart-Clustering"></a>
-## Clustering
+### Clustering
 
 * [Clustering of synthetic control data](../clustering/clustering-of-synthetic-control-data.html)
 * [Visualizing Sample Clusters](../clustering/visualizing-sample-clusters.html)
@@ -21,24 +23,24 @@ notes, when using trunk, see parent/pom.xml) [Hadoop Common release](http://www.
 
 
 <a name="Quickstart-Classification"></a>
-## Classification
+### Classification
 
 * [Twenty Newsgroups](../clustering/twenty-newsgroups.html) ... classic example for classifying text, data is based on 20 nntp news group posts.
 * [Wikipedia Bayes Example](../classification/wikipedia-bayes-example.html) ... classification based on wikipedia content.
 
 <a name="Quickstart-GeneticProgramming"></a>
-## Genetic Programming
+### Genetic Programming
 
 * [Watchmaker](../basics/mahout.ga.tutorial.html)
 
 <a name="Quickstart-DecisionForest"></a>
-## Decision Forest
+### Decision Forest
 
 * [Breiman Example](../classification/breiman-example.html)
 * [Partial Implementation](../classification/partial-implementation.html)
 
 <a name="Quickstart-Recommendationmining"></a>
-## Recommendation mining
+### Recommendation mining
 
 This package comes with four examples based on netflix data, bookcrossing,
 grouplens and jester data.
@@ -46,7 +48,7 @@ grouplens and jester data.
 * [RecommendationExamples](../recommender/recommendationexamples.html)
 
 <a name="Quickstart-WheretoGoNext"></a>
-# Where to Go Next
+## Where to Go Next
 
 * If you are working with text, read more on [Creating Vectors from Text](creating-vectors-from-text.html)
 * To learn more on grouping items by similarity and identifying clusters
