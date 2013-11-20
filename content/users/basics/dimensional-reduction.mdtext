@@ -1,4 +1,7 @@
 Title: Dimensional Reduction
+
+# Support for dimensional reduction
+
 Matrix algebra underpins the way many Big Data algorithms and data
 structures are composed: full-text search can be viewed as doing matrix
 multiplication of the term-document matrix by the query vector (giving a
@@ -55,10 +58,7 @@ o.a.m.math.decomposer.lanczos package (math module), as a hadoop map-reduce
 (series of) job(s) in o.a.m.math.hadoop.decomposer package (core module).
 Coming soon: stochastic decomposition.
 
-See also:
-
- *
-https://cwiki.apache.org/confluence/display/MAHOUT/SVD+-+Singular+Value+Decomposition
+See also: [https://cwiki.apache.org/confluence/display/MAHOUT/SVD+-+Singular+Value+Decomposition](Wikipedia - SVD)
 
 <a name="DimensionalReduction-Lanczos"></a>
 ## Lanczos
@@ -119,29 +119,19 @@ arguments):
 
     Job-Specific Options:							    
       --input (-i) input			  Path to job input directory.	    
-      --output (-o) output			  The directory pathname for
-output.    
-      --numRows (-nr) numRows		  Number of rows of the input
-matrix	  
-      --numCols (-nc) numCols		  Number of columns of the input
-matrix 
+      --output (-o) output			  The directory pathname for output.    
+      --numRows (-nr) numRows		  Number of rows of the input matrix	  
+      --numCols (-nc) numCols		  Number of columns of the input matrix 
       --rank (-r) rank			  Desired decomposition rank (note: 
-    					  only roughly 1/4 to 1/3 of these
-will 
-    					  have the top portion of the
-spectrum) 
+    					  only roughly 1/4 to 1/3 of these will 
+    					  have the top portion of the spectrum) 
       --symmetric (-sym) symmetric		  Is the input matrix square and    
     					  symmetric?			    
-      --cleansvd (-cl) cleansvd		  Run the EigenVerificationJob to
-clean 
+      --cleansvd (-cl) cleansvd		  Run the EigenVerificationJob to clean 
     					  the eigenvectors after SVD	    
       --maxError (-err) maxError		  Maximum acceptable error	    
-      --minEigenvalue (-mev) minEigenvalue	  Minimum eigenvalue to keep the
-vector 
-    					  for				    
-      --inMemory (-mem) inMemory		  Buffer eigen matrix into memory
-(if   
-    					  you have enough!)		    
+      --minEigenvalue (-mev) minEigenvalue	  Minimum eigenvalue to keep the vector for				    
+      --inMemory (-mem) inMemory		  Buffer eigen matrix into memory (if you have enough!)		    
       --help (-h)				  Print out help		    
       --tempDir tempDir			  Intermediate output directory     
       --startPhase startPhase		  First phase to run		    
@@ -184,8 +174,7 @@ separate command:
       --output <path to output directory> \
       --maxError <maximum allowed error. Default is 0.5> \
       --minEigenvalue <minimum allowed eigenvalue. Default is 0.0> \
-      --inMemory <true if the eigenvectors can all fit into memory. Default
-false>
+      --inMemory <true if the eigenvectors can all fit into memory. Default false>
 
 
 The --corpusInput is the input path from the previous step, --eigenInput is
@@ -215,8 +204,7 @@ the long form svd invocation:
       --cleansvd "true"   \
       --maxError <maximum allowed error. Default is 0.5> \
       --minEigenvalue <minimum allowed eigenvalue. Default is 0.0> \
-      --inMemory <true if the eigenvectors can all fit into memory. Default
-false>
+      --inMemory <true if the eigenvectors can all fit into memory. Default false>
 
 
 After execution, the --output directory will contain two files: the
@@ -249,7 +237,7 @@ bin/mahout kmeans newMatrix
 
 The bulk of the content for this section was extracted from the Mahout user
 mailing list, see: [Using SVD with Canopy/KMeans](http://search.lucidimagination.com/search/document/6e5889ee6f0f253b/using_svd_with_canopy_kmeans#66a50fe017cebbe8)
- and [Need a little help with using SVD|http://search.lucidimagination.com/search/document/748181681ae5238b/need_a_little_help_with_using_svd#134fb2771fd52928]
+ and [Need a little help with using SVD](http://search.lucidimagination.com/search/document/748181681ae5238b/need_a_little_help_with_using_svd#134fb2771fd52928)
 
 Note: Some of this work is due in part to credits donated by the Amazon
 Elastic MapReduce team.
@@ -279,9 +267,7 @@ to your EMR cluster's HDFS.
 
 
     elastic-mapreduce --jar s3://elasticmapreduce/samples/distcp/distcp.jar \
-      --arg
-s3n://ACCESS_KEY:SECRET_KEY@asf-mail-archives/mahout-0.4/sparse-1-gram-stem/tfidf-vectors
-\
+      --arg s3n://ACCESS_KEY:SECRET_KEY@asf-mail-archives/mahout-0.4/sparse-1-gram-stem/tfidf-vectors\
       --arg /asf-mail-archives/mahout/sparse-1-gram-stem/tfidf-vectors \
       -j JOB_ID
 
@@ -295,8 +281,7 @@ Now you're ready to run the SVD job on the vectors stored in HDFS:
     elastic-mapreduce --jar s3://BUCKET/mahout-examples-0.5-SNAPSHOT-job.jar \
       --main-class org.apache.mahout.driver.MahoutDriver \
       --arg svd \
-      --arg -i --arg /asf-mail-archives/mahout/sparse-1-gram-stem/tfidf-vectors
-\
+      --arg -i --arg /asf-mail-archives/mahout/sparse-1-gram-stem/tfidf-vectors\
       --arg -o --arg /asf-mail-archives/mahout/svd \
       --arg --rank --arg 100 \
       --arg --numCols --arg 20444 \
@@ -452,6 +437,5 @@ This job produces output such as:
 <a name="DimensionalReduction-Resources"></a>
 # Resources
 
-* http://www.dcs.shef.ac.uk/~genevieve/lsa_tutorial.htm
-*
-http://www.puffinwarellc.com/index.php/news-and-articles/articles/30-singular-value-decomposition-tutorial.html
+* [LSA tutorial](http://www.dcs.shef.ac.uk/~genevieve/lsa_tutorial.htm)
+* [SVD tutorial](http://www.puffinwarellc.com/index.php/news-and-articles/articles/30-singular-value-decomposition-tutorial.html)
