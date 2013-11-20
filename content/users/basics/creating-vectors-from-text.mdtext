@@ -43,7 +43,6 @@ option.  Examples of running the Driver are included below:
 <a name="CreatingVectorsfromText-GeneratinganoutputfilefromaLuceneIndex"></a>
 ## Generating an output file from a Lucene Index
 
-~~~~.html
 
     $MAHOUT_HOME/bin/mahout lucene.vector <PATH TO DIRECTORY CONTAINING LUCENE INDEX> 
 
@@ -56,15 +55,10 @@ option.  Examples of running the Driver are included below:
        <--max <Number of vectors to output>> <--norm {INF|integer >= 0}>
 
        <--idField <Name of the idField in the Lucene index>>
-~~~~
-
-
-</code></pre>
 
 <a name="CreatingVectorsfromText-Create50VectorsfromanIndex"></a>
 ### Create 50 Vectors from an Index 
 
-<blockquote>
 
     $MAHOUT_HOME/bin/mahout lucene.vector --dir <PATH>/wikipedia/solr/data/index --field body 
 
@@ -72,7 +66,6 @@ option.  Examples of running the Driver are included below:
 
         --output <PATH>/solr/wikipedia/out.txt --max 50
 
-</blockquote>
 
 This uses the index specified by --dir and the body field in it and writes
 out the info to the output dir and the dictionary to dict.txt.	It only
@@ -82,7 +75,6 @@ the index are output.
 <a name="CreatingVectorsfromText-Normalize50VectorsfromaLuceneIndexusingthe[L_2Norm](http://en.wikipedia.org/wiki/Lp_space)"></a>
 ### Normalize 50 Vectors from a Lucene Index using the [L_2 Norm|http://en.wikipedia.org/wiki/Lp_space]
 
-<blockquote>
 
     $MAHOUT_HOME/bin/mahout lucene.vector --dir <PATH>/wikipedia/solr/data/index --field body 
 
@@ -90,7 +82,6 @@ the index are output.
 
           --output <PATH>/solr/wikipedia/out.txt --max 50 --norm 2
 
-</blockquote>
 
 <a name="CreatingVectorsfromText-FromDirectoryofTextdocuments"></a>
 # From Directory of Text documents
@@ -113,9 +104,9 @@ PARENT>/document.txt
 
 From the examples directory run
 
-<blockquote>
 
     $MAHOUT_HOME/bin/mahout seqdirectory 
+
     --input <PARENT DIR WHERE DOCS ARE LOCATED> --output <OUTPUT DIRECTORY> 
 
     <-c <CHARSET NAME OF THE INPUT DOCUMENTS> {UTF-8|cp1252|ascii...}> 
@@ -124,7 +115,6 @@ From the examples directory run
 
     <-prefix <PREFIX TO ADD TO THE DOCUMENT ID>>
 
-</blockquote>
 
 <a name="CreatingVectorsfromText-CreatingVectorsfromSequenceFile"></a>
 ## Creating Vectors from SequenceFile
@@ -134,7 +124,7 @@ From the examples directory run
 From the sequence file generated from the above step run the following to
 generate vectors. 
 
-<blockquote>
+
     $MAHOUT_HOME/bin/mahout seq2sparse 
 
     -i <PATH TO THE SEQUENCEFILES> 
@@ -147,10 +137,7 @@ generate vectors.
 
     <-a <NAME OF THE LUCENE ANALYZER TO TOKENIZE THE DOCUMENT>
 
-</blockquote>
-
-<blockquote>
-org.apache.lucene.analysis.standard.StandardAnalyzer> 
+    org.apache.lucene.analysis.standard.StandardAnalyzer> 
 
     <--minSupport <MINIMUM SUPPORT> 2> 
 
@@ -162,7 +149,7 @@ org.apache.lucene.analysis.standard.StandardAnalyzer>
 
     <-seq <Create SequentialAccessVectors>{false|true required for running some algorithms(LDA,Lanczos)}>"
 
-</blockquote>
+
 
 --minSupport is the min frequency for the word to  be considered as a
 feature. --minDF is the min number of documents the word needs to be in
@@ -186,9 +173,7 @@ Iterable<Vector> (called VectorIterable in the example below) and then
 reuse the existing VectorWriter classes:
 
 
-<blockquote>
     VectorWriter vectorWriter = SequenceFile.createWriter(filesystem, configuration, outfile, LongWritable.class, SparseVector.class);
 
     long numDocs = vectorWriter.write(new VectorIterable(), Long.MAX_VALUE);
 
-</blockquote>
