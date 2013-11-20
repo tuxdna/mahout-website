@@ -36,7 +36,7 @@ can be found at Google Answers: [http://answers.google.com/answers/main?cmd=thre
  For information on the algorithms implemented in Mahout (or scheduled for
 implementation) please visit the following pages.
 
-### Fully supported:
+Fully supported:
 
 
 * [Logistic Regression](logistic-regression.html) (SGD) - model parameter selection can be done in Hadoop
@@ -48,7 +48,7 @@ implementation) please visit the following pages.
 Map-Reduce
 
 
-### Deprecated or drafts only:
+Deprecated or drafts only:
 
 * [Support Vector Machines](support-vector-machines.html) (see [MAHOUT-14](http://issues.apache.org/jira/browse/MAHOUT-14)
 , [MAHOUT-232](http://issues.apache.org/jira/browse/MAHOUT-232)
@@ -69,7 +69,7 @@ Map-Reduce
 
 For a more detailed explanation see [Wikipedia page](http://en.wikipedia.org/wiki/Cluster_analysis) or checkout our [Reference Reading](reference-reading.html)
 
-### Fully supported:
+Fully supported:
 
 * [MAHOUT:Canopy Clustering](mahout:canopy-clustering.html)
  ([MAHOUT-3](https://issues.apache.org/jira/browse/MAHOUT-3) - runs on Hadoop
@@ -89,7 +89,7 @@ For a more detailed explanation see [Wikipedia page](http://en.wikipedia.org/wik
 * kMeans++ streaming clustering - documentation missing
 
 
-### Deprecated or drafts only:
+Deprecated or drafts only:
 
 * [Hierarchical Clustering](hierarchical-clustering.html)
  ([MAHOUT-19](http://issues.apache.org/jira/browse/MAHOUT-19))
@@ -101,7 +101,7 @@ For a more detailed explanation see [Wikipedia page](http://en.wikipedia.org/wik
 <a name="Algorithms-Dimensionreduction"></a>
 ## Dimension reduction
 
-### Fully supported:
+Fully supported:
 
 * [Singular Value Decomposition and other Dimension Reduction Techniques](dimensional-reduction.html)
  (available since 0.3)
@@ -109,7 +109,7 @@ For a more detailed explanation see [Wikipedia page](http://en.wikipedia.org/wik
 * [Stochastic Singular Value Decomposition with PCA workflow](stochastic-singular-value-decomposition.html)
  (PCA workflow now integrated)
 
-### Deprecated or drafts only:
+Deprecated or drafts only:
 
 * [Principal Components Analysis](principal-components-analysis.html)
  (PCA) 
@@ -149,7 +149,7 @@ distributed Hadoop-based recommenders.
 <a name="Algorithms-Other"></a>
 ## Other
 
-### Fullly supported:
+Fullly supported:
 
 * RowSimilarityJob -- Builds an inverted index and then computes distances
 between items that have co-occurrences.  This is a fully distributed
@@ -158,7 +158,7 @@ calculation.
 and all of the input vectors.
 * [Collocations](collocations.html) ... find co-locations of tokens in text, runs on Hadoop
 
-### Deprecated or drafts only:
+Deprecated or drafts only:
 
 * Pattern mining: [Parallel FP Growth Algorithm](parallel-frequent-pattern-mining.html)
  (Also known as Frequent Itemset mining)
