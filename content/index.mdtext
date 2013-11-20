@@ -3,23 +3,20 @@
   <div class="highlights">
     <h4>Mahout currently has</h4>
     <ul>
-      <li>Collaborative Filtering</li>
       <li>User and Item based recommenders</li>
+      <li>Matrix factorization based recommenders</li>
       <li>K-Means, Fuzzy K-Means clustering</li>
-      <li>Mean Shift clustering</li>
-      <li>Dirichlet process clustering</li>
       <li>Latent Dirichlet Allocation</li>
       <li>Singular value decomposition</li>
-      <li>Parallel Frequent Pattern mining</li>
+      <li>Logistic regression based classifier</li>
       <li>Complementary Naive Bayes classifier</li>
       <li>Random forest decision tree based classifier</li>
       <li>High performance java collections (previously colt collections)</li>
       <li>A vibrant community</li>
-      <li>and many more cool stuff to come by this summer thanks to Google summer of code</li>
     </ul>
   </div>
   <p>With scalable we mean:</p>
-  <p>Scalable to reasonably large data sets. Our core algorithms for clustering, classfication and batch based
+  <p>Scalable to reasonably large data sets. Our core algorithms for clustering, classfication and
     collaborative filtering are implemented on top of Apache Hadoop using the map/reduce paradigm. However we do not
     restrict contributions to Hadoop based implementations: Contributions that run on a single node or on a non-Hadoop
     cluster are welcome as well. The core libraries are highly optimized to allow for good performance also for
@@ -30,12 +27,10 @@
     discussions not only on the project itself but also on potential use cases. Come to the mailing lists to find out
     more.</p>
 
-  <p>Currently Mahout supports mainly four use cases: Recommendation mining takes users' behavior and from that tries to
+  <p>Currently Mahout supports mainly three use cases: Recommendation mining takes users' behavior and from that tries to
     find items users might like. Clustering takes e.g. text documents and groups them into groups of topically related
     documents. Classification learns from exisiting categorized documents what documents of a specific category look
-    like and is able to assign unlabelled documents to the (hopefully) correct category. Frequent itemset mining takes a
-    set of item groups (terms in a query session, shopping cart content) and identifies, which individual items usually
-    appear together.</p>
+    like and is able to assign unlabelled documents to the (hopefully) correct category.</p>
 
   <p>Interested in helping? See the
     <a href="http://cwiki.apache.org/confluence/display/MAHOUT/Developer+Resources">wiki</a> or join the
