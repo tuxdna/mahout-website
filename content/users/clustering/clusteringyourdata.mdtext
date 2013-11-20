@@ -1,6 +1,6 @@
 Title: ClusteringYourData
 
-+*Mahout_0.8*+
+# Clustering your data
 
 After you've done the [Quickstart](quickstart.html) and are familiar with the basics of Mahout, it is time to cluster your own
 data. See also [Wikipedia on cluster analysis](en.wikipedia.org/wiki/Cluster_analysis) for more background.
@@ -27,6 +27,8 @@ In particular for text preparation check out [Creating Vectors from Text](../bas
 * [Meanshift background](mean-shift-clustering.html) and [mean-shift-commandline](mean-shift-commandline.html).
 
 * [LDA (Latent Dirichlet Allocation) background](-latent-dirichlet-allocation.html) and [lda-commandline](lda-commandline.html).
+
+* TODO: kmeans++/ streaming kMeans documentation
 
 
 <a name="ClusteringYourData-RetrievingtheOutput"></a>
