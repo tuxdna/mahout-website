@@ -1,4 +1,7 @@
 Title: Wikipedia Bayes Example
+
+# Naive Bayes Wikipedia Example
+
 <a name="WikipediaBayesExample-Intro"></a>
 # Intro
 
@@ -13,28 +16,35 @@ what country an unseen article should be categorized into.
 <a name="WikipediaBayesExample-Runningtheexample"></a>
 # Running the example
 
-1. download the wikipedia data set [here ](-http://download.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2.html)
-1. unzip the bz2 file to get the enwiki-latest-pages-articles.xml. 
-1. Create directory $MAHOUT_HOME/examples/temp and copy the xml file into
-this directory
-1. Chunk the Data into pieces: {code}$MAHOUT_HOME/bin/mahout
-wikipediaXMLSplitter -d
-$MAHOUT_HOME/examples/temp/enwiki-latest-pages-articles10.xml -o
-wikipedia/chunks -c 64{code} {quote}*We strongly suggest you backup the
-results to some other place so that you don't have to do this step again in
-case it gets accidentally erased*{quote}
-1. This would have created the chunks in HDFS. Verify the same by executing
-{code}hadoop fs -ls wikipedia/chunks{code} and it'll list all the xml files
-as chunk-0001.xml and so on.
-1. Create the countries based Split of wikipedia dataset.
-{code}$MAHOUT_HOME/bin/mahout  wikipediaDataSetCreator	-i wikipedia/chunks
--o wikipediainput -c $MAHOUT_HOME/examples/src/test/resources/country.txt
+1. Download the wikipedia data set [here](http://download.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2.html).
 
-    # Verify the creation of input data set by executing {code} hadoop fs -ls
-wikipediainput {code} and you'll be able to see part-r-00000 file inside
+1. Unzip the bz2 file to get the enwiki-latest-pages-articles.xml. 
+
+1. Create directory `$MAHOUT_HOME/examples/temp` and copy the xml file into this directory
+
+1. Chunk the Data into pieces: `$MAHOUT_HOME/bin/mahout wikipediaXMLSplitter -d $MAHOUT_HOME/examples/temp/enwiki-latest-pages-articles10.xml -o wikipedia/chunks -c 64` 
+*We strongly suggest you backup the results to some other place so that you don't have to do this step again in
+case it gets accidentally erased.*
+
+1. This would have created the chunks in HDFS. Verify the same by executing
+`hadoop fs -ls wikipedia/chunks` and it'll list all the xml files as chunk-0001.xml and so on.
+
+1. Create the countries based Split of wikipedia dataset.
+`$MAHOUT_HOME/bin/mahout  wikipediaDataSetCreator	-i wikipedia/chunks
+-o wikipediainput -c $MAHOUT_HOME/examples/src/test/resources/country.txt`.
+
+
+<br><br>
+
+After input preparation start the actual training:
+
+
+* Verify the creation of input data set by executing `hadoop fs -ls wikipediainput` and you'll be able to see part-r-00000 file inside
 wikipediainput directory
-    # Train the classifier: {code}$MAHOUT_HOME/bin/mahout trainclassifier -i
-wikipediainput -o wikipediamodel{code}. The model file will be available in
+
+* Train the classifier: `$MAHOUT_HOME/bin/mahout trainclassifier -i
+wikipediainput -o wikipediamodel`. The model file will be available in
 the wikipediamodel folder in HDFS.
-    # Test the classifier: {code}$MAHOUT_HOME/bin/mahout testclassifier -m
-wikipediamodel -d wikipediainput{code}
+
+* Test the classifier: `$MAHOUT_HOME/bin/mahout testclassifier -m
+wikipediamodel -d wikipediainput`
