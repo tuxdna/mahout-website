@@ -1,4 +1,5 @@
 Title: Developer Resources
+
 <a name="DeveloperResources-MakingaContribution"></a>
 ## Making a Contribution
 
@@ -24,7 +25,11 @@ svn checkout [http://svn.apache.org/repos/asf/mahout/trunk](http://svn.apache.or
 
 Javadoc documentation is available online in our code reports:
 
-* [Latest Javadoc](https://builds.apache.org/hudson/job/Mahout-Quality/javadoc/)
+* Latest Javadoc:
+    * [Math](https://builds.apache.org/job/Mahout-Quality/ws/trunk/math/target/site/apidocs/index.html)
+    * [Core](https://builds.apache.org/job/Mahout-Quality/ws/trunk/core/target/site/apidocs/index.html)
+    * [Integration](https://builds.apache.org/job/Mahout-Quality/ws/trunk/integration/target/site/apidocs/index.html)
+    * [Examples](https://builds.apache.org/job/Mahout-Quality/ws/trunk/examples/target/site/apidocs/index.html)
 * [Data Formats](https://cwiki.apache.org/confluence/display/MAHOUT/Data+Formats)
 * [File Format Integrations](https://cwiki.apache.org/confluence/display/MAHOUT/File+Format+Integrations)
 * [Database Integrations](https://cwiki.apache.org/confluence/display/MAHOUT/Database+Integrations)
