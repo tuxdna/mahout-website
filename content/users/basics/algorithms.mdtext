@@ -1,162 +1,126 @@
 Title: Algorithms
+
 <a name="Algorithms-Algorithms"></a>
-## Algorithms
+# Algorithms
 
 This section contains links to information, examples, use cases, etc. for
-the various algorithms we intend to implement.	Click the individual links
-to learn more. The initial algorithms descriptions have been copied here
-from the original project proposal. The algorithms are grouped by the
-application setting, they can be used for. In case of multiple
-applications, the version presented in the paper was chosen, versions as
-implemented in our project will be added as soon as we are working on them.
-
-Original Paper: [Map Reduce for Machine Learning on Multicore](http://www.cs.stanford.edu/people/ang//papers/nips06-mapreducemulticore.pdf)
-
-Papers related to Map Reduce:
-* [Evaluating MapReduce for Multi-core and Multiprocessor Systems](http://csl.stanford.edu/~christos/publications/2007.cmp_mapreduce.hpca.pdf)
-* [Map Reduce: Distributed Computing for Machine Learning](http://www.icsi.berkeley.edu/~arlo/publications/gillick_cs262a_proj.pdf)
+the various algorithms we support. Click the individual links
+to learn more. The algorithms are grouped by use case.
 
 For Papers, videos and books related to machine learning in general, see [Machine Learning Resources](machine-learning-resources.html)
 
-All algorithms are either marked as _integrated_, that is the
-implementation is integrated into the development version of Mahout.
-Algorithms that are currently being developed are annotated with a link to
-the JIRA issue that deals with the specific implementation. Usually these
-issues already contain patches that are more or less major, depending on
-how much work was spent on the issue so far. Algorithms that have so far
-not been touched are marked as _open_.
+## General advise
 
-[What, When, Where, Why (but not How or Who)](what,-when,-where,-why-(but-not-how-or-who).html)
- \- Community tips, tricks, etc. for when to use which algorithm in what
-situations, what to watch out for in terms of errors.  That is, practical
-advice on using Mahout for your problems.
+The main goal of Apache Mahout is to be useful to practitioners. This means implementations should be easy to
+use from within Java applications. It should be close to trivial to deploy the trained models. Scaling to include
+more and more diverse data should be simple.
+
+If you are starting a data science project instead of looking for an algorithm you barely know about except for
+this one cool talk you attended recently rather try to find out what your real problem setting is. From there
+check out one of the sections below to learn more about what Mahout can do for you. Chances are decent feature
+engineering combined with increased amount of data can do much more for your business case than what you can
+achieve by investing your time only in finding the best algorithm. For more background also checkout the following
+slide deck by one of the committers:
+
+<iframe src="http://www.slideshare.net/slideshow/embed_code/27793038?rel=0" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/tdunning/which-algorithms-really-matter" title="Which Algorithms Really Matter" target="_blank">Which Algorithms Really Matter</a> </strong> from <strong><a href="http://www.slideshare.net/tdunning" target="_blank">Ted Dunning</a></strong> </div>
+
+Note that as a result getting new algorithms into Mahout is pretty hard much in contrast to getting modifications,
+improvements and better documentation committed. If you absolutely do want to see you favourite algorithm it's up to
+you to make a case for replacing one of the existing implementations with your proposal.
 
 <a name="Algorithms-Classification"></a>
-### Classification
+## Classification
 
 A general introduction to the most common text classification algorithms
 can be found at Google Answers: [http://answers.google.com/answers/main?cmd=threadview&id=225316](http://answers.google.com/answers/main?cmd=threadview&id=225316)
  For information on the algorithms implemented in Mahout (or scheduled for
 implementation) please visit the following pages.
 
-[Logistic Regression](logistic-regression.html)
- (SGD)
+### Fully supported:
 
-[Bayesian](bayesian.html)
 
-[Support Vector Machines](support-vector-machines.html)
- (SVM) (open: [MAHOUT-14|http://issues.apache.org/jira/browse/MAHOUT-14]
-, [MAHOUT-232|http://issues.apache.org/jira/browse/MAHOUT-232]
- and [MAHOUT-334|https://issues.apache.org/jira/browse/MAHOUT-334]
-) 
-
-[Perceptron and Winnow](perceptron-and-winnow.html)
- (open: [MAHOUT-85|http://issues.apache.org/jira/browse/MAHOUT-85]
-)
-
-[Neural Network](neural-network.html)
- (open, but [MAHOUT-228|http://issues.apache.org/jira/browse/MAHOUT-228]
- might help)
-
-[Random Forests](random-forests.html)
- (integrated - [MAHOUT-122|http://issues.apache.org/jira/browse/MAHOUT-122]
-, [MAHOUT-140|http://issues.apache.org/jira/browse/MAHOUT-140]
-, [MAHOUT-145|http://issues.apache.org/jira/browse/MAHOUT-145]
-)
-
-[Restricted Boltzmann Machines](restricted-boltzmann-machines.html)
- (open, [MAHOUT-375|http://issues.apache.org/jira/browse/MAHOUT-375]
-, GSOC2010)
-
-[Online Passive Aggressive](online-passive-aggressive.html)
- (integrated, [MAHOUT-702|http://issues.apache.org/jira/browse/MAHOUT-702]
-)
-
-[Boosting](boosting.html)
- (awaiting patch commit, [MAHOUT-716|https://issues.apache.org/jira/browse/MAHOUT-716]
-)
-
-[Hidden Markov Models](hidden-markov-models.html)
- (HMM) (MAHOUT-627, MAHOUT-396, MAHOUT-734) - Training is done in
+* [Logistic Regression](logistic-regression.html) (SGD) - model parameter selection can be done in Hadoop
+* [Naive Bayes/ Complementary Naive Bayes](bayesian.html) - training runs on Hadoop
+* [Random Forests](random-forests.html)
+ (integrated - [MAHOUT-122](http://issues.apache.org/jira/browse/MAHOUT-122), - training is done in Hadoop
+ [MAHOUT-140](http://issues.apache.org/jira/browse/MAHOUT-140), [MAHOUT-145](http://issues.apache.org/jira/browse/MAHOUT-145)
+* [Hidden Markov Models](hidden-markov-models.html) (see MAHOUT-627, MAHOUT-396, MAHOUT-734) - training is done in
 Map-Reduce
 
+
+### Deprecated or drafts only:
+
+* [Support Vector Machines](support-vector-machines.html) (see [MAHOUT-14](http://issues.apache.org/jira/browse/MAHOUT-14)
+, [MAHOUT-232](http://issues.apache.org/jira/browse/MAHOUT-232)
+ and [MAHOUT-334](https://issues.apache.org/jira/browse/MAHOUT-334) 
+* [Perceptron and Winnow](perceptron-and-winnow.html)
+ (see [MAHOUT-85](http://issues.apache.org/jira/browse/MAHOUT-85))
+* [Neural Network](neural-network.html)
+ (see [MAHOUT-228](http://issues.apache.org/jira/browse/MAHOUT-228))
+* [Restricted Boltzmann Machines](restricted-boltzmann-machines.html)
+ (see [MAHOUT-375](http://issues.apache.org/jira/browse/MAHOUT-375))
+* [Online Passive Aggressive](online-passive-aggressive.html)
+ (see [MAHOUT-702](http://issues.apache.org/jira/browse/MAHOUT-702)
+* [Boosting](boosting.html) (see [MAHOUT-716](https://issues.apache.org/jira/browse/MAHOUT-716))
+
+
 <a name="Algorithms-Clustering"></a>
-### Clustering
+## Clustering
 
-[Reference Reading](reference-reading.html)
+For a more detailed explanation see [Wikipedia page](http://en.wikipedia.org/wiki/Cluster_analysis) or checkout our [Reference Reading](reference-reading.html)
 
-[MAHOUT:Canopy Clustering](mahout:canopy-clustering.html)
- ([MAHOUT-3|https://issues.apache.org/jira/browse/MAHOUT-3] - integrated)
+### Fully supported:
 
-[K-Means Clustering](k-means-clustering.html)
- ([MAHOUT-5|https://issues.apache.org/jira/browse/MAHOUT-5] - integrated)
+* [MAHOUT:Canopy Clustering](mahout:canopy-clustering.html)
+ ([MAHOUT-3](https://issues.apache.org/jira/browse/MAHOUT-3) - runs on Hadoop
+* [K-Means Clustering](k-means-clustering.html)
+ ([MAHOUT-5](https://issues.apache.org/jira/browse/MAHOUT-5) - runs on Hadoop
+* [Fuzzy K-Means](fuzzy-k-means.html)
+ ([MAHOUT-74](https://issues.apache.org/jira/browse/MAHOUT-74) - runs on Hadoop
+* [Expectation Maximization](expectation-maximization.html ([MAHOUT-28](http://issues.apache.org/jira/browse/MAHOUT-28) - runs on Hadoop
+* [Mean Shift Clustering](mean-shift-clustering.html)
+ ([MAHOUT-15](https://issues.apache.org/jira/browse/MAHOUT-15) - runs on Hadoop
+* [Dirichlet Process Clustering](dirichlet-process-clustering.html)
+ ([MAHOUT-30](http://issues.apache.org/jira/browse/MAHOUT-30) - runs on Hadoop
+* [Latent Dirichlet Allocation](latent-dirichlet-allocation.html)
+ ([MAHOUT-123](http://issues.apache.org/jira/browse/MAHOUT-123)) - runs on Hadoop
+* [Minhash Clustering](minhash-clustering.html)
+ ([MAHOUT-344](https://issues.apache.org/jira/browse/MAHOUT-344)) - runs on Hadoop
+* kMeans++ streaming clustering - documentation missing
 
-[Fuzzy K-Means](fuzzy-k-means.html)
- ([MAHOUT-74|https://issues.apache.org/jira/browse/MAHOUT-74] - integrated)
 
-[Expectation Maximization](expectation-maximization.html)
- (EM) ([MAHOUT-28|http://issues.apache.org/jira/browse/MAHOUT-28])
+### Deprecated or drafts only:
 
-[Mean Shift Clustering](mean-shift-clustering.html)
- ([MAHOUT-15|https://issues.apache.org/jira/browse/MAHOUT-15] - integrated)
-
-[Hierarchical Clustering](hierarchical-clustering.html)
- ([MAHOUT-19|http://issues.apache.org/jira/browse/MAHOUT-19])
-
-[Dirichlet Process Clustering](dirichlet-process-clustering.html)
- ([MAHOUT-30|http://issues.apache.org/jira/browse/MAHOUT-30] - integrated)
-
-[Latent Dirichlet Allocation](latent-dirichlet-allocation.html)
- ([MAHOUT-123|http://issues.apache.org/jira/browse/MAHOUT-123] -
-integrated)
-
-[Spectral Clustering](spectral-clustering.html)
- ([MAHOUT-363|https://issues.apache.org/jira/browse/MAHOUT-363] -
-integrated)
-
-[Minhash Clustering](minhash-clustering.html)
- ([MAHOUT-344|https://issues.apache.org/jira/browse/MAHOUT-344] -
-integrated)
-
-[Top Down Clustering](top-down-clustering.html)
- ([MAHOUT-843|https://issues.apache.org/jira/browse/MAHOUT-843] -
-integrated)
-
-<a name="Algorithms-PatternMining"></a>
-### Pattern Mining
-
-[Parallel FP Growth Algorithm](parallel-frequent-pattern-mining.html)
- (Also known as Frequent Itemset mining)
-
-<a name="Algorithms-Regression"></a>
-### Regression
-
-[Locally Weighted Linear Regression](locally-weighted-linear-regression.html)
- (open)
-
+* [Hierarchical Clustering](hierarchical-clustering.html)
+ ([MAHOUT-19](http://issues.apache.org/jira/browse/MAHOUT-19))
+* [Spectral Clustering](spectral-clustering.html)
+ ([MAHOUT-363](https://issues.apache.org/jira/browse/MAHOUT-363))
+* [Top Down Clustering](top-down-clustering.html)
+ ([MAHOUT-843](https://issues.apache.org/jira/browse/MAHOUT-843))
 
 <a name="Algorithms-Dimensionreduction"></a>
-### Dimension reduction
+## Dimension reduction
 
-[Singular Value Decomposition and other Dimension Reduction Techniques](dimensional-reduction.html)
+### Fully supported:
+
+* [Singular Value Decomposition and other Dimension Reduction Techniques](dimensional-reduction.html)
  (available since 0.3)
 
-[Stochastic Singular Value Decomposition with PCA workflow](stochastic-singular-value-decomposition.html)
+* [Stochastic Singular Value Decomposition with PCA workflow](stochastic-singular-value-decomposition.html)
  (PCA workflow now integrated)
 
-[Principal Components Analysis](principal-components-analysis.html)
- (PCA) (open)
+### Deprecated or drafts only:
 
-[Independent Component Analysis](independent-component-analysis.html)
- (open)
-
-[Gaussian Discriminative Analysis](gaussian-discriminative-analysis.html)
- (GDA) (open)
+* [Principal Components Analysis](principal-components-analysis.html)
+ (PCA) 
+* [Independent Component Analysis](independent-component-analysis.html)
+* [Gaussian Discriminative Analysis](gaussian-discriminative-analysis.html)
+ (GDA) 
 
 <a name="Algorithms-EvolutionaryAlgorithms"></a>
-### Evolutionary Algorithms
+## Evolutionary Algorithms
 
-* NOTE: * Watchmaker support has been removed as of 0.7
+* NOTE:  Watchmaker support has been removed as of 0.7
 
 see also: [MAHOUT-56 (integrated)](http://issues.apache.org/jira/browse/MAHOUT-56)
 
@@ -172,44 +136,29 @@ Examples:
 * [Class Discovery](class-discovery.html)
 
 <a name="Algorithms-Recommenders/CollaborativeFiltering"></a>
-### Recommenders / Collaborative Filtering
+## Recommenders / Collaborative Filtering
 
 Mahout contains both simple non-distributed recommender implementations and
 distributed Hadoop-based recommenders.
 
- * [Non-distributed recommenders ("Taste")](recommender-documentation.html)
- (integrated)
- * [Distributed Item-Based Collaborative Filtering](itembased-collaborative-filtering.html)
- (integrated)
- * [Collaborative Filtering using a parallel matrix factorization](collaborative-filtering-with-als-wr.html)
- (integrated)
  * [First-timer FAQ](recommender-first-timer-faq.html)
+ * [Non-distributed recommenders ("Taste")](recommender-documentation.html)
+ * [Distributed Item-Based Collaborative Filtering](itembased-collaborative-filtering.html)
+ * [Collaborative Filtering using a parallel matrix factorization](collaborative-filtering-with-als-wr.html)
 
-<a name="Algorithms-VectorSimilarity"></a>
-### Vector Similarity
+<a name="Algorithms-Other"></a>
+## Other
 
-Mahout contains implementations that allow one to compare one or more
-vectors with another set of vectors.  This can be useful if one is, for
-instance, trying to calculate the pairwise similarity between all documents
-(or a subset of docs) in a corpus.
+### Fullly supported:
 
 * RowSimilarityJob -- Builds an inverted index and then computes distances
 between items that have co-occurrences.  This is a fully distributed
 calculation.
 * VectorDistanceJob -- Does a map side join between a set of "seed" vectors
 and all of the input vectors.
+* [Collocations](collocations.html) ... find co-locations of tokens in text, runs on Hadoop
 
-<a name="Algorithms-Other"></a>
-### Other
+### Deprecated or drafts only:
 
- * [Collocations](collocations.html)
-
-<a name="Algorithms-Non-MapReducealgorithms"></a>
-### Non-MapReduce algorithms
-
-Some algorithms and applications appeared on the mailing list, that have
-not been published in map reduce form so far. As we do not restrict
-ourselves to Hadoop-only versions, these proposals are listed here.
-
-
-
+* Pattern mining: [Parallel FP Growth Algorithm](parallel-frequent-pattern-mining.html)
+ (Also known as Frequent Itemset mining)
