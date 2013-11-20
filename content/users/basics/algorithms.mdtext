@@ -7,7 +7,7 @@ This section contains links to information, examples, use cases, etc. for
 the various algorithms we support. Click the individual links
 to learn more. The algorithms are grouped by use case.
 
-For Papers, videos and books related to machine learning in general, see [Machine Learning Resources](machine-learning-resources.html)
+For Papers, videos and books related to machine learning in general, see [Machine Learning Resources](../general/reference-reading.html)
 
 ## General advise
 
@@ -43,7 +43,7 @@ Fully supported:
 * [Naive Bayes/ Complementary Naive Bayes](../classification/bayesian.html) - training runs on Hadoop
 * [Random Forests](../classification/random-forests.html)
  ([MAHOUT-122](http://issues.apache.org/jira/browse/MAHOUT-122), - training is done in Hadoop
- [MAHOUT-140](http://issues.apache.org/jira/browse/MAHOUT-140), [MAHOUT-145](http://issues.apache.org/jira/browse/MAHOUT-145)
+ [MAHOUT-140](http://issues.apache.org/jira/browse/MAHOUT-140), [MAHOUT-145](http://issues.apache.org/jira/browse/MAHOUT-145))
 * [Hidden Markov Models](../stuff/hidden-markov-models.html) (see MAHOUT-627, MAHOUT-396, MAHOUT-734) - training is done in
 Map-Reduce
 
@@ -53,15 +53,14 @@ Deprecated or drafts only:
 * [Support Vector Machines](../classification/support-vector-machines.html) (see [MAHOUT-14](http://issues.apache.org/jira/browse/MAHOUT-14)
 , [MAHOUT-232](http://issues.apache.org/jira/browse/MAHOUT-232)
  and [MAHOUT-334](https://issues.apache.org/jira/browse/MAHOUT-334) 
-* [Perceptron and Winnow](../classification/perceptron-and-winnow.html)
+* [Perceptron and Winnow](../stuff/perceptron-and-winnow.html)
  (see [MAHOUT-85](http://issues.apache.org/jira/browse/MAHOUT-85))
 * [Neural Network](../classification/neural-network.html)
  (see [MAHOUT-228](http://issues.apache.org/jira/browse/MAHOUT-228))
 * [Restricted Boltzmann Machines](../classification/restricted-boltzmann-machines.html)
  (see [MAHOUT-375](http://issues.apache.org/jira/browse/MAHOUT-375))
-* [Online Passive Aggressive](../classification/online-passive-aggressive.html)
- (see [MAHOUT-702](http://issues.apache.org/jira/browse/MAHOUT-702)
-* [Boosting](../classification/boosting.html) (see [MAHOUT-716](https://issues.apache.org/jira/browse/MAHOUT-716))
+* Online Passive Aggressive (see [MAHOUT-702](http://issues.apache.org/jira/browse/MAHOUT-702)
+* Boosting (see [MAHOUT-716](https://issues.apache.org/jira/browse/MAHOUT-716))
 
 
 <a name="Algorithms-Clustering"></a>
@@ -84,19 +83,16 @@ Fully supported:
  ([MAHOUT-30](http://issues.apache.org/jira/browse/MAHOUT-30) - runs on Hadoop
 * [Latent Dirichlet Allocation](../clustering/latent-dirichlet-allocation.html)
  ([MAHOUT-123](http://issues.apache.org/jira/browse/MAHOUT-123)) - runs on Hadoop
-* [Minhash Clustering](../clustering/minhash-clustering.html)
- ([MAHOUT-344](https://issues.apache.org/jira/browse/MAHOUT-344)) - runs on Hadoop
+* Minhash Clustering ([MAHOUT-344](https://issues.apache.org/jira/browse/MAHOUT-344)) - runs on Hadoop
 * kMeans++ streaming clustering - documentation missing
 
 
 Deprecated or drafts only:
 
 * [Hierarchical Clustering](../clustering/hierarchical-clustering.html)
- ([MAHOUT-19](http://issues.apache.org/jira/browse/MAHOUT-19))
+ ([MAHOUT-19](http://issues.apache.org/jira/browse/MAHOUT-19), [MAHOUT-843](https://issues.apache.org/jira/browse/MAHOUT-843))
 * [Spectral Clustering](../clustering/spectral-clustering.html)
  ([MAHOUT-363](https://issues.apache.org/jira/browse/MAHOUT-363))
-* [Top Down Clustering](../clustering/top-down-clustering.html)
- ([MAHOUT-843](https://issues.apache.org/jira/browse/MAHOUT-843))
 
 <a name="Algorithms-Dimensionreduction"></a>
 ## Dimension reduction
@@ -105,34 +101,31 @@ Fully supported:
 
 * [Singular Value Decomposition and other Dimension Reduction Techniques](dimensional-reduction.html)
  (available since 0.3)
-* [Stochastic Singular Value Decomposition with PCA workflow](stochastic-singular-value-decomposition.html)
- (PCA workflow now integrated)
+* Stochastic Singular Value Decomposition with PCA workflow
 
 Deprecated or drafts only:
 
 * [Principal Components Analysis](principal-components-analysis.html)
  (PCA) 
-* [Independent Component Analysis](independent-component-analysis.html)
 * [Gaussian Discriminative Analysis](gaussian-discriminative-analysis.html)
  (GDA) 
 
 <a name="Algorithms-EvolutionaryAlgorithms"></a>
 ## Evolutionary Algorithms
 
-* NOTE:  Watchmaker support has been removed as of 0.7
+NOTE:  Watchmaker support has been removed as of 0.7
 
-see also: [MAHOUT-56 (integrated)](http://issues.apache.org/jira/browse/MAHOUT-56)
+see also: [MAHOUT-56](http://issues.apache.org/jira/browse/MAHOUT-56)
 
 You will find here information, examples, use cases, etc. related to
 Evolutionary Algorithms.
 
 Introductions and Tutorials:
+
 * [Evolutionary Algorithms Introduction](http://www.geatbx.com/docu/algindex.html)
 * [How to distribute the fitness evaluation using Mahout.GA](mahout.ga.tutorial.html)
 
-Examples:
-* [Traveling Salesman](traveling-salesman.html)
-* [Class Discovery](class-discovery.html)
+Example: [Traveling Salesman](../stuff/traveling-salesman.html)
 
 <a name="Algorithms-Recommenders/CollaborativeFiltering"></a>
 ## Recommenders / Collaborative Filtering
@@ -140,11 +133,10 @@ Examples:
 Mahout contains both simple non-distributed recommender implementations and
 distributed Hadoop-based recommenders.
 
- * [First-timer FAQ](recommender-first-timer-faq.html)
- * [Non-distributed recommenders ("Taste")](recommender-documentation.html)
- * [Distributed Item-Based Collaborative Filtering](itembased-collaborative-filtering.html)
- * [Collaborative Filtering using a parallel matrix factorization](collaborative-filtering-with-als-wr.html)
-
+ * [First-timer FAQ](../recommender/recommender-first-timer-faq.html)
+ * [Non-distributed recommenders ("Taste")](../recommender/recommender-documentation.html)
+ * [Distributed Item-Based Collaborative Filtering](../recommender/itembased-collaborative-filtering.html)
+ * Collaborative Filtering using a parallel matrix factorization
 <a name="Algorithms-Other"></a>
 ## Other
 
