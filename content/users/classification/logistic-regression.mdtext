@@ -1,4 +1,5 @@
 Title: Logistic Regression
+
 <a name="LogisticRegression-LogisticRegression(SGD)"></a>
 # Logistic Regression (SGD)
 
@@ -11,10 +12,8 @@ production fraud detection and advertising quality and targeting products.
 The Mahout implementation uses Stochastic Gradient Descent (SGD) to all
 large training sets to be used.
 
-For a more detailed analysis of the approach, have a look at the thesis of
-Paul Komarek:
-
-http://www.autonlab.org/autonweb/14709/version/4/part/5/data/komarek:lr_thesis.pdf?branch=main&language=en
+For a more detailed analysis of the approach, have a look at the [thesis of
+Paul Komarek](http://www.autonlab.org/autonweb/14709/version/4/part/5/data/komarek:lr_thesis.pdf?branch=main&language=en).
 
 See MAHOUT-228 for the main JIRA issue for SGD.
 
@@ -47,8 +46,7 @@ propagating to the other learners.
 There are three packages that are used in Mahout's SGD system.	These
 include
 
-* The vector encoding package (found in
-org.apache.mahout.vectorizer.encoders)
+* The vector encoding package (found in org.apache.mahout.vectorizer.encoders)
 
 * The SGD learning package (found in org.apache.mahout.classifier.sgd)
 
@@ -77,7 +75,7 @@ case you are getting your training data from a system like Avro.
 
 Here is a class diagram for the encoders package:
 
-!vector-class-hierarchy.png|border=1!
+![class diagram](../../images/vector-class-hierarchy.png)
 
 <a name="LogisticRegression-SGDLearning"></a>
 ### SGD Learning
@@ -104,5 +102,5 @@ Here is a class diagram for the classifiers.sgd package.  As you can see,
 the number of twiddlable knobs is pretty large.  For some examples, see the
 TrainNewsGroups example code.
 
-!sgd-class-hierarchy.png|border=1!
+![sgd class diagram](../../images/sgd-class-hierarchy.png)
 
