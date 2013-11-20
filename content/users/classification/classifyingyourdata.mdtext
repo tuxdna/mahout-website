@@ -1,47 +1,22 @@
 Title: ClassifyingYourData
-+*Mahout_0.2*+
 
-After you've done the [Quickstart](quickstart.html)
- and are familiar with the basics of Mahout, it is time to build a
-classifier from your own data. 
+# Classifying data from the command line
 
-The following pieces *may* be useful for in getting started:
+
+After you've done the [Quickstart](../basics/quickstart.html) and are familiar with the basics of Mahout, it is time to build a
+classifier from your own data. The following pieces *may* be useful for in getting started:
 
 <a name="ClassifyingYourData-Input"></a>
 # Input
 
-For starters, you will need your data in an appropriate Vector format
-(which has changed since Mahout 0.1)
-
-* See [Creating Vectors](creating-vectors.html)
-
-<a name="ClassifyingYourData-TextPreparation"></a>
-## Text Preparation
-
-* See [Creating Vectors from Text](creating-vectors-from-text.html)
-*
-http://www.lucidimagination.com/search/document/4a0e528982b2dac3/document_clustering
+For starters, you will need your data in an appropriate Vector format: See [Creating Vectors](../basics/creating-vectors.html) as well as [Creating Vectors from Text](../basics/creating-vectors-from-text.html).
 
 <a name="ClassifyingYourData-RunningtheProcess"></a>
 # Running the Process
 
-<a name="ClassifyingYourData-NaiveBayes"></a>
-## Naive Bayes
-
-Background: [Naive Bayes Classification ](-bayesian-.html)
-
-Documentation of running naive bayes from the command line: [bayesian-commandline](bayesian-commandline.html)
-
-<a name="ClassifyingYourData-C-Bayes"></a>
-## C-Bayes
-
-Background: [C-Bayes Classification ](-https://issues.apache.org/jira/browse/mahout-60-.html)
-
-Documentation of running c-bayes from the command line: [c-bayes-commandline](c-bayes-commandline.html)
-
-<a name="ClassifyingYourData-RandomForests"></a>
-## Random Forests
-
-Background: [Random Forests Classification ](-http://cwiki.apache.org/mahout/random-forests.html-.html)
-
-Documentation of running random forests from the command line: [Breiman Example](breiman-example.html)
+* Logistic regression [background](logistic-regression.html)
+* [Naive Bayes background](naivebayes.html) and [commandline](bayesian-commandline.html) options.
+* [Complementary naive bayes background](complementary-naive-bayes.html), [design](https://issues.apache.org/jira/browse/mahout-60.html), and [c-bayes-commandline](c-bayes-commandline.html)
+* [Random Forests Classification](https://cwiki.apache.org/confluence/display/MAHOUT/Random+Forests) comes with a [Breiman example](breiman-example.html). There is some really great documentation
+over at [Mark Needham's blog](http://www.markhneedham.com/blog/2012/10/27/kaggle-digit-recognizer-mahout-random-forest-attempt/). Also checkout the description on [Xiaomeng Shawn Wan
+s](http://shawnwan.wordpress.com/2012/06/01/mahout-0-7-random-forest-examples/) blog.
