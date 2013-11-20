@@ -43,16 +43,22 @@ option.  Examples of running the Driver are included below:
 <a name="CreatingVectorsfromText-GeneratinganoutputfilefromaLuceneIndex"></a>
 ## Generating an output file from a Lucene Index
 
-<blockquote>
-    $MAHOUT_HOME/bin/mahout lucene.vector <PATH TO DIRECTORY CONTAINING LUCENE INDEX> 
+<pre><code>
 
-       --output <PATH TO OUTPUT LOCATION> --field <NAME OF FIELD IN INDEX> --dictOut <PATH TO FILE TO OUTPUT THE DICTIONARY TO]
+>    $MAHOUT_HOME/bin/mahout lucene.vector <PATH TO DIRECTORY CONTAINING LUCENE INDEX> 
+>
+>       --output <PATH TO OUTPUT LOCATION> 
+>
+>       --field <NAME OF FIELD IN INDEX> 
+>
+>       --dictOut <PATH TO FILE TO OUTPUT THE DICTIONARY TO>
+>
+>       <--max <Number of vectors to output>> <--norm {INF|integer >= 0}>
+>
+>       <--idField <Name of the idField in the Lucene index>>
 
-       <--max <Number of vectors to output>> <--norm {INF|integer >= 0}>
 
-       <--idField <Name of the idField in the Lucene index>>
-
-</blockquote>
+</code></pre>
 
 <a name="CreatingVectorsfromText-Create50VectorsfromanIndex"></a>
 ### Create 50 Vectors from an Index 
@@ -185,5 +191,3 @@ reuse the existing VectorWriter classes:
     long numDocs = vectorWriter.write(new VectorIterable(), Long.MAX_VALUE);
 
 </blockquote>
-
-
