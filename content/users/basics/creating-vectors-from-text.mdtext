@@ -44,12 +44,13 @@ option.  Examples of running the Driver are included below:
 ## Generating an output file from a Lucene Index
 
 <blockquote>
-    $MAHOUT_HOME/bin/mahout lucene.vector <PATH TO DIRECTORY CONTAINING LUCENE
-INDEX> \
+    $MAHOUT_HOME/bin/mahout lucene.vector <PATH TO DIRECTORY CONTAINING LUCENE INDEX> 
+
        --output <PATH TO OUTPUT LOCATION> --field <NAME OF FIELD IN INDEX> --dictOut <PATH TO FILE TO OUTPUT THE DICTIONARY TO]
- \
+
        <--max <Number of vectors to output>> <--norm {INF|integer >= 0}>
-<--idField <Name of the idField in the Lucene index>>
+
+       <--idField <Name of the idField in the Lucene index>>
 
 </blockquote>
 
@@ -57,10 +58,13 @@ INDEX> \
 ### Create 50 Vectors from an Index 
 
 <blockquote>
-    $MAHOUT_HOME/bin/mahout lucene.vector --dir
-<PATH>/wikipedia/solr/data/index --field body \
-        --dictOut <PATH>/solr/wikipedia/dict.txt --output
-<PATH>/solr/wikipedia/out.txt --max 50
+
+    $MAHOUT_HOME/bin/mahout lucene.vector --dir <PATH>/wikipedia/solr/data/index --field body 
+
+        --dictOut <PATH>/solr/wikipedia/dict.txt
+
+        --output <PATH>/solr/wikipedia/out.txt --max 50
+
 </blockquote>
 
 This uses the index specified by --dir and the body field in it and writes
@@ -71,11 +75,15 @@ the index are output.
 <a name="CreatingVectorsfromText-Normalize50VectorsfromaLuceneIndexusingthe[L_2Norm](http://en.wikipedia.org/wiki/Lp_space)"></a>
 ### Normalize 50 Vectors from a Lucene Index using the [L_2 Norm|http://en.wikipedia.org/wiki/Lp_space]
 
-    $MAHOUT_HOME/bin/mahout lucene.vector --dir
-<PATH>/wikipedia/solr/data/index --field body \
-          --dictOut <PATH>/solr/wikipedia/dict.txt --output
-<PATH>/solr/wikipedia/out.txt --max 50 --norm 2
+<blockquote>
 
+    $MAHOUT_HOME/bin/mahout lucene.vector --dir <PATH>/wikipedia/solr/data/index --field body 
+
+          --dictOut <PATH>/solr/wikipedia/dict.txt
+
+          --output <PATH>/solr/wikipedia/out.txt --max 50 --norm 2
+
+</blockquote>
 
 <a name="CreatingVectorsfromText-FromDirectoryofTextdocuments"></a>
 # From Directory of Text documents
@@ -99,11 +107,16 @@ PARENT>/document.txt
 From the examples directory run
 
 <blockquote>
-    $MAHOUT_HOME/bin/mahout seqdirectory \
-    --input <PARENT DIR WHERE DOCS ARE LOCATED> --output <OUTPUT DIRECTORY> \
-    <-c <CHARSET NAME OF THE INPUT DOCUMENTS> {UTF-8|cp1252|ascii...}> \
-    <-chunk <MAX SIZE OF EACH CHUNK in Megabytes> 64> \
+
+    $MAHOUT_HOME/bin/mahout seqdirectory 
+    --input <PARENT DIR WHERE DOCS ARE LOCATED> --output <OUTPUT DIRECTORY> 
+
+    <-c <CHARSET NAME OF THE INPUT DOCUMENTS> {UTF-8|cp1252|ascii...}> 
+
+    <-chunk <MAX SIZE OF EACH CHUNK in Megabytes> 64> 
+
     <-prefix <PREFIX TO ADD TO THE DOCUMENT ID>>
+
 </blockquote>
 
 <a name="CreatingVectorsfromText-CreatingVectorsfromSequenceFile"></a>
@@ -115,19 +128,33 @@ From the sequence file generated from the above step run the following to
 generate vectors. 
 
 <blockquote>
-    $MAHOUT_HOME/bin/mahout seq2sparse \
-    -i <PATH TO THE SEQUENCEFILES> -o <OUTPUT DIRECTORY WHERE VECTORS AND
-DICTIONARY IS GENERATED> \
-    <-wt <WEIGHTING METHOD USED> {tf|tfidf}> \
-    <-chunk <MAX SIZE OF DICTIONARY CHUNK IN MB TO KEEP IN MEMORY> 100> \
+    $MAHOUT_HOME/bin/mahout seq2sparse 
+
+    -i <PATH TO THE SEQUENCEFILES> 
+
+    -o <OUTPUT DIRECTORY WHERE VECTORS AND DICTIONARY IS GENERATED> 
+
+    <-wt <WEIGHTING METHOD USED> {tf|tfidf}> 
+
+    <-chunk <MAX SIZE OF DICTIONARY CHUNK IN MB TO KEEP IN MEMORY> 100> 
+
     <-a <NAME OF THE LUCENE ANALYZER TO TOKENIZE THE DOCUMENT>
-org.apache.lucene.analysis.standard.StandardAnalyzer> \
-    <--minSupport <MINIMUM SUPPORT> 2> \
-    <--minDF <MINIMUM DOCUMENT FREQUENCY> 1> \
-    <--maxDFPercent <MAX PERCENTAGE OF DOCS FOR DF. VALUE BETWEEN 0-100> 99> \
+
+</blockquote>
+
+<blockquote>
+org.apache.lucene.analysis.standard.StandardAnalyzer> 
+
+    <--minSupport <MINIMUM SUPPORT> 2> 
+
+    <--minDF <MINIMUM DOCUMENT FREQUENCY> 1> 
+
+    <--maxDFPercent <MAX PERCENTAGE OF DOCS FOR DF. VALUE BETWEEN 0-100> 99> 
+
     <--norm <REFER TO L_2 NORM ABOVE>{INF|integer >= 0}>"
-    <-seq <Create SequentialAccessVectors>{false|true required for running some
-algorithms(LDA,Lanczos)}>"
+
+    <-seq <Create SequentialAccessVectors>{false|true required for running some algorithms(LDA,Lanczos)}>"
+
 </blockquote>
 
 --minSupport is the min frequency for the word to  be considered as a
@@ -153,9 +180,10 @@ reuse the existing VectorWriter classes:
 
 
 <blockquote>
-    VectorWriter vectorWriter = SequenceFile.createWriter(filesystem,
-configuration, outfile, LongWritable.class, SparseVector.class);
+    VectorWriter vectorWriter = SequenceFile.createWriter(filesystem, configuration, outfile, LongWritable.class, SparseVector.class);
+
     long numDocs = vectorWriter.write(new VectorIterable(), Long.MAX_VALUE);
+
 </blockquote>
 
 
