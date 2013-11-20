@@ -1,11 +1,13 @@
 Title: Creating Vectors from Text
-+*Mahout_0.2*+
-{toc:style=disc|indent=20px}
+
+# Creating vectors from text
+
+available starting *Mahout_0.2*
 
 <a name="CreatingVectorsfromText-Introduction"></a>
 # Introduction
 
-For clustering documents it is usually necessary to convert the raw text
+For clustering and classifying documents it is usually necessary to convert the raw text
 into vectors that can then be consumed by the clustering [Algorithms](algorithms.html)
 .  These approaches are described below.
 
@@ -24,11 +26,11 @@ representations from a Lucene (and Solr, since they are they same) index.
 For this, we assume you know how to build a Lucene/Solr index.	For those
 who don't, it is probably easiest to get up and running using [Solr](http://lucene.apache.org/solr)
  as it can ingest things like PDFs, XML, Office, etc. and create a Lucene
-index.	For those wanting to use just Lucene, see the Lucene [website|http://lucene.apache.org/java]
+index.	For those wanting to use just Lucene, see the [Lucene website](http://lucene.apache.org/java)
  or check out _Lucene In Action_ by Erik Hatcher, Otis Gospodnetic and Mike
 McCandless.
 
-To get started, make sure you get a fresh copy of Mahout from [SVN](http://cwiki.apache.org/MAHOUT/buildingmahout.html)
+To get started, make sure you get a fresh copy of Mahout from [SVN](../developers/buildingmahout.html)
  and are comfortable building it. It defines interfaces and implementations
 for efficiently iterating over a Data Source (it only supports Lucene
 currently, but should be extensible to databases, Solr, etc.) and produces
@@ -41,7 +43,7 @@ option.  Examples of running the Driver are included below:
 <a name="CreatingVectorsfromText-GeneratinganoutputfilefromaLuceneIndex"></a>
 ## Generating an output file from a Lucene Index
 
-
+<blockquote>
     $MAHOUT_HOME/bin/mahout lucene.vector <PATH TO DIRECTORY CONTAINING LUCENE
 INDEX> \
        --output <PATH TO OUTPUT LOCATION> --field <NAME OF FIELD IN INDEX> --dictOut <PATH TO FILE TO OUTPUT THE DICTIONARY TO]
@@ -49,14 +51,17 @@ INDEX> \
        <--max <Number of vectors to output>> <--norm {INF|integer >= 0}>
 <--idField <Name of the idField in the Lucene index>>
 
+</blockquote>
 
 <a name="CreatingVectorsfromText-Create50VectorsfromanIndex"></a>
 ### Create 50 Vectors from an Index 
 
+<blockquote>
     $MAHOUT_HOME/bin/mahout lucene.vector --dir
 <PATH>/wikipedia/solr/data/index --field body \
         --dictOut <PATH>/solr/wikipedia/dict.txt --output
 <PATH>/solr/wikipedia/out.txt --max 50
+</blockquote>
 
 This uses the index specified by --dir and the body field in it and writes
 out the info to the output dir and the dictionary to dict.txt.	It only
@@ -93,12 +98,13 @@ PARENT>/document.txt
 
 From the examples directory run
 
+<blockquote>
     $MAHOUT_HOME/bin/mahout seqdirectory \
     --input <PARENT DIR WHERE DOCS ARE LOCATED> --output <OUTPUT DIRECTORY> \
     <-c <CHARSET NAME OF THE INPUT DOCUMENTS> {UTF-8|cp1252|ascii...}> \
     <-chunk <MAX SIZE OF EACH CHUNK in Megabytes> 64> \
     <-prefix <PREFIX TO ADD TO THE DOCUMENT ID>>
-
+</blockquote>
 
 <a name="CreatingVectorsfromText-CreatingVectorsfromSequenceFile"></a>
 ## Creating Vectors from SequenceFile
@@ -108,6 +114,7 @@ From the examples directory run
 From the sequence file generated from the above step run the following to
 generate vectors. 
 
+<blockquote>
     $MAHOUT_HOME/bin/mahout seq2sparse \
     -i <PATH TO THE SEQUENCEFILES> -o <OUTPUT DIRECTORY WHERE VECTORS AND
 DICTIONARY IS GENERATED> \
@@ -121,7 +128,7 @@ org.apache.lucene.analysis.standard.StandardAnalyzer> \
     <--norm <REFER TO L_2 NORM ABOVE>{INF|integer >= 0}>"
     <-seq <Create SequentialAccessVectors>{false|true required for running some
 algorithms(LDA,Lanczos)}>"
-
+</blockquote>
 
 --minSupport is the min frequency for the word to  be considered as a
 feature. --minDF is the min number of documents the word needs to be in
@@ -132,18 +139,7 @@ the document. This helps remove high frequency features like stop words
 <a name="CreatingVectorsfromText-Background"></a>
 # Background
 
-*
-http://www.lucidimagination.com/search/document/3d8310376b6cdf6b/centroid_calculations_with_sparse_vectors#86a54dae9052d68c
-*
-http://www.lucidimagination.com/search/document/4a0e528982b2dac3/document_clustering
-
-<a name="CreatingVectorsfromText-FromaDatabase"></a>
-# From a Database
-
-+*TODO:*+
-
-<a name="CreatingVectorsfromText-Other"></a>
-# Other
+* [Discussion on centroid calculations with sparse vectors](http://markmail.org/thread/l5zi3yk446goll3o)
 
 <a name="CreatingVectorsfromText-ConvertingexistingvectorstoMahout'sformat"></a>
 ## Converting existing vectors to Mahout's format
@@ -156,7 +152,10 @@ Iterable<Vector> (called VectorIterable in the example below) and then
 reuse the existing VectorWriter classes:
 
 
+<blockquote>
     VectorWriter vectorWriter = SequenceFile.createWriter(filesystem,
 configuration, outfile, LongWritable.class, SparseVector.class);
     long numDocs = vectorWriter.write(new VectorIterable(), Long.MAX_VALUE);
+</blockquote>
+
 
