@@ -44,7 +44,7 @@ Fully supported:
 * [Random Forests](../classification/random-forests.html)
  ([MAHOUT-122](http://issues.apache.org/jira/browse/MAHOUT-122), - training is done in Hadoop
  [MAHOUT-140](http://issues.apache.org/jira/browse/MAHOUT-140), [MAHOUT-145](http://issues.apache.org/jira/browse/MAHOUT-145)
-* [Hidden Markov Models](../classification/hidden-markov-models.html) (see MAHOUT-627, MAHOUT-396, MAHOUT-734) - training is done in
+* [Hidden Markov Models](../stuff/hidden-markov-models.html) (see MAHOUT-627, MAHOUT-396, MAHOUT-734) - training is done in
 Map-Reduce
 
 
@@ -71,31 +71,31 @@ For a more detailed explanation see [Wikipedia page](http://en.wikipedia.org/wik
 
 Fully supported:
 
-* [MAHOUT:Canopy Clustering](mahout:canopy-clustering.html)
+* [MAHOUT:Canopy Clustering](../clustering/canopy-clustering.html)
  ([MAHOUT-3](https://issues.apache.org/jira/browse/MAHOUT-3) - runs on Hadoop
-* [K-Means Clustering](k-means-clustering.html)
+* [K-Means Clustering](../clustering/k-means-clustering.html)
  ([MAHOUT-5](https://issues.apache.org/jira/browse/MAHOUT-5) - runs on Hadoop
-* [Fuzzy K-Means](fuzzy-k-means.html)
+* [Fuzzy K-Means](../clustering/fuzzy-k-means.html)
  ([MAHOUT-74](https://issues.apache.org/jira/browse/MAHOUT-74) - runs on Hadoop
-* [Expectation Maximization](expectation-maximization.html ([MAHOUT-28](http://issues.apache.org/jira/browse/MAHOUT-28) - runs on Hadoop
-* [Mean Shift Clustering](mean-shift-clustering.html)
+* [Expectation Maximization](../clustering/expectation-maximization.html ([MAHOUT-28](http://issues.apache.org/jira/browse/MAHOUT-28) - runs on Hadoop
+* [Mean Shift Clustering](../clustering/mean-shift-clustering.html)
  ([MAHOUT-15](https://issues.apache.org/jira/browse/MAHOUT-15) - runs on Hadoop
-* [Dirichlet Process Clustering](dirichlet-process-clustering.html)
+* [Dirichlet Process Clustering](../clustering/dirichlet-process-clustering.html)
  ([MAHOUT-30](http://issues.apache.org/jira/browse/MAHOUT-30) - runs on Hadoop
-* [Latent Dirichlet Allocation](latent-dirichlet-allocation.html)
+* [Latent Dirichlet Allocation](../clustering/latent-dirichlet-allocation.html)
  ([MAHOUT-123](http://issues.apache.org/jira/browse/MAHOUT-123)) - runs on Hadoop
-* [Minhash Clustering](minhash-clustering.html)
+* [Minhash Clustering](../clustering/minhash-clustering.html)
  ([MAHOUT-344](https://issues.apache.org/jira/browse/MAHOUT-344)) - runs on Hadoop
 * kMeans++ streaming clustering - documentation missing
 
 
 Deprecated or drafts only:
 
-* [Hierarchical Clustering](hierarchical-clustering.html)
+* [Hierarchical Clustering](../clustering/hierarchical-clustering.html)
  ([MAHOUT-19](http://issues.apache.org/jira/browse/MAHOUT-19))
-* [Spectral Clustering](spectral-clustering.html)
+* [Spectral Clustering](../clustering/spectral-clustering.html)
  ([MAHOUT-363](https://issues.apache.org/jira/browse/MAHOUT-363))
-* [Top Down Clustering](top-down-clustering.html)
+* [Top Down Clustering](../clustering/top-down-clustering.html)
  ([MAHOUT-843](https://issues.apache.org/jira/browse/MAHOUT-843))
 
 <a name="Algorithms-Dimensionreduction"></a>
@@ -105,7 +105,6 @@ Fully supported:
 
 * [Singular Value Decomposition and other Dimension Reduction Techniques](dimensional-reduction.html)
  (available since 0.3)
-
 * [Stochastic Singular Value Decomposition with PCA workflow](stochastic-singular-value-decomposition.html)
  (PCA workflow now integrated)
 
@@ -160,5 +159,5 @@ and all of the input vectors.
 
 Deprecated or drafts only:
 
-* Pattern mining: [Parallel FP Growth Algorithm](parallel-frequent-pattern-mining.html)
+* Pattern mining: [Parallel FP Growth Algorithm](../stuff/parallel-frequent-pattern-mining.html)
  (Also known as Frequent Itemset mining)
