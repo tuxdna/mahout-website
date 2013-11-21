@@ -52,14 +52,12 @@ Run the clusterdump utility as follows as a standalone Java Program through Ecli
 
     "mahout-utils" and Main Class as "org.apache.mahout.utils.clustering.ClusterDumper"
 
-* In the arguments tab, specify the below arguments
+In the arguments tab, specify the below arguments
+
 
     --seqFileDir <MAHOUT_HOME>/examples/output/clusters-10 
-
     --pointsDir <MAHOUT_HOME>/examples/output/clusteredPoints 
-
     --output <MAHOUT_HOME>/examples/output/clusteranalyze.txt
-
     replace <MAHOUT_HOME> with the actual path of your $MAHOUT_HOME
 
 * Hit run to execute the ClusterDumper using Eclipse. Setting breakpoints etc should just work fine.
