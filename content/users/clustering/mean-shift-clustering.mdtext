@@ -141,7 +141,7 @@ The points are generated as follows:
 In the first image, the points are plotted and the 3-sigma boundaries of
 their generator are superimposed. 
 
-![clustering](../../SampleData.png)
+![clustering](../../images/SampleData.png)
 
 In the second image, the resulting clusters (k=3) are shown superimposed
 upon the sample data. In this image, each cluster renders in a different
@@ -150,11 +150,11 @@ centers determined by the algorithm. Mean Shift does an excellent job of
 clustering this data, though by its design the cluster membership is unique
 and the clusters do not overlap. 
 
-![clustering](../../MeanShift.png)
+![clustering](../../images/MeanShift.png)
 
 The third image shows the results of running Mean Shift on a different data
 set (see [Dirichlet Process Clustering](dirichlet-process-clustering.html)
  for details) which is generated using asymmetrical standard deviations.
 Mean Shift does an excellent job of clustering this data set too.
 
-![clustering](../../2dMeanShift.png)
+![clustering](../../images/2dMeanShift.png)
