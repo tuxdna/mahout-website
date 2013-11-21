@@ -1,4 +1,5 @@
 Title: dirichlet-commandline
+
 <a name="dirichlet-commandline-RunningDirichletProcessClusteringfromtheCommandLine"></a>
 # Running Dirichlet Process Clustering from the Command Line
 Mahout's Dirichlet clustering can be launched from the same command line
@@ -45,47 +46,37 @@ to view all outputs.
 <a name="dirichlet-commandline-Commandlineoptions"></a>
 # Command line options
 
-      --input (-i) input				Path to job input
-directory.    
+      --input (-i) input				Path to job input directory.    
     						Must be a SequenceFile of   
     						VectorWritable		    
       --output (-o) output				The directory pathname for  
     						output. 		    
       --overwrite (-ow)				If present, overwrite the   
-    						output directory before
-running 
+    						output directory before running 
     						job			    
       --modelDistClass (-md) modelDistClass 	The ModelDistribution class 
     						name. Defaults to	    
     						NormalModelDistribution     
-      --modelPrototypeClass (-mp) prototypeClass	The ModelDistribution
-prototype 
-    						Vector class name. Defaults
-to  
+      --modelPrototypeClass (-mp) prototypeClass	The ModelDistribution prototype 
+    						Vector class name. Defaults to  
     						RandomAccessSparseVector    
       --maxIter (-x) maxIter			The maximum number of	    
     						iterations.		    
       --alpha (-m) alpha				The alpha0 value for the    
-    						DirichletDistribution.
-Defaults 
+    						DirichletDistribution. Defaults 
     						to 1.0			    
-      --k (-k) k					The number of clusters to   
-    						create			    
+      --k (-k) k					The number of clusters to        						create			    
       --help (-h)					Print out help		    
       --maxRed (-r) maxRed				The number of reduce tasks. 
     						Defaults to 2		    
       --clustering (-cl)				If present, run clustering  
-    						after the iterations have
-taken 
+    						after the iterations have taken 
     						place			    
-      --emitMostLikely (-e) emitMostLikely		True if clustering should
-emit  
+      --emitMostLikely (-e) emitMostLikely		True if clustering should emit  
     						the most likely point only, 
-    						false for threshold
-clustering. 
+    						false for threshold clustering. 
     						Default is true 	    
       --threshold (-t) threshold			The pdf threshold used for  
-    						cluster determination.
-Default  
+    						cluster determination. Default  
     						is 0			    
 
