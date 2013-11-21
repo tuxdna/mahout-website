@@ -1,11 +1,12 @@
 Title: Mean Shift Clustering
-"Mean Shift: A Robust Approach to Feature Space Analysis"
-(http://www.caip.rutgers.edu/riul/research/papers/pdf/mnshft.pdf)
+
+# Means Shift clustering
+
+["Mean Shift: A Robust Approach to Feature Space Analysis"](http://www.caip.rutgers.edu/riul/research/papers/pdf/mnshft.pdf)
 introduces the geneology of the mean shift custering procedure which dates
 back to work in pattern recognition in 1975. The paper contains a detailed
 derivation and several examples of the use of mean shift for image smooting
-and segmentation. "Mean Shift Clustering"
-(http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/TUZEL1/MeanShift.pdf)
+and segmentation. ["Mean Shift Clustering"](http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/TUZEL1/MeanShift.pdf)
 presents an overview of the algorithm with a summary of the derivation. An
 attractive feature of mean shift clustering is that it does not require
 a-priori knowledge of the number of clusters (as required in k-means) and
@@ -70,8 +71,7 @@ Invocation using the command line takes the form:
     bin/mahout meanshift \
         -i <input vectors directory> \
         -o <output working directory> \
-        -inputIsCanopies <input directory contains mean shift canopies not
-vectors> \
+        -inputIsCanopies <input directory contains mean shift canopies not vectors> \
         -dm <DistanceMeasure> \
         -t1 <the T1 threshold> \
         -t2 <the T2 threshold> \
@@ -141,7 +141,7 @@ The points are generated as follows:
 In the first image, the points are plotted and the 3-sigma boundaries of
 their generator are superimposed. 
 
-!SampleData.png!
+![clustering](../../SampleData.png)
 
 In the second image, the resulting clusters (k=3) are shown superimposed
 upon the sample data. In this image, each cluster renders in a different
@@ -150,11 +150,11 @@ centers determined by the algorithm. Mean Shift does an excellent job of
 clustering this data, though by its design the cluster membership is unique
 and the clusters do not overlap. 
 
-!MeanShift.png!
+![clustering](../../MeanShift.png)
 
 The third image shows the results of running Mean Shift on a different data
 set (see [Dirichlet Process Clustering](dirichlet-process-clustering.html)
  for details) which is generated using asymmetrical standard deviations.
 Mean Shift does an excellent job of clustering this data set too.
 
-!2dMeanShift.png!
+![clustering](../../2dMeanShift.png)
