@@ -1,5 +1,8 @@
 Title: K-Means Clustering
-k-Means is a rather {color:#ff0000}simple{color} but well known algorithm
+
+# k-Means clustering - basics
+
+[k-Means](http://en.wikipedia.org/wiki/Kmeans) is a rather simple but well known algorithm
 for grouping objects, clustering. Again all objects need to be represented
 as a set of numerical features. In addition the user has to specify the
 number of groups (referred to as _k_) he wishes to identify.
@@ -47,12 +50,12 @@ offer you a better understanding.
 ## Strategy for parallelization
 
 Some ideas can be found in [Cluster computing and MapReduce](http://code.google.com/edu/content/submissions/mapreduce-minilecture/listing.html)
- lecture video series \[by Google(r)\]; k-Means clustering is discussed in [lecture #4|http://www.youtube.com/watch?v=1ZDybXl212Q]
-. Slides can be found [here|http://code.google.com/edu/content/submissions/mapreduce-minilecture/lec4-clustering.ppt]
+ lecture video series \[by Google(r)\]; k-Means clustering is discussed in [lecture 4](http://www.youtube.com/watch?v=1ZDybXl212Q9)
+. Slides can be found [here](http://code.google.com/edu/content/submissions/mapreduce-minilecture/lec4-clustering.ppt)
 .
 
 Interestingly, Hadoop based implementation using [Canopy-clustering](http://en.wikipedia.org/wiki/Canopy_clustering_algorithm)
- seems to be here: [http://code.google.com/p/canopy-clustering/]
+ seems to be here: [canopy](http://code.google.com/p/canopy-clustering/)
  (GPL 3 licence)
 
 Here's another useful paper [http://www2.chass.ncsu.edu/garson/PA765/cluster.htm](http://www2.chass.ncsu.edu/garson/PA765/cluster.htm)
@@ -73,6 +76,7 @@ The program iterates over the input points and clusters, outputting a new
 directory "clusters-N" containing SequenceFile(Text, Cluster) files for
 each iteration N. This process uses a mapper/combiner/reducer/driver as
 follows:
+
 * KMeansMapper - reads the input clusters during its setup() method, then
 assigns and outputs each input point to its nearest cluster as defined by
 the user-supplied distance measure. Output key is: cluster identifier.
@@ -94,15 +98,15 @@ using the KMeansClusterMapper clusters all points to an output directory
 "clusteredPoints" and has no combiner or reducer steps.
 
 Canopy clustering can be used to compute the initial clusters for k-KMeans:
-{quote}
-// run the CanopyDriver job
-CanopyDriver.runJob("testdata", "output"
-ManhattanDistanceMeasure.class.getName(), (float) 3.1, (float) 2.1, false);
 
-// now run the KMeansDriver job
-KMeansDriver.runJob("testdata", "output/clusters-0", "output",
-EuclideanDistanceMeasure.class.getName(), "0.001", "10", true);
-{quote}
+    // run the CanopyDriver job
+    CanopyDriver.runJob("testdata", "output"
+    ManhattanDistanceMeasure.class.getName(), (float) 3.1, (float) 2.1, false);
+
+    // now run the KMeansDriver job
+    KMeansDriver.runJob("testdata", "output/clusters-0", "output",
+    EuclideanDistanceMeasure.class.getName(), "0.001", "10", true);
+
 
 In the above example, the input data points are stored in 'testdata' and
 the CanopyDriver is configured to output to the 'output/clusters-0'
@@ -113,11 +117,7 @@ iteration and 'clusteredPoints' will contain the clustered data points.
 
 This diagram shows the examplary dataflow of the k-Means example
 implementation provided by Mahout:
-{gliffy:name=Example implementation of k-Means provided with
-Mahout|space=MAHOUT|page=k-Means|pageid=75159|align=left|size=L|version=7}
-
-This diagram doesn't consider CanopyClustering:
-{gliffy:name=k-Means Example|space=MAHOUT|page=k-Means|align=left|size=L}
+![dataflow](../../images/Example implementation of k-Means provided with Mahout.png)
 
 <a name="K-MeansClustering-Runningk-MeansClustering"></a>
 ## Running k-Means Clustering
@@ -201,17 +201,17 @@ The points are generated as follows:
 In the first image, the points are plotted and the 3-sigma boundaries of
 their generator are superimposed.
 
-!SampleData.png!
+![Sample data graph](../../images/SampleData.png)
 
 In the second image, the resulting clusters (k=3) are shown superimposed upon the sample data. As k-Means is an iterative algorithm, the centers of the clusters in each recent iteration are shown using different colors. Bold red is the final clustering and previous iterations are shown in \[orange, yellow, green, blue, violet and gray\](orange,-yellow,-green,-blue,-violet-and-gray\.html)
 . Although it misses a lot of the points and cannot capture the original,
 superimposed cluster centers, it does a decent job of clustering this data.
 
-!KMeans.png!
+![kmeans](../../images/KMeans.png)
 
 The third image shows the results of running k-Means on a different data
 set (see [Dirichlet Process Clustering](dirichlet-process-clustering.html)
  for details) which is generated using asymmetrical standard deviations.
 K-Means does a fair job handling this data set as well.
 
-!2dKMeans.png!
+![2d kmeans](../../images/2dKMeans.png)
