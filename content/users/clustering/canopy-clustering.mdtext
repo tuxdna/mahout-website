@@ -1,4 +1,5 @@
 Title: Canopy Clustering
+
 <a name="CanopyClustering-CanopyClustering"></a>
 # Canopy Clustering
 
@@ -162,13 +163,13 @@ The points are generated as follows:
 In the first image, the points are plotted and the 3-sigma boundaries of
 their generator are superimposed. 
 
-!SampleData.png!
+![sample data](../../images/SampleData.png)
 
 In the second image, the resulting canopies are shown superimposed upon the
 sample data. Each canopy is represented by two circles, with radius T1 and
 radius T2.
 
-!Canopy.png!
+![canopy](../../images/Canopy.png)
 
 The third image uses the same values of T1 and T2 but only superimposes
 canopies covering more than 10% of the population. This is a bit better
@@ -177,5 +178,5 @@ The advantage of Canopy clustering is that it is single-pass and fast
 enough to iterate runs using different T1, T2 parameters and display
 thresholds.
 
-!Canopy10.png!
+![canopy](../../images/Canopy10.png)
 
