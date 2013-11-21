@@ -1,4 +1,7 @@
 Title: Fuzzy K-Means
+
+# Fuzzy K-Means
+
 Fuzzy K-Means (also called Fuzzy C-Means) is an extension of [K-Means](http://cwiki.apache.org/MAHOUT/k-means.html)
 , the popular simple clustering technique. While K-Means discovers hard
 clusters (a point belong to only one cluster), Fuzzy K-Means is a more
@@ -12,12 +15,11 @@ probability.
 Like K-Means, Fuzzy K-Means works on those objects which can be represented
 in n-dimensional vector space and a distance measure is defined.
 The algorithm is similar to k-means.
+
 * Initialize k clusters
 * Until converged
-** Compute the probability of a point belong to a cluster for every
-<point,cluster> pair
-** Recompute the cluster centers using above probability membership values
-of points to clusters
+    * Compute the probability of a point belong to a cluster for every <point,cluster> pair
+    * Recompute the cluster centers using above probability membership values of points to clusters
 
 <a name="FuzzyK-Means-DesignImplementation"></a>
 #### Design Implementation
@@ -32,7 +34,7 @@ The code has set number of reduce tasks equal to number of map tasks. So,
 those many part-0
   
   
-\* files are created in clusterN directory. The code uses
+Files are created in clusterN directory. The code uses
 driver/mapper/combiner/reducer as follows:
 
 FuzzyKMeansDriver - This is similar to&nbsp; KMeansDriver. It iterates over
@@ -159,20 +161,20 @@ The points are generated as follows:
 In the first image, the points are plotted and the 3-sigma boundaries of
 their generator are superimposed. 
 
-!SampleData.png!
+![fuzzy](../../images/SampleData.png)
 
 In the second image, the resulting clusters (k=3) are shown superimposed upon the sample data. As Fuzzy k-Means is an iterative algorithm, the centers of the clusters in each recent iteration are shown using different colors. Bold red is the final clustering and previous iterations are shown in \[orange, yellow, green, blue, violet and gray\](orange,-yellow,-green,-blue,-violet-and-gray\.html)
 . Although it misses a lot of the points and cannot capture the original,
 superimposed cluster centers, it does a decent job of clustering this data.
 
-!FuzzyKMeans.png!
+![fuzzy](../../FuzzyKMeans.png)
 
 The third image shows the results of running Fuzzy k-Means on a different
 data set (see [Dirichlet Process Clustering](dirichlet-process-clustering.html)
  for details) which is generated using asymmetrical standard deviations.
 Fuzzy k-Means does a fair job handling this data set as well.
 
-!2dFuzzyKMeans.png!
+![fuzzy](../../2dFuzzyKMeans.png)
 
 <a name="FuzzyK-Means-References&nbsp;"></a>
 #### References&nbsp;
