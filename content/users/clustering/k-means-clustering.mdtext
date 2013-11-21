@@ -117,7 +117,8 @@ iteration and 'clusteredPoints' will contain the clustered data points.
 
 This diagram shows the examplary dataflow of the k-Means example
 implementation provided by Mahout:
-![dataflow](../../images/Example implementation of k-Means provided with Mahout.png)
+<img src="../../images/Example implementation of k-Means provided with Mahout.png">
+
 
 <a name="K-MeansClustering-Runningk-MeansClustering"></a>
 ## Running k-Means Clustering
