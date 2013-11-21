@@ -1,6 +1,7 @@
 Title: Using Mahout with Python via JPype
+
 <a name="UsingMahoutwithPythonviaJPype-overview"></a>
-# overview
+# Mahout over Jython - some examples
 This tutorial provides some sample code illustrating how we can read and
 write sequence files containing Mahout vectors from Python using JPype.
 This tutorial is intended for people who want to use Python for analyzing
@@ -60,29 +61,24 @@ vectors from two Gaussian distributions with unit variance.
      """
      
      #matrix of the cluster means
-     cmeans=np.array([[1,1]
-,[-1,-1]],np.int)
+     cmeans=np.array([[1,1] ,[-1,-1]],np.int)
      
      nperc=30  #number of points per cluster
      
      vecs=[]
      
      vnames=[]
-     for cind in range(cmeans.shape[0]
-):
+     for cind in range(cmeans.shape[0]):
       pts=np.random.randn(nperc,2)
-      pts=pts+cmeans[cind,:]
-.reshape([1,cmeans.shape[1]])
+      pts=pts+cmeans[cind,:].reshape([1,cmeans.shape[1]])
       vecs.append(pts)
      
       #names for the vectors
       #names are just the points with an index
-      #we do this so we can validate by cross-refencing the name with the
-vector
+      #we do this so we can validate by cross-refencing the name with thevector
       vn=np.empty(nperc,dtype=(np.str,30))
       for row in range(nperc):
-       vn[row]
-="c"+str(cind)+"_"+pts[row,0].astype((np.str,4))+"_"+pts[row,1].astype((np.str,4))
+       vn[row]="c"+str(cind)+"_"+pts[row,0].astype((np.str,4))+"_"+pts[row,1].astype((np.str,4))
       vnames.append(vn)
       
      vecs=np.vstack(vecs)
@@ -108,15 +104,12 @@ vector
      VectorWritableCls=JPackage("org").apache.mahout.math.VectorWritable
      DenseVectorCls=JPackage("org").apache.mahout.math.DenseVector
      NamedVectorCls=JPackage("org").apache.mahout.math.NamedVector
-     writer=io.SequenceFile.createWriter(fs, conf, path,
-io.Text,VectorWritableCls)
+     writer=io.SequenceFile.createWriter(fs, conf, path,io.Text,VectorWritableCls)
      
      
      vecwritable=VectorWritableCls()
-     for row in range(vecs.shape[0]
-):
-      nvector=NamedVectorCls(DenseVectorCls(JArray(JDouble,1)(vecs[row,:]
-)),vnames[row])
+     for row in range(vecs.shape[0]):
+      nvector=NamedVectorCls(DenseVectorCls(JArray(JDouble,1)(vecs[row,:])),vnames[row])
       #need to wrap key and value because of overloading
       wrapkey=JObject(io.Text("key "+str(row)),io.Writable)
       wrapval=JObject(vecwritable,io.Writable)
@@ -171,13 +164,10 @@ mahout.
       nvec=vecwritable.getVector()
       
       cname=nvec.__class__.__name__
-      if (cname.rsplit('.',1)[1]
-=="NamedVector"):  
-       print "cluster={key} Name={name} x={x}
-y={y}".format(key=key.toString(),name=nvec.getName(),x=nvec.get(0),y=nvec.get(1))
+      if (cname.rsplit('.',1)[1]=="NamedVector"):  
+       print "cluster={key} Name={name} x={x}y={y}".format(key=key.toString(),name=nvec.getName(),x=nvec.get(0),y=nvec.get(1))
       else:
-       raise NotImplementedError("Vector isn't a NamedVector. Need to
-modify/test the code to handle this case.")
+       raise NotImplementedError("Vector isn't a NamedVector. Need tomodify/test the code to handle this case.")
 
 
 <a name="UsingMahoutwithPythonviaJPype-ReadingtheKMeansCentroids"></a>
@@ -222,7 +212,6 @@ found by mahout,
      while (reader.next(key,vecwritable)):	
       center=vecwritable.getCenter()
       
-      print "id={cid}
-center={center}".format(cid=vecwritable.getId(),center=center.values)
+      print "id={cid}center={center}".format(cid=vecwritable.getId(),center=center.values)
       pass
 
