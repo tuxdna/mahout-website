@@ -1,4 +1,7 @@
 Title: Use an Existing Hadoop AMI
+
+# Use an existing Hadoop AMI with Mahout
+
 The following process was developed for launching Hadoop clusters in EC2 in
 order to benchmark Mahout's clustering algorithms using a large document
 set (see Mahout-588). Specifically, we used the ASF mail archives that have
@@ -25,11 +28,12 @@ Projects Testing Program.
 #### Gather Amazon EC2 keys / security credentials
 
 You will need the following:
-AWS Account ID
-Access Key ID
-Secret Access Key
-X.509 certificate and private key (e.g. cert-aws.pem and pk-aws.pem)
-EC2 Key-Pair (ssh public and private keys) for the US-EAST region.
+
+* AWS Account ID
+* Access Key ID
+* Secret Access Key
+* X.509 certificate and private key (e.g. cert-aws.pem and pk-aws.pem)
+* EC2 Key-Pair (ssh public and private keys) for the US-EAST region.
 
 Please make sure the file permissions are "-rw-------" (e.g. chmod 600
 gsg-keypair.pem). You can create a key-pair for the US-East region using
@@ -79,9 +83,7 @@ you work through these steps.
     sudo mkdir -p /mnt/dev/downloads
     sudo chown -R ubuntu:ubuntu /mnt/dev
     cd /mnt/dev/downloads
-    wget
-http://apache.mirrors.hoobly.com//hadoop/core/hadoop-0.20.2/hadoop-0.20.2.tar.gz
-&& cd /mnt/dev && tar zxvf downloads/hadoop-0.20.2.tar.gz
+    wget http://apache.mirrors.hoobly.com//hadoop/core/hadoop-0.20.2/hadoop-0.20.2.tar.gz && cd /mnt/dev && tar zxvf downloads/hadoop-0.20.2.tar.gz
     ln -s hadoop-0.20.2 hadoop 
 
 
@@ -194,8 +196,7 @@ is not the latest version of Mahout.
 
     mkdir -p /mnt/dev/downloads
     cd /mnt/dev/downloads
-    wget http://apache.mesi.com.ar//mahout/0.4/mahout-distribution-0.4.tar.gz
-&& cd /mnt/dev && tar zxvf downloads/mahout-distribution-0.4.tar.gz
+    wget http://apache.mesi.com.ar//mahout/0.4/mahout-distribution-0.4.tar.gz && cd /mnt/dev && tar zxvf downloads/mahout-distribution-0.4.tar.gz
     ln -s mahout-distribution-0.4 mahout
 
 
@@ -203,12 +204,12 @@ is not the latest version of Mahout.
 ##### From Source
 
 
-    Install Subversion: >yum install subversion //Note, you can also use Git,
-so substitute in the appropriate URL
-    > svn co http://svn.apache.org/repos/asf/mahout/trunk mahout/trunk
+    Install Subversion: >yum install subversion //Note, you can also use Git, so substitute in the appropriate URL
+    svn co http://svn.apache.org/repos/asf/mahout/trunk mahout/trunk
+
     Install Maven 3.x and put it in the path
-    > cd mahout/trunk
-    > mvn install //Optionally add -DskipTests
+    cd mahout/trunk
+    mvn install //Optionally add -DskipTests
 
 
 <a name="UseanExistingHadoopAMI-ConfigureHadoop"></a>
@@ -251,8 +252,7 @@ Use Hadoop's distcp command to copy the vectors from S3 to HDFS.
 
 
     hadoop distcp -Dmapred.task.timeout=1800000 \
-    s3n://ACCESS_KEY:SECRET_KEY@asf-mail-archives/mahout-0.4/sparse-1-gram-stem/tfidf-vectors
-\
+    s3n://ACCESS_KEY:SECRET_KEY@asf-mail-archives/mahout-0.4/sparse-1-gram-stem/tfidf-vectors\
     /asf-mail-archives/mahout-0.4/tfidf-vectors
 
 
@@ -269,8 +269,7 @@ data transfer to your EC2 cluster, as it is running in the US-EAST region.
       -o /asf-mail-archives/mahout-0.4/kmeans-clusters/ \
       --numClusters 100 \
       --maxIter 10 \
-      --distanceMeasure org.apache.mahout.common.distance.CosineDistanceMeasure
-\
+      --distanceMeasure org.apache.mahout.common.distance.CosineDistanceMeasure\
       --convergenceDelta 0.01 &
 
   
@@ -282,11 +281,8 @@ You can monitor the job using the JobTracker Web UI through FoxyProxy.
 Once completed, you can view the results using Mahout's cluster dumper
 
 
-    bin/mahout clusterdump --seqFileDir
-/asf-mail-archives/mahout-0.4/kmeans-clusters/clusters-1/ \
+    bin/mahout clusterdump --seqFileDir /asf-mail-archives/mahout-0.4/kmeans-clusters/clusters-1/ \
       --numWords 20 \
-      --dictionary
-s3n://ACCESS_KEY:SECRET_KEY@asf-mail-archives/mahout-0.4/sparse-1-gram-stem/dictionary.file-0
-\
+      --dictionary s3n://ACCESS_KEY:SECRET_KEY@asf-mail-archives/mahout-0.4/sparse-1-gram-stem/dictionary.file-0 \
       --dictionaryType sequencefile --output clusters.txt --substring 100
 
