@@ -1,8 +1,9 @@
 Title: Mahout Benchmarks
+
 <a name="MahoutBenchmarks-Introduction"></a>
 # Introduction
 
-TODO:  YMMV
+Depending on hardware configuration, exact distribution of ratings over users and items YMMV!
 
 <a name="MahoutBenchmarks-Recommenders"></a>
 # Recommenders
@@ -144,9 +145,4 @@ measured in seconds, not milliseconds.
 
 See [MAHOUT-588](https://issues.apache.org/jira/browse/MAHOUT-588)
 
-<a name="MahoutBenchmarks-Classification"></a>
-# Classification
-
-<a name="MahoutBenchmarks-FrequentPatternsetMining"></a>
-# Frequent Patternset Mining
 
