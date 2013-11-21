@@ -1,4 +1,7 @@
 Title: Mahout on Amazon EC2
+
+# Mahout on EC2
+
 Amazon EC2 is a compute-on-demand platform sold by Amazon.com that allows
 users to purchase one or more host machines on an hourly basis and execute
 applications.  Since Hadoop can run on EC2, it is also possible to run
@@ -34,15 +37,14 @@ DNS name>
 
 1. In the root home directory evaluate:
 
-    # apt-get update
-    # apt-get upgrade  // This is optional, but probably advisable since the
-AMI is over a year old.
-    # apt-get install python-setuptools
-    # easy_install "simplejson==2.0.9"
-    # easy_install "boto==1.8d"
-    # apt-get install ant
-    # apt-get install subversion
-    # apt-get install maven2
+    apt-get update
+    apt-get upgrade  // This is optional, but probably advisable since the AMI is over a year old.
+    apt-get install python-setuptools
+    easy_install "simplejson==2.0.9"
+    easy_install "boto==1.8d"
+    apt-get install ant
+    apt-get install subversion
+    apt-get install maven2
 
 1. Add the following to your .profile
 
@@ -59,16 +61,16 @@ available on the Hadoop site. You can download a beta version from [Cloudera's C
     > scp -i <gsg-keypair.pem>  <where>/hadoop-0.20.2.tar.gz root@<instance
 public DNS name>:.
     
-    # tar -xzf hadoop-0.20.2.tar.gz
-    # mv hadoop-0.20.2 /usr/local/.
+    tar -xzf hadoop-0.20.2.tar.gz
+    mv hadoop-0.20.2 /usr/local/.
 
 1. Configure Hadoop for temporary single node operation
-1. # add the following to $HADOOP_HOME/conf/hadoop-env.sh
+1. add the following to $HADOOP_HOME/conf/hadoop-env.sh
 
-    # The java implementation to use.  Required.
+    // The java implementation to use.  Required.
     export JAVA_HOME=/usr/lib/jvm/java-6-sun
     
-    # The maximum amount of heap to use, in MB. Default is 1000.
+    // The maximum amount of heap to use, in MB. Default is 1000.
     export HADOOP_HEAPSIZE=2000
 
 1. # add the following to $HADOOP_HOME/conf/core-site.xml and also
@@ -93,35 +95,34 @@ $HADOOP_HOME/conf/mapred-site.xml
       </property>
     </configuration>
 
-1. # set up authorized keys for localhost login w/o passwords and format your
+1. set up authorized keys for localhost login w/o passwords and format your
 name node
 
-    # ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
-    # cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
-    # $HADOOP_HOME/bin/hadoop namenode -format
+    ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
+    cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
+    $HADOOP_HOME/bin/hadoop namenode -format
 
 1. Checkout and build Mahout from trunk. Alternatively, you can upload a
 Mahout release tarball and install it as we did with the Hadoop tarball
 (Don't forget to update your .profile accordingly).
 
-    # svn co http://svn.apache.org/repos/asf/mahout/trunk mahout 
-    # cd mahout
-    # mvn clean install
-    # cd ..
-    # mv mahout /usr/local/mahout-0.4
+    svn co http://svn.apache.org/repos/asf/mahout/trunk mahout 
+    cd mahout
+    mvn clean install
+    cd ..
+    mv mahout /usr/local/mahout-0.4
 
 1. Run Hadoop, just to prove you can, and test Mahout by building the
 Reuters dataset on it. Finally, delete the files and shut it down.
 
-    # $HADOOP_HOME/bin/hadoop namenode -format
-    # $HADOOP_HOME/bin/start-all.sh
-    # jps	  // you should see all 5 Hadoop processes (NameNode,
-SecondaryNameNode, DataNode, JobTracker, TaskTracker)
-    # cd $MAHOUT_HOME
-    # ./examples/bin/build-reuters.sh
+    $HADOOP_HOME/bin/hadoop namenode -format
+    $HADOOP_HOME/bin/start-all.sh
+    jps	  // you should see all 5 Hadoop processes (NameNode, SecondaryNameNode, DataNode, JobTracker, TaskTracker)
+    cd $MAHOUT_HOME
+    ./examples/bin/build-reuters.sh
     
-    # $HADOOP_HOME/bin/stop-all.sh
-    # rm -rf /tmp/* 		  // delete the Hadoop files
+    $HADOOP_HOME/bin/stop-all.sh
+    rm -rf /tmp/* 		  // delete the Hadoop files
 
 1. Remove the single-host stuff you added to $HADOOP_HOME/conf/core-site.xml
 and $HADOOP_HOME/conf/mapred-site.xml in step #6b and verify you are happy
@@ -145,17 +146,14 @@ instance (you don't want to leave these around in the AMI).
     > scp -i <gsg-keypair.pem> <your AWS cert directory>/*.pem root@<instance
 public DNS name>:/mnt/.
     
-    # Note that ec2-bundle-vol may fail if EC2_HOME is set.  So you may want to
+Note that ec2-bundle-vol may fail if EC2_HOME is set.  So you may want to
 temporarily unset EC2_HOME before running the bundle command.  However the
 shell will need to have the correct value of EC2_HOME set before running
 the ec2-register step.
     
-    # ec2-bundle-vol -k /mnt/pk*.pem -c /mnt/cert*.pem -u <your-AWS-user_id> -d
-/mnt -p mahout
-    # ec2-upload-bundle -b <your-s3-bucket> -m /mnt/mahout.manifest.xml -a
-<your-AWS-access_key> -s <your-AWS-secret_key> 
-    # ec2-register -K /mnt/pk-*.pem -C /mnt/cert-*.pem
-<your-s3-bucket>/mahout.manifest.xml
+    ec2-bundle-vol -k /mnt/pk*.pem -c /mnt/cert*.pem -u <your-AWS-user_id> -d /mnt -p mahout
+    ec2-upload-bundle -b <your-s3-bucket> -m /mnt/mahout.manifest.xml -a <your-AWS-access_key> -s <your-AWS-secret_key> 
+    ec2-register -K /mnt/pk-*.pem -C /mnt/cert-*.pem <your-s3-bucket>/mahout.manifest.xml
 
 <a name="MahoutonAmazonEC2-GettingStarted"></a>
 # Getting Started
@@ -166,15 +164,14 @@ connect to it and test it by re-running the test code.	If you removed the
 single host configuration added in step 6(b) above, you will need to re-add
 it before you can run this test.  To test run (again):
 
-    # $HADOOP_HOME/bin/hadoop namenode -format
-    # $HADOOP_HOME/bin/start-all.sh
-    # jps	  // you should see all 5 Hadoop processes (NameNode,
-SecondaryNameNode, DataNode, JobTracker, TaskTracker)
-    # cd $MAHOUT_HOME
-    # ./examples/bin/build-reuters.sh
+    $HADOOP_HOME/bin/hadoop namenode -format
+    $HADOOP_HOME/bin/start-all.sh
+    jps	  // you should see all 5 Hadoop processes (NameNode, SecondaryNameNode, DataNode, JobTracker, TaskTracker)
+    cd $MAHOUT_HOME
+    ./examples/bin/build-reuters.sh
     
-    # $HADOOP_HOME/bin/stop-all.sh
-    # rm -rf /tmp/* 		  // delete the Hadoop files
+    $HADOOP_HOME/bin/stop-all.sh
+    rm -rf /tmp/* 		  // delete the Hadoop files
 
 
 1. Now that you have a working Mahout-ready AMI, follow [Hadoop's instructions](http://wiki.apache.org/hadoop/AmazonEC2)
@@ -187,26 +184,25 @@ SecondaryNameNode, DataNode, JobTracker, TaskTracker)
     S3_BUCKET
     (and perhaps others depending upon your environment)
 
-1. # edit bin/launch-hadoop-master and bin/launch-hadoop-slaves, setting:
+1. edit bin/launch-hadoop-master and bin/launch-hadoop-slaves, setting:
 
     AMI_IMAGE
 
-1. # finally, launch your cluster and log in
+1. finally, launch your cluster and log in
 
-    > bin/hadoop-ec2 launch-cluster test-cluster 2
-    > bin/hadoop-ec2 login test-cluster
-    # ...  
-    # exit
-    > bin/hadoop-ec2 terminate-cluster test-cluster     // when you are done
-with it
+    bin/hadoop-ec2 launch-cluster test-cluster 2
+    bin/hadoop-ec2 login test-cluster
+    ...  
+    exit
+    bin/hadoop-ec2 terminate-cluster test-cluster     // when you are done with it
 
 
 <a name="MahoutonAmazonEC2-RunningtheExamples"></a>
-# Running the Examples
+## Running the Examples
 1. Submit the Reuters test job
 
-    # cd $MAHOUT_HOME
-    # ./examples/bin/build-reuters.sh
+    cd $MAHOUT_HOME
+    ./examples/bin/build-reuters.sh
     // the warnings about configuration files do not seem to matter
 
 1. See the Mahout [Quickstart](quickstart.html)
