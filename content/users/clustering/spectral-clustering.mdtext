@@ -1,4 +1,7 @@
 Title: Spectral Clustering
+
+# Spectral Clustering
+
 Spectral clustering, a more powerful and specialized algorithm (compared to
 K-means), derives its name from spectral analysis of a graph, which is how
 the data are represented. Each object to be clustered can initially be
