@@ -1,16 +1,19 @@
 Title: Mahout on Elastic MapReduce
+
+# Mahout on EMR (Elastic MapReduce)
+
 <a name="MahoutonElasticMapReduce-Introduction"></a>
-# Introduction
+## Introduction
 
 This page details the set of steps that was necessary to get an example of
 k-Means clustering running on Amazon's [Elastic MapReduce](http://aws.amazon.com/elasticmapreduce/)
- (EMR). 
+(EMR). 
 
 Note: Some of this work is due in part to credits donated by Amazon Web
 Services Apache Projects Testing Program.
 
 <a name="MahoutonElasticMapReduce-GettingStarted"></a>
-# Getting Started
+## Getting Started
 
    * Get yourself an EMR account.  If you're already using EC2, then you
 can do this from [Amazon's AWS Managment Console](https://console.aws.amazon.com/)
@@ -49,8 +52,8 @@ it easily from the [Quickstart](quickstart.html)
  page), and the output of the clustering.  
 
 You will need to upload:
-1. The Mahout Job jar.  For the example here, we are using
-*mahout-core-0.4-SNAPSHOT.job*
+
+1. The Mahout Job jar.  For the example here, we are using *mahout-core-0.4-SNAPSHOT.job*
 1. The data.  In this example, we uploaded two files: dictionary.txt and
 part-out.vec.  The latter is the main vector file and the former is the
 dictionary that maps words to columns.	It was created by converting a
@@ -86,11 +89,11 @@ line.  The arguments for the k-means job that were as follows:
 
 
     org.apache.mahout.clustering.kmeans.KMeansDriver --input
-s3n://news-vecs/part-out.vec --clusters
-s3n://news-vecs/kmeans/clusters-9-11/ -k 10 --output
-s3n://news-vecs/out-9-11/ --distanceMeasure
-org.apache.mahout.common.distance.CosineDistanceMeasure --convergenceDelta
-0.001 --overwrite --maxIter 50 --clustering
+        s3n://news-vecs/part-out.vec --clusters
+        s3n://news-vecs/kmeans/clusters-9-11/ -k 10 --output
+        s3n://news-vecs/out-9-11/ --distanceMeasure
+        org.apache.mahout.common.distance.CosineDistanceMeasure --convergenceDelta
+        0.001 --overwrite --maxIter 50 --clustering
 
 
 TODO: Screenshot
@@ -136,9 +139,9 @@ Let's list our job flows:
 
 
     [stgreen@dhcp-ubur02-74-153 14:16:15 emr]
-$ ./elastic-mapreduce --list
-    j-3JB4UF7CQQ025     WAITING	  
-ec2-174-129-90-97.compute-1.amazonaws.com    kmeans
+        $ ./elastic-mapreduce --list
+            j-3JB4UF7CQQ025     WAITING	  
+        ec2-174-129-90-97.compute-1.amazonaws.com    kmeans
 
 
 At this point, everything's started up, and it's waiting for us to add a
@@ -154,14 +157,14 @@ Let's add a step to run a job:
 
 
      elastic-mapreduce -j j-3JB4UF7CQQ025  --jar
-s3n://PATH/mahout-core-0.4-SNAPSHOT-job.jar  --main-class
-org.apache.mahout.clustering.kmeans.KMeansDriver --arg --input --arg
-s3n://PATH/part-out.vec --arg --clusters --arg s3n://PATH/kmeans/clusters/
---arg -k --arg 10 --arg --output --arg s3n://PATH/out-9-11/ --arg
---distanceMeasure --arg 
-org.apache.mahout.common.distance.CosineDistanceMeasure --arg
---convergenceDelta --arg 0.001 --arg --overwrite --arg --maxIter --arg 50
---arg --clustering
+        s3n://PATH/mahout-core-0.4-SNAPSHOT-job.jar  --main-class
+        org.apache.mahout.clustering.kmeans.KMeansDriver --arg --input --arg
+        s3n://PATH/part-out.vec --arg --clusters --arg s3n://PATH/kmeans/clusters/
+        --arg -k --arg 10 --arg --output --arg s3n://PATH/out-9-11/ --arg
+        --distanceMeasure --arg 
+        org.apache.mahout.common.distance.CosineDistanceMeasure --arg
+        --convergenceDelta --arg 0.001 --arg --overwrite --arg --maxIter --arg 50
+        --arg --clustering
 
 
 When you do this, the job flow goes into the *RUNNING* state for a while
@@ -353,8 +356,7 @@ Schedule a jobflow step to vectorize (1-grams only) using Mahout's
 seq2sparse job:
 
 
-    elastic-mapreduce --jar
-s3://asf-mail-archives/mahout-0.4/mahout-examples-0.4-job-ext.jar \
+    elastic-mapreduce --jar s3://asf-mail-archives/mahout-0.4/mahout-examples-0.4-job-ext.jar \
       --main-class org.apache.mahout.driver.MahoutDriver \
       --arg seq2sparse \
       --arg -i --arg s3n://asf-mail-archives/mahout-0.4/sequence-files/ \
@@ -364,8 +366,7 @@ s3://asf-mail-archives/mahout-0.4/mahout-examples-0.4-job-ext.jar \
       --arg --maxDFPercent --arg 70 \
       --arg --norm --arg 2 \
       --arg --numReducers --arg # \
-      --arg --analyzerName --arg
-org.apache.mahout.text.MailArchivesClusteringAnalyzer \
+      --arg --analyzerName --arg org.apache.mahout.text.MailArchivesClusteringAnalyzer \
       --arg --maxNGramSize --arg 1 \
       -j JOB_ID
 
@@ -418,8 +419,7 @@ To login to the master node, use:
 Once logged in, do:
 
 
-    hadoop distcp /asf-mail-archives/mahout-0.4/vectors/
-s3n://ACCESS_KEY:SECRET_KEY@BUCKET/asf-mail-archives/mahout-0.4/vectors/ &
+    hadoop distcp /asf-mail-archives/mahout-0.4/vectors/ s3n://ACCESS_KEY:SECRET_KEY@BUCKET/asf-mail-archives/mahout-0.4/vectors/ &
 
 
 Or, you can just add another job flow step to do it:
@@ -427,8 +427,7 @@ Or, you can just add another job flow step to do it:
 
     elastic-mapreduce --jar s3://elasticmapreduce/samples/distcp/distcp.jar \
       --arg hdfs:///asf-mail-archives/mahout-0.4/vectors/ \
-      --arg
-s3n://ACCESS_KEY:SECRET_KEY@BUCKET/asf-mail-archives/mahout-0.4/vectors/ \
+      --arg s3n://ACCESS_KEY:SECRET_KEY@BUCKET/asf-mail-archives/mahout-0.4/vectors/ \
       -j JOB_ID
 
 
@@ -439,16 +438,13 @@ Once copied, if you would like to share your results with the Mahout
 community, make the vectors public in S3 using the Amazon console or s3cmd:
 
 
-    s3cmd setacl --acl-public --recursive
-s3://BUCKET/asf-mail-archives/mahout-0.4/vectors/
+    s3cmd setacl --acl-public --recursive s3://BUCKET/asf-mail-archives/mahout-0.4/vectors/
 
 
 Dump out the size of the vectors:
 
 
-    bin/mahout vectordump --seqFile
-s3n://ACCESS_KEY:SECRET_KEY@BUCKET/asf-mail-archives/mahout-0.4/vectors/tfidf-vectors/part-r-00000
---sizeOnly | more
+    bin/mahout vectordump --seqFile s3n://ACCESS_KEY:SECRET_KEY@BUCKET/asf-mail-archives/mahout-0.4/vectors/tfidf-vectors/part-r-00000 --sizeOnly | more
 
 
 <a name="MahoutonElasticMapReduce-7.k-MeansClustering"></a>
@@ -459,8 +455,7 @@ command will create a new jobflow step to run the k-Means job using the
 TFIDF vectors produced by seq2sparse:
 
 
-    elastic-mapreduce --jar
-s3://asf-mail-archives/mahout-0.4/mahout-examples-0.4-job-ext.jar \
+    elastic-mapreduce --jar s3://asf-mail-archives/mahout-0.4/mahout-examples-0.4-job-ext.jar \
       --main-class org.apache.mahout.driver.MahoutDriver \
       --arg kmeans \
       --arg -i --arg /asf-mail-archives/mahout-0.4/vectors/tfidf-vectors/ \
@@ -469,8 +464,7 @@ s3://asf-mail-archives/mahout-0.4/mahout-examples-0.4-job-ext.jar \
       --arg -x --arg 10 \
       --arg -cd --arg 0.01 \
       --arg -k --arg 60 \
-      --arg --distanceMeasure --arg
-org.apache.mahout.common.distance.CosineDistanceMeasure \
+      --arg --distanceMeasure --arg org.apache.mahout.common.distance.CosineDistanceMeasure \
       -j JOB_ID
 
 
