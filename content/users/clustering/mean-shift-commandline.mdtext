@@ -1,4 +1,5 @@
 Title: mean-shift-commandline
+
 <a name="mean-shift-commandline-RunningMeanShiftCanopyClusteringfromtheCommandLine"></a>
 # Running Mean Shift Canopy Clustering from the Command Line
 Mahout's Mean Shift clustering can be launched from the same command line
@@ -50,8 +51,7 @@ to view all outputs.
     					       VectorWritable		    
       --output (-o) output			       The directory pathname for   
     					       output.			    
-      --overwrite (-ow)			       If present, overwrite the
-output 
+      --overwrite (-ow)			       If present, overwrite the output 
     					       directory before running job 
       --distanceMeasure (-dm) distanceMeasure      The classname of the	    
     					       DistanceMeasure. Default is  
@@ -61,14 +61,11 @@ output
     					       Default is 0.5		    
       --t1 (-t1) t1 			       T1 threshold value	    
       --t2 (-t2) t2 			       T2 threshold value	    
-      --clustering (-cl)			       If present, run clustering
-after 
-    					       the iterations have taken
-place  
+      --clustering (-cl)			       If present, run clustering after 
+    					       the iterations have taken place  
       --maxIter (-x) maxIter		       The maximum number of	    
     					       iterations.		    
-      --inputIsCanopies (-ic) inputIsCanopies      If present, the input
-directory  
+      --inputIsCanopies (-ic) inputIsCanopies      If present, the input directory  
     					       already contains 	    
     					       MeanShiftCanopies	    
 
