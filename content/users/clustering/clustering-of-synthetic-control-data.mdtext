@@ -1,4 +1,7 @@
 Title: Clustering of synthetic control data
+
+# Example: Synthetic control data
+
 * [Introduction](#Clusteringofsyntheticcontroldata-Introduction)
 * [Problem description](#Clusteringofsyntheticcontroldata-Problemdescription)
 * [Pre-Prep](#Clusteringofsyntheticcontroldata-Pre-Prep)
@@ -13,7 +16,7 @@ time series. [Control charts ](http://en.wikipedia.org/wiki/Control_chart)
  are tools used to determine whether or not a manufacturing or business
 process is in a state of statistical control. Such control charts are
 generated / simulated over equal time interval and available for use in UCI
-machine learning database. The data is described [here |http://archive.ics.uci.edu/ml/databases/synthetic_control/synthetic_control.data.html]
+machine learning database. The data is described [here](http://archive.ics.uci.edu/ml/databases/synthetic_control/synthetic_control.data.html)
 .
 
 <a name="Clusteringofsyntheticcontroldata-Problemdescription"></a>
@@ -48,6 +51,7 @@ Normal data. Rows from 101 - 200 contains cyclic data and so on.. More info [her
 <tr><td> 24.2104 </td><td> 41.7679 </td><td> 45.2228 </td><td> 43.7762 </td><td> .. </td><td> 48.8175 </td></tr>
 ..
 ..
+
 1. Setup Hadoop
 1. # Assuming that you have installed the latest compatible Hadooop, start
 the daemons using {code}$HADOOP_HOME/bin/start-all.sh {code} If you have
@@ -58,6 +62,7 @@ issues starting Hadoop, please reference the [Hadoop quick start guide](http://h
     $HADOOP_HOME/bin/hadoop fs -put <PATH TO synthetic_control.data> testdata
 
 (HDFS input directory name should be testdata)
+
 1. Mahout Example job
 Mahout's mahout-examples-$MAHOUT_VERSION.job does the actual clustering
 task and so it needs to be created. This can be done as
@@ -78,41 +83,36 @@ Mahout.
 # Perform Clustering
 
 With all the pre-work done, clustering the control data gets real simple.
+
 1. Depending on which clustering technique to use, you can invoke the
 corresponding job as below
-1. # For [canopy ](canopy-clustering.html)
-:
+1. For [canopy ](canopy-clustering.html)
+1. For [kmeans](K-Means Clustering)
+1. For [fuzzykmeans ](fuzzy-k-means.html)
+1. For [dirichlet](Dirichlet Process Clustering)
+1. For [meanshift](mean-shift-clustering.html) respectively:
 
-    ## For [kmeans |K-Means Clustering]
-:
+    $MAHOUT_HOME/bin/mahout org.apache.mahout.clustering.syntheticcontrol.${clustering.type}.Job
 
-1. # For [fuzzykmeans ](fuzzy-k-means.html)
-:
-
-    ## For [dirichlet |Dirichlet Process Clustering]
-:
-
-1. # For [meanshift ](mean-shift-clustering.html)
-: {code}  $MAHOUT_HOME/bin/mahout
-org.apache.mahout.clustering.syntheticcontrol.meanshift.Job {code}
-1. Get the data out of HDFS{footnote}See [HDFS Shell ](-http://hadoop.apache.org/core/docs/current/hdfs_shell.html.html)
-{footnote}{footnote}The output directory is cleared when a new run starts
+1. Get the data out of HDFS (see [HDFS Shell](http://hadoop.apache.org/core/docs/current/hdfs_shell.html.html)
+The output directory is cleared when a new run starts
 so the results must be retrieved before a new run{footnote} and have a
-look{footnote}All jobs run ClusterDump after clustering with output data
-sent to the console{footnote} by following the below steps:
+look. All jobs run ClusterDump after clustering with output data
+sent to the console by following the below steps.
 
 <a name="Clusteringofsyntheticcontroldata-Read/AnalyzeOutput"></a>
 # Read / Analyze Output
+
 In order to read/analyze the output, you can use [clusterdump](cluster-dumper.html)
  utility provided by Mahout. If you want to just read the output, follow
 the below steps. 
-1. Use {code}$HADOOP_HOME/bin/hadoop fs -lsr output {code}to view all
+
+1. Use `$HADOOP_HOME/bin/hadoop fs -lsr output` to view all
 outputs.
-1. Use {code}$HADOOP_HOME/bin/hadoop fs -get output $MAHOUT_HOME/examples
-{code} to copy them all to your local machine and the output data points
+1. Use `$HADOOP_HOME/bin/hadoop fs -get output $MAHOUT_HOME/examples` to copy them all to your local machine and the output data points
 are in vector format. This creates an output folder inside examples
 directory.
 1. Computed clusters are contained in _output/clusters-i_
 1. All result clustered points are placed into _output/clusteredPoints_
 
-{display-footnotes}
+
