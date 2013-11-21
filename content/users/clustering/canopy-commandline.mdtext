@@ -1,4 +1,5 @@
 Title: canopy-commandline
+
 <a name="canopy-commandline-RunningCanopyClusteringfromtheCommandLine"></a>
 # Running Canopy Clustering from the Command Line
 Mahout's Canopy clustering can be launched from the same command line
@@ -47,23 +48,18 @@ to view all outputs.
 <a name="canopy-commandline-Commandlineoptions"></a>
 # Command line options
 
-      --input (-i) input			     Path to job input directory.
-Must  
+      --input (-i) input			     Path to job input directory.Must  
     					     be a SequenceFile of	    
     					     VectorWritable		    
-      --output (-o) output			     The directory pathname for
-output. 
-      --overwrite (-ow)			     If present, overwrite the
-output	 
+      --output (-o) output			     The directory pathname for output. 
+      --overwrite (-ow)			     If present, overwrite the output	 
     					     directory before running job   
       --distanceMeasure (-dm) distanceMeasure    The classname of the	    
     					     DistanceMeasure. Default is    
     					     SquaredEuclidean		    
       --t1 (-t1) t1 			     T1 threshold value 	    
       --t2 (-t2) t2 			     T2 threshold value 	    
-      --clustering (-cl)			     If present, run clustering
-after	
-    					     the iterations have taken
-place	 
+      --clustering (-cl)			     If present, run clustering after	
+    					     the iterations have taken place	 
       --help (-h)				     Print out help		    
 
