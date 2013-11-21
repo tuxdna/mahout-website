@@ -35,28 +35,27 @@ clustering using Mahout.
 # Pre-Prep
 
 Make sure you have the following covered before you work out the example.
-1. Input data set. Download it [here ](http://archive.ics.uci.edu/ml/databases/synthetic_control/synthetic_control.data)
-.
-1. # Sample input data:
+
+1. Input data set. Download it [here ](http://archive.ics.uci.edu/ml/databases/synthetic_control/synthetic_control.data).
+1. Sample input data:
 Input consists of 600 rows and 60 columns. The rows from  1 - 100 contains
-Normal data. Rows from 101 - 200 contains cyclic data and so on.. More info [here ](http://archive.ics.uci.edu/ml/databases/synthetic_control/synthetic_control.data.html)
-. Sample of how the data looks is like below.
+Normal data. Rows from 101 - 200 contains cyclic data and so on.. More info [here ](http://archive.ics.uci.edu/ml/databases/synthetic_control/synthetic_control.data.html). Sample of how the data looks is like below.
+
 <table>
 <tr><th> \_time </th><th> \_time+x </th><th> \_time+2x </th><th> .. </th><th> \_time+60x </th></tr>
 <tr><td> 28.7812 </td><td> 34.4632 </td><td> 31.3381 </td><td> .. </td><td> 31.2834 </td></tr>
 <tr><td> 24.8923 </td><td> 25.741 </td><td> 27.5532 </td><td> .. </td><td> 32.8217 </td></tr>
-..
-..
 <tr><td> 35.5351 </td><td> 41.7067 </td><td> 39.1705 </td><td> 48.3964 </td><td> .. </td><td> 38.6103 </td></tr>
 <tr><td> 24.2104 </td><td> 41.7679 </td><td> 45.2228 </td><td> 43.7762 </td><td> .. </td><td> 48.8175 </td></tr>
+</table>
 ..
 ..
 
 1. Setup Hadoop
-1. # Assuming that you have installed the latest compatible Hadooop, start
+1. Assuming that you have installed the latest compatible Hadooop, start
 the daemons using {code}$HADOOP_HOME/bin/start-all.sh {code} If you have
 issues starting Hadoop, please reference the [Hadoop quick start guide](http://hadoop.apache.org/common/docs/r0.20.2/quickstart.html)
-1. # Copy the input to HDFS using 
+1. Copy the input to HDFS using 
 
     $HADOOP_HOME/bin/hadoop fs -mkdir testdata
     $HADOOP_HOME/bin/hadoop fs -put <PATH TO synthetic_control.data> testdata
@@ -66,8 +65,8 @@ issues starting Hadoop, please reference the [Hadoop quick start guide](http://h
 1. Mahout Example job
 Mahout's mahout-examples-$MAHOUT_VERSION.job does the actual clustering
 task and so it needs to be created. This can be done as
-1. # cd $MAHOUT_HOME
-1. # 
+1. cd $MAHOUT_HOME
+1.  
 
     mvn clean install		   // full build including all unit tests
     mvn clean install -DskipTests=true // fast build without running unit tests
