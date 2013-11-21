@@ -1,11 +1,13 @@
 Title: Recommender First-Timer FAQ
+
+# Recommender First Timer Dos and Don'ts
+
 Many people with an interest in recommenders arrive at Mahout since they're
 building a first recommender system. Some starting questions have been
 asked enough times to warrant a FAQ collecting advice and rules-of-thumb to
 newcomers.
 
-For the interested, these topics are treated in detail in the book [Mahout in Action](http://manning.com/owen/)
-.
+For the interested, these topics are treated in detail in the book [Mahout in Action](http://manning.com/owen/).
 
 Don't start with a distributed, Hadoop-based recommender; take on that
 complexity only if necessary. Start with non-distributed recommenders. It
