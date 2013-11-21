@@ -1,6 +1,7 @@
 Title: Dirichlet Process Clustering
+
 <a name="DirichletProcessClustering-Overview"></a>
-# Overview
+# Overview Dirichlet process clustering
 
 The Dirichlet Process Clustering algorithm performs Bayesian mixture
 modeling.
@@ -99,10 +100,8 @@ Invocation using the command line takes the form:
         -a0 <the alpha_0 parameter to the Dirichlet Distribution>
         -x <maximum number of iterations> \
         -k <number of models to create from prior> \
-        -md <the ModelDistribution class name. Default NormalModelDistribution>
-\
-        -mp <the ModelPrototype class name. Default
-SequentialAccessSparseVector> \
+        -md <the ModelDistribution class name. Default NormalModelDistribution> \
+        -mp <the ModelPrototype class name. Default SequentialAccessSparseVector> \
         -dm <optional DistanceMeasure class name for some ModelDistribution>
         -ow <overwrite output directory if present>
         -cl <run input vector clustering after computing Clusters>
@@ -171,9 +170,9 @@ The points are generated as follows:
 In the first image, the points are plotted and the 3-sigma boundaries of
 their generator are superimposed. It is, of course, impossible to tell
 which model actually generated each point as there is some probability -
-perhaps small - that any of the models could have generated every point.
+perhaps small - that any of the models could have generated every point
 
-!SampleData.png!
+![dirichlet](../../images/SampleData.png)
 
 In the next image, the Dirichlet Process Clusterer is run against the sample points using a NormalModelDistribution with m=\[0.0, 0.0\](0.0,-0.0\.html)
  sd=1.0. This distribution represents the least amount of prior
@@ -190,7 +189,7 @@ As Dirichlet clustering is an iterative process, the following illustrations inc
 . These illustrate the cluster convergence process over the last several
 iterations and can be helpful in tuning the algorithm.
 
-!DirichletN.png!
+![dirichlet](../../images/DirichletN.png)
 
 The next image improves upon this situation by using a
 SampledNormalDistribution. In this distribution, the prior models have
@@ -201,14 +200,14 @@ different pdf for each point and the iteration assigns points to the
 more-likely models given this value. The result is a decent capture of the
 sample data parameters but there is still some over-fitting.
 
-!DirichletSN.png!
+![dirichlet](../../images/DirichletSN.png)
 
 The above image was run through 20 iterations and the cluster assignments
 are clearly moving indicating the clustering is not yet converged. The next
 image runs the same model for 40 iterations, producing an accurate model of
 the input data.
 
-!DirichletSN40.png!
+![dirichlet](../../images/DirichletSN40.png)
 
 The next image uses an AsymmetricSampledNormalDistribution in which the
 model's standard deviation is also represented as a 2-d vector. This causes
@@ -218,7 +217,7 @@ the actual sample data quite well. Had we suspected the sample points were
 generated in a similar manner then this distribution would have been the
 most logical model.
 
-!DirichletASN.png!
+![dirichlet](../../images/DirichletASN.png)
 
 In order to explore an asymmetrical sample data distribution, the following
 image shows a number of points generated according to the following
@@ -231,14 +230,14 @@ parameters. Again, the generator's 3-sigma ellipses are superimposed:
 * 300 samples m=\[0.0, 2.0\](0.0,-2.0\.html)
  sd=\[0.1, 0.5\]
 
-!AsymmetricSampleData.png!
+![dirichlet](../../images/AsymmetricSampleData.png)
 
 The following image shows the results of applying the symmetrical
 SampledNormalDistribution to the asymmetrically-generated sample data. It
 does a valiant effort but does not capture a very good set of models
 because the circular model assumption does not fit the data.
 
-!2dDirichletSN.png!
+![dirichlet](../../images/2dDirichletSN.png)
 
 Finally, the AsymmetricSampledNormalDistribution is run against the
 asymmetrical sample data. Though there is some over-fitting, it does a
@@ -248,8 +247,8 @@ slightly different results. Compare the first run of numClusters=20 models
 for 20 iterations with another run of numClusters=40 models for 40
 iterations.
 
-!2dDirichletASN.png!
-!2dDirichletASN4040.png!
+![dirichlet](../../images/2dDirichletASN.png)
+![dirichlet](../../images/2dDirichletASN4040.png)
 
 <a name="DirichletProcessClustering-References"></a>
 # References
