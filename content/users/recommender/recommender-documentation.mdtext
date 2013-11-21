@@ -1,4 +1,5 @@
 Title: Recommender Documentation
+
 <a name="RecommenderDocumentation-Overview"></a>
 ## Overview
 
@@ -27,6 +28,7 @@ server which exposes recommendation logic to your application via web
 services and HTTP.
 
 Top-level packages define the Mahout interfaces to these key abstractions:
+
 * DataModel
 * UserSimilarity
 * ItemSimilarity
@@ -43,7 +45,7 @@ currently support *model-based* recommenders.
 <a name="RecommenderDocumentation-Architecture"></a>
 ## Architecture
 
-!https://cwiki.apache.org/confluence/download/attachments/22872433/taste-architecture.png!
+![doc](../../images/taste-architecture.png)
 
 This diagram shows the relationship between various Mahout components in a
 user-based recommender. An item-based recommender system is similar except
@@ -104,6 +106,7 @@ operate.
 
 <a name="RecommenderDocumentation-Optional"></a>
 ### Optional
+
 * [Apache Maven](http://maven.apache.org)
   2.2.1 or later, if you want to build from source or build examples. (Mac
 users note that even OS X 10.5 ships with Maven 2.0.6, which will not
@@ -189,9 +192,9 @@ List<RecommendedItem> recommendations =
 	  cachingRecommender.recommend(1234, 10);
 
     
-    h3.Item-based Recommender
+## Item-based Recommender
     
-    We could have created an item-based recommender instead. Item-based
+We could have created an item-based recommender instead. Item-based
 recommender base recommendation not on user similarity, but on item
 similarity. In theory these are about the same approach to the problem,
 just from different angles. However the similarity of two items is
@@ -200,48 +203,49 @@ recommenders can use pre-computed similarity values in the computations,
 which make them much faster. For large data sets, item-based recommenders
 are more appropriate.
     
-    Let's start over, again with a FileDataModel to start:
+Let's start over, again with a FileDataModel to start:
     
 
-DataModel model = new FileDataModel(new File("data.txt"));
+    DataModel model = new FileDataModel(new File("data.txt"));
 
     
-    We'll also need an ItemSimilarity. We could use
+We'll also need an ItemSimilarity. We could use
 PearsonCorrelationSimilarity, which computes item similarity in realtime,
 but, this is generally too slow to be useful. Instead, in a real
 application, you would feed a list of pre-computed correlations to a
 GenericItemSimilarity: 
     
 
-// Construct the list of pre-computed correlations
-Collection<GenericItemSimilarity.ItemItemSimilarity> correlations =
+    // Construct the list of pre-computed correlations
+    Collection<GenericItemSimilarity.ItemItemSimilarity> correlations =
 	  ...;
-ItemSimilarity itemSimilarity =
+    ItemSimilarity itemSimilarity =
 	  new GenericItemSimilarity(correlations);
 
 
     
-    Then we can finish as before to produce recommendations:
+Then we can finish as before to produce recommendations:
     
 
-Recommender recommender =
+    Recommender recommender =
 	  new GenericItemBasedRecommender(model, itemSimilarity);
-Recommender cachingRecommender = new CachingRecommender(recommender);
-...
-List<RecommendedItem> recommendations =
+    Recommender cachingRecommender = new CachingRecommender(recommender);
+    ...
+    List<RecommendedItem> recommendations =
 	  cachingRecommender.recommend(1234, 10);
 
     
-    h3. Slope-One Recommender
-    This is a simple yet effective Recommender and we present another example
+## Slope-One Recommender
+
+This is a simple yet effective Recommender and we present another example
 to round out the list:
     
 
-DataModel model = new FileDataModel(new File("data.txt"));
+    DataModel model = new FileDataModel(new File("data.txt"));
 	  // Make a weighted slope one recommender
 	  Recommender recommender = new SlopeOneRecommender(model);
 	  Recommender cachingRecommender = new
-CachingRecommender(recommender);
+    CachingRecommender(recommender);
 	{code}
 
 
@@ -353,8 +357,7 @@ are more meaningful:
 You'll want to look at these packages too, which offer more algorithms and
 approaches that you may find useful:
 
-* [Cofi](http://www.nongnu.org/cofi/)
-: A Java-Based Collaborative Filtering Library
+* [Cofi](http://www.nongnu.org/cofi/): A Java-Based Collaborative Filtering Library
 * [CoFE](http://eecs.oregonstate.edu/iis/CoFE/)
 
 Here's a handful of research papers that I've read and found particularly
@@ -388,6 +391,7 @@ Michelle Anderson, Marcel Ball, Harold Boley, Stephen Greene, Nancy Howse, Danie
 
 These links will take you to all the collaborative filtering reading you
 could ever want!
+
 * [Paul Perry's notes](http://www.paulperry.net/notes/cf.asp)
 * [James Thornton's collaborative filtering resources](http://jamesthornton.com/cf/)
 * [Daniel Lemire's blog](http://www.daniel-lemire.com/blog/)
