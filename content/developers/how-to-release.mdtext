@@ -28,6 +28,7 @@ date.
 
 For 7-14 days prior to the release target date, have a "code freeze" where
 committers agree to only commit things if they:
+
  * Are documentation improvements (including fixes to eliminate Javadoc
 warnings)
  * Are new test cases that improve test coverage
