@@ -46,7 +46,4 @@ top a ReloadFromJDBCDataModel.
 
 This should give a reasonable starter system which responds fast. The
 nature of the system is that new data comes in from the file or database
-only periodically -- perhaps on the order of minutes. If that's not OK,
-you'll have to look into some more specialized work -- SlopeOneRecommender
-deals with updates quickly, or, it is possible to do some work to update
-the GenericDataModel in real time. 
+only periodically -- perhaps on the order of minutes. 
