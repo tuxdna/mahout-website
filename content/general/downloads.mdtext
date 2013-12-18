@@ -4,9 +4,10 @@ Title: Downloads
 # Official Release
 
 Apache Mahout is an official Apache project and thus available from any of
-the Apache mirrors.
+the Apache mirrors. The latest Mahout release is available for download at: 
 
-The latest Mahout release is available for download at: [http://www.apache.org/dyn/closer.cgi/mahout/](http://www.apache.org/dyn/closer.cgi/mahout/).
+* [Download Latest](http://www.apache.org/dyn/closer.cgi/mahout/)
+* [Release Archive](http://archive.apache.org/dist/mahout/)
 
 
 [MAHOUT:System Requirements](../developers/system-requirements.html)
@@ -39,25 +40,6 @@ In case you would like to use some of our integration tooling (e.g. for generati
 In case you are using Ivy, Gradle, Buildr, Grape or SBT you might want to directly head over to the official [Maven Repository search](http://mvnrepository.com/artifact/org.apache.mahout/mahout-core).
 
 
-<a name="Downloads-SnapshotReleases"></a>
-# Snapshot Releases
-
-Recent builds are available on the Apache Jenkins [build server](https://builds.apache.org/job/Mahout-Quality/changes)
-To get the latest, navigate to "Build History", in the lower left-hand
-corner.
-Pick the latest build which has a yellow ball instead of a red ball.
-Go to "Build Artifacts" page.
-Download "all files in trunk" zip file
-
-Now, how you go from there to running examples: you don't. These build
-artifacts do not include the shell scripts and other materiel needed
-to run the Mahout examples: you are only able to use the jars in your
-own projects.
-
-[MAHOUT-935](https://issues.apache.org/jira/browse/MAHOUT-935)
- is filed as a marker to make the builds more useable. You are welcome and
-encouraged to fix this problem!
-
 <a name="Downloads-FutureReleases"></a>
 # Future Releases
 
@@ -66,38 +48,3 @@ sufficient changes, improvements and bug fixes to warrant a release. Watch
 the [Mailing lists](https://cwiki.apache.org/MAHOUT/mailinglistarchives.html)
  for latest release discussions.
 
-<a name="Downloads-Backwardscompatibilityofreleases"></a>
-# Backwards compatibility of releases
-
-_Please note that below backwards compatibility contract is a draft. As
-soon as finished the line you are about to read will be deleted._
-
-As of version 1.0 Apache Mahout will provide the following backwards
-compatibility guarantees.
-
-<a name="Downloads-Datainputformats,Modelformats,Modeloutput"></a>
-## Data input formats, Model formats, Model output
-
-All minor versions within a major release can read prior versions data
-within the same major release.	That is, 3.4 can read a 3.3 data.  However,
-3.3 cannot read a 3.4 data file.  When a user reads 3.3 data w/ 3.4, it is
-silently upgraded to 3.4.
-
-A major TODO that you can help with if you are interested is to provide
-serialization methods based on [Apache Avro](http://avro.apache.org)
- that would make support for input, output and model format upgrade easier.
-
-Another option is to use the [SequenceFile.Metadata](http://hadoop.apache.org/common/docs/current/api/org/apache/hadoop/io/SequenceFile.Metadata.html)
- feature to store file format versions.
-
-<a name="Downloads-APIsandcommandlinescripts"></a>
-## APIs and command line scripts
-
-For APIs, we typically mark things as @mahout.experimental if we think they
-may change within minor releases.  We also mark things as deprecated that
-are going away.  Deprecated items are then removed on the next major
-release.  The upgrade path is usually to go to x.9, remove all deprecations
-and then go to x+1.0.
-
-We also communicate to users via release notes when we purposefully broke
-back compat.
