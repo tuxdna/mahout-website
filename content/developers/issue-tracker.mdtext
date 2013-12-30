@@ -2,30 +2,30 @@ Title: Issue Tracker
 
 # Issue tracker
 
-Anything that is to be added to [the source code repository](http://svn.apache.org/viewvc/mahout/ )
- is first presented as a patch in the issue tracker. All conversations are
+
+* <a href="http://issues.apache.org/jira/browse/MAHOUT">Mahout issue tracker</a>
+
+For most changes (apart from trivial stuff) Mahout works according to a review-then-commit model.
+This means anything that is to be added to [the source code repository](http://svn.apache.org/viewvc/mahout/ )
+ is first presented as a patch in the issue tracker. All conversations in the issue tracker are automatically
 echoed on the developer mailing list and people tend to respond or continue
 conversations there rather in the issue tracker, so in order to follow an
-issue you might also have to read to the mailing lists. 
+issue you might also have to read to the <a href="http://mahout.apache.org/general/mailing-lists,-irc-and-archives.html">mailing lists</a>. 
 
 An issue does not literally have to be an issue. It could be a wish, task,
 bug report, etc. and it does not have to contain a patch.
 
-Mahout use [JIRA](http://issues.apache.org/jira/browse/MAHOUT)
-. It is made by the same company that made this Wiki and a handful of other
-collaborate software development tools that supposedly can communicate with
-each other and be trigged by actions such as commits to SVN with issue
-identity in the comments.
+Mahout uses [JIRA](https://confluence.atlassian.com/display/JIRA/JIRA+Documentation) by Atlassian.
 
 <a name="IssueTracker-Bestpractise"></a>
 ### Best practise
 
 Don't create duplicate issues. Make sure your problem is a problem and that
 nobody else already fixed it. If you are new to the project it is often
-prefered that the subject of an issue is discussed on one of our mailing
-list before an issue is created.
+preferred that the subject of an issue is discussed on one of our mailing
+list before an issue is created - in particular when it comes to adding new functionality.
 
-Quote what it is you are responding to in comments.
+Quote only what it is you are responding to in comments.
 
 Patches should be created at trunk or trunk parent level and if possible be
 a single uncompressed text file so it is easy to inspect the patch in a web
@@ -37,3 +37,7 @@ Use the issue identity when referring to an issue in any of our fora.
 linked to [MAHOUT-1](http://issues.apache.org/jira/browse/MAHOUT-1)
  in a better world.
 
+A note to committers: Make sure to mention the issue id in each commit. Not only has
+JIRA the capability of auto-linking commits to the issue they are related to
+that way, it also makes it easier to get further information for a specific commit
+when browsing through the commit log and within the commit mailing list.
