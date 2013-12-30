@@ -15,18 +15,29 @@ given.	Please keep all listings in alphabetical order within each section.
 
 # Books
 
+Please keep the three lists in alphabetical order.
+
+## Mahout specific
+
+   * <a href="http://www.packtpub.com/apache-mahout-cookbook/book">Apache Mahout cookbook</a>- Book by Piero Giacomelli published Dic 2013 by Packtpub.
    * <a href="http://www.manning.com/owen/">Mahout in Action</a> - Book by Sean Owen, Robin Anil, Ted Dunning and Ellen Friedman published Oct 2011 by Manning Publications.
    * <a href="http://www.manning.com/ingersoll/">Taming Text</a> - By Grant Ingersoll and Tom Morton, published by Manning Publications. Will have some Mahout coverage, but by no means as complete as Mahout in Action.
-   * <a href="http://www.cs.waikato.ac.nz/~ml/weka/book.html">Data Mining: Practical Machine Learning Tools and Techniques</a>
-   * <a href="http://www.amazon.com/Programming-Collective-Intelligence-Building-Applications/dp/0596529325/ref=pd_bbs_sr_1/104-1017533-9408723?ie=UTF8&s=books&qid=1214593516&sr=1-1">Programming Collective Intelligence</a>
+
+## Engineering oriented machine learning books
+
    * <a href="http://www.amazon.com/Collective-Intelligence-Action-Satnam-Alag/dp/1933988312/ref=pd_bbs_sr_3?ie=UTF8&s=books&qid=1214545249&sr=1-3">Collective Intelligence in Action</a>
+   * <a href="http://www.amazon.com/Programming-Collective-Intelligence-Building-Applications/dp/0596529325/ref=pd_bbs_sr_1/104-1017533-9408723?ie=UTF8&s=books&qid=1214593516&sr=1-1">Programming Collective Intelligence</a>
+   * <a href="http://www.amazon.com/Algorithms-Intelligent-Web-Haralambos-Marmanis/dp/1933988665/ref=sr_1_1?s=books&ie=UTF8&qid=1298005918&sr=1-1">Algorithms of the Intelligent Web</a>
+
+## Scientific background
+
+   * <a href="http://www.cs.waikato.ac.nz/~ml/weka/book.html">Data Mining: Practical Machine Learning Tools and Techniques</a>
+   * <a href="-http://www.inference.phy.cam.ac.uk/itprnn/book.html.html">Information Theory, Inference, and Learning Algorithms by David MacKay</a>
+   * <a href="http://www-csli.stanford.edu/~hinrich/information-retrieval-book.html">Introduction to Information Retrieval</a>
    * <a href="http://www.amazon.com/Machine-Learning-Mcgraw-Hill-International-Edit/dp/0071154671/ref=pd_bbs_sr_1?ie=UTF8&s=books&qid=1214593709&sr=8-1">Machine Learning</a>
    * <a href="http://www.amazon.com/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738/ref=pd_bbs_sr_2?ie=UTF8&s=books&qid=1214593709&sr=8-2">Pattern Recognition and Machine Learning (Information Science and Statistics) </a>
-   * <a href="http://www-csli.stanford.edu/~hinrich/information-retrieval-book.html">Introduction to Information Retrieval</a>
-   * <a href="-http://www.inference.phy.cam.ac.uk/itprnn/book.html.html">Information Theory, Inference, and Learning Algorithms by David MacKay</a>
    * <a href="-http://www.amazon.com/text-mining-application-programming/dp/1584504609.html">Text Mining Application Programming </a>
-   * <a href="http://www.amazon.com/Algorithms-Intelligent-Web-Haralambos-Marmanis/dp/1933988665/ref=sr_1_1?s=books&ie=UTF8&qid=1298005918&sr=1-1">Algorithms of the Intelligent Web</a>
-   * <a href="http://www.packtpub.com/apache-mahout-cookbook/book">Apache Mahout cookbook</a>- Book by Piero Giacomelli published Dic 2013 by Packtput.
+
 
 # News, Articles and Tutorials
 
