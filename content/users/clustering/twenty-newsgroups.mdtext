@@ -1,4 +1,5 @@
 Title: Twenty Newsgroups
+
 <a name="TwentyNewsgroups-TwentyNewsgroupsClassificationExample"></a>
 ## Twenty Newsgroups Classification Example
 
@@ -39,25 +40,20 @@ mahout job:
     $ cd $MAHOUT_HOME
     $ mvn install
 
-1. Run the 20 newsgroup example by executing the script as below
-
-    $ ./examples/bin/build-20news-bayes.sh
-
-After MAHOUT-857 is committed (available when 0.6 is released), the command
-will be:
+1. Run the 20 newsgroup example by executing:
 
     $ ./examples/bin/classify-20newsgroups.sh
 
-This later version allows you to also try out running Stochastic Gradient
-Descent (SGD) on the same data.
-
 The script performs the following
+1. # Asks you to select an classification algorithm: Complementary Naive Bayes, Naive Bayes or Stochastic Gradient Descent.
 1. # Downloads *20news-bydate.tar.gz* from the [20newsgroups dataset](http://people.csail.mit.edu/jrennie/20Newsgroups/20news-bydate.tar.gz)
 1. # Extracts dataset
 1. # Generates input dataset for training classifier
 1. # Generates input dataset for testing classifier
 1. # Trains the classifier
 1. # Tests the classifier
+
+
 
 Output might look like:
 
