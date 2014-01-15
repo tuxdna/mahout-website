@@ -343,13 +343,13 @@ input.button {
 
 #wrap{
   background: #fff url(../images/wrapper.jpg) top center no-repeat;
-  width: 1400px;
+  width: 1200px;
   margin: 0 auto;
   text-align:left;
 }
 
 #content-wrap  {
-  width:1400px;
+  width:1200px;
   margin:0 auto;
   padding-bottom: 42px;
 }
@@ -367,7 +367,7 @@ input.button {
   height: 50px;
   clear:both;
   font-size:12px;
-  width:1400px;
+  width:1200px;
   border-top: 1px solid #eee;
   background-color: #E2E2E2;
   padding: 20px 0;
@@ -506,7 +506,7 @@ input.button {
 
 #main {
   float: left;
-  width: 960px;
+  width: 826px;
   padding: 0;
   margin: 0 0 0 20px;
   display: inline;
@@ -614,7 +614,7 @@ input.button {
 
 #sidebar {
   float: right;
-  width: 380px;
+  width: 323px;
   padding: 0;
   margin: 15px 20px 0 0;
   display: inline;
@@ -739,16 +739,15 @@ p.thumbs {
 
 body#home #wrap {
   position: relative;
-  background: #fff url(../images/home-wrapper-v2.png) top center no-repeat;
-  width: 1400px;
+  background: #fff url(../images/home-wrapper-v3.png) top center no-repeat;
+  width: 1200px;
   margin: 0 auto;
   text-align: left;
 }
 
 body#home #header {
   position: relative;
-  width: 1400px;
-  height: 403px;
+  width: 1200px;
   padding: 0;
   margin: 0 auto;
   background: transparent;
@@ -881,7 +880,7 @@ body#home #col2 {
 body#full #wrap {
   position: relative;
   background: #fff top center no-repeat;
-  width: 1400px;
+  width: 1200px;
   margin: 0 auto;
   text-align: left;
 }

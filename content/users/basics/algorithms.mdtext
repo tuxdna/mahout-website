@@ -48,19 +48,9 @@ Fully supported:
 Map-Reduce
 
 
-Deprecated or drafts only:
+Drafts only:
 
-* [Support Vector Machines](../classification/support-vector-machines.html) (see [MAHOUT-14](http://issues.apache.org/jira/browse/MAHOUT-14)
-, [MAHOUT-232](http://issues.apache.org/jira/browse/MAHOUT-232)
- and [MAHOUT-334](https://issues.apache.org/jira/browse/MAHOUT-334) 
-* [Perceptron and Winnow](../stuff/perceptron-and-winnow.html)
- (see [MAHOUT-85](http://issues.apache.org/jira/browse/MAHOUT-85))
-* [Neural Network](../classification/neural-network.html)
- (see [MAHOUT-228](http://issues.apache.org/jira/browse/MAHOUT-228))
-* [Restricted Boltzmann Machines](../classification/restricted-boltzmann-machines.html)
- (see [MAHOUT-375](http://issues.apache.org/jira/browse/MAHOUT-375))
-* Online Passive Aggressive (see [MAHOUT-702](http://issues.apache.org/jira/browse/MAHOUT-702)
-* Boosting (see [MAHOUT-716](https://issues.apache.org/jira/browse/MAHOUT-716))
+* Online Passive Aggressive (see [MAHOUT-702](http://issues.apache.org/jira/browse/MAHOUT-702))
 
 
 <a name="Algorithms-Clustering"></a>
@@ -87,7 +77,7 @@ Fully supported:
 * kMeans++ streaming clustering - documentation missing
 
 
-Deprecated or drafts only:
+Drafts only:
 
 * [Hierarchical Clustering](../clustering/hierarchical-clustering.html)
  ([MAHOUT-19](http://issues.apache.org/jira/browse/MAHOUT-19), [MAHOUT-843](https://issues.apache.org/jira/browse/MAHOUT-843))
@@ -103,7 +93,7 @@ Fully supported:
  (available since 0.3)
 * Stochastic Singular Value Decomposition with PCA workflow
 
-Deprecated or drafts only:
+Drafts only:
 
 * [Principal Components Analysis](principal-components-analysis.html)
  (PCA) 
@@ -149,7 +139,3 @@ calculation.
 and all of the input vectors.
 * [Collocations](collocations.html) ... find co-locations of tokens in text, runs on Hadoop
 
-Deprecated or drafts only:
-
-* Pattern mining: [Parallel FP Growth Algorithm](../stuff/parallel-frequent-pattern-mining.html)
- (Also known as Frequent Itemset mining)
