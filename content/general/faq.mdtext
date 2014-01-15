@@ -11,6 +11,7 @@ Title: FAQ
 1. [Where can I download Mahout slide presentations? ](#presentations.html)
 
 *Algorithms*
+
 1. [What algorithms are implemented in Mahout?](#algos.html)
 1. [What algorithms are missing from Mahout?](#todo.html)
 1. [Do I need Hadoop to run Mahout?](#hadoop.html)
@@ -24,13 +25,13 @@ Title: FAQ
 
 
 <a name="FAQ-{anchor:whatIs}WhatisApacheMahout?"></a>
-### {anchor:whatIs}What is Apache Mahout?
+### What is Apache Mahout?
 
 Apache Mahout is a suite of machine learning libraries designed to be
 scalable and robust
 
 <a name="FAQ-{anchor:mean}Whatdoesthenamemean?"></a>
-### {anchor:mean}What does the name mean?
+### What does the name mean?
 
 The name [Mahout](http://en.wikipedia.org/wiki/Mahout)
  was original chosen for it's association with the [Apache Hadoop|http://hadoop.apache.org]
@@ -41,19 +42,19 @@ and testing it.  We are not, however, implying that we are controlling
 Hadoop's development.
 
 <a name="FAQ-{anchor:historical}WherecanIfindtheoriginsoftheMahoutproject?"></a>
-### {anchor:historical}Where can I find the origins of the Mahout project?
+### Where can I find the origins of the Mahout project?
 
-See [http://ml-site.grantingersoll.com](http://ml-site.grantingersoll.com)
+See [http://ml-site.grantingersoll.com](http://web.archive.org/web/20080101233917/http://ml-site.grantingersoll.com/index.php?title=Main_Page)
  for old wiki and mailing list archives (all read-only)
 
 <a name="FAQ-{anchor:logo}WherecanIdownloadMahoutlogo?"></a>
-### {anchor:logo}Where can I download the Mahout logo?
+### Where can I download the Mahout logo?
 
 See [MAHOUT-335](https://issues.apache.org/jira/browse/MAHOUT-335)
 
 
 <a name="FAQ-{anchor:presentations}WherecanIdownloadMahoutslidepresentations?"></a>
-### {anchor:presentations} Where can I download Mahout slide presentations?
+### Where can I download Mahout slide presentations?
 
 * [Books, Tutorials and Talks ](https://cwiki.apache.org/confluence/display/MAHOUT/Books+Tutorials+and+Talks)
  Wiki page containing an overview of all presentations with links to slides
@@ -63,14 +64,14 @@ where available.
 ## Algorithms
 
 <a name="FAQ-{anchor:algos}WhatalgorithmsareimplementedinMahout?"></a>
-### {anchor:algos} What algorithms are implemented in Mahout?
+### What algorithms are implemented in Mahout?
 
 We are interested in a wide variety of machine learning algorithms. Many of
 which are already implemented in Mahout. You can find them [here ](http://cwiki.apache.org/confluence/display/MAHOUT/Algorithms)
 .
 
 <a name="FAQ-{anchor:todo}WhatalgorithmsaremissingfromMahout?"></a>
-### {anchor:todo} What algorithms are missing from Mahout?
+### What algorithms are missing from Mahout?
 
 There are many machine learning algorithms that we would like to have in
 Mahout, including some from the paper [http://www.cs.stanford.edu/people/ang/papers/nips06-mapreducemulticore.pdf](http://www.cs.stanford.edu/people/ang/papers/nips06-mapreducemulticore.pdf)
@@ -78,7 +79,7 @@ Mahout, including some from the paper [http://www.cs.stanford.edu/people/ang/pap
 like to implement, by all means submit a patch.
 
 <a name="FAQ-{anchor:hadoop}DoIneedHadooptorunMahout?"></a>
-### {anchor:hadoop} Do I need Hadoop to use Mahout?
+### Do I need Hadoop to use Mahout?
 
 Apart from the possibility of running Hadoop jobs in a single node installation there are
 a couple of modules that require no Hadoop dependencies whatsoever (except maybe for
