@@ -17,6 +17,11 @@ Title: FAQ
 1. [What algorithms are missing from Mahout?](todo)
 1. [Do I need Hadoop to run Mahout?](hadoop)
 
+*Hadoop specific questions*
+
+1. [Mahout just won't run in parallel on my dataset. Why?](split)
+
+
 # *Answers*
 
 
@@ -93,3 +98,10 @@ a couple of modules that require no Hadoop dependencies whatsoever (except maybe
 vector and matrix serialisation). For recommendation those packages don't have Hadoop as
 part of their namespace. For classification checkout the sgd package. For clustering checkout
 the new kmeans++ stuff.
+
+## Hadoop specific questions
+<a href="split"></a>
+### Mahout just won't run in parallel on my dataset. Why?
+
+If you are running training on a Hadoop cluster keep in mind that the number of mappers started is governed by the size of the input data and the configured split/block size of your cluster. As a rule of thumb,
+anything below 100MB in size won't be split. In addition files compressed e.g. with gzip aren't splitable neither. For a more detailed discussion of the topic see als [IBM InfoSphere Split Size article](https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W265aa64a4f21_43ee_b236_c42a1c875961/page/MapReduce%20-%20Tuning%20the%20number%20of%20map%20tasks)
