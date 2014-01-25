@@ -4,22 +4,22 @@ Title: FAQ
 
 *General*
 
-1. [What is Apache Mahout?](whatis)
-1. [What does the name mean?](mean)
-1. [How is the name pronounced?](pronounce)
-1. [Where can I find the origins of the Mahout project? ](historical)
-1. [Where can I download the Mahout logo? ](logo)
-1. [Where can I download Mahout slide presentations? ](presentations)
+1. [What is Apache Mahout?](#whatis)
+1. [What does the name mean?](#mean)
+1. [How is the name pronounced?](#pronounce)
+1. [Where can I find the origins of the Mahout project? ](#historical)
+1. [Where can I download the Mahout logo? ](#logo)
+1. [Where can I download Mahout slide presentations? ](#presentations)
 
 *Algorithms*
 
-1. [What algorithms are implemented in Mahout?](algos)
-1. [What algorithms are missing from Mahout?](todo)
-1. [Do I need Hadoop to run Mahout?](hadoop)
+1. [What algorithms are implemented in Mahout?](#algos)
+1. [What algorithms are missing from Mahout?](#todo)
+1. [Do I need Hadoop to run Mahout?](#hadoop)
 
 *Hadoop specific questions*
 
-1. [Mahout just won't run in parallel on my dataset. Why?](split)
+1. [Mahout just won't run in parallel on my dataset. Why?](#split)
 
 
 # *Answers*
