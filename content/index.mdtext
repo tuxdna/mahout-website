@@ -49,7 +49,7 @@
  This is an early implementation of MLP to solicit user feedback, needs to be integrated into Mahout’s processing pipeline to work with Mahout’s vectors.</li>
    <li>Scala DSL Bindings for Mahout Math Linear Algebra.  See http://weatheringthrutechdays.blogspot.com/2013/07/scala-dsl-for-mahout-in-core-linear.html - MAHOUT-1297</li>
    <li>Recommenders as a Search.  See https://github.com/pferrel/solr-recommender - MAHOUT-1288</li>
-   <li>Support for easy functional Matrix views and derivatives - MAHOUT-1300<li>
+   <li>Support for easy functional Matrix views and derivatives - MAHOUT-1300</li>
    <li>JSON output format for ClusterDumper - MAHOUT-1343</li>
    <li>Enable randomised testing for all Mahout modules using Carrot RandomizedRunner - MAHOUT-1345</li>
    <li>Online Algorithm for computing accurate Quantiles using 1-dimensional Clustering - MAHOUT-1361.  See https://github.com/tdunning/t-digest/blob/master/docs/theory/t-digest-paper/histo.pdf for the details.
