@@ -38,10 +38,58 @@
 
   <h1>Mahout News</h1>
 
+  <h2 class="boxed">1 February 2014 - Apache Mahout 0.9 released</h2>
+
+  <p>Apache Mahout has reached version 0.9. All developers are encouraged to begin using version
+  0.9. Highlights include:</p>
+
+  <ul>
+   <li>A new and improved Mahout website based on Apache CMS - MAHOUT-1245</li>
+   <li>Multi Layer Perceptron (MLP) classifier - MAHOUT-1265.
+ This is an early implementation of MLP to solicit user feedback, needs to be integrated into Mahout’s processing pipeline to work with Mahout’s vectors.</li>
+   <li>Scala DSL Bindings for Mahout Math Linear Algebra.  See http://weatheringthrutechdays.blogspot.com/2013/07/scala-dsl-for-mahout-in-core-linear.html - MAHOUT-1297</li>
+   <li>Recommenders as a Search.  See https://github.com/pferrel/solr-recommender - MAHOUT-1288</li>
+   <li>Support for easy functional Matrix views and derivatives - MAHOUT-1300<li>
+   <li>JSON output format for ClusterDumper - MAHOUT-1343</li>
+   <li>Enable randomised testing for all Mahout modules using Carrot RandomizedRunner - MAHOUT-1345</li>
+   <li>Online Algorithm for computing accurate Quantiles using 1-dimensional Clustering - MAHOUT-1361.  See https://github.com/tdunning/t-digest/blob/master/docs/theory/t-digest-paper/histo.pdf for the details.
+   <li>Upgrade to Lucene 4.6.1 - MAHOUT-1364</li>
+  </ul>
+
+  <p>Changes in 0.9 are detailed at <a href="http://svn.apache.org/viewvc/mahout/trunk/CHANGELOG?view=markup&pathrev=1563661">release notes</a>.</p>
+
+ <p>The following algorithms that were marked deprecated in 0.8 have been removed in 0.9:</p>
+
+ <ul class="alternate" type="square">
+  <li>From Clustering:<br>
+   Switched LDA implementation from using Gibbs Sampling to Collapsed Variational Bayes (CVB)<br>
+   Meanshift<br>
+   MinHash - removed due to poor performance, lack of support and lack of usage<br>
+  </li>
+
+  <li>From Classification (both are sequential implementations)<br>
+  Winnow - lack of actual usage and support<br>
+  Perceptron - lack of actual usage and support<br>
+  </li>
+
+  <li>Collaborative Filtering<br>
+    SlopeOne implementations in org.apache.mahout.cf.taste.hadoop.slopeone and org.apache.mahout.cf.taste.impl.recommender.slopeone<br>
+    Distributed pseudo recommender in org.apache.mahout.cf.taste.hadoop.pseudo<br>
+    TreeClusteringRecommender in org.apache.mahout.cf.taste.impl.recommender<br>
+   </li>
+ 
+  <li>Mahout Math<br>
+    Hadoop entropy stuff in org.apache.mahout.math.stats.entropy<br>
+  </li>
+
+ </ul>
+
   <h2 class="boxed">25 July 2013 - Apache Mahout 0.8 released</h2>
 
   <p>Apache Mahout has reached version 0.8. All developers are encouraged to begin using version
   0.8. Highlights include:</p>
+
+
 
   <ul>
     <li>Numerous performance improvements to Vector and Matrix implementations, API's and their iterators (see also MAHOUT-1192, MAHOUT-1202)</li>
