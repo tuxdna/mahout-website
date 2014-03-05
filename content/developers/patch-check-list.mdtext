@@ -4,34 +4,33 @@ Title: Patch Check List
 
 So, you want to apply a patch - or you want to know in more detail what committers look for in your patches?
 Here are tips, traps, etc. for dealing with
-patches (in no particular order):
+patches:
 
-1. Get a fresh copy of trunk.  Or at least make sure you are up to date and
+  - Get a fresh copy of trunk.  Or at least make sure you are up to date and
 clean your build area.	For complex patches, it is recommended you deal
 with a fresh checkout.
-1. Look at the patch and see where it is applied.  Ideally it is generated
-from the root, but not everyone does this, especially for contrib areas.
-1. patch \-p 0 \-i <path to patch>  Throw a \--dry-run on there if you want
+  - Look at the patch and see where it is applied.  Ideally it is generated
+from the root, but not everyone does this.
+  - patch \-p 0 \-i <path to patch>  Throw a \--dry-run on there if you want
 to see what happens w/o screwing up your checkout.
-1. Did the author write unit tests?  Are the unit tests worthwhile?
-1. How are the benchmark results?  contrib/benchmarker may be used to test
-performance in before/after scenarios.
-1. Are the licenses correct on newly added files? Has an ASF license been
+  - Did the author write unit tests?  Are the unit tests worthwhile?
+  - Are the licenses correct on newly added files? Has an ASF license been
 granted?
-1. Update CHANGES.txt.  Give proper credit to the authors.
-1. Make sure you update JIRA by assigning the issue to you so that others
+  - Update the [CHANGELOG][1] file.  Give proper credit to the authors.
+  - Make sure you update JIRA by assigning the issue to you so that others
 know you are working on it.
-1. If it is a complex change and you have added to the original author's
+  - If it is a complex change and you have added to the original author's
 patch, it is suggested that you create a new patch and attach that to JIRA
 so that it can be discussed.
-1. How's the documentation, esp. the javadocs?
-1. Before committing, make sure you add any new documents to SVN.  Just b/c
-the patch added them doesn't mean you have.
-1. Run all unit tests, verify all tests pass.
-1. Generate javadocs, verify no javadoc errors/warnings were introduced by
+  - How is the documentation, especially the javadocs?
+  - Before committing, make sure you add any new documents to SVN.  Just becuause
+the patch added them doesn't mean you have :)
+  - Run all unit tests, verify all tests pass.
+  - Generate javadocs, verify no javadoc errors/warnings were introduced by
 the patch.
-1. Put in a meaningful commit message.  Reference the JIRA issue when
+  - Put in a meaningful commit message.  Reference the JIRA issue when
 appropriate.
-1. Remember to update the issue in JIRA when you have completed it.
-1. From the top directory "ant rat-sources" to make sure all the files have
-license headers.
+  - Remember to update the issue in JIRA when you have completed it.
+
+
+  [1]: https://svn.apache.org/viewvc/mahout/trunk/CHANGELOG?view=markup "CHANGELOG"
