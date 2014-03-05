@@ -1,115 +1,50 @@
 Title: Algorithms
 
+<a name="Algorithms-CollaborativeFiltering"></a>
+# Collaborative Filtering
 
+* User-Based Collaborative Filtering - **single machine**
+* Item-Based Collaborative Filtering - **single machine / MapReduce**
+* Matrix Factorization with Alternating Least Squares - **single machine / MapReduce**
+* Matrix Factorization with Alternating Least Squares  on Implicit Feedback- **single machine / MapReduce**
+* Weighted Matrix Factorization, SVD++, Parallel SGD - **single machine**
 
 <a name="Algorithms-Classification"></a>
-## Classification
+# Classification
 
-A general introduction to the most common text classification algorithms
-can be found at Google Answers: [http://answers.google.com/answers/main?cmd=threadview&id=225316](http://answers.google.com/answers/main?cmd=threadview&id=225316)
- For information on the algorithms implemented in Mahout (or scheduled for
-implementation) please visit the following pages.
-
-Fully supported:
-
-
-* [Logistic Regression](../classification/logistic-regression.html) (SGD) - model parameter selection can be done in Hadoop
-* [Naive Bayes/ Complementary Naive Bayes](../classification/bayesian.html) - training runs on Hadoop
-* [Random Forests](../classification/random-forests.html)
- ([MAHOUT-122](http://issues.apache.org/jira/browse/MAHOUT-122), - training is done in Hadoop
- [MAHOUT-140](http://issues.apache.org/jira/browse/MAHOUT-140), [MAHOUT-145](http://issues.apache.org/jira/browse/MAHOUT-145))
-* [Hidden Markov Models](../stuff/hidden-markov-models.html) (see MAHOUT-627, MAHOUT-396, MAHOUT-734) - training is done in
-Map-Reduce
-
-
-Drafts only:
-
-* Online Passive Aggressive (see [MAHOUT-702](http://issues.apache.org/jira/browse/MAHOUT-702))
-
+* [Logistic Regression](../classification/logistic-regression.html) - trained via SGD - **single machine**
+* [Naive Bayes/ Complementary Naive Bayes](../classification/bayesian.html) - **MapReduce**
+* Random Forest - **MapReduce**
+* [Hidden Markov Models](../stuff/hidden-markov-models.html) - **single machine**
 
 <a name="Algorithms-Clustering"></a>
-## Clustering
+# Clustering
 
-For a more detailed explanation see [Wikipedia page](http://en.wikipedia.org/wiki/Cluster_analysis) or checkout our [Reference Reading](reference-reading.html)
-
-Fully supported:
-
-* [MAHOUT:Canopy Clustering](../clustering/canopy-clustering.html)
- ([MAHOUT-3](https://issues.apache.org/jira/browse/MAHOUT-3) - runs on Hadoop
-* [K-Means Clustering](../clustering/k-means-clustering.html)
- ([MAHOUT-5](https://issues.apache.org/jira/browse/MAHOUT-5) - runs on Hadoop
-* [Fuzzy K-Means](../clustering/fuzzy-k-means.html)
- ([MAHOUT-74](https://issues.apache.org/jira/browse/MAHOUT-74) - runs on Hadoop
-* [Expectation Maximization](../clustering/expectation-maximization.html ([MAHOUT-28](http://issues.apache.org/jira/browse/MAHOUT-28) - runs on Hadoop
-* [Mean Shift Clustering](../clustering/mean-shift-clustering.html)
- ([MAHOUT-15](https://issues.apache.org/jira/browse/MAHOUT-15) - runs on Hadoop
-* [Dirichlet Process Clustering](../clustering/dirichlet-process-clustering.html)
- ([MAHOUT-30](http://issues.apache.org/jira/browse/MAHOUT-30) - runs on Hadoop
-* [Latent Dirichlet Allocation](../clustering/latent-dirichlet-allocation.html)
- ([MAHOUT-123](http://issues.apache.org/jira/browse/MAHOUT-123)) - runs on Hadoop
-* Minhash Clustering ([MAHOUT-344](https://issues.apache.org/jira/browse/MAHOUT-344)) - runs on Hadoop
-* kMeans++ streaming clustering - documentation missing
+* [Canopy Clustering](../clustering/canopy-clustering.html) - **MapReduce**
+* [k-Means Clustering](../clustering/k-means-clustering.html) - **MapReduce**
+* [Fuzzy k-Means](../clustering/fuzzy-k-means.html) - **MapReduce**
+* Streaming k-Means - **single machine / MapReduce** 
+* [Spectral Clustering](../clustering/spectral-clustering.html) - **MapReduce** 
 
 
-Drafts only:
+<a name="Algorithms-DimensionalityReduction"></a>
+# Dimensionality Reduction
 
-* [Hierarchical Clustering](../clustering/hierarchical-clustering.html)
- ([MAHOUT-19](http://issues.apache.org/jira/browse/MAHOUT-19), [MAHOUT-843](https://issues.apache.org/jira/browse/MAHOUT-843))
-* [Spectral Clustering](../clustering/spectral-clustering.html)
- ([MAHOUT-363](https://issues.apache.org/jira/browse/MAHOUT-363))
+* Singular Value Decomposition - **single machine**
+* Lanczos Algorithm - **single machine / MapReduce**
+* Stochastic SVD - **single machine / MapReduce**
+* Principal Component Analysis (via Stochastic SVD)- **single machine / MapReduce**
 
-<a name="Algorithms-Dimensionreduction"></a>
-## Dimension reduction
+<a name="Algorithms-TopicModels"></a>
+# Topic Models
 
-Fully supported:
+* [Latent Dirichlet Allocation](../clustering/latent-dirichlet-allocation.html) - **single machine / MapReduce**
 
-* [Singular Value Decomposition and other Dimension Reduction Techniques](dimensional-reduction.html)
- (available since 0.3)
-* Stochastic Singular Value Decomposition with PCA workflow
 
-Drafts only:
+<a name="Algorithms-Miscellaneous"></a>
+## Miscellaneous
 
-* [Principal Components Analysis](principal-components-analysis.html)
- (PCA) 
-* [Gaussian Discriminative Analysis](gaussian-discriminative-analysis.html)
- (GDA) 
-
-<a name="Algorithms-EvolutionaryAlgorithms"></a>
-## Evolutionary Algorithms
-
-NOTE:  Watchmaker support has been removed as of 0.7
-
-see also: [MAHOUT-56](http://issues.apache.org/jira/browse/MAHOUT-56)
-
-You will find here information, examples, use cases, etc. related to
-Evolutionary Algorithms.
-
-Introductions and Tutorials:
-
-* [Evolutionary Algorithms Introduction](http://www.geatbx.com/docu/algindex.html)
-* [How to distribute the fitness evaluation using Mahout.GA](mahout.ga.tutorial.html)
-
-Example: [Traveling Salesman](../stuff/traveling-salesman.html)
-
-<a name="Algorithms-Recommenders/CollaborativeFiltering"></a>
-## Recommenders / Collaborative Filtering
-
-Mahout contains both simple non-distributed recommender implementations and
-distributed Hadoop-based recommenders.
-
- * [First-timer FAQ](../recommender/recommender-first-timer-faq.html)
- * [Non-distributed recommenders ("Taste")](../recommender/recommender-documentation.html)
- * [Distributed Item-Based Collaborative Filtering](../recommender/itembased-collaborative-filtering.html)
- * Collaborative Filtering using a parallel matrix factorization
-<a name="Algorithms-Other"></a>
-## Other
-
-Fullly supported:
-
-* RowSimilarityJob -- Builds an inverted index and then computes distances
-between items that have co-occurrences.  This is a fully distributed
-calculation.
-* VectorDistanceJob -- Does a map side join between a set of "seed" vectors
-and all of the input vectors.
-* [Collocations](collocations.html) ... find co-locations of tokens in text, runs on Hadoop
+* Frequent Pattern Mining - **MapReduce**
+* RowSimilarityJob - compute pairwise similarities between the rows of a matrix - **MapReduce**
+* [Collocations](collocations.html) - find co-locations of tokens in text - **MapReduce**
 
