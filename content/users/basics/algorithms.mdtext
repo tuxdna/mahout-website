@@ -1,7 +1,7 @@
 Title: Algorithms
 
 <a name="Algorithms-CollaborativeFiltering"></a>
-# Collaborative Filtering
+## Collaborative Filtering
 
 * User-Based Collaborative Filtering - **single machine**
 * Item-Based Collaborative Filtering - **single machine / MapReduce**
@@ -10,7 +10,7 @@ Title: Algorithms
 * Weighted Matrix Factorization, SVD++, Parallel SGD - **single machine**
 
 <a name="Algorithms-Classification"></a>
-# Classification
+## Classification
 
 * [Logistic Regression](../classification/logistic-regression.html) - trained via SGD - **single machine**
 * [Naive Bayes/ Complementary Naive Bayes](../classification/bayesian.html) - **MapReduce**
@@ -18,7 +18,7 @@ Title: Algorithms
 * [Hidden Markov Models](../stuff/hidden-markov-models.html) - **single machine**
 
 <a name="Algorithms-Clustering"></a>
-# Clustering
+## Clustering
 
 * [Canopy Clustering](../clustering/canopy-clustering.html) - **MapReduce**
 * [k-Means Clustering](../clustering/k-means-clustering.html) - **MapReduce**
@@ -28,7 +28,7 @@ Title: Algorithms
 
 
 <a name="Algorithms-DimensionalityReduction"></a>
-# Dimensionality Reduction
+## Dimensionality Reduction
 
 * Singular Value Decomposition - **single machine**
 * Lanczos Algorithm - **single machine / MapReduce**
@@ -36,7 +36,7 @@ Title: Algorithms
 * Principal Component Analysis (via Stochastic SVD)- **single machine / MapReduce**
 
 <a name="Algorithms-TopicModels"></a>
-# Topic Models
+## Topic Models
 
 * [Latent Dirichlet Allocation](../clustering/latent-dirichlet-allocation.html) - **single machine / MapReduce**
 
