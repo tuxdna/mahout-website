@@ -1,32 +1,6 @@
 Title: Algorithms
 
-<a name="Algorithms-Algorithms"></a>
-# Algorithms
 
-This section contains links to information, examples, use cases, etc. for
-the various algorithms we support. Click the individual links
-to learn more. The algorithms are grouped by use case.
-
-For Papers, videos and books related to machine learning in general, see [Machine Learning Resources](../general/reference-reading.html)
-
-## General advise
-
-The main goal of Apache Mahout is to be useful to practitioners. This means implementations should be easy to
-use from within Java applications. It should be close to trivial to deploy the trained models. Scaling to include
-more and more diverse data should be simple.
-
-If you are starting a data science project instead of looking for an algorithm you barely know about except for
-this one cool talk you attended recently rather try to find out what your real problem setting is. From there
-check out one of the sections below to learn more about what Mahout can do for you. Chances are decent feature
-engineering combined with increased amount of data can do much more for your business case than what you can
-achieve by investing your time only in finding the best algorithm. For more background also checkout the following
-slide deck by one of the committers:
-
-<iframe src="http://www.slideshare.net/slideshow/embed_code/27793038?rel=0" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://www.slideshare.net/tdunning/which-algorithms-really-matter" title="Which Algorithms Really Matter" target="_blank">Which Algorithms Really Matter</a> </strong> from <strong><a href="http://www.slideshare.net/tdunning" target="_blank">Ted Dunning</a></strong> </div>
-
-Note that as a result getting new algorithms into Mahout is pretty hard much in contrast to getting modifications,
-improvements and better documentation committed. If you absolutely do want to see you favourite algorithm it's up to
-you to make a case for replacing one of the existing implementations with your proposal.
 
 <a name="Algorithms-Classification"></a>
 ## Classification
