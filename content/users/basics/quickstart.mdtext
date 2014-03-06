@@ -10,7 +10,7 @@ Title: Quickstart
 <a name="Quickstart-RunningtheExamples"></a>
 ## Running the Examples
 
-Many Mahout implementations run on [Apache Hadoop ](http://hadoop.apache.org.html). So, to
+Many Mahout implementations run on [Apache Hadoop ](http://hadoop.apache.org). So, to
 run these examples, install the latest compatible (when using a release, see the release 
 notes, when using trunk, see parent/pom.xml) [Hadoop Common release](http://www.apache.org/dyn/closer.cgi/hadoop/common/). 
 
@@ -26,18 +26,13 @@ notes, when using trunk, see parent/pom.xml) [Hadoop Common release](http://www.
 ### Classification
 
 * [Twenty Newsgroups](../clustering/twenty-newsgroups.html) ... classic example for classifying text, data is based on 20 nntp news group posts.
-* [Wikipedia Bayes Example](../classification/wikipedia-bayes-example.html) ... classification based on wikipedia content.
-
-<a name="Quickstart-GeneticProgramming"></a>
-### Genetic Programming
-
-* [Watchmaker](../basics/mahout.ga.tutorial.html)
+* [Wikipedia Bayes Example](../wikipedia-bayes-example.html) ... classification based on wikipedia content.
 
 <a name="Quickstart-DecisionForest"></a>
 ### Decision Forest
 
 * [Breiman Example](../classification/breiman-example.html)
-* [Partial Implementation](../classification/partial-implementation.html)
+* [Partial Implementation](../stuff/partial-implementation.html)
 
 <a name="Quickstart-Recommendationmining"></a>
 ### Recommendation mining
@@ -55,6 +50,6 @@ grouplens and jester data.
 read more on [Clustering your data](../clustering/clusteringyourdata.html)
 * If you want to classify incoming items into predefinied categories read
 more on [Classifying your data ](../classification/classifyingyourdata.html)
-* To know how to Mine frequent patterns from your data read more on [Parallel Frequent Pattern Mining](parallel-frequent-pattern-mining.html)
-* To read more on building recommendation engines have a look at the [Recommender (Taste) documentation](recommender-documentation.html)
+* To know how to Mine frequent patterns from your data read more on [Parallel Frequent Pattern Mining](../stuff/parallel-frequent-pattern-mining.html)
+* To read more on building recommendation engines have a look at the [Recommender (Taste) documentation](../recommender/recommender-documentation.html)
  and [Taste hadoop commandline](TasteCommandLine)
