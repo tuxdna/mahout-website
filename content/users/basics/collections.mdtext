@@ -1,5 +1,6 @@
 Title: Collections
 TODO: Organize these somehow, add one-line blurbs
+
 Organize by usage? (classification, recommendation etc.)
 
 <a name="Collections-CollectionsofCollections"></a>
@@ -32,7 +33,6 @@ There is a newer beta verson here:[http://ece.ut.ac.ir/DBRG/Hamshahri/ham2/](htt
 <a name="Collections-RecommendationData"></a>
 ## Recommendation Data
 
-- [Netflix Prize/Dataset](http://www.netflixprize.com/download)
 - [Book usage and recommendation data from the University of Huddersfield](http://library.hud.ac.uk/data/usagedata/)
 - [Last.fm](http://denoiserthebetter.posterous.com/music-recommendation-datasets)
  \- Non-commercial use only
