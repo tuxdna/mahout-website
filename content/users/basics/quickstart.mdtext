@@ -40,7 +40,7 @@ notes, when using trunk, see parent/pom.xml) [Hadoop Common release](http://www.
 This package comes with four examples based on netflix data, bookcrossing,
 grouplens and jester data.
 
-* [RecommendationExamples](../recommender/recommendationexamples.html)
+* See the demo section at [Recommender (Taste) documentation](../recommender/recommender-documentation.html) on how to run the demo examples.
 
 <a name="Quickstart-WheretoGoNext"></a>
 ## Where to Go Next
