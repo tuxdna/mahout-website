@@ -33,9 +33,7 @@
     documents. Classification learns from exisiting categorized documents what documents of a specific category look
     like and is able to assign unlabelled documents to the (hopefully) correct category.</p>
 
-  <p>Interested in helping? See the
-    <a href="http://cwiki.apache.org/confluence/display/MAHOUT/Developer+Resources">wiki</a> or join the
-    <a href="http://cwiki.apache.org/confluence/display/MAHOUT/Mailing+Lists%2C+IRC+and+Archives">mailing lists</a>.</p>
+  <p>Interested in helping? Join the <a href="https://mahout.apache.org/general/mailing-lists,-irc-and-archives.html">Mailing lists</a>.</p>
 
   <h1>Mahout News</h1>
 
