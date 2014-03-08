@@ -2,27 +2,18 @@ Title: Powered By Mahout
 
 # Powered by Mahout
 
-* [Intro](#PoweredByMahout-Intro)
-* [Commercial Use](#PoweredByMahout-CommercialUse)
-* [Academic Use](#PoweredByMahout-AcademicUse)
-* [Powered By Logos](#PoweredByMahout-PoweredByLogos)
+Are you using Mahout to do Machine Learning? <a href="https://mahout.apache.org/general/mailing-lists,-irc-and-archives.html">Care to share</a>? Developers of the project always are happy to learn about new happy users with interesting use cases.
 
-<a name="PoweredByMahout-Intro"></a>
-# Intro
-
-Are you using Mahout to do Machine Learning?  Care to share? Developers of the project always are happy to learn about new happy users with interesting use cases.
-
-*NOTE: Please add links in alphabetical order.	Links here do NOT imply
+*Links here do NOT imply
 endorsement by Mahout, its committers or the Apache Software Foundation and
 are for informational purposes only.*
 
 <a name="PoweredByMahout-CommercialUse"></a>
 # Commercial Use
 
-* Adobe AMP uses Mahout's clustering algorithms to increase video
-consumption by better user targeting. See [http://nosql.mypopescu.com/post/2082712431/hbase-and-hadoop-at-adobe](nosql.mypopescu.com)
+* <a href="http://nosql.mypopescu.com/post/2082712431/hbase-and-hadoop-at-adobe">Adobe AMP</a> uses Mahout's clustering algorithms to increase video
+consumption by better user targeting. 
 * Accenture uses Mahout as typical example for their [Hadoop Deployment Comparison Study](http://www.accenture.com/SiteCollectionDocuments/PDF/Accenture-Hadoop-Deployment-Comparison-Study.pdf)
-* Amazon's Personalization Platform -- See [Job post](http://www.linkedin.com/groups/Apache-Mahout-2182513)
 * [AOL](http://www.aol.com)
  use Mahout for shopping recommendations. See [slide deck](http://www.slideshare.net/kryton/the-data-layer)
 * [Booz Allen Hamilton](http://www.boozallen.com/)
@@ -51,8 +42,7 @@ projects.
  has implementations of Mahout's recommendation algorithms to select new
 offers to send tu customers, as well as to recommend potential customers to
 current offers. We are also working on enhancing our offer categories by
-using the clustering algorithms. We have a [blog post](http://intela.com/best-practices/intela-gets-smarter)
- where we talk about it.
+using the clustering algorithms.
 * ![iOffer](http://ioffer.com/favicon.ico) [iOffer](http://www.ioffer.com)
  uses Mahout's Frequent Pattern Mining and Collaborative Filtering to
 recommend items to users.
@@ -61,8 +51,8 @@ recommend items to users.
 data for predicting audience's interests and intents.
 * [Linked.In](http://linkedin.com)
  Historically, we have used R for model training. We have recently started
-experimenting with Mahout for model training and are excited about it - see
-also [Hadoop World slides|https://www.quora.com/LinkedIn-Recommendations/How-does-LinkedIns-recommendation-system-work?srid=XoeG&share=1]
+experimenting with Mahout for model training and are excited about it - also see
+ <a href="https://www.quora.com/LinkedIn-Recommendations/How-does-LinkedIns-recommendation-system-work?srid=XoeG&share=1">Hadoop World slides</a>
 .
 * [LucidWorks Big Data](http://www.lucidworks.com/products/lucidworks-big-data)
  uses Mahout for clustering, duplicate document detection, phrase
@@ -80,26 +70,23 @@ service.
  uses Mahout to generate clusters of news articles and to surface the
 important stories of the day
 * [Next Glass](http://nextglass.co/)
- uses Mahout [summary](http://nextglass.co/who-we-are.html#who-3)
-* [Predixion Software](http://predixionsoftware.com/predixion/NewsEvents/articleType/ArticleView/articleId/51/Predixion-Software-Demonstrating-Apache-Mahout-Integration-on-Hadoop-at-EMC-World-2012.aspx)
- uses Mahout’s algorithms to	build predictive models on big data
+ uses Mahout
+* [Predixion Software](http://predixionsoftware.com/)
+ uses Mahout’s algorithms to build predictive models on big data
 * <img src="http://www.radoop.eu/wp-content/uploads/favicon.png" width=15> [Radoop](http://radoop.eu)
  provides a drag-n-drop interface for big data analytics, including Mahout
 clustering and classification algorithms
-* ![Researchgate](https://www.researchgate.net/favicon.ico) [ResearchGate](http://www.researchgate.net/)
-, the professional network for scientists and researchers, uses Mahout's
+* ![Researchgate](https://www.researchgate.net/favicon.ico) [ResearchGate](http://www.researchgate.net/), the professional network for scientists and researchers, uses Mahout's
 recommendation algorithms.
 * [Sematext](http://www.sematext.com/)
- uses Mahout for its [Recommendation Engine](http://www.sematext.com/products/recommendation-engine/index.html)
+ uses Mahout for its recommendation engine
 * [SpeedDate.com](http://www.speeddate.com)
  uses Mahout's collaborative filtering engine to recommend member profiles
 * [Twitter](http://twitter.com)
- uses Mahout's LDA implementation for user interest modeling, and maintains
-a (periodically sync'ed with Apache trunk) [fork](http://github.com/twitter/mahout)
- of Mahout on GitHub
+ uses Mahout's LDA implementation for user interest modeling
 * [Yahoo\!](http://www.yahoo.com)
- Mail uses Mahout's Frequent Pattern Set Mining.  See (slides)[http://www.slideshare.net/hadoopusergroup/mail-antispam)
-* ![imageshack](http://a.imageshack.us/img823/3443/logoyf.gif) [365Media ](http://365media.com/)
+ Mail uses Mahout's Frequent Pattern Set Mining.  See [slides](http://www.slideshare.net/hadoopusergroup/mail-antispam)
+* [365Media ](http://365media.com/)
  uses *Mahout's* Classification and Collaborative Filtering algorithms in
 its Real-time system named [UPTIME](http://uptime.365media.com/)
  and 365Media/Social
@@ -110,12 +97,11 @@ its Real-time system named [UPTIME](http://uptime.365media.com/)
 * [Dicode](https://www.dicode-project.eu/)
  project uses Mahout's clustering and classification algorithms on top of
 HBase.
-* The course [Large Scale Data Analysis and Data Mining](http://www.dima.tu-berlin.de/menue/studium_und_lehre/aktuelles_semester_sommersemester_2011/aim_3_advanced_information_management)
- at [TU Berlin](http://www.tu-berlin.de/)
-&nbsp;uses Mahout to teach students about the parallelization of data
+* The course [Large Scale Data Analysis and Data Mining](http://www.dima.tu-berlin.de/menue/teaching/masterstudium/aim-3/)
+ at TU Berlin uses Mahout to teach students about the parallelization of data
 mining problems with Hadoop and Map/Reduce
 * Mahout is used at Carnegie Mellon University, as a comparable platform to [GraphLab](http://www.graphlab.ml.cmu.edu/)
-.
+
 * The [ROBUST project](http://www.robust-project.eu/)
 , co-funded by the European Commission, employs Mahout in the large scale
 analysis of online community data.
@@ -125,21 +111,14 @@ funded by the Ministry of Interior of Japan.
 * Several researches within [Digital Enterprise Research Institute](http://www.deri.ie)
  [NUI Galway](http://www.nuigalway.ie)
  use Mahout for e.g. topic mining and modelling of large corpora.
-* We used Mahout in the NoTube EU project, and it saved a lot of time (and a brain transplant). The only piece we've used heavily in our apps ([http://vimeo.com/user3487770http://notube.tv/](http://vimeo.com/user3487770http://notube.tv/)
-) so far is the Taste recommender, but I've been digging deeper into the
-other components. I can't claim we're a hugely famous or successful
-application, but I can say without doubt I don't regret using Mahout. It
-did what it said it would do, and easily. One nice thing about this
-community, is that Mahout is not
-over-marketed. If the nature or scale of your problem better suits other
-tools, the Mahout folk will tell you so.
+* Mahout is used in the NoTube EU project.
 
 <a name="PoweredByMahout-PoweredByLogos"></a>
 # Powered By Logos
 
-Feel free to use our Powered By logos on your site:
+Feel free to use our **Powered By** logos on your site:
 
-![powered by logo](images/mahout-logo-poweredby-55.png)
+![powered by logo](https://mahout.apache.org/images/mahout-logo-poweredby-55.png)
 
 
-![powered by logo](images/mahout-logo-poweredby-100.png)
+![powered by logo](https://mahout.apache.org/images/mahout-logo-poweredby-100.png)
