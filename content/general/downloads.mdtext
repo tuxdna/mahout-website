@@ -9,11 +9,7 @@ the Apache mirrors. The latest Mahout release is available for download at:
 * [Download Latest](http://www.apache.org/dyn/closer.cgi/mahout/)
 * [Release Archive](http://archive.apache.org/dist/mahout/)
 
-
-[MAHOUT:System Requirements](../developers/system-requirements.html)
- are detailed online. 
-
-For Maven users please include the following snippet in your pom:
+For <a href="http://maven.apache.org">Maven</a> users please include the following snippet in your pom:
 
     <dependency>
         <groupId>org.apache.mahout</groupId>
@@ -45,6 +41,6 @@ In case you are using Ivy, Gradle, Buildr, Grape or SBT you might want to direct
 
 Official releases are usually created when the developers feel there are
 sufficient changes, improvements and bug fixes to warrant a release. Watch
-the [Mailing lists](https://cwiki.apache.org/MAHOUT/mailinglistarchives.html)
+the <a href="https://mahout.apache.org/general/mailing-lists,-irc-and-archives.html">Mailing lists</a>
  for latest release discussions.
 
