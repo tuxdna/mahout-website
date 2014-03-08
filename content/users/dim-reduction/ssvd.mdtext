@@ -33,8 +33,10 @@ SSVD uses at most 3 MR sequential steps (map-only + map-reduce + 2 optional para
 **Potential drawbacks:**
 
 potentially less precise (but adding even one power iteration seems to fix that quite a bit).
-Documentation
-Overview and Usage
+
+**Documentation**
+
+[Overview and Usage][3]
 Note: Please use 0.6 or later! for PCA workflow, please use 0.7 or later.
 
 **Publications**
@@ -44,7 +46,7 @@ approximations of matrices" contains comprehensive definition of parallelization
 
 **R simulation**
 
-Non-parallel SSVD simulation in R with power iterations and PCA options. Note that this implementation is not most optimal for sequential flow solver, but it is for demonstration purposes only.
+[Non-parallel SSVD simulation in R][2] with power iterations and PCA options. Note that this implementation is not most optimal for sequential flow solver, but it is for demonstration purposes only.
 
 However, try this R code to simulate a meaningful input:
 
@@ -73,3 +75,5 @@ Note: numerical stability of R algorithms may differ from that of Mahout's distr
 
 
   [1]: http://amath.colorado.edu/faculty/martinss/Pubs/2012_halko_dissertation.pdf
+  [2]: ssvd.page/ssvd.R
+  [3]: ssvd.page/ssvd.pdf
