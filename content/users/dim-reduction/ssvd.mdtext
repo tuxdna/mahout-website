@@ -16,30 +16,35 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-## Stochastic Singular Value Decomposition ##
+# Stochastic Singular Value Decomposition #
 
 Stochastic SVD method in Mahout produces reduced rank Singular Value Decomposition output in its strict mathematical definition: A=USV'
 
-**The benefits over other methods are:**
+##The benefits over other methods are:
 
-reduced flops required compared to Krylov subspace methods
-In map-reduce world, a fixed number of MR iterations required regardless of rank requested
-Tweak precision/speed balance with options.
-A is a Distributed Row Matrix where rows may be identified by any Writable (such as a document path). As such, it would work directly on the output of seq2sparse.
-As of 0.7 trunk, includes PCA and dimensionality reduction workflow (EXPERIMENTAL! Feedback on performance/other PCA related issues/ blogs is greatly appreciated.)
-map-reduce characteristics: 
+ - reduced flops required compared to Krylov subspace methods
+
+ - In map-reduce world, a fixed number of MR iterations required regardless of rank requested
+
+ - Tweak precision/speed balance with options.
+
+ - A is a Distributed Row Matrix where rows may be identified by any Writable (such as a document path). As such, it would work directly on the output of seq2sparse.
+
+ - As of 0.7 trunk, includes PCA and dimensionality reduction workflow (EXPERIMENTAL! Feedback on performance/other PCA related issues/ blogs is greatly appreciated.)
+
+### Map-Reduce characteristics: 
 SSVD uses at most 3 MR sequential steps (map-only + map-reduce + 2 optional parallel map-reduce jobs) to produce reduced rank approximation of U, V and S matrices. Additionally, two more map-reduce steps are added for each power iteration step if requested.
 
-**Potential drawbacks:**
+##Potential drawbacks:
 
 potentially less precise (but adding even one power iteration seems to fix that quite a bit).
 
-**Documentation**
+##Documentation
 
 [Overview and Usage][3]
 Note: Please use 0.6 or later! for PCA workflow, please use 0.7 or later.
 
-**Publications**
+##Publications
 
 [Nathan Halko's dissertation][1] "Randomized methods for computing low-rank
 approximations of matrices" contains comprehensive definition of parallelization strategy taken in Mahout SSVD implementation and also some precision/scalability benchmarks, esp. w.r.t. Mahout Lanczos implementation on a typical corpus data set.
