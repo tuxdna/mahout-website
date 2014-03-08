@@ -48,6 +48,10 @@ a, address, body, caption, cite, code, dfn, em, strong, th, var {
   text-decoration: none;
 }
 
+em {
+  font-style: italic;
+}
+
 strong {
   font-weight: bold;
 }
