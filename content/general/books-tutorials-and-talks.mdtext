@@ -44,6 +44,8 @@ given.	Please keep all listings in alphabetical order within each section.
    * <a href="https://www.ibm.com/developerworks/java/library/j-mahout/index.html">Introducing Apache Mahout</a> - Grant Ingersoll - Intro to Apache Mahout focused on clustering, classification and collaborative filtering. Japanese translation available at: [http://www.ibm.com/developerworks/jp/java/library/j-mahout/](http://www.ibm.com/developerworks/jp/java/library/j-mahout/)
    * <a href="http://philippeadjiman.com/blog/2009/11/11/flexible-collaborative-filtering-in-java-with-mahout-taste/">Flexible Collaborative Filtering In Java With Mahout Taste</a> - Philippe Adjiman - Quick starting guide on how to use the collaborative filtering package of Mahout (called Taste) to quickly and flexibly create, test and compare tailored recommendation engines.
    * <a href="http://www.lucidimagination.com/blog/2010/03/16/integrating-apache-mahout-with-apache-lucene-and-solr-part-i-of-3/">Integrating Mahout with Lucene and Solr</a> Three part series on ways to integrate Mahout with Lucene and Solr
+   * <a href="https://www.youtube.com/watch?v=yD40rVKUwPI">Mahout Item Recommender Tutorial using Java and Eclipse</a> - YouTube video tutorial by Steve Cook
+
 
 # Coursework/Lectures
 
