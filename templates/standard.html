@@ -51,66 +51,14 @@
    <div id="header">
     <div id="logo"><a href="/overview.html"></a></div>
   <div id="search">
-    <script type="text/javascript">
-      function getBlank(input, stdValue) {
-      if (input.value == stdValue) {
-      input.value = '';
-      }
-      return true;
-      }
-
-      function selectProvider(form) {
-      provider = form.elements['searchProvider'].value;
-      if (provider == "any") {
-      if (Math.random() > 0.5) {
-      provider = "lucid";
-      } else {
-      provider = "sl";
-      }
-      }
-
-      if (provider == "lucid") {
-      form.action = "http://search.lucidimagination.com/p:mahout";
-      } else if (provider == "sl") {
-      form.action = "http://search-lucene.com/mahout";
-      }
-
-      days = 90; // cookie will be valid for 90 days
-      date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      expires = "; expires=" + date.toGMTString();
-      document.cookie = "searchProvider=" + provider + expires + "; path=/";
-      return true;
-      }
-    </script>
-    <form id="quick-search" method="GET" onsubmit="return selectProvider(this)" action="http://search-lucene.com/mahout" name="searchform">
-      <fieldset>
-        <input type="search" name="q" value="Search with Apache Solr..." class="class1 class2 hint" accesskey="q" onfocus="getBlank(this, &#39;Search with Apache Solr...&#39;)">
-        <span style="color:white">@</span>
-        <select name="searchProvider" id="searchProvider">
-          <option value="any">select provider</option>
-          <option value="lucid">Lucid Find</option>
-          <option value="sl">Search-Lucene</option>
-        </select>
-      </fieldset>
-      <script type="text/javascript">
-        if (document.cookie.length>0) {
-        cStart=document.cookie.indexOf("searchProvider=");
-        if (cStart!=-1) {
-        cStart=cStart + "searchProvider=".length;
-        cEnd=document.cookie.indexOf(";", cStart);
-        if (cEnd==-1) {
-        cEnd=document.cookie.length;
-        }
-        provider = unescape(document.cookie.substring(cStart,cEnd));
-        document.forms['searchform'].elements['searchProvider'].value = provider;
-        }
-        }
-      </script>
+    <form id="search-form" action="http://www.google.com/search" method="get" class="navbar-search pull-right">    
+      <input value="http://mahout.apache.org" name="sitesearch" type="hidden">
+      <input class="search-query" name="q" id="query" type="text">
+      <input id="submission" type="image" src="images/mahout-lupe.png" alt="Search" />
     </form>
   </div>
 
-    <div class="navbar navbar-inverse" style="position:absolute;padding-right:5px;padding-left:5px;top:84px;right:0">
+    <div class="navbar navbar-inverse" style="position:absolute;top:133px;padding-right:0px;padding-left:0px;">
       <div class="navbar-inner">
         <div class="container">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -249,15 +197,7 @@
 </div>
 
  <div id="sidebar">
-  <div class="downloadNow">
-    <a href="http://mahout.apache.org/general/downloads.html">
-      <img alt="Download Apache Mahout" src="/images/download.png"></a>
-  </div>
   <div id="sidebar-wrap">
-    <ul class="sidemenu">
-      <li>Latest release version: Mahout 0.9</li>
-      <li>Latest development version: Mahout 1.0-SNAPSHOT</li>
-    </ul>
     <h2>Twitter</h2>
 	<ul class="sidemenu">
 		<li>
