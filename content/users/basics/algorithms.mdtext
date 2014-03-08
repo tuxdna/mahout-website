@@ -20,9 +20,9 @@ Title: Algorithms
 <a name="Algorithms-Clustering"></a>
 ## Clustering
 
-* [Canopy Clustering](../clustering/canopy-clustering.html) - **MapReduce**
-* [k-Means Clustering](../clustering/k-means-clustering.html) - **MapReduce**
-* [Fuzzy k-Means](../clustering/fuzzy-k-means.html) - **MapReduce**
+* [Canopy Clustering](../clustering/canopy-clustering.html) - **single machine / MapReduce**
+* [k-Means Clustering](../clustering/k-means-clustering.html) - **single machine / MapReduce**
+* [Fuzzy k-Means](../clustering/fuzzy-k-means.html) - **single machine / MapReduce**
 * Streaming k-Means - **single machine / MapReduce** 
 * [Spectral Clustering](../clustering/spectral-clustering.html) - **MapReduce** 
 
@@ -46,5 +46,7 @@ Title: Algorithms
 
 * Frequent Pattern Mining - **MapReduce**
 * RowSimilarityJob - compute pairwise similarities between the rows of a matrix - **MapReduce**
+* ConcatMatrices - combine 2 matrices or vectors into a single matrix - **MapReduce** 
 * [Collocations](collocations.html) - find co-locations of tokens in text - **MapReduce**
+
 
