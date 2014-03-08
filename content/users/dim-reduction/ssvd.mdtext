@@ -81,4 +81,4 @@ Note: numerical stability of R algorithms may differ from that of Mahout's distr
 
   [1]: http://amath.colorado.edu/faculty/martinss/Pubs/2012_halko_dissertation.pdf
   [2]: ssvd.page/ssvd.R
-  [3]: ssvd.page/ssvd.pdf
+  [3]: ssvd.page/SSVD-CLI.pdf
