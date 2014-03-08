@@ -42,6 +42,7 @@ potentially less precise (but adding even one power iteration seems to fix that 
 ##Documentation
 
 [Overview and Usage][3]
+
 Note: Please use 0.6 or later! for PCA workflow, please use 0.7 or later.
 
 ##Publications
@@ -55,9 +56,12 @@ approximations of matrices" contains comprehensive definition of parallelization
 
 However, try this R code to simulate a meaningful input:
 
- 
 
-       tests.R
+
+**tests.R**
+
+
+
     n<-1000
     m<-2000
     k<-10
