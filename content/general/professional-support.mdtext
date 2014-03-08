@@ -15,18 +15,12 @@ committers.
 | Name | contact details | notes |
 |------|-----------------|-------|
 | Ted Dunning | tdunning@apache.org | limited availability |
-| GridLine | [http://www.gridline.nl/contact](Gridline) | specialised in search and thesauri |
-| LucidWorks (co-founded by Grant Ingersoll) | [http://www.lucidworks.com](http://www.lucidworks.com) | Big data platform including Mahout as a service for clustering, classification and more |
-| Sematext International | [http://sematext.com/about/contact.html](http://sematext.com/about/contact.html) | [http://www.sematext.com/] |
-| Frank Scholten | frank.scholten@orange11.nl | Mahout [http://blog.orange11.nl/author/frank/](http://blog.orange11.nl/author/frank/) |
+| GridLine | [http://www.gridline.nl/contact](http://www.gridline.nl/contact) | specialised in search and thesauri |
+| LucidWorks | [http://www.lucidworks.com](http://www.lucidworks.com) | Big data platform including Mahout as a service for clustering, classification and more |
+| Sematext International | [http://sematext.com/](http://sematext.com/) | |
+| Frank Scholten | frank.scholten@orange11.nl | [http://blog.orange11.nl/author/frank/](http://blog.orange11.nl/author/frank/) |
 | Winterwell | daniel@winterwell.com | business/maths concept development & algorithms [http://winterwell.com](http://winterwell.com) |
 | Jagdish Nomula | nomulaj@gmail.com | ML, Search, Algorithms, Java [http://www.kosmex.com](http://www.kosmex.com) |
-
-<a name="ProfessionalSupport-Trainingandcourses"></a>
-## Training and courses
-
-| Name | contact details | notes |
-| ---- | --------------- | ----- |
 
 <a name="ProfessionalSupport-Talksandpresentations"></a>
 ## Talks and presentations
@@ -34,8 +28,4 @@ committers.
 | Name | contact details | notes |
 | Isabel Drost-Fromm | Mail: isabel@apache.org | If travel and accommodation costs are covered scheduling a talk is a lot easier. |
 | Frank Scholten | frank@jteam.nl | Mahout/Taste [http://blog.jteam.nl/author/frank/](http://blog.jteam.nl/author/frank/) |
-
-
-If you are looking for local Apache people please also consider having a
-look at the [ASF Nearby Mentor Search ](http://community.zones.apache.org/).
 
