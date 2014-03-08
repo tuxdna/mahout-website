@@ -8,11 +8,11 @@
       <li>Matrix factorization based recommenders</li>
       <li>K-Means, Fuzzy K-Means clustering</li>
       <li>Latent Dirichlet Allocation</li>
-      <li>Singular value decomposition</li>
-      <li>Logistic regression based classifier</li>
-      <li>Complementary Naive Bayes classifier</li>
-      <li>Random forest decision tree based classifier</li>
-      <li>High performance java collections (previously colt collections)</li>
+      <li>Singular Value Decomposition</li>
+      <li>Logistic regression classifier</li>
+      <li>(Complementary) Naive Bayes classifier</li>
+      <li>Random forest classifier</li>
+      <li>High performance java collections</li>
       <li>A vibrant community</li>
     </ul>
   </div>
@@ -48,12 +48,12 @@
    <li>A new and improved Mahout website based on Apache CMS - <a href="https://issues.apache.org/jira/browse/MAHOUT-1245">MAHOUT-1245</a></li>
    <li>Multi Layer Perceptron (MLP) classifier - <a href="https://issues.apache.org/jira/browse/MAHOUT-1265">MAHOUT-1265</a>.
  This is an early implementation of MLP to solicit user feedback, needs to be integrated into Mahout’s processing pipeline to work with Mahout’s vectors.</li>
-   <li>Scala DSL Bindings for Mahout Math Linear Algebra.  See http://weatheringthrutechdays.blogspot.com/2013/07/scala-dsl-for-mahout-in-core-linear.html - <a href="https://issues.apache.org/jira/browse/MAHOUT-1297">MAHOUT-1297</a></li>
+   <li>Scala DSL Bindings for Mahout Math Linear Algebra.  See <a href="http://weatheringthrutechdays.blogspot.com/2013/07/scala-dsl-for-mahout-in-core-linear.html">this blogpost</a> - <a href="https://issues.apache.org/jira/browse/MAHOUT-1297">MAHOUT-1297</a></li>
    <li>Recommenders as a Search.  See https://github.com/pferrel/solr-recommender - <a href="https://issues.apache.org/jira/browse/MAHOUT-1288">MAHOUT-1288</a></li>
-   <li>Support for easy functional Matrix views and derivatives - https://issues.apache.org/jira/browse/MAHOUT-1300">MAHOUT-1300</a></li>
-   <li>JSON output format for ClusterDumper - MAHOUT-1343</li>
-   <li>Enable randomised testing for all Mahout modules using Carrot RandomizedRunner - https://issues.apache.org/jira/browse/MAHOUT-1345">MAHOUT-1345</a></li>
-   <li>Online Algorithm for computing accurate Quantiles using 1-dimensional Clustering - MAHOUT-1361.  See https://github.com/tdunning/t-digest/blob/master/docs/theory/t-digest-paper/histo.pdf for the details.
+   <li>Support for easy functional Matrix views and derivatives - <a href="https://issues.apache.org/jira/browse/MAHOUT-1300">MAHOUT-1300</a></li>
+   <li>JSON output format for ClusterDumper - <a href="https://issues.apache.org/jira/browse/MAHOUT-1343">MAHOUT-1343</a></li>
+   <li>Enable randomised testing for all Mahout modules using Carrot RandomizedRunner - <a href="https://issues.apache.org/jira/browse/MAHOUT-1345">MAHOUT-1345</a></li>
+   <li>Online Algorithm for computing accurate Quantiles using 1-dimensional Clustering - <a href="https://issues.apache.org/jira/browse/MAHOUT-1361">MAHOUT-1361</a>.  See this <a href="https://github.com/tdunning/t-digest/blob/master/docs/theory/t-digest-paper/histo.pdf">pdf</a> for the details.
    <li>Upgrade to Lucene 4.6.1 - <a href="https://issues.apache.org/jira/browse/MAHOUT-1364">MAHOUT-1364</a></li>
   </ul>
 
