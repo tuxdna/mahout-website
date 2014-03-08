@@ -9,7 +9,7 @@ endorsement by Mahout, its committers or the Apache Software Foundation and
 are for informational purposes only.*
 
 <a name="PoweredByMahout-CommercialUse"></a>
-# Commercial Use
+## Commercial Use
 
 * <a href="http://nosql.mypopescu.com/post/2082712431/hbase-and-hadoop-at-adobe">Adobe AMP</a> uses Mahout's clustering algorithms to increase video
 consumption by better user targeting. 
@@ -92,7 +92,7 @@ its Real-time system named [UPTIME](http://uptime.365media.com/)
  and 365Media/Social
 
 <a name="PoweredByMahout-AcademicUse"></a>
-# Academic Use
+## Academic Use
 
 * [Dicode](https://www.dicode-project.eu/)
  project uses Mahout's clustering and classification algorithms on top of
@@ -114,7 +114,7 @@ funded by the Ministry of Interior of Japan.
 * Mahout is used in the NoTube EU project.
 
 <a name="PoweredByMahout-PoweredByLogos"></a>
-# Powered By Logos
+## Powered By Logos
 
 Feel free to use our **Powered By** logos on your site:
 
