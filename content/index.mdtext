@@ -1,7 +1,8 @@
 <h1>What is Apache Mahout?</h1>
-<h2>The Apache Mahout™ machine learning library's goal is to build scalable machine learning libraries.</h2>
+<h2>The Apache Mahout™ project's goal is to build a scalable machine learning library.</h2>
   <div class="highlights">
-    <h4>Mahout currently has</h4>
+    <a href="http://mahout.apache.org/general/downloads.html"><img src="http://mahout.apache.org/images/download-mahout.png"/></a>
+    <h4>Latest release version 0.9 has</h4>
     <ul>
       <li>User and Item based recommenders</li>
       <li>Matrix factorization based recommenders</li>
@@ -16,14 +17,14 @@
     </ul>
   </div>
   <p>With scalable we mean:</p>
-  <p>Scalable to reasonably large data sets. Our core algorithms for clustering, classfication and
+  <p>**Scalable to large data sets**. Our core algorithms for clustering, classfication and
     collaborative filtering are implemented on top of Apache Hadoop using the map/reduce paradigm. However we do not
     restrict contributions to Hadoop based implementations: Contributions that run on a single node or on a non-Hadoop
     cluster are welcome as well. The core libraries are highly optimized to allow for good performance also for
     non-distributed algorithms</p>
-  <p>Scalable to support your business case. Mahout is distributed under a commercially friendly Apache Software
+  <p>**Scalable to support your business case**. Mahout is distributed under a commercially friendly Apache Software
     license.</p>
-  <p>Scalable community. The goal of Mahout is to build a vibrant, responsive, diverse community to facilitate
+  <p>**Scalable community**. The goal of Mahout is to build a vibrant, responsive, diverse community to facilitate
     discussions not only on the project itself but also on potential use cases. Come to the mailing lists to find out
     more.</p>
 
@@ -44,16 +45,16 @@
   0.9. Highlights include:</p>
 
   <ul>
-   <li>A new and improved Mahout website based on Apache CMS - MAHOUT-1245</li>
-   <li>Multi Layer Perceptron (MLP) classifier - MAHOUT-1265.
+   <li>A new and improved Mahout website based on Apache CMS - <a href="https://issues.apache.org/jira/browse/MAHOUT-1245">MAHOUT-1245</a></li>
+   <li>Multi Layer Perceptron (MLP) classifier - <a href="https://issues.apache.org/jira/browse/MAHOUT-1265">MAHOUT-1265</a>.
  This is an early implementation of MLP to solicit user feedback, needs to be integrated into Mahout’s processing pipeline to work with Mahout’s vectors.</li>
-   <li>Scala DSL Bindings for Mahout Math Linear Algebra.  See http://weatheringthrutechdays.blogspot.com/2013/07/scala-dsl-for-mahout-in-core-linear.html - MAHOUT-1297</li>
-   <li>Recommenders as a Search.  See https://github.com/pferrel/solr-recommender - MAHOUT-1288</li>
-   <li>Support for easy functional Matrix views and derivatives - MAHOUT-1300</li>
+   <li>Scala DSL Bindings for Mahout Math Linear Algebra.  See http://weatheringthrutechdays.blogspot.com/2013/07/scala-dsl-for-mahout-in-core-linear.html - <a href="https://issues.apache.org/jira/browse/MAHOUT-1297">MAHOUT-1297</a></li>
+   <li>Recommenders as a Search.  See https://github.com/pferrel/solr-recommender - <a href="https://issues.apache.org/jira/browse/MAHOUT-1288">MAHOUT-1288</a></li>
+   <li>Support for easy functional Matrix views and derivatives - https://issues.apache.org/jira/browse/MAHOUT-1300">MAHOUT-1300</a></li>
    <li>JSON output format for ClusterDumper - MAHOUT-1343</li>
-   <li>Enable randomised testing for all Mahout modules using Carrot RandomizedRunner - MAHOUT-1345</li>
+   <li>Enable randomised testing for all Mahout modules using Carrot RandomizedRunner - https://issues.apache.org/jira/browse/MAHOUT-1345">MAHOUT-1345</a></li>
    <li>Online Algorithm for computing accurate Quantiles using 1-dimensional Clustering - MAHOUT-1361.  See https://github.com/tdunning/t-digest/blob/master/docs/theory/t-digest-paper/histo.pdf for the details.
-   <li>Upgrade to Lucene 4.6.1 - MAHOUT-1364</li>
+   <li>Upgrade to Lucene 4.6.1 - <a href="https://issues.apache.org/jira/browse/MAHOUT-1364">MAHOUT-1364</a></li>
   </ul>
 
   <p>Changes in 0.9 are detailed at <a href="http://svn.apache.org/viewvc/mahout/trunk/CHANGELOG?view=markup&pathrev=1563661">release notes</a>.</p>
