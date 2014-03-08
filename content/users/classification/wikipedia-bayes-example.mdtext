@@ -22,7 +22,7 @@ what country an unseen article should be categorized into.
 
 1. Create directory `$MAHOUT_HOME/examples/temp` and copy the xml file into this directory
 
-1. Chunk the Data into pieces: `$MAHOUT_HOME/bin/mahout wikipediaXMLSplitter -d $MAHOUT_HOME/examples/temp/enwiki-latest-pages-articles10.xml -o wikipedia/chunks -c 64` 
+1. Chunk the Data into pieces: `$MAHOUT_HOME/bin/mahout wikipediaXmlSplitter -d $MAHOUT_HOME/examples/temp/enwiki-latest-pages-articles10.xml -o wikipedia/chunks -c 64` 
 *We strongly suggest you backup the results to some other place so that you don't have to do this step again in
 case it gets accidentally erased.*
 
