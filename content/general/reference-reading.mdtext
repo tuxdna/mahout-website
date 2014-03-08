@@ -2,22 +2,10 @@ Title: Reference Reading
 
 # Reference Reading
 
-<a name="ReferenceReading-GeneralClustering"></a>
-## Clustering
-
-For a broader discussion on  [clustering tips and tricks ](http://markmail.org/thread/7dln43yv2nlnlqow) the dev/user list of Mahout is a good place to start. 
-Listing more references below.
-
-For more information on clustering as part of search see chapters on 
-Hierarchical and Flat Clustering as part of search in 
-the [stanford ir book](http://nlp.stanford.edu/IR-book/html/htmledition/irbook.html).
+Here we provide references to books and courses about data analysis in general, which might also be helpful in the context of Mahout.
 
 <a name="ReferenceReading-GeneralBackgroundMaterials"></a>
 ## General Background Materials
-
-> Can someone recommend me good books on Statistics and also on Linear
-> Algebra and Analytic Geometry which will provide enough background for
-> understanding machine learning algorithms?
 
 Don't be overwhelmed by all the maths, you can do a lot in Mahout with some
 basic knowledge. The books will help you understand your
@@ -25,124 +13,57 @@ data better, and ask better questions both of Mahout's APIs, and also of
 the Mahout community. And unlike learning some particular software tool,
 these are skills that will remain useful decades later.
 
-* [Gilbert Strang](http://www-math.mit.edu/~gs)
-'s [Introduction to Linear Algebra](http://math.mit.edu/linearalgebra/).
-([openlibrary](http://openlibrary.org/works/OL3285486W/Introduction_to_linear_algebra)
-) His lectures are also [available online](http://web.mit.edu/18.06/www/)
- and are strongly recommended. See [lecture](http://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/)
-
-* "Mathematical Tools for Applied Mulitvariate Analysis" by J.Douglass
+ * [Gilbert Strang](http://www-math.mit.edu/~gs)
+'s [Introduction to Linear Algebra](http://math.mit.edu/linearalgebra/). His [lectures](http://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/) are also [available online](http://web.mit.edu/18.06/www/)
+ and are strongly recommended. 
+ * [Mathematical Tools for Applied Mulitvariate Analysis](http://www.amazon.com/Mathematical-Tools-Applied-Multivariate-Analysis/dp/0121609553/ref=sr_1_1?ie=UTF8&qid=1299602805&sr=8-1) by J.Douglass
 Carroll.
-([amazon](http://www.amazon.com/Mathematical-Tools-Applied-Multivariate-Analysis/dp/0121609553/ref=sr_1_1?ie=UTF8&qid=1299602805&sr=8-1)
-)
-
-
-* [Stanford Machine Learning online courseware](http://www.stanford.edu/class/cs229/)
-(cs229.stanford.edu): Videos in youtube or [iTunesU](http://itunes.apple.com/itunes-u/machine-learning/id384233048). The [section notes](http://www.stanford.edu/class/cs229/materials.html)
+ * [Stanford Machine Learning online courseware](http://www.stanford.edu/class/cs229/)
+: Videos on youtube or [iTunesU](http://itunes.apple.com/itunes-u/machine-learning/id384233048). The [section notes](http://www.stanford.edu/class/cs229/materials.html)
  for this course will give you enough review material on linear algebra and
 probability theory to get you going.
-
-* [MIT Machine Learning online courseware](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006/)
- (6.867) has [Lecture notes in PDF](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006/lecture-notes/)
- online.
-
-* As a pre-requisite to probability and statistics, you'll need [basic calculus](http://en.wikipedia.org/wiki/Calculus)
-.  A maths for scientists text might be useful here such as 'Mathematics
-for Engineers and Scientists', Alan Jeffrey, Chapman & Hall/CRC.
-([openlibrary](http://openlibrary.org/books/OL3305993M/Mathematics_for_engineers_and_scientists))
-
-* One of the best writers in the probability/statistics world is Sheldon
-Ross.  Try
-''A First Course in Probability (8th Edition), Pearson'' ([amazon](http://www.pearsonhighered.com/educator/product/First-Course-in-Probability-A/9780136033134.page)
-) and then move on to his ''Introduction to Probability Models (9th
-Edition), Academic
-Press.''([amazon](http://www.amazon.com/Introduction-Probability-Models-Sixth-Sheldon/dp/0125984707))
-
+ * [MIT Machine Learning online courseware](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006/)  has [lecture notes](http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006/lecture-notes/) online.
+ * As a pre-requisite to probability and statistics, you'll need [basic calculus](http://en.wikipedia.org/wiki/Calculus). A maths for scientists text might be useful here such as 'Mathematics for Engineers and Scientists', Alan Jeffrey, Chapman & Hall/CRC. ([openlibrary](http://openlibrary.org/books/OL3305993M/Mathematics_for_engineers_and_scientists))
+ * One of the best writers in the probability/statistics world is Sheldon Ross. Try [A First Course in Probability (8th Edition)](http://www.pearsonhighered.com/educator/product/First-Course-in-Probability-A/9780136033134.page) and then move on to his [Introduction to Probability Models](http://www.amazon.com/Introduction-Probability-Models-Sixth-Sheldon/dp/0125984707)
 
 Some good introductory alternatives here are:
 
-* [Kahn Academy](http://www.khanacademy.org/) -- videos on stats, probability, linear algebra
+ * [Kahn Academy](http://www.khanacademy.org/) -- videos on stats, probability, linear algebra
+ * [Probability and Statistics (7th Edition)](http://www.amazon.com/Probability-Statistics-Engineering-Sciences-InfoTrac/dp/0534399339), Jay L. Devore, Chapman.
+ * [Probability and Statistical Inference (7th Edition)](http://www.amazon.com/Probability-Statistical-Inference-Robert-Hogg/dp/0132546086), Hogg and Tanis, Pearson.
 
-* Probability and Statistics (7th Edition), Jay L. Devore, Chapman.
-([amazon](http://www.amazon.com/Probability-Statistics-Engineering-Sciences-InfoTrac/dp/0534399339))
+Once you have a grasp of the basics then there are a slew of great texts that you might consult:
 
-* Probability and Statistical Inference (7th Edition), Hogg and Tanis,
-Pearson.
-([amazon](http://www.amazon.com/Probability-Statistical-Inference-Robert-Hogg/dp/0132546086))
-
-Once you have a grasp of the basics then there are a slew of great texts
-that you might consult:
-
-* Statistical Inference,	Casell and Berger, Duxbury/Thomson Learning.
-([amazon](http://www.amazon.com/Statistical-Inference-George-Casella/dp/0534243126))
-
-* Introduction to Bayesian Statistics (2nd Edition), William H. Bolstad,
-Wiley. ([amazon](http://www.amazon.com/Introduction-Bayesian-Statistics-William-Bolstad/dp/0471270202))
-
-* For the computational side of Bayesian (predominantly Markov chain
-Monte Carlo), e.g.
-Bolstad's Understanding Computational Bayesian Statistics, Wiley.
-([amazon](http://www.amazon.com/Understanding-Computational-Bayesian-Statistics-Wiley/dp/0470046090))
-
-* [Bayesian Data Analysis, Gelman et al., Chapman &Hall/CRC](http://www.stat.columbia.edu/~gelman/book/)
-
-* On top of the books, [R](http://en.wikipedia.org/wiki/R_(programming_language))
- \- is an indispensable software tool for visualizing distributions and
-doing calculations.
-
+ * [Statistical Inference](http://www.amazon.com/Statistical-Inference-George-Casella/dp/0534243126), Casell and Berger, Duxbury/Thomson Learning.
+ * [Introduction to Bayesian Statistics](http://www.amazon.com/Introduction-Bayesian-Statistics-William-Bolstad/dp/0471270202), William H. Bolstad, Wiley. 
+ * [Understanding Computational Bayesian Statistics](http://www.amazon.com/Understanding-Computational-Bayesian-Statistics-Wiley/dp/0470046090), Bolstadt
+ * [Bayesian Data Analysis, Gelman et al.](http://www.stat.columbia.edu/~gelman/book/)
 
 
 ## For statistics related to machine learning, these are particularly helpful:
 
-* [Pattern Recognition and Machine Learning by Chris Bishop](http://research.microsoft.com/en-us/um/people/cmbishop/PRML/index.htm)
-
-* [Elements of Statistical Learning](http://www-stat.stanford.edu/~tibs/ElemStatLearn/)
- by Trevor Hastie, Robert Tibshirani, Jerome Friedman 
-
-* [http://research.microsoft.com/en-us/um/people/cmbishop/PRML/index.htm](http://research.microsoft.com/en-us/um/people/cmbishop/PRML/index.htm)
+ * [Pattern Recognition and Machine Learning by Chris Bishop](http://research.microsoft.com/en-us/um/people/cmbishop/PRML/index.htm)
+ * [Elements of Statistical Learning](http://www-stat.stanford.edu/~tibs/ElemStatLearn/) by Trevor Hastie, Robert Tibshirani, Jerome Friedman 
+ * [http://research.microsoft.com/en-us/um/people/cmbishop/PRML/index.htm](http://research.microsoft.com/en-us/um/people/cmbishop/PRML/index.htm)
  
 
 ## For matrix computations/decomposition/factorization etc.:
 
-* Peter V. O'Neil "Introduction to Linear Algebra", great book for beginners
-(with some knowledge in calculus). It is not comprehensive, but,
-it will be a good place to start and the author starts by explaining the
-concepts with regards to vector spaces which I found to be a more natural
-way of explaining. [amazon](http://www.amazon.com/Introduction-Linear-Algebra-Theory-Applications/dp/053400606X)
-
-* David S. Watkins "Fundamentals of Matrix Computations (Pure and Applied
-Mathematics: A Wiley Series of Texts, Monographs and Tracts)"
-[amazon](http://www.amazon.com/Fundamentals-Matrix-Computations-Applied-Mathematics/dp/0470528338/)
-
-* The Gollub / Van Loan text is the classic text for numerical
-linear algebra.  Can't go wrong with it - great for researchers.  
-
-* Nick Trefethen's "Numerical Linear Algebra".  It's a bit more
-approachable for practitioners [html version](http://people.maths.ox.ac.uk/trefethen/books.html](http://people.maths.ox.ac.uk/trefethen/books.html)
-[amazon](http://www.amazon.com/Numerical-Linear-Algebra-Lloyd-Trefethen/dp/0898713617](http://www.amazon.com/Numerical-Linear-Algebra-Lloyd-Trefethen/dp/0898713617)
-Many chapters on SVD, there are even chapters on Lanczos.
+ * Peter V. O'Neil [Introduction to Linear Algebra](http://www.amazon.com/Introduction-Linear-Algebra-Theory-Applications/dp/053400606X), great book for beginners (with some knowledge in calculus). It is not comprehensive, but, it will be a good place to start and the author starts by explaining the concepts with regards to vector spaces which I found to be a more natural way of explaining.
+ * David S. Watkins [Fundamentals of Matrix Computations](http://www.amazon.com/Fundamentals-Matrix-Computations-Applied-Mathematics/dp/0470528338/)
+ * [Matrix Computations](http://www.amazon.com/Computations-Hopkins-Studies-Mathematical-Sciences/dp/0801854148/ref=sr_1_2?s=books&ie=UTF8&qid=1394307676&sr=1-2&keywords=golub+van+loan) is the classic text for numerical linear algebra. Can't go wrong with it - great for researchers.  
+ * Nick Trefethen's [Numerical Linear Algebra](http://people.maths.ox.ac.uk/trefethen/books.html).  It's a bit more approachable for practitioners. Many chapters on SVD, there are even chapters on Lanczos.
 
 
 ## Books specifically on R:
 
-* Learning about R is a difficult thing.  The best
-introduction is in MASS [http://www.stats.ox.ac.uk/pub/MASS4/](http://www.stats.ox.ac.uk/pub/MASS4/)
-.  
-
+* Learning about R is a difficult thing. The best introduction is in MASS [http://www.stats.ox.ac.uk/pub/MASS4/](http://www.stats.ox.ac.uk/pub/MASS4/)
 * [R Tutor](http://www.r-tutor.com/r-introduction)
 * [Manual](http://cran.r-project.org/doc/manuals/R-intro.pdf)
-* [R Course] (http://faculty.washington.edu/tlumley/Rcourse/)
+* [R Course](http://faculty.washington.edu/tlumley/Rcourse/)
 
 In addition, you should see how to plot data well:
 
 * [Trellis plotting](http://www.statmethods.net/advgraphs/trellis.html)
 * [ggplot2](http://had.co.nz/ggplot2/)
 
-Watch people and read code rather than reading books. Many small tricks
-like how to format data optimally, how to restructure data.frames,
-common ways to plot data, which libraries do what and so on that an 
-introductory book cannot convey general principles that will see you through to success."
-
-## Web plotting
-
-* jQuery libs: [Chart libs](http://www.1stwebdesigner.com/css/top-jquery-chart-libraries-interactive-charts/)
