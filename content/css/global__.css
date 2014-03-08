@@ -52,6 +52,10 @@ a img {
   border: none;
 }
 
+ol, ul {
+  list-style: none;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -64,12 +68,14 @@ html, body, #wrap {height: 100%;}
 body > #wrap {height: auto; min-height: 100%;}
 
 body {
+  font: 13px/ 165% sans-serif;
+  line-height: 1.7em;
   color: #555;
   margin: 0;
   padding: 0;
-  background-color: #cde9fc;
+  background: url(../images/bg.png) top left repeat-x #A6A6A6;
   text-align: center;
-  font-family: Arial;
+  font-family: Opensans , "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 .clearfix:after {
@@ -114,6 +120,7 @@ a:hover {
 }
 
 h1,h2,h2 {
+  font-family: Opensans , "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   color: #555;
   line-height: 130%;
@@ -134,17 +141,17 @@ h2 {
 }
 
 p,dl {
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 10px;
   margin: 0;
 }
 
 ul{
-  /*margin: 10px 10px;*/
-  /*padding: 0 0 0 10px;*/
-  margin-left: 40px;
-  margin-right: 20px;
+  margin: 10px 10px;
+  padding: 0 0 0 10px;
+}
+
+ul {
+  list-style: none;
 }
 
 ol {
@@ -238,6 +245,7 @@ input,select {
   padding: 4px;
   font-size: 1em;
   font-weight: 300;
+  font-family: Opensans , "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #555;
 }
 
@@ -246,7 +254,8 @@ input[type="search"] {
 }
 
 #sidebar-wrap {
-  padding: 0 0 0 0px;
+  background: #fff url(../images/sidebar.png) top left repeat-y;
+  padding: 0 0 0 15px;
 }
 
 #sidebar ul.sidemenu {
@@ -275,6 +284,7 @@ input[type="search"] {
   color: #304c90;
   font-size: 1em;
   font-weight: 300;
+  font-family: Opensans , "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #555;
   background: #fff;
 }
@@ -284,6 +294,7 @@ textarea {
   padding: 4px;
   font-size: 1em;
   font-weight: 300;
+  font-family: Opensans , "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   height: 100px;
   display: block;
   color: #555;
@@ -299,6 +310,7 @@ input,textarea,select {
 input.button {
   font-size: 13px;
   font-weight: 500;
+  font-family: Opensans , "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   height: 30px;
   margin: 0;
   padding: 2px 3px;
@@ -329,17 +341,17 @@ input.button {
   clear: both;
 }
 
-#wrap {
+#wrap{
+  background: #fff url(../images/wrapper.jpg) top center no-repeat;
   width: 1200px;
   margin: 0 auto;
   text-align:left;
 }
 
 #content-wrap  {
-  width: 860px;
-  margin: 0;
+  width:1200px;
+  margin:0 auto;
   padding-bottom: 42px;
-  background-color: white;
 }
 
 #content {
@@ -355,16 +367,10 @@ input.button {
   height: 50px;
   clear:both;
   font-size:12px;
-  width:860px;
+  width:1200px;
   border-top: 1px solid #eee;
   background-color: #E2E2E2;
   padding: 20px 0;
-}
-
-#footer #container {
-  width: 860px;
-  margin: 0;
-  float: left;
 }
 
 #foot {
@@ -374,24 +380,21 @@ input.button {
   left:30px;
 }
 
-
-
 #header {
   position: relative;
   width: 945px;
-  height: 166px;
+  height: 100px;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   background: transparent;
 }
 
 #header #logo {
   position: absolute;
-  top: 20px;
-  left: 10px;
-  height: 104px;
-  width: 498px;
-  background-image: url('../images/mahout-logo-brudman.png');
+  top: 5px;
+  left: 20px;
+  height: 42px;
+  width: 405px;
 }
 
 #header #logo a,img {
@@ -428,13 +431,13 @@ input.button {
 #search {
   position:absolute;
   top:0;
-  right:40px;
+  right:0;
+  background:url(../images/search.gif) center left no-repeat;
   padding:5px;
   padding-top:4px;
   padding-left:33px;
   background-color:#444;
-  width: 260px;
-  height: 133px;
+  width: 360px;
 }
 
 .hintText {
@@ -453,22 +456,10 @@ input.button {
   padding-right:5px;
   padding-left:5px;
   right:0;
-  height: 33px;
-  top: 133px;
+  height: 34px;
+  top: 84px;
   z-index: 99999;
   background-color:#444;
-}
-
-div.navbar-inner {
-  min-height: 33px;
-  padding-right: 0px;
-  padding-left: 0px;
-  background-color: #FAFAFA;
-  background-image: none;
-  background-repeat: repeat-x;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.067);
 }
 
 #nav ul {
@@ -513,25 +504,6 @@ div.navbar-inner {
   background-image: url(../images/header_hot.jpg);
 }
 
-.navbar .nav {
-  float: right;
-  margin-right: 30px;
-}
-
-.navbar .nav > li > a {
-  text-align: left;
-  color: #fff;
-}
-
-.navbar .nav > li > a:active {
-  color: green;
-}
-
-.navbar .container {
-  width: 860px;
-  text-align: left;
-}
-
 #main {
   float: left;
   width: 826px;
@@ -548,6 +520,7 @@ div.navbar-inner {
   border-bottom: 1px solid #ebebeb;
   font-size: 2em;
   font-weight: 300;
+  font-family: Opensans , "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 #main h1 a {
@@ -555,6 +528,10 @@ div.navbar-inner {
   text-decoration: none;
   background: none;
   border: none;
+}
+
+#main ul li {
+  list-style-image: url(../images/bullet.gif);
 }
 
 #col1 {
@@ -578,6 +555,7 @@ div.navbar-inner {
   margin-top: 15px;
   font-size: 2em;
   font-weight: 300;
+  font-family: Opensans , "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #555;
   text-transform: none;
   border-bottom: 1px solid #ebebeb;
@@ -617,23 +595,28 @@ div.navbar-inner {
 
 #main .highlights {
   float:right;
-  width: 300px;
-  margin-left: 20px;
- /*  margin: 0 20px 0 10px;*/
+  width:400px;
+  background:#dfe9ef;
+  border:1px solid #eee;
+  margin:0 10px 0 10px;
   display:inline;
   padding: 15px;
-  color: #a8569c;
+}
+
+#main .highlights ul li {
+  list-style-image: url(../images/highlight-bullet.gif);
 }
 
 #main .highlights h4 {
-  padding-top: 10px;
+  padding:5px 5px 0 5px;
+  font-size: 13px;
 }
 
 #sidebar {
   float: right;
-  width: 280px;
+  width: 323px;
   padding: 0;
-  
+  margin: 15px 20px 0 0;
   display: inline;
 }
 
@@ -642,6 +625,7 @@ div.navbar-inner {
   padding: 15px 5px 0px 10px;
   font-size: 1.5em;
   font-weight: 300;
+  font-family: Opensans , "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #333;
 }
 
@@ -755,17 +739,18 @@ p.thumbs {
 
 body#home #wrap {
   position: relative;
-  width: 1150px;
+  background: #fff url(../images/home-wrapper-v3.png) top center no-repeat;
+  width: 1200px;
   margin: 0 auto;
   text-align: left;
 }
 
 body#home #header {
   position: relative;
-  width: 860px;
+  width: 1200px;
   padding: 0;
-  margin: 0;
-  background-color: white;
+  margin: 0 auto;
+  background: transparent;
 }
 
 body#home #header #slides {
@@ -898,24 +883,4 @@ body#full #wrap {
   width: 1200px;
   margin: 0 auto;
   text-align: left;
-}
-
-#search-form {
-  margin-top: 20px;
-}
-
-#search-form input {
-  float: left;
-}
-
-#search-form .search-query {
-  font-family: Arial;
-  width: 180px;
-  margin-right: 10px;
-}
-
-#search-form #submission {
-  border: none;
-  background: transparent;
-  margin-right: 10px;
 }
