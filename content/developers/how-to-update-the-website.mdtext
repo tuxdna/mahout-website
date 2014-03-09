@@ -1,37 +1,17 @@
 Title: How To Update The Website
 
-# How to update the Mahout Wiki and Website
+# How to update the Mahout Website
 
 <a name="HowToUpdateTheWebsite-Howtoupdatethemahouthomepage"></a>
 ## How to update the mahout home page
-1. If you are not a committer of Apache Mahout, please follow the [official contributor guidelines](http://www.apache.org/dev/cmsref.html#non-committer)
+1. If you are not a committer of Apache Mahout, please open a ticket in our [issue tracker](/developers/issue-tracker.html) and attach a text describing the changes/additions you want to  contribute
 1. If you are a committer:
     1. Make sure you have the [Apache CMS bookmarklet](https://cms.apache.org/#bookmark) installed.
     1. For all else refer to the [Apache CMS reference docs](http://www.apache.org/dev/cmsref.html).
-1. In particular ensure all outgoing links from the landing page to the wiki are working
-1. The site will automatically be exported from svn as soon as its committed
 
 <a name="HowToUpdateTheWebsite-SomeDo'sandDont'sofupdatingthewiki"></a>
-## Some Do's and Dont's of updating the web site and wiki
+## Some Do's and Dont's of updating the web site
 1. Keep all pages cleanly formatted - this includes using standard formatting for headers etc.
 1. Try to keep a single page for a topic instead of starting multiple ones.
 If the topics are related, put it under as a child under the similar page.
 1. Notify the developers of orphaned or broken links.
-
-
-## Additional hints for editing the wiki pages
-
-1. When linking wiki pages inside of Confluence make sure to use the page title to link pages so that they get correctly updated by
-when someone changes the title
-  eg:
-
-    Correct format
-    [Name of the link|How To Update The Website]
-    
-    The following is incorrect. Please change then when you encounter them
-    [Name of the link|http://<path to>/how to update the website.html]
-
-
-Note to non-committers: If you fail to edit the wiki pages send us a brief note on the
-mailing list - there have been lots of spamming attempts which forced us to shut down
-anonymous wiki editing.
