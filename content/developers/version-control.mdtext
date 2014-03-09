@@ -2,12 +2,10 @@ Title: Version Control
 
 # Version control access
 
-The Mahout source code resides in the [Apache Subversion (SVN)](http://subversion.tigris.org/)
- repository.  
+The Mahout source code resides in the **Apache Subversion (SVN)** repository.  
 
-There is also a [git](http://git-scm.com/)
- repository for Mahout available [at Apache](http://git.apache.org/) which is mirrored to [github](https://github.com/apache/mahout). Note though
-that currently we do not accept pull requests - instead create patches and submit them through [jira](http://issues.apache.org/jira/browse/MAHOUT).
+There is also a [git repository for Mahout](git://git.apache.org/mahout.git) available  which is mirrored on [github](https://github.com/apache/mahout). Note though
+that currently we do not accept pull requests - instead create patches and submit them through our [issue tracker](/developers/issue-tracker.html).
 
 <a name="VersionControl-WebAccess(read-only)"></a>
 ## Web Access (read-only)
@@ -30,4 +28,4 @@ The SVN URL for committers is [https://svn.apache.org/repos/asf/mahout/trunk](ht
 <a name="VersionControl-Issues"></a>
 ## Issues
 
-All bugs, improvements, patches, etc. should be logged in [JIRA](http://issues.apache.org/jira/browse/MAHOUT).
+All bugs, improvements, patches, etc. should be logged in our [issue tracker](https://mahout.apache.org/developers/issue-tracker.html).
