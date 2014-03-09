@@ -2,14 +2,9 @@ Title: Books Tutorials and Talks
 
 # Intro
 
-This page is a place to put links to info about talks (past and upcoming),
-tutorials, articles, books, slides, PDFs, discussions, etc. about Mahout,
-Machine Learning and related technologies.  No endorsements are implied or
-given.	Please keep all listings in alphabetical order within each section.
+This page is a place for info about talks (past and upcoming), tutorials, articles, books, slides, PDFs, discussions, etc. about Mahout. No endorsements are implied or
+given.
 
-# Background Material
-
-   * <a href="reference-reading.html">Reference Reading</a>
 # Books
 
 ## Mahout specific
@@ -32,7 +27,8 @@ given.	Please keep all listings in alphabetical order within each section.
    * <a href="http://www.amazon.com/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738/ref=pd_bbs_sr_2?ie=UTF8&s=books&qid=1214593709&sr=8-2">Pattern Recognition and Machine Learning (Information Science and Statistics) </a>
 
 # News, Articles and Tutorials
-
+   
+   * [Comparing Document Classification Functions of Lucene and Mahout](http://soleami.com/blog/comparing-document-classification-functions-of-lucene-and-mahout.html)
    * <a href="http://www.ibm.com/developerworks/java/library/j-mahout-scaling/">Apache Mahout: Scalable Machine Learning for Everyone</a>
    * <a href="http://emmaespina.wordpress.com/2011/04/26/ham-spam-and-elephants-or-how-to-build-a-spam-filter-server-with-mahout/">How to build a spam filter server with Mahout</a> - Applying classification on a live server - April 2011
    * <a href="http://ssc.io/deploying-a-massively-scalable-recommender-system-with-apache-mahout/">Deploying a massively scalable recommender system with Apache Mahout</a> - Blogpost of Sebastian Schelter in April 2011
