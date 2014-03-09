@@ -16,7 +16,7 @@ what country an unseen article should be categorized into.
 <a name="WikipediaBayesExample-Runningtheexample"></a>
 # Running the example
 
-1. Download the wikipedia data set [here](http://download.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2.html).
+1. Download the wikipedia data set [here](http://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2).
 
 1. Unzip the bz2 file to get the enwiki-latest-pages-articles.xml. 
 
