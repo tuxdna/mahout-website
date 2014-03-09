@@ -69,29 +69,28 @@ people don't. Putting your patch out there allows other people to try it
 and possibly improve it.
 
 <a name="HowToContribute-Gettingthesourcecode"></a>
-### Getting the source code
+## Getting the source code
 
 First of all, you need to get the [Mahout source code](/developers/version-control.html). Most development is done on the "trunk".
 
 
 <a name="HowToContribute-MakingChanges"></a>
-### Making Changes
+## Making Changes
 
 Before you start, you should send a message to the [Mahout developer mailing list](/general/mailing-lists,-irc-and-archives.html)
 (note: you have to subscribe before you can post), or file a ticket in  our [issue tracker](/developers/issue-tracker.html).
 Describe your proposed changes and check that they fit in with what others are doing and have planned for the project.  Be patient, it may take folks a while to understand your requirements.
 
-Modify the source code and add some (very) nice features using your
-favorite IDE.
+Modify the source code and add some (very) nice features.
 
 But take care about the following points
 
-* All public classes and methods should have informative **Javadoc comments**.
-* Code should be formatted according to the official [](http://www.oracle.com/technetwork/java/codeconventions-150003.pdf), with two exceptions:
- * indent two spaces per level, not four
- * lines can be 120 characters, not 80
-* Contributions should pass existing unit tests.
-* New unit tests should be provided to demonstrate bugs and fixes
+ * All public classes and methods should have informative Javadoc comments.
+ * Code should be formatted according to the official [](http://www.oracle.com/technetwork/java/codeconventions-150003.pdf), with two exceptions:
+  * indent two spaces per level, not four
+  * lines can be 120 characters, not 80
+ * Contributions should pass existing unit tests.
+ * New unit tests should be provided to demonstrate bugs and fixes
 
 <a name="HowToContribute-Generatingapatch"></a>
 ### Generating a patch
@@ -168,5 +167,5 @@ effort to improve the docs/tests for a patch, that helps even more.
 
 From the base directory (assuming that is where the patch is generated from), run:
 
- *patch [--dry-run] -p0 -i <PATH TO PATCH> *
+*patch [--dry-run] -p0 -i <PATH TO PATCH> *
 
