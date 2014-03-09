@@ -705,6 +705,13 @@ div.navbar-inner {
   margin-left:0;
 }
 
+pre {
+  padding: 9.5px;
+  margin: 0px 0px 10px;
+  background-color: #F5F5F5; 
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;        
+}
 #sidebar .indentsecond {
   margin-left:20px;
 }
