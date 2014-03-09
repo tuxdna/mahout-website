@@ -17,8 +17,8 @@ discuss issues. Do send mail to this list with usage and configuration
 questions and problems. Also, please send questions to this list to verify
 your problem before filing issues in JIRA. 
 
-* [Subscribe](mailto:mahout-user-subscribe@apache.org.html)
-* [Unsubscribe](mailto:mahout-user-unsubscribe@apache.org.html)
+* [Subscribe](mailto:user-subscribe@mahout.apache.org)
+* [Unsubscribe](mailto:user-unsubscribe@mahout.apache.org)
 
 <a name="MailingLists,IRCandArchives-MahoutDeveloperList"></a>
 ## Mahout Developer List
@@ -30,15 +30,15 @@ questions and problems.
 
 Discussion list: 
 
-* [Subscribe](mailto:mahout-dev-subscribe@apache.org.html)
+* [Subscribe](mailto:dev-subscribe@mahout.apache.org)
  -- Do not send mail to this list with usage questions or configuration
 questions and problems. 
-* [Unsubscribe](mailto:mahout-dev-unsubscribe@apache.org.html)
+* [Unsubscribe](mailto:dev-unsubscribe@mahout.apache.org)
 
 Commit notifications: 
 
-* [Subscribe](mailto:mahout-commits-subscribe@apache.org.html)
-* [Unsubscribe](mailto:mahout-commits-unsubscribe@apache.org.html)
+* [Subscribe](mailto:commits-subscribe@mahout.apache.org)
+* [Unsubscribe](mailto:commits-unsubscribe@mahout.apache.org)
 
 <a name="MailingLists,IRCandArchives-IRC"></a>
 # IRC
