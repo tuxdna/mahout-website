@@ -11,7 +11,7 @@ clean your build area.	For complex patches, it is recommended you deal
 with a fresh checkout.
   - Look at the patch and see where it is applied.  Ideally it is generated
 from the root, but not everyone does this.
-  - patch \-p 0 \-i <path to patch>  Throw a \--dry-run on there if you want
+  - Apply the patch with *patch \-p 0 \-i &lt;path to patch&gt;*  Throw a *\--dry-run* on there if you want
 to see what happens w/o screwing up your checkout.
   - Did the author write unit tests?  Are the unit tests worthwhile?
   - Are the licenses correct on newly added files? Has an ASF license been
@@ -23,13 +23,10 @@ know you are working on it.
 patch, it is suggested that you create a new patch and attach that to JIRA
 so that it can be discussed.
   - How is the documentation, especially the javadocs?
-  - Before committing, make sure you add any new documents to SVN.  Just becuause
+  - Before committing, make sure you add any new documents to SVN.  Just because
 the patch added them doesn't mean you have :)
-  - Run all unit tests, verify all tests pass.
-  - Generate javadocs, verify no javadoc errors/warnings were introduced by
-the patch.
-  - Put in a meaningful commit message.  Reference the JIRA issue when
-appropriate.
+  - Run all unit tests, verify that all tests pass.
+  - Put in a meaningful commit message, referencing the JIRA issue.
   - Remember to update the issue in JIRA when you have completed it.
 
 
