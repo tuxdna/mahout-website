@@ -32,7 +32,7 @@ Title: Algorithms
 
 * Singular Value Decomposition - **single machine**
 * Lanczos Algorithm - **single machine / MapReduce**
-* [Stochastic SVD](../dim-reduction/ssvd.html) - **single machine / MapReduce**
+* [Stochastic SVD](../dim-reduction/ssvd.html) - **single machine / MapReduce / Spark**
 * Principal Component Analysis (via Stochastic SVD)- **single machine / MapReduce**
 
 <a name="Algorithms-TopicModels"></a>
