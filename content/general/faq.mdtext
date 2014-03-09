@@ -7,9 +7,9 @@ Title: FAQ
 1. [What is Apache Mahout?](#whatis)
 1. [What does the name mean?](#mean)
 1. [How is the name pronounced?](#pronounce)
-1. [Where can I find the origins of the Mahout project? ](#historical)
-1. [Where can I download the Mahout logo? ](#logo)
-1. [Where can I download Mahout slide presentations? ](#presentations)
+1. [Where can I find the origins of the Mahout project?](#historical)
+1. [Where can I download the Mahout logo?](#downloadlogo)
+1. [Where can I download Mahout slide presentations?](#presentations)
 
 *Algorithms*
 
@@ -28,7 +28,7 @@ Title: FAQ
 ## General
 
 
-<a name="whatIs"></a>
+<a name="whatis"></a>
 #### What is Apache Mahout?
 
 Apache Mahout is a suite of machine learning libraries designed to be
@@ -60,7 +60,7 @@ Mahout was started by <a href="http://web.archive.org/web/20071228055210/http://
 
 There are some disagreements about how to pronounce the name. Webster's has it as muh-hout (as in ["out"](http://dictionary.reference.com/browse/mahout)), but the Sanskrit/Hindi origins pronounce it as "muh-hoot". The second pronunciation suggests a nice pun on the Hebrew word מהות meaning "essence or truth".
 
-<a name="logo"></a>
+<a name="downloadlogo"></a>
 #### Where can I download the Mahout logo?
 
 See [MAHOUT-335](https://issues.apache.org/jira/browse/MAHOUT-335)
@@ -93,7 +93,7 @@ like to implement, start a discussion on our [mailing list](https://mahout.apach
 There is a number of algorithm implementations that require no Hadoop dependencies whatsoever, consult the [algorithms list](https://mahout.apache.org/users/basics/algorithms.html). In the future, we might provide more algorithm implementations on platforms more suitable for machine learning such as [Apache Spark](http://spark.apache.org)
 
 ## Hadoop specific questions
-<a href="split"></a>
+<a name="split"></a>
 #### Mahout just won't run in parallel on my dataset. Why?
 
 If you are running training on a Hadoop cluster keep in mind that the number of mappers started is governed by the size of the input data and the configured split/block size of your cluster. As a rule of thumb,
