@@ -4,47 +4,35 @@ Title: Developer Resources
 ## Making a Contribution
 
 Mahout is always looking for contributions, especially in the areas of
-documentation. See this Wiki for details on contributing: [How to contribute](https://cwiki.apache.org/confluence/display/MAHOUT/How+To+Contribute)
+documentation. See our [How to contribute](/developers/how-to-contribute.html) page for details.
 
-We provide a list of items in JIRA that are aimed at new contributors and
-should be fairly easy to start on, these are labeled with [MAHOUT_INTRO_CONTRIBUTE](https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&jqlQuery=labels%20%3D%20MAHOUT_INTRO_CONTRIBUTE)
-.
 
 <a name="DeveloperResources-SourceCode"></a>
 ## Source Code
 
-The source files are now stored using Subversion (see [http://subversion.tigris.org/](http://subversion.tigris.org/)
- and [http://svnbook.red-bean.com/]
-).
+The source files are stored using Subversion, our page on [version control](/developers/version-control.html) has details on how to access the sourcecode.
 
-svn checkout [http://svn.apache.org/repos/asf/mahout/trunk](http://svn.apache.org/repos/asf/mahout/trunk)
- mahout/trunk
 
 <a name="DeveloperResources-Documentation"></a>
 ## Documentation
 
 Javadoc documentation is available online in our code reports:
 
-* Latest Javadoc:
-    * [Math](https://builds.apache.org/job/Mahout-Quality/ws/trunk/math/target/site/apidocs/index.html)
-    * [Core](https://builds.apache.org/job/Mahout-Quality/ws/trunk/core/target/site/apidocs/index.html)
-    * [Integration](https://builds.apache.org/job/Mahout-Quality/ws/trunk/integration/target/site/apidocs/index.html)
-    * [Examples](https://builds.apache.org/job/Mahout-Quality/ws/trunk/examples/target/site/apidocs/index.html)
-* [Data Formats](https://cwiki.apache.org/confluence/display/MAHOUT/Data+Formats)
-* [File Format Integrations](https://cwiki.apache.org/confluence/display/MAHOUT/File+Format+Integrations)
-* [Database Integrations](https://cwiki.apache.org/confluence/display/MAHOUT/Database+Integrations)
+
+ * [Math](https://builds.apache.org/job/Mahout-Quality/ws/trunk/math/target/site/apidocs/index.html)
+ * [Core](https://builds.apache.org/job/Mahout-Quality/ws/trunk/core/target/site/apidocs/index.html)
+ * [Integration](https://builds.apache.org/job/Mahout-Quality/ws/trunk/integration/target/site/apidocs/index.html)
+ * [Examples](https://builds.apache.org/job/Mahout-Quality/ws/trunk/examples/target/site/apidocs/index.html)
 
 <a name="DeveloperResources-Issues"></a>
 ## Issues
 
-All bugs, improvements, patches, etc. should be logged in [JIRA](https://issues.apache.org/jira/browse/MAHOUT)
-.
+All bugs, improvements, patches, etc. should be logged in our [issue tracker](/developers/issue-tracker.html).
 
 <a name="DeveloperResources-ContinuousIntegration"></a>
 ## Continuous Integration
 
-Mahout is continuously built on an hourly basis on the Apache [Jenkins](https://builds.apache.org/job/Mahout-Quality/)
- build system.
+Mahout is continuously built on an hourly basis on the [Apache Jenkins](https://builds.apache.org/job/Mahout-Quality/)  build system.
 
 ## Board reports
 
