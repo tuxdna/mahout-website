@@ -2,6 +2,9 @@ Title: Recommender Quickstart
 
 # Recommender Quickstart
 
-It's very easy to get started with Mahout's recommenders. You don't need to know and have Hadoop for this.
+It's very easy to get started with Mahout's recommenders. You don't need to know and have Hadoop for this. Here we list resources that might be helpful for some first steps:
 
-Steve Cook created a [video tutorial](https://www.youtube.com/watch?v=yD40rVKUwPI) on how to create a simple item-based recommender from scratch using Eclipse. (Note that you can avoid manually downloading the library jars by including mahout as [maven dependency](/general/downloads.html) into your project). 
+ * Steve Cook created a [video tutorial](https://www.youtube.com/watch?v=yD40rVKUwPI) on how to create a simple item-based recommender from scratch using Eclipse. (Note that you can avoid manually downloading the library jars by including mahout as [maven dependency](/general/downloads.html) into your project). 
+
+ * The paper [Collaborative Filtering with Apache Mahout](http://ssc.io/wp-content/uploads/2013/02/cf-mahout.pdf) by Sebastian Schelter and Sean Owen gives a short overview of Mahout's non-distributed recommenders and has pointers to research papers describing the underlying algorithms. 
+
