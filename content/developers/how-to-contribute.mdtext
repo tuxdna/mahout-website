@@ -155,7 +155,7 @@ incorporate other's suggestions into into your patch if you think they're reason
 
 
 <a name="HowToContribute-Review/ImproveExistingPatches"></a>
-# Review/Improve Existing Patches
+## Review/Improve Existing Patches
 
 If there's a Jira issue that already has a patch you think is really good, and works well for you -- please add a comment saying so.   If there's room
 for improvement (more tests, better javadocs, etc...) then make the changes and attach it as well.	If a lot of people review a patch and give it a
