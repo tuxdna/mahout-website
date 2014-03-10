@@ -98,4 +98,7 @@ Note: numerical stability of R algorithms may differ from that of Mahout's distr
   SVD <span style="display: none;" class="MathJax_Preview"></span><span style="font-size: 100%;" class="MathJax_MathML"><math><mrow><mi mathvariant="bold">A</mi><mo stretchy="false">≈</mo><mi mathvariant="bold">U</mi></mrow><mi mathvariant="bold">Σ</mi><msup><mrow><mi mathvariant="bold">V</mi></mrow><mrow><mi mathvariant="normal">⊤</mi></mrow></msup></math></span><script id="MathJax-Element-50" type="math/tex">\mathbf{A\approx U}\boldsymbol{\Sigma}\mathbf{V}^{\top}</script></p>
 
 
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
  
