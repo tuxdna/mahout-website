@@ -89,13 +89,13 @@ Note: numerical stability of R algorithms may differ from that of Mahout's distr
 
 #### Modified SSVD Algorithm. ####
 
-
-Given an $m\times n$
-  matrix A, a target rank $k\in\mathbb{N}_{1}$
- , an oversampling parameter $p\in\mathbb{N}_{1}$
- , and the number of additional power iterations $q\in\mathbb{N}_{0}$
- , this procedure computes an $m\times\left(k+p\right)$
-  SVD $\mathbf{A\approx U}\boldsymbol{\Sigma}\mathbf{V}^{\top}$
+<p>Modified SSVD Algorithm.</p>
+<p>Given an <span style="display: none;" class="MathJax_Preview"></span><span style="font-size: 100%;" class="MathJax_MathML"><math><mi>m</mi><mo stretchy="false">×</mo><mi>n</mi></math></span><script id="MathJax-Element-45" type="math/tex">m\times n</script>
+  matrix A, a target rank <span style="display: none;" class="MathJax_Preview"></span><span style="font-size: 100%;" class="MathJax_MathML"><math><mi>k</mi><mo stretchy="false">∈</mo><msub><mrow><mi mathvariant="double-struck">N</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span><script id="MathJax-Element-46" type="math/tex">k\in\mathbb{N}_{1}</script>
+ , an oversampling parameter <span style="display: none;" class="MathJax_Preview"></span><span style="font-size: 100%;" class="MathJax_MathML"><math><mi>p</mi><mo stretchy="false">∈</mo><msub><mrow><mi mathvariant="double-struck">N</mi></mrow><mrow><mn>1</mn></mrow></msub></math></span><script id="MathJax-Element-47" type="math/tex">p\in\mathbb{N}_{1}</script>
+ , and the number of additional power iterations <span style="display: none;" class="MathJax_Preview"></span><span style="font-size: 100%;" class="MathJax_MathML"><math><mi>q</mi><mo stretchy="false">∈</mo><msub><mrow><mi mathvariant="double-struck">N</mi></mrow><mrow><mn>0</mn></mrow></msub></math></span><script id="MathJax-Element-48" type="math/tex">q\in\mathbb{N}_{0}</script>
+ , this procedure computes an <span style="display: none;" class="MathJax_Preview"></span><span style="font-size: 100%;" class="MathJax_MathML"><math><mi>m</mi><mo stretchy="false">×</mo><mfenced close=")" open="("><mrow><mi>k</mi><mo stretchy="false">+</mo><mi>p</mi></mrow></mfenced></math></span><script id="MathJax-Element-49" type="math/tex">m\times\left(k+p\right)</script>
+  SVD <span style="display: none;" class="MathJax_Preview"></span><span style="font-size: 100%;" class="MathJax_MathML"><math><mrow><mi mathvariant="bold">A</mi><mo stretchy="false">≈</mo><mi mathvariant="bold">U</mi></mrow><mi mathvariant="bold">Σ</mi><msup><mrow><mi mathvariant="bold">V</mi></mrow><mrow><mi mathvariant="normal">⊤</mi></mrow></msup></math></span><script id="MathJax-Element-50" type="math/tex">\mathbf{A\approx U}\boldsymbol{\Sigma}\mathbf{V}^{\top}</script></p>
 
 
 <script type="text/javascript"
