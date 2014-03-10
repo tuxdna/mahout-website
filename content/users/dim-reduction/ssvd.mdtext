@@ -114,12 +114,12 @@ SVD `\(\mathbf{A\approx U}\boldsymbol{\Sigma}\mathbf{V}^{\top}\)`:
  (Another way is `\(\mathbf{R}^{-1}\mathbf{Y}^{\top}\mathbf{A}\)`
  , depending on whether we beleive if size of A less than size of Q).
 
-  5. If `\(q>0
-  repeat: for `\(i=1..q
+  5. If `\(q>0\)`
+  repeat: for `\(i=1..q\)`
  : `\(\mathbf{B}_{i}^{\top}=\mathbf{A}^{\top}\mbox{qr}\left(\mathbf{A}\mathbf{B}_{i-1}^{\top}\right).\mathbf{Q}\)`
   (power iterations step)
 
-  6. Compute Eigensolution of a small Hermitian `\(\mathbf{B}_{q}\mathbf{B}_{q}^{\top}=\mathbf{\hat{U}}\boldsymbol{\Lambda}\mathbf{\hat{U}}^{\top}\)`.
+  6. Compute Eigensolution of a small Hermitian `\(\mathbf{B}_{q}\mathbf{B}_{q}^{\top}=\mathbf{\hat{U}}\boldsymbol{\Lambda}\mathbf{\hat{U}}^{\top}\)`,
   `\(\mathbf{B}_{q}\mathbf{B}_{q}^{\top}\in\mathbb{R}^{\left(k+p\right)\times\left(k+p\right)}\)`.
  
 
