@@ -935,3 +935,5 @@ body#full #wrap {
   background: transparent;
   margin-right: 10px;
 }
+
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
