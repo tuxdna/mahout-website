@@ -16,6 +16,10 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 # Stochastic Singular Value Decomposition #
 
 Stochastic SVD method in Mahout produces reduced rank Singular Value Decomposition output in its strict mathematical definition: A=USV'
@@ -86,3 +90,12 @@ Note: numerical stability of R algorithms may differ from that of Mahout's distr
   [1]: http://amath.colorado.edu/faculty/martinss/Pubs/2012_halko_dissertation.pdf
   [2]: ssvd.page/ssvd.R
   [3]: ssvd.page/SSVD-CLI.pdf
+
+<div>
+\[\mathbf{D}=\mathbf{C}^{\top}\]
+</div>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+ 
