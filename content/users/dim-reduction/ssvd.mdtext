@@ -87,36 +87,15 @@ Note: numerical stability of R algorithms may differ from that of Mahout's distr
   [2]: ssvd.page/ssvd.R
   [3]: ssvd.page/SSVD-CLI.pdf
 
-### General SSVD algorithm flow ###
+#### Modified SSVD Algorithm.
 
-<div>
-Given an \(m\times n\) matrix **A**, a target rank \(k\in\mathbb{N}_{1}\),
-an oversampling parameter \(p\in\mathbb{N}_{1}\), and the number of
-additional power iterations \(q\in\mathbb{N}_{0}\), this procedure
-computes an \(m\times\left(k+p\right)\) SVD \(\mathbf{A=U}\boldsymbol{\Sigma}\mathbf{V}^{\top}\)
-</div>
+Given an \(m\times n\)
+  matrix \(\mathbb{A}\), a target rank \(k\in\mathbb{N}_{1}\)
+ , an oversampling parameter \(p\in\mathbb{N}_{1}\)
+ , and the number of additional power iterations \(q\in\mathbb{N}_{0}\)
+ , this procedure computes an \(m\times\left(k+p\right)\)
+  SVD \(\mathbf{A\approx U}\boldsymbol{\Sigma}\mathbf{V}^{\top}\):
 
-
-\begin{enumerate}
-\item Create seed for random $n\times\left(k+p\right)$ matrix $\boldsymbol{\Omega}$.
-The seed defines matrix $\mathbf{\Omega}$ using Gaussian unit vectors
-per one of suggestions in \cite{Martinsson}.
-\item $\mathbf{Y=A\boldsymbol{\Omega}},\,\mathbf{Y}\in\mathbb{R}^{m\times\left(k+p\right)}$.
-\item Column-orthonormalize $\mathbf{Y}\rightarrow\mathbf{Q}$ by computing
-thin decomposition $\mathbf{Y}=\mathbf{Q}\mathbf{R}$. Also, $\mathbf{Q}\in\mathbb{R}^{m\times\left(k+p\right)},\,\mathbf{R}\in\mathbb{R}^{\left(k+p\right)\times\left(k+p\right)}$.
-I denote this as $\mathbf{Q}=\mbox{qr}\left(\mathbf{Y}\right).\mathbf{Q}$.
-\item $\mathbf{B}_{0}=\mathbf{Q}^{\top}\mathbf{A}:\,\,\mathbf{B}\in\mathbb{R}^{\left(k+p\right)\times n}$.
-(Another way is $\mathbf{R}^{-1}\mathbf{Y}^{\top}\mathbf{A}$, depending
-on whether we beleive if size of A less than size of Q).
-\item If $q>0$ repeat: for $i=1..q$: $\mathbf{B}_{i}^{\top}=\mathbf{A}^{\top}\mbox{qr}\left(\mathbf{A}\mathbf{B}_{i-1}^{\top}\right).\mathbf{Q}$
-(power iterations step)
-\item Compute Eigensolution of a small Hermitian $\mathbf{B}_{q}\mathbf{B}_{q}^{\top}=\mathbf{\hat{U}}\boldsymbol{\Lambda}\mathbf{\hat{U}}^{\top}$.
-$\mathbf{B}_{q}\mathbf{B}_{q}^{\top}\in\mathbb{R}^{\left(k+p\right)\times\left(k+p\right)}$.
-\item Singular values $\mathbf{\boldsymbol{\Sigma}}=\boldsymbol{\Lambda}^{0.5}$,
-or, in other words, $s_{i}=\sqrt{\sigma_{i}}$.
-\item If needed, compute $\mathbf{U}=\mathbf{Q}\hat{\mathbf{U}}$.
-\item If needed, compute $\mathbf{V}=\mathbf{B}_{q}^{\top}\hat{\mathbf{U}}\boldsymbol{\Sigma}^{-1}$.
-Another way is $\mathbf{V}=\mathbf{A}^{\top}\mathbf{U}\boldsymbol{\Sigma}^{-1}$.\end{enumerate}
 
 
 
