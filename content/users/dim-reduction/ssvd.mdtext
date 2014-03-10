@@ -90,7 +90,7 @@ Note: numerical stability of R algorithms may differ from that of Mahout's distr
 ### General SSVD algorithm flow ###
 
 <div>
-Given an \(m\times n\) matrix **A**, a target rank \(k\in\mathbb{N}_{1}\),
+Given an \\(m\times n\\) matrix **A**, a target rank \(k\in\mathbb{N}_{1}\),
 an oversampling parameter \(p\in\mathbb{N}_{1}\), and the number of
 additional power iterations \(q\in\mathbb{N}_{0}\), this procedure
 computes an \(m\times\left(k+p\right)\) SVD \(\mathbf{A=U}\boldsymbol{\Sigma}\mathbf{V}^{\top}\)
