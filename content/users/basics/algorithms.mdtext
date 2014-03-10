@@ -16,6 +16,7 @@ Title: Algorithms
 * [Naive Bayes/ Complementary Naive Bayes](../classification/bayesian.html) - **MapReduce**
 * Random Forest - **MapReduce**
 * [Hidden Markov Models](../stuff/hidden-markov-models.html) - **single machine**
+* Multilayer Perceptron - **single machine**
 
 <a name="Algorithms-Clustering"></a>
 ## Clustering
