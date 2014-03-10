@@ -88,9 +88,16 @@ Note: numerical stability of R algorithms may differ from that of Mahout's distr
   [3]: ssvd.page/SSVD-CLI.pdf
 
 
-test `inline code` here.
+Given an `\(m\times n\)`
+matrix `\(\mathbb{A}\)`, a target rank `\(k\in\mathbb{N}_{1}\)`
+, an oversampling parameter `\(p\in\mathbb{N}_{1}\)`, 
+and the number of additional power iterations `\(q\in\mathbb{N}_{0}\)`, 
+this procedure computes an `\(m\times\left(k+p\right)\)`
+SVD `\(\mathbf{A\approx U}\boldsymbol{\Sigma}\mathbf{V}^{\top}\)`:
 
-Given an `\(m\times n\)` kllkdklsdf
+  1. Create seed for random `\(n\times\left(k+p\right)\)`
+  matrix `\(\boldsymbol{\Omega}\)` The seed defines matrix `\(\mathbf{\Omega}\)`
+  using Gaussian unit vectors per one of suggestions in [Martinsson].
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
