@@ -50,6 +50,8 @@ Note: Please use 0.6 or later! for PCA workflow, please use 0.7 or later.
 [Nathan Halko's dissertation][1] "Randomized methods for computing low-rank
 approximations of matrices" contains comprehensive definition of parallelization strategy taken in Mahout SSVD implementation and also some precision/scalability benchmarks, esp. w.r.t. Mahout Lanczos implementation on a typical corpus data set.
 
+[Halko, Martinsson, Tropp] paper discusses family of random projection-based algorithms and contains theoretical error estimates.
+
 **R simulation**
 
 [Non-parallel SSVD simulation in R][2] with power iterations and PCA options. Note that this implementation is not most optimal for sequential flow solver, but it is for demonstration purposes only.
