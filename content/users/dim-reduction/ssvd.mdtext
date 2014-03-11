@@ -111,27 +111,25 @@ SVD `\(\mathbf{A\approx U}\boldsymbol{\Sigma}\mathbf{V}^{\top}\)`:
  
 
   4. `\(\mathbf{B}_{0}=\mathbf{Q}^{\top}\mathbf{A}:\,\,\mathbf{B}\in\mathbb{R}^{\left(k+p\right)\times n}\)`.
- (Another way is `\(\mathbf{R}^{-1}\mathbf{Y}^{\top}\mathbf{A}\)`
- , depending on whether we beleive if size of A less than size of Q).
-
+ 
   5. If `\(q>0\)`
   repeat: for `\(i=1..q\)`: 
   `\(\mathbf{B}_{i}^{\top}=\mathbf{A}^{\top}\mbox{qr}\left(\mathbf{A}\mathbf{B}_{i-1}^{\top}\right).\mathbf{Q}\)`
-  (power iterations step)
+  (power iterations step).
 
   6. Compute Eigensolution of a small Hermitian `\(\mathbf{B}_{q}\mathbf{B}_{q}^{\top}=\mathbf{\hat{U}}\boldsymbol{\Lambda}\mathbf{\hat{U}}^{\top}\)`,
   `\(\mathbf{B}_{q}\mathbf{B}_{q}^{\top}\in\mathbb{R}^{\left(k+p\right)\times\left(k+p\right)}\)`.
  
 
   7. Singular values `\(\mathbf{\boldsymbol{\Sigma}}=\boldsymbol{\Lambda}^{0.5}\)`,
-  or, in other words, `\(s_{i}=\sqrt{\sigma_{i}}\)`
+  or, in other words, `\(s_{i}=\sqrt{\sigma_{i}}\)`.
  
 
-  8. If needed, compute `\(\mathbf{U}=\mathbf{Q}\hat{\mathbf{U}}\)`
+  8. If needed, compute `\(\mathbf{U}=\mathbf{Q}\hat{\mathbf{U}}\)`.
  
 
-  9. If needed, compute `\(\mathbf{V}=\mathbf{B}_{q}^{\top}\hat{\mathbf{U}}\boldsymbol{\Sigma}^{-1}\)`
-  .Another way is `\(\mathbf{V}=\mathbf{A}^{\top}\mathbf{U}\boldsymbol{\Sigma}^{-1}\)`.
+  9. If needed, compute `\(\mathbf{V}=\mathbf{B}_{q}^{\top}\hat{\mathbf{U}}\boldsymbol{\Sigma}^{-1}\)`.
+Another way is `\(\mathbf{V}=\mathbf{A}^{\top}\mathbf{U}\boldsymbol{\Sigma}^{-1}\)`.
  
 
 <script type="text/x-mathjax-config">
