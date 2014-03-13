@@ -1,117 +1,48 @@
 Title: Clustering of synthetic control data
 
-# Example: Synthetic control data
+# Clustering synthetic control data
 
-* [Introduction](#Clusteringofsyntheticcontroldata-Introduction)
-* [Problem description](#Clusteringofsyntheticcontroldata-Problemdescription)
-* [Pre-Prep](#Clusteringofsyntheticcontroldata-Pre-Prep)
-* [Perform Clustering](#Clusteringofsyntheticcontroldata-PerformClustering)
-* [Read / Analyze Output](#Clusteringofsyntheticcontroldata-Read/AnalyzeOutput)
+## Introduction
 
-<a name="Clusteringofsyntheticcontroldata-Introduction"></a>
-# Introduction
+This example will demonstrate clustering of time series data, specifically control charts. [Control charts](http://en.wikipedia.org/wiki/Control_chart) are tools used to determine whether a manufacturing or business process is in a state of statistical control. Such control charts are generated / simulated repeatedly at equal time intervals. A [simulated dataset](http://archive.ics.uci.edu/ml/databases/synthetic_control/synthetic_control.data.html) is available for use in UCI machine learning repository.
 
-The example will demonstrate clustering of control charts which exhibits a
-time series. [Control charts ](http://en.wikipedia.org/wiki/Control_chart)
- are tools used to determine whether or not a manufacturing or business
-process is in a state of statistical control. Such control charts are
-generated / simulated over equal time interval and available for use in UCI
-machine learning database. The data is described [here](http://archive.ics.uci.edu/ml/databases/synthetic_control/synthetic_control.data.html)
-.
+A time series of control charts needs to be clustered into their close knit groups. The data set we use is synthetic and is meant to resemble real world information in an anonymized format. It contains six different classes: Normal, Cyclic, Increasing trend, Decreasing trend, Upward shift, Downward shift. In this example we will use Mahout to cluster the data into corresponding class buckets. 
 
-<a name="Clusteringofsyntheticcontroldata-Problemdescription"></a>
-# Problem description
+*For the sake of simplicity, we won't use a cluster in this example, but instead show you the commands to run the clustering examples locally with Hadoop*.
 
-A time series of control charts needs to be clustered into their close knit
-groups. The data set we use is synthetic and so resembles real world
-information in an anonymized format. It contains six different classes
-(Normal, Cyclic, Increasing trend, Decreasing trend, Upward shift, Downward
-shift). With these trends occurring on the input data set, the Mahout
-clustering algorithm will cluster the data into their corresponding class
-buckets. At the end of this example, you'll get to learn how to perform
-clustering using Mahout.
+## Setup
 
-<a name="Clusteringofsyntheticcontroldata-Pre-Prep"></a>
-# Pre-Prep
+We need to do some initial setup before we are able to run the example. 
 
-Make sure you have the following covered before you work out the example.
 
-1. Input data set. Download it [here ](http://archive.ics.uci.edu/ml/databases/synthetic_control/synthetic_control.data).
-1. Sample input data:
-Input consists of 600 rows and 60 columns. The rows from  1 - 100 contains
-Normal data. Rows from 101 - 200 contains cyclic data and so on.. More info [here ](http://archive.ics.uci.edu/ml/databases/synthetic_control/synthetic_control.data.html). Sample of how the data looks is like below.
+  1. Start out by downloading the dataset to be clustered from the UCI Machine Learning Repository: [http://archive.ics.uci.edu/ml/databases/synthetic_control/synthetic_control.data](http://archive.ics.uci.edu/ml/databases/synthetic_control/synthetic_control.data).
 
-<table>
-<tr><th> \_time </th><th> \_time+x </th><th> \_time+2x </th><th> .. </th><th> \_time+60x </th></tr>
-<tr><td> 28.7812 </td><td> 34.4632 </td><td> 31.3381 </td><td> .. </td><td> 31.2834 </td></tr>
-<tr><td> 24.8923 </td><td> 25.741 </td><td> 27.5532 </td><td> .. </td><td> 32.8217 </td></tr>
-<tr><td> 35.5351 </td><td> 41.7067 </td><td> 39.1705 </td><td> 48.3964 </td><td> .. </td><td> 38.6103 </td></tr>
-<tr><td> 24.2104 </td><td> 41.7679 </td><td> 45.2228 </td><td> 43.7762 </td><td> .. </td><td> 48.8175 </td></tr>
-</table>
-..
-..
+  2. Download the [latest release of Mahout](/general/downloads.html).
 
-1. Setup Hadoop
-1. Assuming that you have installed the latest compatible Hadooop, start
-the daemons using {code}$HADOOP_HOME/bin/start-all.sh {code} If you have
-issues starting Hadoop, please reference the [Hadoop quick start guide](http://hadoop.apache.org/common/docs/r0.20.2/quickstart.html)
-1. Copy the input to HDFS using 
+  3. Unpack the release binary and switch to the *mahout-distribution-0.x* folder
 
-    $HADOOP_HOME/bin/hadoop fs -mkdir testdata
-    $HADOOP_HOME/bin/hadoop fs -put <PATH TO synthetic_control.data> testdata
+  4. Make sure that the *JAVA_HOME* environment variable points to your local java installation
 
-(HDFS input directory name should be testdata)
+  5. Create a folder called *testdata* in the current directory and copy the dataset into this folder.
 
-1. Mahout Example job
-Mahout's mahout-examples-$MAHOUT_VERSION.job does the actual clustering
-task and so it needs to be created. This can be done as
-1. cd $MAHOUT_HOME
-1.  
 
-    mvn clean install		   // full build including all unit tests
-    mvn clean install -DskipTests=true // fast build without running unit tests
+## Clustering Examples
 
-You will see BUILD SUCCESSFUL once all the corresponding tasks are through.
-The job will be generated in $MAHOUT_HOME/examples/target/ and it's name
-will contain the $MAHOUT_VERSION number. For example, when using Mahout 0.4
-release, the job will be mahout-examples-0.4.job.jar
-This completes the pre-requisites to perform clustering process using
-Mahout.
+Depending on the clustering algorithm you want to run, the following commands can be used:
 
-<a name="Clusteringofsyntheticcontroldata-PerformClustering"></a>
-# Perform Clustering
 
-With all the pre-work done, clustering the control data gets real simple.
+   * [Canopy Clustering](/users/clustering/canopy-clustering.html)
 
-1. Depending on which clustering technique to use, you can invoke the
-corresponding job as below
-1. For [canopy ](canopy-clustering.html)
-1. For [kmeans](K-Means Clustering)
-1. For [fuzzykmeans ](fuzzy-k-means.html)
-1. For [dirichlet](Dirichlet Process Clustering)
-1. For [meanshift](mean-shift-clustering.html) respectively:
+    bin/mahout org.apache.mahout.clustering.syntheticcontrol.canopy.Job
 
-    $MAHOUT_HOME/bin/mahout org.apache.mahout.clustering.syntheticcontrol.${clustering.type}.Job
+   * [k-Means Clustering](/users/clustering/k-means-clustering.html)
 
-1. Get the data out of HDFS (see [HDFS Shell](http://hadoop.apache.org/core/docs/current/hdfs_shell.html.html)
-The output directory is cleared when a new run starts
-so the results must be retrieved before a new run{footnote} and have a
-look. All jobs run ClusterDump after clustering with output data
-sent to the console by following the below steps.
+    bin/mahout org.apache.mahout.clustering.syntheticcontrol.kmeans.Job
 
-<a name="Clusteringofsyntheticcontroldata-Read/AnalyzeOutput"></a>
-# Read / Analyze Output
 
-In order to read/analyze the output, you can use [clusterdump](cluster-dumper.html)
- utility provided by Mahout. If you want to just read the output, follow
-the below steps. 
+   * [Fuzzy k-Means Clustering](/users/clustering/fuzzy-k-means.html)
 
-1. Use `$HADOOP_HOME/bin/hadoop fs -lsr output` to view all
-outputs.
-1. Use `$HADOOP_HOME/bin/hadoop fs -get output $MAHOUT_HOME/examples` to copy them all to your local machine and the output data points
-are in vector format. This creates an output folder inside examples
-directory.
-1. Computed clusters are contained in _output/clusters-i_
-1. All result clustered points are placed into _output/clusteredPoints_
+    bin/mahout org.apache.mahout.clustering.syntheticcontrol.fuzzykmeans.Job
 
+The clustering output will be produced in the *output* directory. The output data points are in vector format. In order to read/analyze the output, you can use the [clusterdump](/users/clustering/cluster-dumper.html) utility provided by Mahout.
 
