@@ -7,9 +7,6 @@ Mahout provides examples to visualize sample clusters that gets created by
 our clustering algorithms. Note that the visualization is done by Swing programs. You have to be in a window system on the same
 machine you run these, or logged in via a remote desktop.
 
-<a name="VisualizingSampleClusters-Pre-Prep"></a>
-# Pre - Prep
-
 For visualizing the clusters, you have to execute the Java
 classes under *org.apache.mahout.clustering.display* package in
 mahout-examples module. The easiest way to achieve this is to [setup Mahout](users/basics/quickstart.html) in your IDE.
