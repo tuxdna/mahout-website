@@ -12,6 +12,7 @@ Apache Mahout is maintained by a team of volunteer developers.
 
 Name | Mail | Webpage | PMC | Comment 
 ----|---------|------|------|----------
+Andrew Musselman | akm@... | <a href="http://accenture.com">Accenture</a> | No | Twitter: @akm
 Benson Margulies | bimargulies@... | | Yes | |
 Dan Filimon | dfilimon@... | | No | |
 Dmitriy Lyubimov | dlyubimov@... | <a href="http://www.linkedin.com/in/dlyubimov">LinkedIn profile</a> | Yes | Twitter: @dlieuOfTwit
@@ -22,7 +23,6 @@ Gokhan Capan | gcapan@... | <a href="http://www.dilisim.com">Dilisim</a> | No | 
 Grant Ingersoll | gsingers@... | <a href="http://lucidworks.com">LucidWorks | Yes (Chair) | Twitter: @gsingers
 Isabel Drost-Fromm | isabel@... | <a href="http://drost-fromm.de">Homepage</a>, <a href="http://blog.drost-fromm.de">Blog</a> | Yes | Passion for free software (development, but to some extend also the political and economic implications), interested in agile development and project management, lives in Germany. Follow me on Twitter @MaineC
 Jacob Alexander Mannix | jmannix@... | | Yes | |
-Ted Dunning | tdunning@... |  <a href="http://www.mapr.com">MapR Technologies</a> | Yes | 
 Jeff Eastman | jeastman@... | <a href="http://www.windwardsolutions.com/">WindwardSolutions</a> | No (Emeritus) |
 Paritosh Ranjan | pranjan@... | <a href="http://in.linkedin.com/in/paritoshranjan">LinkedIn profile</a> | Yes | Twitter: @paritoshranjan
 Robin Anil | robinanil@... | | Yes | |
@@ -31,8 +31,8 @@ Sebastian Schelter | ssc@... | | Yes | |
 Shannon Quinn | squinn@... | | No | |
 Stevo Slavić|  sslavic@... | <a href="https://www.linkedin.com/in/sslavic">LinkedIn Profile</a> | No | Twitter: @sslavic
 Suneel Marthi | smarthi@... | <a href="http://hadoop.intel.com">Intel</a> | Yes | Twitter: @suneelmarthi
+Ted Dunning | tdunning@... |  <a href="http://www.mapr.com">MapR Technologies</a> | Yes | 
 Tom Pierce | tcp@... | | No | |
-Andrew Musselman | akm@... | <a href="http://accenture.com">Accenture</a> | No | Twitter: @akm
 
 <a name="WhoWeAre-EmeritusCommitters"></a>
 ## Emeritus Committers
