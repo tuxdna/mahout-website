@@ -31,16 +31,18 @@ remains the same.
 <a name="K-MeansClustering-Quickstart"></a>
 ## Quickstart
 
-[Here](k-means-clustering^quickstart-kmeans.sh.html)
+[Here](https://svn.apache.org/repos/asf/mahout/trunk/examples/bin/cluster-reuters.sh)
  is a short shell script outline that will get you started quickly with
-k-Means. This does the following:
+k-means. This does the following:
 
-* Get the Reuters dataset
-* Run org.apache.lucene.benchmark.utils.ExtractReuters to generate
+* Accepts clustering type: kmeans,fuzzykmeans, lda, or streamingkmeans
+* Gets the Reuters dataset
+* Runs org.apache.lucene.benchmark.utils.ExtractReuters to generate
 reuters-out from reuters-sgm(the downloaded archive)
-* Run seqdirectory to convert reuters-out to SequenceFile format
-* Run seq2sparse to convert SequenceFiles to sparse vector format
-* Finally, run kMeans with 20 clusters.
+* Runs seqdirectory to convert reuters-out to SequenceFile format
+* Runs seq2sparse to convert SequenceFiles to sparse vector format
+* Runs k-means with 20 clusters
+* Runs clusterdump to show results
 
 After following through the output that scrolls past, reading the code will
 offer you a better understanding.
@@ -49,17 +51,7 @@ offer you a better understanding.
 <a name="K-MeansClustering-Strategyforparallelization"></a>
 ## Strategy for parallelization
 
-Some ideas can be found in [Cluster computing and MapReduce](http://code.google.com/edu/content/submissions/mapreduce-minilecture/listing.html)
- lecture video series \[by Google(r)\]; k-Means clustering is discussed in [lecture 4](http://www.youtube.com/watch?v=1ZDybXl212Q9)
-. Slides can be found [here](http://code.google.com/edu/content/submissions/mapreduce-minilecture/lec4-clustering.ppt)
-.
-
-Interestingly, Hadoop based implementation using [Canopy-clustering](http://en.wikipedia.org/wiki/Canopy_clustering_algorithm)
- seems to be here: [canopy](http://code.google.com/p/canopy-clustering/)
- (GPL 3 licence)
-
-Here's another useful paper [http://www2.chass.ncsu.edu/garson/PA765/cluster.htm](http://www2.chass.ncsu.edu/garson/PA765/cluster.htm)
-.
+Some ideas can be found in [the original map-reduce paper](http://research.google.com/archive/mapreduce.html) from Google.
 
 <a name="K-MeansClustering-Designofimplementation"></a>
 ## Design of implementation
