@@ -93,7 +93,7 @@ Note: numerical stability of R algorithms may differ from that of Mahout's distr
 #### Modified SSVD Algorithm.
 
 Given an `\(m\times n\)`
-matrix `\(\mathbb{A}\)`, a target rank `\(k\in\mathbb{N}_{1}\)`
+matrix `\(\mathbf{A}\)`, a target rank `\(k\in\mathbb{N}_{1}\)`
 , an oversampling parameter `\(p\in\mathbb{N}_{1}\)`, 
 and the number of additional power iterations `\(q\in\mathbb{N}_{0}\)`, 
 this procedure computes an `\(m\times\left(k+p\right)\)`
