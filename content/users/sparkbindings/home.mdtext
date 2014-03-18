@@ -27,7 +27,7 @@ In short, Scala DSL and algebraic optimizer of something like this:
 involving combination of in-core mahout-math vectors, in-core matrices and Spark-backed in-memory Mahout DRMs. 
 For more details, see the manual/working notes below.
 
-## The Bindings Documentation
+## Documentation
 
 * [Scala and Spark bindings manual](ScalaSparkBindings.pdf)
 
