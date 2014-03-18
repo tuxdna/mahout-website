@@ -22,7 +22,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 
 In short, Scala DSL and algebraic optimizer of something like this: 
 
-        val bbt = bt.t %*% bt -c - c.t +  (s_q cross s_q) * (xi * xi).sum
+        val bbt = bt.t %*% bt - c - c.t + (s_q cross s_q) * (xi * xi).sum
 
 involving combination of in-core mahout-math vectors, in-core matrices and Spark-backed in-memory Mahout DRMs. 
 For more details, see the manual/working notes below.
