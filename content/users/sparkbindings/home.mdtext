@@ -24,7 +24,8 @@ In short, Scala DSL and algebraic optimizer of something like this:
 
         val bbt = bt.t %*% bt -c - c.t +  (s_q cross s_q) * (xi * xi).sum
 
-involving combination of in-core mahout-math vectors, in-core matrices and Spark-backed in-memory Mahout DRMs.
+involving combination of in-core mahout-math vectors, in-core matrices and Spark-backed in-memory Mahout DRMs. 
+For more details, see the manual/working notes below.
 
 ## The Bindings 
 
@@ -32,8 +33,8 @@ involving combination of in-core mahout-math vectors, in-core matrices and Spark
 
 ## Distributed methods and solvers 
 
-* Distributed Stochastic SVD (dsvd) -- see the bindings manual
-* Distributed Stochastic PCA (dspca) -- see the bindings manual 
+* Distributed Stochastic SVD (dsvd) -- guinea pig -- see the bindings manual
+* Distributed Stochastic PCA (dspca) -- guinea pig -- see the bindings manual 
 
 ## Work in progress 
 * RSJ -- [MAHOUT-1464](https://issues.apache.org/jira/browse/MAHOUT-1464)
