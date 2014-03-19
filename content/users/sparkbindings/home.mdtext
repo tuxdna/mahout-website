@@ -20,12 +20,42 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 
 ## What is Scala & Spark Bindings?
 
-In short, Scala DSL and algebraic optimizer of something like this: 
+In short, Scala & Spark Bindings for Mahout is Scala DSL and algebraic optimizer of something like this: 
 
         val bbt = bt.t %*% bt - c - c.t + (s_q cross s_q) * (xi * xi).sum
 
-involving combination of in-core mahout-math vectors, in-core matrices and Spark-backed in-memory Mahout DRMs. 
-For more details, see the manual/working notes below.
+These linear algebra operators take combination of in-core and out-of-core operands. 
+As it stands, operands can be Spark-backed Mahout DRM (distributed row matrix), in-core matrix or 
+in-core vectors and real scalars.
+
+The ecosystem of operators is built in the R's image, i.e. it follows R naming such as %*%, 
+colSums, nrow, length operating over vectors or matices. 
+
+Important part of Spark Bindings is expression optimizer. It looks at expression as a whole 
+and figures out how it can be simplified, and which physical operators should be picked. E.g.
+there are currently about 5 different physical operators performing DRM-DRM multiplication
+picked based on matrix geometry, partitioning, orientation etc. If we count DRM by in-core 
+combinations, that would be at least another 3. 
+
+The main idea is that a scientist writing algebraic expressions can't care less of distributed 
+operation plans and works entirely on the logical level just like he or she would do with R.
+
+Another point of logical level manipulations is decoupling computation from distributed back-end. 
+That is, the algebraic optimizer also acts as a translation layer to a concrete machine cluster computational back-end. 
+Although it is not currently on roadmap (and not even 100% decoupled on the API level), 
+one can think of bringing in other back-ends and have the same algorithms running on those without 
+a change.
+
+At this point, this environment addresses Linear Algebra side of things only. 
+However, it would be very exciting to include statistics and data frame support too. 
+
+Also, this is early stage and experimental at this point. 
+Tweaks may be needed here and there for performance on case-per-case basis. 
+But being run on Spark, and assuming there's enough RAM not to swap intermediate products 
+of computation to disk, it should be as fast as it can be expected of in-memory matrix 
+block manipulations in Mahout and IO associated with the use of Spark distributed primitives.
+
+Please refer to the documentation for details.
 
 ## Documentation
 
