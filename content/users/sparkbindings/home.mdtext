@@ -32,12 +32,13 @@ The ecosystem of operators is built in the R's image, i.e. it follows R naming s
 colSums, nrow, length operating over vectors or matices. 
 
 Important part of Spark Bindings is expression optimizer. It looks at expression as a whole 
-and figures out how it can be simplified, and which physical operators should be picked. E.g.
+and figures out how it can be simplified, and which physical operators should be picked. For example,
 there are currently about 5 different physical operators performing DRM-DRM multiplication
-picked based on matrix geometry, partitioning, orientation etc. If we count DRM by in-core 
-combinations, that would be at least another 3. 
+picked based on matrix geometry, distributed dataset partitioning, orientation etc. 
+If we count in DRM by in-core combinations, that would be at least another 3 -- all of it for just 
+simple A %*% B type of expression. 
 
-The main idea is that a scientist writing algebraic expressions can't care less of distributed 
+The main idea is that a scientist writing algebraic expressions cannot care less of distributed 
 operation plans and works entirely on the logical level just like he or she would do with R.
 
 Another point of logical level manipulations is decoupling computation from distributed back-end. 
@@ -45,6 +46,10 @@ That is, the algebraic optimizer also acts as a translation layer to a concrete 
 Although it is not currently on roadmap (and not even 100% decoupled on the API level), 
 one can think of bringing in other back-ends and have the same algorithms running on those without 
 a change.
+
+Please refer to the documentation for details.
+
+## Status
 
 At this point, this environment addresses Linear Algebra side of things only. 
 However, it would be very exciting to include statistics and data frame support too. 
@@ -55,7 +60,6 @@ But being run on Spark, and assuming there's enough RAM not to swap intermediate
 of computation to disk, it should be as fast as it can be expected of in-memory matrix 
 block manipulations in Mahout and IO associated with the use of Spark distributed primitives.
 
-Please refer to the documentation for details.
 
 ## Documentation
 
