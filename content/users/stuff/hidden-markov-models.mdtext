@@ -56,8 +56,9 @@ Create an input file to train the model.  Here we have a sequence drawn from the
 
     $ echo "0 1 2 2 2 1 1 0 0 3 3 3 2 1 2 1 1 1 1 2 2 2 0 0 0 0 0 0 2 2 2 0 0 0 0 0 0 2 2 2 3 3 3 3 3 3 2 3 2 3 2 3 2 1 3 0 0 0 1 0 1 0 2 1 2 1 2 1 2 3 3 3 3 2 2 3 2 1 1 0" > hmm-input
 
-Now run the baumwelch job to train your model.
+Now run the baumwelch job to train your model, after first setting MAHOUT_LOCAL to true, to use your local file system.
 
+    $ export MAHOUT_LOCAL=true
     $ $MAHOUT_HOME/bin/mahout baumwelch -i hmm-input -o hmm-model -nh 3 -no 4 -e .0001 -m 1000
 
 Output like the following should appear in the console.
