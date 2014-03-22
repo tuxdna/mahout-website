@@ -60,7 +60,7 @@ Now run the baumwelch job to train your model.
 
     $ $MAHOUT_HOME/bin/mahout baumwelch -i hmm-input -o hmm-model -nh 3 -no 4 -e .0001 -m 1000
 
-The following output should appear in the console.
+Output like the following should appear in the console.
 
     Initial probabilities: 
     0 1 2 
