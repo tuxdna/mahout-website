@@ -1,4 +1,5 @@
 Title: Bayesian
+
 <a name="Bayesian-Intro"></a>
 # Intro
 
@@ -51,7 +52,7 @@ train set. Call this Sigma_jSigma_k
 
 Final Weight is calculated as
 
-    Weight = Log [ ( Sigma_j - W-N-Tf-Idf + alpha_i ) / ( Sigma_jSigma_k - Sigma_k + N  ) ]
+    Weight = -Log [ ( Sigma_j - W-N-Tf-Idf + alpha_i ) / ( Sigma_jSigma_k - Sigma_k + N  ) ]
 
 
 <a name="Bayesian-Examples"></a>
