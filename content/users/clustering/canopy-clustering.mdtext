@@ -35,10 +35,9 @@ outputs its canopies' centers
 centers
 1. The points are then clustered into these final canopies
 
-Some ideas can be found in [Cluster computing and MapReduce](http://code.google.com/edu/content/submissions/mapreduce-minilecture/listing.html)
- lecture video series \[by Google(r)\]; Canopy Clustering is discussed in [lecture #4|http://www.youtube.com/watch?v=1ZDybXl212Q]
-. Slides can be found [here|https://code.google.com/edu/submissions/mapreduce-minilecture/lec4-clustering.ppt]
-. Finally here is the [Wikipedia page|http://en.wikipedia.org/wiki/Canopy_clustering_algorithm]
+Some ideas can be found in [Cluster computing and MapReduce](https://www.youtube.com/watch?v=yjPBkvYh-ss&list=PLEFAB97242917704A)
+ lecture video series \[by Google(r)\]; Canopy Clustering is discussed in [lecture #4](https://www.youtube.com/watch?v=1ZDybXl212Q)
+. Finally here is the [Wikipedia page](http://en.wikipedia.org/wiki/Canopy_clustering_algorithm)
 .
 
 <a name="CanopyClustering-Designofimplementation"></a>
