@@ -2,7 +2,7 @@ Title: Fuzzy K-Means
 
 # Fuzzy K-Means
 
-Fuzzy K-Means (also called Fuzzy C-Means) is an extension of [K-Means](http://cwiki.apache.org/MAHOUT/k-means.html)
+Fuzzy K-Means (also called Fuzzy C-Means) is an extension of [K-Means](http://mahout.apache.org/users/clustering/k-means-clustering.html)
 , the popular simple clustering technique. While K-Means discovers hard
 clusters (a point belong to only one cluster), Fuzzy K-Means is a more
 statistically formalized method and discovers soft clusters where a
