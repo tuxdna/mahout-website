@@ -17,8 +17,7 @@ the 20 newsgroup.
 <a name="TwentyNewsgroups-Prerequisites"></a>
 ## Prerequisites
 
-* Mahout has been downloaded [instructions here](http://apache.osuosl.org/mahout/)
-)
+* Mahout has been downloaded ([instructions here](http://apache.osuosl.org/mahout/))
 * Maven is available
 * Your environment has the following variables:
 <table>
