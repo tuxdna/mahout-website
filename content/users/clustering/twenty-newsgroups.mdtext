@@ -45,13 +45,14 @@ mahout job:
     $ ./examples/bin/classify-20newsgroups.sh
 
 The script performs the following
-1. # Asks you to select an classification algorithm: Complementary Naive Bayes, Naive Bayes or Stochastic Gradient Descent.
-1. # Downloads *20news-bydate.tar.gz* from the [20newsgroups dataset](http://people.csail.mit.edu/jrennie/20Newsgroups/20news-bydate.tar.gz)
-1. # Extracts dataset
-1. # Generates input dataset for training classifier
-1. # Generates input dataset for testing classifier
-1. # Trains the classifier
-1. # Tests the classifier
+
+1. Asks you to select an classification algorithm: Complementary Naive Bayes, Naive Bayes or Stochastic Gradient Descent.
+2. Downloads *20news-bydate.tar.gz* from the [20newsgroups dataset](http://people.csail.mit.edu/jrennie/20Newsgroups/20news-bydate.tar.gz)
+3. Extracts dataset
+4. Generates input dataset for training classifier
+5. Generates input dataset for testing classifier
+6. Trains the classifier
+7. Tests the classifier
 
 
 
