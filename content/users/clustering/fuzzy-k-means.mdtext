@@ -167,16 +167,15 @@ In the second image, the resulting clusters (k=3) are shown superimposed upon th
 . Although it misses a lot of the points and cannot capture the original,
 superimposed cluster centers, it does a decent job of clustering this data.
 
-![fuzzy](../../FuzzyKMeans.png)
+![fuzzy](../../images/FuzzyKMeans.png)
 
 The third image shows the results of running Fuzzy k-Means on a different
-data set (see [Dirichlet Process Clustering](dirichlet-process-clustering.html)
- for details) which is generated using asymmetrical standard deviations.
+data set which is generated using asymmetrical standard deviations.
 Fuzzy k-Means does a fair job handling this data set as well.
 
-![fuzzy](../../2dFuzzyKMeans.png)
+![fuzzy](../../images/2dFuzzyKMeans.png)
 
 <a name="FuzzyK-Means-References&nbsp;"></a>
 #### References&nbsp;
 
-* [http://en.wikipedia.org/wiki/Data_clustering#Fuzzy_c-means_clustering](http://en.wikipedia.org/wiki/Data_clustering#Fuzzy_c-means_clustering)
+* [http://en.wikipedia.org/wiki/Fuzzy_clustering](http://en.wikipedia.org/wiki/Fuzzy_clustering)
