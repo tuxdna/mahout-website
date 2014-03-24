@@ -177,18 +177,17 @@ Now we create a UserNeighborhood algorithm. Here we use nearest-3:
     UserNeighborhood neighborhood =
     	  new NearestNUserNeighborhood(3, userSimilarity, model);{code}
     
-    Now we can create our Recommender, and add a caching decorator:
+Now we can create our Recommender, and add a caching decorator:
     
 
-Recommender recommender =
-	  new GenericUserBasedRecommender(model, neighborhood,
-userSimilarity);
-Recommender cachingRecommender = new CachingRecommender(recommender);
+    Recommender recommender =
+	  new GenericUserBasedRecommender(model, neighborhood, userSimilarity);
+    Recommender cachingRecommender = new CachingRecommender(recommender);
 
     
-    Now we can get 10 recommendations for user ID "1234" &mdash; done!
+Now we can get 10 recommendations for user ID "1234" &mdash; done!
 
-List<RecommendedItem> recommendations =
+    List<RecommendedItem> recommendations =
 	  cachingRecommender.recommend(1234, 10);
 
     
