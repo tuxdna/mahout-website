@@ -27,7 +27,7 @@ In short, Scala & Spark Bindings for Mahout is Scala DSL and algebraic optimizer
 `\[\mathbf{G}=\mathbf{B}\mathbf{B}^{\top}-\mathbf{C}-\mathbf{C}^{\top}+\mathbf{s}_{q}\mathbf{s}_{q}^{\top}\boldsymbol{\xi}^{\top}\boldsymbol{\xi}\]`
 
 
-As Scala & Spark Bindings expression this formula would look like the following:
+Mahout Scala & Spark Bindings expression of the above:
 
         val g = bt.t %*% bt - c - c.t + (s_q cross s_q) * (xi dot xi)
 
