@@ -26,7 +26,7 @@ In short, Scala & Spark Bindings for Mahout is Scala DSL and algebraic optimizer
 `\[\mathbf{G}=\mathbf{B}\mathbf{B}^{\top}-\mathbf{C}-\mathbf{C}^{\top}+\mathbf{s}_{q}\mathbf{s}_{q}^{\top}\boldsymbol{\xi}^{\top}\boldsymbol{\xi}\]`
 
 
-Scala & Spark Bindings expression:
+As Scala & Spark Bindings expression this formula would look like the following:
 
         val g = bt.t %*% bt - c - c.t + (s_q cross s_q) * (xi dot xi)
 
@@ -89,11 +89,11 @@ block manipulations in Mahout and IO associated with the use of Spark distribute
 
 ## Stuff wanted: 
 * Interactive linalg shell
+* Data frame R-like bindings (similarly to linalg bindings)
+* Stat R-like bindings (perhaps we can just adapt to commons.math stat)
+* **BYODMs:** Bring Your Own Distributed Method on SparkBindings! 
 * In-core jBlas matrix adapter
 * In-core GPU matrix adapters
-* Stat R-like bindings (perhaps we can just adapt to commons.math stat)
-* Data frame R-like bindings (similarly to linalg bindings)
-* **BYODMs:** Bring Your Own Distributed Method on SparkBindings! 
 
 
 
