@@ -32,10 +32,10 @@ Mahout Scala & Spark Bindings expression of the above:
         val g = bt.t %*% bt - c - c.t + (s_q cross s_q) * (xi dot xi)
 
 The main idea is that a scientist writing algebraic expressions cannot care less of distributed 
-operation plans and works entirely on the logical level just like he or she would do with R.
+operation plans and works **entirely on the logical level** just like he or she would do with R.
 
 Another idea is decoupling logical expression from distributed back-end. As more back-ends are added, 
-this implies "write once, run everywhere".
+this implies **"write once, run everywhere"**.
 
 The linear algebra side works with scalars, in-core vectors and matrices, and Mahout Distributed
 Row Matrices (DRMs).
