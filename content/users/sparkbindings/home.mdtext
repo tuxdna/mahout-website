@@ -49,7 +49,7 @@ Important part of Spark Bindings is expression optimizer. It looks at expression
 and figures out how it can be simplified, and which physical operators should be picked. For example,
 there are currently about 5 different physical operators performing DRM-DRM multiplication
 picked based on matrix geometry, distributed dataset partitioning, orientation etc. 
-If we count in DRM by in-core combinations, that would be at another 4 -- all of it for just 
+If we count in DRM by in-core combinations, that would be another 4, i.e. 9 total -- all of it for just 
 simple x %*% y logical notation.
 
 
