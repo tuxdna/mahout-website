@@ -18,7 +18,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 
 # Stochastic Singular Value Decomposition #
 
-Stochastic SVD method in Mahout produces reduced rank Singular Value Decomposition output in its strict mathematical definition: A=USV'
+Stochastic SVD method in Mahout produces reduced rank Singular Value Decomposition output in its strict mathematical definition: ` \(\mathbf{A\approx U}\boldsymbol{\Sigma}\mathbf{V}^{\top}\)`
 
 ##The benefits over other methods are:
 
@@ -135,4 +135,3 @@ Another way is `\(\mathbf{V}=\mathbf{A}^{\top}\mathbf{U}\boldsymbol{\Sigma}^{-1}
 
 [Halko, Martinsson, Tropp]: http://arxiv.org/abs/0909.4061
  
-
