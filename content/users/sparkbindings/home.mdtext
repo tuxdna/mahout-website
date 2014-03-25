@@ -70,24 +70,23 @@ block manipulations in Mahout and IO associated with the use of Spark distribute
 
 * [Scala and Spark bindings manual](ScalaSparkBindings.pdf)
 
-#### Related history 
-
-* [MAHOUT-1346](https://issues.apache.org/jira/browse/MAHOUT-1346) -- Spark Bindings
-* [MAHOUT-1297](https://issues.apache.org/jira/browse/MAHOUT-1297) -- Scala Bindings
-
-## Distributed methods and solvers 
+## Distributed methods and solvers using Bindings
 
 * Distributed Stochastic SVD (dsvd) -- guinea pig -- see the bindings manual
 * Distributed Stochastic PCA (dspca) -- guinea pig -- see the bindings manual 
+
+## Related history 
+
+* [MAHOUT-1346](https://issues.apache.org/jira/browse/MAHOUT-1346) -- Spark Bindings
+* [MAHOUT-1297](https://issues.apache.org/jira/browse/MAHOUT-1297) -- Scala Bindings
 
 ## Work in progress 
 * RSJ -- [MAHOUT-1464](https://issues.apache.org/jira/browse/MAHOUT-1464)
 * Weighed (Implicit Feedback) ALS -- [MAHOUT-1365](https://issues.apache.org/jira/browse/MAHOUT-1365)
 * *Your issue here!*
 
-
 ## Stuff wanted: 
-* Interactive linalg shell
+* Interactive linalg shell & script processor -- high priority, any takers?
 * Data frame R-like bindings (similarly to linalg bindings)
 * Stat R-like bindings (perhaps we can just adapt to commons.math stat)
 * **BYODMs:** Bring Your Own Distributed Method on SparkBindings! 
