@@ -20,7 +20,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 
 ## What is Scala & Spark Bindings?
 
-In short, Scala & Spark Bindings for Mahout is Scala DSL and algebraic optimizer of something like this:
+In short, Scala & Spark Bindings for Mahout is Scala DSL and algebraic optimizer of something like this (actual formula from **(d)spca**):
         
 
 `\[\mathbf{G}=\mathbf{B}\mathbf{B}^{\top}-\mathbf{C}-\mathbf{C}^{\top}+\mathbf{s}_{q}\mathbf{s}_{q}^{\top}\boldsymbol{\xi}^{\top}\boldsymbol{\xi}\]`
