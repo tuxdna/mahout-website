@@ -44,6 +44,24 @@
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/global.css" type="text/css">
+	
+  <!-- mathJax stuff -- use `\(...\)` for inline style math in markdown -->
+	<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+		tex2jax: {
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+		}
+	});
+	MathJax.Hub.Queue(function() {
+		var all = MathJax.Hub.getAllJax(), i;
+		for(i = 0; i < all.length; i += 1) {
+			all[i].SourceElement().parentNode.className += ' has-jax';
+		}
+	});
+	</script>
+	<script type="text/javascript"
+	  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>	
 </head>
 
 <body id="home" data-twttr-rendered="true">
