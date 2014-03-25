@@ -73,7 +73,8 @@ block manipulations in Mahout and IO associated with the use of Spark distribute
 ## Distributed methods and solvers using Bindings
 
 * Distributed Stochastic SVD (dsvd) -- guinea pig -- see the bindings manual
-* Distributed Stochastic PCA (dspca) -- guinea pig -- see the bindings manual 
+* Distributed Stochastic PCA (dspca) -- guinea pig -- see the bindings manual
+* Distributed thin QR decomposition (thinQR) -- guinea pig -- see the bindings manual 
 
 ## Related history 
 
