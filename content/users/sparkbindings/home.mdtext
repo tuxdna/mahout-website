@@ -16,7 +16,8 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
            specific language governing permissions and limitations
            under the License.
 
-# Scala Bindings & Spark Bindings
+# Scala & Spark Bindings:
+*Bringing algebraic semantics*
 
 ## What is Scala & Spark Bindings?
 
