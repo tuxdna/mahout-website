@@ -48,11 +48,9 @@ simple A %*% B type of expression.
 The main idea is that a scientist writing algebraic expressions cannot care less of distributed 
 operation plans and works entirely on the logical level just like he or she would do with R.
 
-Another point of logical level manipulations is decoupling computation from distributed back-end. 
-That is, the algebraic optimizer also acts as a translation layer to a concrete machine cluster computational back-end. 
-Although it is not currently on roadmap (and not even 100% decoupled on the API level), 
-one can think of bringing in other back-ends and have the same algorithms running on those without 
-a change.
+Another idea is decoupling logical expression from distributed back-end. As more back-ends are added, 
+this implies "write once, run everywhere".
+
 
 Please refer to the documentation for details.
 
