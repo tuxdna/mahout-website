@@ -75,7 +75,7 @@ block manipulations in Mahout and IO associated with the use of Spark distribute
 ## Distributed methods and solvers using Bindings
 
 * In-core ([ssvd]) and Distributed ([dssvd]) Stochastic SVD -- guinea pigs -- see the bindings manual
-* In-core ([spca]) and Distributed ([dspca]) Stochastic PCA -- guinea pig -- see the bindings manual
+* In-core ([spca]) and Distributed ([dspca]) Stochastic PCA -- guinea pigs -- see the bindings manual
 * Distributed thin QR decomposition ([dqrThin]) -- guinea pig -- see the bindings manual 
 
 [ssvd]: https://github.com/apache/mahout/blob/trunk/math-scala/src/main/scala/org/apache/mahout/math/scalabindings/SSVD.scala
