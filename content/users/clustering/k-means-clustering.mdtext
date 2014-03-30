@@ -2,10 +2,9 @@ Title: K-Means Clustering
 
 # k-Means clustering - basics
 
-[k-Means](http://en.wikipedia.org/wiki/Kmeans) is a rather simple but well known algorithm
-for grouping objects, clustering. Again all objects need to be represented
-as a set of numerical features. In addition the user has to specify the
-number of groups (referred to as _k_) he wishes to identify.
+[k-Means](http://en.wikipedia.org/wiki/Kmeans) is a simple but well known algorithm for grouping objects, clustering. All objects need to be represented
+as a set of numerical features. In addition, the user has to specify the
+number of groups (referred to as *k*) she wishes to identify.
 
 Each object can be thought of as being represented by some feature vector
 in an _n_ dimensional space, _n_ being the number of all features used to
@@ -35,10 +34,10 @@ remains the same.
  is a short shell script outline that will get you started quickly with
 k-means. This does the following:
 
-* Accepts clustering type: kmeans,fuzzykmeans, lda, or streamingkmeans
+* Accepts clustering type: *kmeans*, *fuzzykmeans*, *lda*, or *streamingkmeans*
 * Gets the Reuters dataset
 * Runs org.apache.lucene.benchmark.utils.ExtractReuters to generate
-reuters-out from reuters-sgm(the downloaded archive)
+reuters-out from reuters-sgm (the downloaded archive)
 * Runs seqdirectory to convert reuters-out to SequenceFile format
 * Runs seq2sparse to convert SequenceFiles to sparse vector format
 * Runs k-means with 20 clusters
@@ -48,46 +47,16 @@ After following through the output that scrolls past, reading the code will
 offer you a better understanding.
 
 
-<a name="K-MeansClustering-Strategyforparallelization"></a>
-## Strategy for parallelization
-
-Some ideas can be found in [the original map-reduce paper](http://research.google.com/archive/mapreduce.html) from Google.
-
 <a name="K-MeansClustering-Designofimplementation"></a>
-## Design of implementation
+## Implementation
 
 The implementation accepts two input directories: one for the data points
 and one for the initial clusters. The data directory contains multiple
-input files of SequenceFile(key, VectorWritable), while the clusters
-directory contains one or more SequenceFiles(Text, Cluster \| Canopy)
+input files of SequenceFile(Key, VectorWritable), while the clusters
+directory contains one or more SequenceFiles(Text, Cluster)
 containing _k_ initial clusters or canopies. None of the input directories
 are modified by the implementation, allowing experimentation with initial
 clustering and convergence values.
-
-The program iterates over the input points and clusters, outputting a new
-directory "clusters-N" containing SequenceFile(Text, Cluster) files for
-each iteration N. This process uses a mapper/combiner/reducer/driver as
-follows:
-
-* KMeansMapper - reads the input clusters during its setup() method, then
-assigns and outputs each input point to its nearest cluster as defined by
-the user-supplied distance measure. Output key is: cluster identifier.
-Output value is: ClusterObservation.
-* KMeansCombiner - receives all key:value pairs from the mapper and
-produces partial sums of the input vectors for each cluster. Output key is:
-cluster identifier. Output value is ClusterObservation.
-* KMeansReducer - a single reducer receives all key:value pairs from all
-combiners and sums them to produce a new centroid for the cluster which is
-output. Output key is: encoded cluster identifier. Output value is:
-Cluster. The reducer encodes unconverged clusters with a 'Cn' cluster Id
-and converged clusters with 'Vn' clusterId.
-* KMeansDriver - iterates over the points and clusters until all output
-clusters have converged (Vn clusterIds) or until a maximum number of
-iterations has been reached. During iterations, a new clusters directory
-"clusters-N" is produced with the output clusters from the previous
-iteration used for input to the next. A final optional pass over the data
-using the KMeansClusterMapper clusters all points to an output directory
-"clusteredPoints" and has no combiner or reducer steps.
 
 Canopy clustering can be used to compute the initial clusters for k-KMeans:
 
@@ -202,9 +171,7 @@ superimposed cluster centers, it does a decent job of clustering this data.
 
 ![kmeans](../../images/KMeans.png)
 
-The third image shows the results of running k-Means on a different data
-set (see [Dirichlet Process Clustering](dirichlet-process-clustering.html)
- for details) which is generated using asymmetrical standard deviations.
+The third image shows the results of running k-Means on a different dataset, which is generated using asymmetrical standard deviations.
 K-Means does a fair job handling this data set as well.
 
 ![2d kmeans](../../images/2dKMeans.png)
