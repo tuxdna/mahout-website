@@ -1,6 +1,8 @@
 Title: Quickstart
 
-## Quickstart - Getting Mahout
+# Quickstart
+
+## Getting Mahout
 
 #### Download the latest release
 
@@ -18,7 +20,7 @@ If you would like to import the latest release of mahout into a java project, ad
     </dependency>
 
 
-## Quickstart - Next Steps
+## Next Steps
 
 The next steps depend on what you plan to do with Mahout. 
 
