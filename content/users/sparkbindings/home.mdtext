@@ -90,8 +90,8 @@ block manipulations in Mahout and IO associated with the use of Spark distribute
 * [MAHOUT-1297](https://issues.apache.org/jira/browse/MAHOUT-1297) -- Scala Bindings
 
 ## Work in progress 
-* RSJ -- [MAHOUT-1464](https://issues.apache.org/jira/browse/MAHOUT-1464)
-* Weighed (Implicit Feedback) ALS -- [MAHOUT-1365](https://issues.apache.org/jira/browse/MAHOUT-1365)
+* Cooccurrence Analysis / Item-based Recommendation -- [MAHOUT-1464](https://issues.apache.org/jira/browse/MAHOUT-1464)
+* Weighted (Implicit Feedback) ALS -- [MAHOUT-1365](https://issues.apache.org/jira/browse/MAHOUT-1365)
 * Data frame R-like bindings -- [MAHOUT-1490](https://issues.apache.org/jira/browse/MAHOUT-1490)
 * Interactive Scala & Spark Bindings Shell & Script processor -- [MAHOUT-1489](https://issues.apache.org/jira/browse/MAHOUT-1489)
 * Port Naive Bayes -- [MAHOUT-1493](https://issues.apache.org/jira/browse/MAHOUT-1493)
