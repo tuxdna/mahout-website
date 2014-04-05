@@ -20,9 +20,28 @@ If you would like to import the latest release of mahout into a java project, ad
     </dependency>
 
 
-## Next Steps
+## Using Mahout
 
-The next steps depend on what you plan to do with Mahout. 
+Mahout has prepared a bunch of examples and tutorials for users to quickly learn how to use its machine learning algorithms.
 
-Are you interested in computing **recommendations**? Then, check the [Recommender Quickstart](/users/recommender/quickstart.html) or the tutorial on [creating a userbased recommender in 5 minutes](/users/recommender/userbased-5-minutes.html).
-For **clustering**, check the [Synthetic data](/users/clustering/clustering-of-synthetic-control-data.html) example, for **classification** have a look at the [20 newsgroups](/users/clustering/twenty-newsgroups.html) example.
+#### Recommendations
+
+Check the [Recommender Quickstart](/users/recommender/quickstart.html) or the tutorial on [creating a userbased recommender in 5 minutes](/users/recommender/userbased-5-minutes.html).
+
+If you are building a recommender system for the first time, please also refer to a list of [Dos and Don'ts](/users/recommender/ecommender-first-timer-faq.html) that might be helpful.
+
+#### Clustering
+
+Check the [Synthetic data](/users/clustering/clustering-of-synthetic-control-data.html) example.
+
+#### Classification
+
+If you are interested in how to train a **Naive Bayses** model, look at the [20 newsgroups](/users/clustering/twenty-newsgroups.html) example or the [naive bayes wikipedia example](/users/classification/wikipedia-bayes-example.html) example.
+
+If you plan to build a **Hidden Markov Model** for speech recognition, the example [here](/users/stuff/hidden-markov-models.html) might be instructive. 
+
+Or you could build a **Random Forest** model by following this [quick start page](/users/stuff/partial-implementation.html).
+
+#### Working with Text 
+
+If you need to convert raw text into word vectors as input to clustering or classification algorithms, please refer to this page on [how to create vectors from text](/users/basics/creating-vectors-from-text.html).
