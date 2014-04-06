@@ -36,7 +36,7 @@ Check the [Synthetic data](/users/clustering/clustering-of-synthetic-control-dat
 
 #### Classification
 
-If you are interested in how to train a **Naive Bayses** model, look at the [20 newsgroups](/users/clustering/twenty-newsgroups.html) example or the [naive bayes wikipedia example](/users/classification/wikipedia-bayes-example.html) example.
+If you are interested in how to train a **Naive Bayes** model, look at the [20 newsgroups](/users/clustering/twenty-newsgroups.html) example or the [naive bayes wikipedia example](/users/classification/wikipedia-bayes-example.html) example.
 
 If you plan to build a **Hidden Markov Model** for speech recognition, the example [here](/users/stuff/hidden-markov-models.html) might be instructive. 
 
