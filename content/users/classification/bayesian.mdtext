@@ -7,14 +7,10 @@ Mahout currently has two implementations of Bayesian classifiers.  One is
 the traditional Naive Bayes approach, and the other is called Complementary
 Naive Bayes.
 
+<b>Warning: the content on this page is outdated and is currently reworked, see [MAHOUT-1502](https://issues.apache.org/jira/browse/MAHOUT-1502)
+
 <a name="Bayesian-Implementations"></a>
 # Implementations
-
-[NaiveBayes](naivebayes.html)
- ([MAHOUT-9|http://issues.apache.org/jira/browse/MAHOUT-9])
-
-[Complementary Naive Bayes](complementary-naive-bayes.html)
- ([MAHOUT-60|http://issues.apache.org/jira/browse/MAHOUT-60])
 
 The Naive Bayes implementations in Mahout follow the paper [http://people.csail.mit.edu/jrennie/papers/icml03-nb.pdf](http://people.csail.mit.edu/jrennie/papers/icml03-nb.pdf)
  Before we get to the actual algorithm lets discuss the terminology
