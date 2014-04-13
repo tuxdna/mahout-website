@@ -44,24 +44,24 @@
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/global.css" type="text/css">
-	
+
   <!-- mathJax stuff -- use `\(...\)` for inline style math in markdown -->
-	<script type="text/x-mathjax-config">
-	MathJax.Hub.Config({
-		tex2jax: {
-			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-		}
-	});
-	MathJax.Hub.Queue(function() {
-		var all = MathJax.Hub.getAllJax(), i;
-		for(i = 0; i < all.length; i += 1) {
-			all[i].SourceElement().parentNode.className += ' has-jax';
-		}
-	});
-	</script>
-	<script type="text/javascript"
-	  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>	
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  });
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+  </script>
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
 <body id="home" data-twttr-rendered="true">
@@ -99,11 +99,11 @@
                   <li class="divider"></li>
                   <li class="nav-header">Resources</li>
                   <li><a href="/general/reference-reading.html">Reference Reading</a>
-		  <li><a href="/general/faq.html">FAQ</a>
-		  <li class="divider"></li>
-		  <li class="nav-header">Legal</li>
-		  <li><a href="http://www.apache.org/licenses/">License</a></li>
-		  <li><a href="http://www.apache.org/security/">Security</a></li>
+                  <li><a href="/general/faq.html">FAQ</a>
+                  <li class="divider"></li>
+                  <li class="nav-header">Legal</li>
+                  <li><a href="http://www.apache.org/licenses/">License</a></li>
+                  <li><a href="http://www.apache.org/security/">Security</a></li>
                   <li><a href="/general/privacy-policy.html">Privacy Policy</a>
                 </ul>
               </li>
@@ -113,7 +113,7 @@
                   <li><a href="/developers/version-control.html">Version control</a></li>
                   <li><a href="/developers/buildingmahout.html">Build from source</a></li>
                   <li><a href="/developers/issue-tracker.html">Issue tracker</a></li>
-      		  <li><a href="https://builds.apache.org/job/Mahout-Quality/" target="_blank">Code quality reports</a></li>
+                  <li><a href="https://builds.apache.org/job/Mahout-Quality/" target="_blank">Code quality reports</a></li>
                   <li class="divider"></li>
                   <li class="nav-header">Contributions</li>
                   <li><a href="/developers/how-to-contribute.html">How to contribute</a></li>
@@ -137,7 +137,7 @@
                   <li><a href="/users/basics/collocations.html">Collocations</a>
                   <li class="divider"></li>
                   <li class="nav-header">Dimensionality reduction</li>
-                  <li><a href="/users/basics/dimensional-reduction.html">Singular Value Decomposition</a></li>
+                  <li><a href="/users/dim-reduction/dimensional-reduction.html">Singular Value Decomposition</a></li>
                   <li><a href="/users/dim-reduction/ssvd.html">Stochastic SVD</a></li>
                   <li class="divider"></li>
                   <li class="nav-header">Topic Models</li>      
@@ -150,15 +150,14 @@
               <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Classification<b class="caret"></b></a>
                 <ul class="dropdown-menu">
 
-              		<li><a href="/users/classification/bayesian.html">Naive Bayes</a></li>
-                  <li><a href="/users/stuff/hidden-markov-models.html">Hidden Markov Models</a></li>
+                  <li><a href="/users/classification/bayesian.html">Naive Bayes</a></li>
+                  <li><a href="/users/classification/hidden-markov-models.html">Hidden Markov Models</a></li>
                   <li><a href="/users/classification/logistic-regression.html">Logistic Regression</a></li>
-                  <li><a href="/users/stuff/partial-implementation.html">Random Forest</a></li>
+                  <li><a href="/users/classification/partial-implementation.html">Random Forest</a></li>
 
                   <li class="divider"></li>
                   <li class="nav-header">Examples</li>
                   <li><a href="/users/classification/wikipedia-bayes-example.html">Wikipedia example</a></li>
-                  <li><a href="/users/clustering/twenty-newsgroups.html">20 newsgroups example</a></li>
                   <li><a href="/users/classification/breiman-example.html">Breiman example</a></li>
                 </ul></li>
                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clustering<b class="caret"></b></a>
@@ -171,10 +170,11 @@
                 <li class="nav-header">Commandline usage</li>
                 <li><a href="/users/clustering/k-means-commandline.html">Options for k-Means</a></li>
                 <li><a href="/users/clustering/canopy-commandline.html">Options for Canopy</a></li>
-            		<li><a href="/users/clustering/fuzzy-k-means-commandline.html">Options for Fuzzy k-Means</a></li>
+                <li><a href="/users/clustering/fuzzy-k-means-commandline.html">Options for Fuzzy k-Means</a></li>
                 <li class="divider"></li>
                 <li class="nav-header">Examples</li>
                 <li><a href="/users/clustering/clustering-of-synthetic-control-data.html">Synthetic data</a></li>
+                <li><a href="/users/clustering/twenty-newsgroups.html">20 newsgroups example</a></li>
                 <li class="divider"></li>
                 <li class="nav-header">Post processing</li>
                 <li><a href="/users/clustering/cluster-dumper.html">Cluster Dumper tool</a></li>
@@ -185,8 +185,9 @@
                 <li><a href="/users/recommender/quickstart.html">Quickstart</a></li>
                 <li><a href="/users/recommender/userbased-5-minutes.html">A user-based recommender <br/>in 5 minutes</a></li>
                 <li><a href="/users/recommender/recommender-first-timer-faq.html">First Timer FAQ</a></li>
-	        <li><a href="/users/recommender/recommender-documentation.html">General</a></li>
-                </ul></li>
+                <li><a href="/users/recommender/recommender-documentation.html">General</a></li>
+              </ul>
+            </li>
            </ul>
           </div><!--/.nav-collapse -->
         </div>
