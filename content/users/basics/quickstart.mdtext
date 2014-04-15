@@ -28,7 +28,7 @@ Mahout has prepared a bunch of examples and tutorials for users to quickly learn
 
 Check the [Recommender Quickstart](/users/recommender/quickstart.html) or the tutorial on [creating a userbased recommender in 5 minutes](/users/recommender/userbased-5-minutes.html).
 
-If you are building a recommender system for the first time, please also refer to a list of [Dos and Don'ts](/users/recommender/ecommender-first-timer-faq.html) that might be helpful.
+If you are building a recommender system for the first time, please also refer to a list of [Dos and Don'ts](/users/recommender/recommender-first-timer-faq.html) that might be helpful.
 
 #### Clustering
 
