@@ -21,7 +21,7 @@ Title: Algorithms
 <a name="Algorithms-Clustering"></a>
 ## Clustering
 
-* [Canopy Clustering](../clustering/canopy-clustering.html) - **single machine / MapReduce**
+* [Canopy Clustering](../clustering/canopy-clustering.html) - **single machine / MapReduce** (deprecated, will be removed once Streaming k-Means is stable enough)
 * [k-Means Clustering](../clustering/k-means-clustering.html) - **single machine / MapReduce**
 * [Fuzzy k-Means](../clustering/fuzzy-k-means.html) - **single machine / MapReduce**
 * Streaming k-Means - **single machine / MapReduce** 
