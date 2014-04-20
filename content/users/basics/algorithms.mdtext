@@ -3,29 +3,29 @@ Title: Algorithms
 <a name="Algorithms-CollaborativeFiltering"></a>
 ## Collaborative Filtering
 
-* User-Based Collaborative Filtering - **single machine**
-* Item-Based Collaborative Filtering - **single machine / MapReduce**
-* Matrix Factorization with Alternating Least Squares - **single machine / MapReduce**
-* Matrix Factorization with Alternating Least Squares  on Implicit Feedback- **single machine / MapReduce**
+* User-Based Collaborative Filtering - **[single machine](https://mahout.apache.org/users/recommender/userbased-5-minutes.html)**
+* Item-Based Collaborative Filtering - **single machine / [MapReduce](https://mahout.apache.org/users/recommender/intro-itembased-hadoop.html)**
+* Matrix Factorization with Alternating Least Squares - **single machine / [MapReduce](https://mahout.apache.org/users/recommender/intro-als-hadoop.html)**
+* Matrix Factorization with Alternating Least Squares  on Implicit Feedback- **single machine / [MapReduce](https://mahout.apache.org/users/recommender/intro-als-hadoop.html)**
 * Weighted Matrix Factorization, SVD++, Parallel SGD - **single machine**
 
 <a name="Algorithms-Classification"></a>
 ## Classification
 
-* [Logistic Regression](../classification/logistic-regression.html) - trained via SGD - **single machine**
-* [Naive Bayes/ Complementary Naive Bayes](../classification/bayesian.html) - **MapReduce**
+* Logistic Regression - trained via SGD - **[single machine](../classification/logistic-regression.html)**
+* Naive Bayes/ Complementary Naive Bayes - **[MapReduce](../classification/bayesian.html)**
 * Random Forest - **MapReduce**
-* [Hidden Markov Models](../stuff/hidden-markov-models.html) - **single machine**
+* Hidden Markov Models - **[single machine](../stuff/hidden-markov-models.html)**
 * Multilayer Perceptron - **single machine**
 
 <a name="Algorithms-Clustering"></a>
 ## Clustering
 
-* [Canopy Clustering](../clustering/canopy-clustering.html) - **single machine / MapReduce** (deprecated, will be removed once Streaming k-Means is stable enough)
-* [k-Means Clustering](../clustering/k-means-clustering.html) - **single machine / MapReduce**
-* [Fuzzy k-Means](../clustering/fuzzy-k-means.html) - **single machine / MapReduce**
+* Canopy Clustering - **single machine / [MapReduce](../clustering/canopy-clustering.html)** (deprecated, will be removed once Streaming k-Means is stable enough)
+* k-Means Clustering - **single machine / [MapReduce](../clustering/k-means-clustering.html)**
+* Fuzzy k-Means - **single machine / [MapReduce](../clustering/fuzzy-k-means.html)**
 * Streaming k-Means - **single machine / MapReduce** 
-* [Spectral Clustering](../clustering/spectral-clustering.html) - **MapReduce** 
+* Spectral Clustering - **[MapReduce](../clustering/spectral-clustering.html)** 
 
 
 <a name="Algorithms-DimensionalityReduction"></a>
@@ -33,13 +33,13 @@ Title: Algorithms
 
 * Singular Value Decomposition - **single machine**
 * Lanczos Algorithm - **single machine / MapReduce**
-* [Stochastic SVD](../dim-reduction/ssvd.html) - **single machine / MapReduce / Spark**
+* Stochastic SVD - **[single machine](../dim-reduction/ssvd.html) / [MapReduce](../dim-reduction/ssvd.html) / Spark**
 * Principal Component Analysis (via Stochastic SVD)- **single machine / MapReduce**
 
 <a name="Algorithms-TopicModels"></a>
 ## Topic Models
 
-* [Latent Dirichlet Allocation](../clustering/latent-dirichlet-allocation.html) - **single machine / MapReduce**
+* Latent Dirichlet Allocation - **single machine / [MapReduce](../clustering/latent-dirichlet-allocation.html)**
 
 
 <a name="Algorithms-Miscellaneous"></a>
@@ -48,6 +48,6 @@ Title: Algorithms
 * Frequent Pattern Mining - **MapReduce**
 * RowSimilarityJob - compute pairwise similarities between the rows of a matrix - **MapReduce**
 * ConcatMatrices - combine 2 matrices or vectors into a single matrix - **MapReduce** 
-* [Collocations](collocations.html) - find co-locations of tokens in text - **MapReduce**
+* Collocations - find co-locations of tokens in text - **[MapReduce](collocations.html)**
 
 
