@@ -2,7 +2,7 @@ Title: K-Means Clustering
 
 # k-Means clustering - basics
 
-[k-Means](http://en.wikipedia.org/wiki/Kmeans) is a simple but well known algorithm for grouping objects, clustering. All objects need to be represented
+[k-Means](http://en.wikipedia.org/wiki/Kmeans) is a simple but well-known algorithm for grouping objects, clustering. All objects need to be represented
 as a set of numerical features. In addition, the user has to specify the
 number of groups (referred to as *k*) she wishes to identify.
 
