@@ -1,4 +1,5 @@
 Title: Latent Dirichlet Allocation
+
 <a name="LatentDirichletAllocation-Overview"></a>
 # Overview
 
@@ -142,8 +143,8 @@ post-processing step.
 <a name="LatentDirichletAllocation-References"></a>
 # References
 
-[David M. Blei, Andrew Y. Ng, Michael I. Jordan, John Lafferty. 2003. Latent Dirichlet Allocation. JMLR.](-http://www.cs.princeton.edu/~blei/papers/bleingjordan2003.pdf.html)
+[David M. Blei, Andrew Y. Ng, Michael I. Jordan, John Lafferty. 2003. Latent Dirichlet Allocation. JMLR.](-http://machinelearning.wustl.edu/mlpapers/paper_files/BleiNJ03.pdf)
 
 [Thomas L. Griffiths and Mark Steyvers. 2004. Finding scientific topics. PNAS.  ](http://psiexp.ss.uci.edu/research/papers/sciencetopics.pdf)
 
-[David Hall, Dan Jurafsky, and Christopher D. Manning. 2008. Studying the History of Ideas Using Topic Models ](-http://www.aclweb.org/anthology-new/d/d08/d08-1038.pdf.html)
+[David Hall, Dan Jurafsky, and Christopher D. Manning. 2008. Studying the History of Ideas Using Topic Models ](-http://www.aclweb.org/anthology-new/d/d08/d08-1038.pdf)
