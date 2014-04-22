@@ -20,7 +20,7 @@ Javadoc documentation is available online in our code reports:
 
 
  * [Math](https://builds.apache.org/job/Mahout-Quality/ws/trunk/math/target/site/apidocs/index.html)
- * [Core](https://builds.apache.org/job/Mahout-Quality/ws/trunk/core/target/site/apidocs/index.html)
+ * [Legacy MapReduce](https://builds.apache.org/job/Mahout-Quality/ws/trunk/mrlegacy/target/site/apidocs/index.html)
  * [Integration](https://builds.apache.org/job/Mahout-Quality/ws/trunk/integration/target/site/apidocs/index.html)
  * [Examples](https://builds.apache.org/job/Mahout-Quality/ws/trunk/examples/target/site/apidocs/index.html)
 
