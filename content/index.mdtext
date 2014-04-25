@@ -42,7 +42,7 @@
 Apache Mahout has reached version 0.9. All developers are encouraged to begin using version 0.9. Highlights include:
 
  * New and improved Mahout website based on Apache CMS - [MAHOUT-1245](https://issues.apache.org/jira/browse/MAHOUT-1245)
- *  Early implementation of a Multi Layer Perceptron (MLP) classifier - [MAHOUT-1265](https://issues.apache.org/jira/browse/MAHOUT-1265)
+ * Early implementation of a Multi Layer Perceptron (MLP) classifier - [MAHOUT-1265](https://issues.apache.org/jira/browse/MAHOUT-1265)
  * Scala DSL Bindings for Mahout Math Linear Algebra.  See this [blogpost](http://weatheringthrutechdays.blogspot.com/2013/07/scala-dsl-for-mahout-in-core-linear.html) and [MAHOUT-1297](https://issues.apache.org/jira/browse/MAHOUT-1297)
  * Recommenders as Search. See [https://github.com/pferrel/solr-recommender] and [MAHOUT-1288](https://issues.apache.org/jira/browse/MAHOUT-1288)
  * Support for easy functional Matrix views and derivatives - [MAHOUT-1300]( https://issues.apache.org/jira/browse/MAHOUT-1300)
