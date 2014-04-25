@@ -17,17 +17,12 @@
     </ul>
   </div>
   <p>With scalable we mean:</p>
-  <p>**Scalable to large data sets**. Our core algorithms for clustering, classfication and
-    collaborative filtering are implemented on top of Apache Hadoop using the map/reduce paradigm. However we do not
-    restrict contributions to Hadoop based implementations: Contributions that run on a single node or on a non-Hadoop
-    cluster are welcome as well. The core libraries are highly optimized to allow for good performance also for
-    non-distributed algorithms</p>
+  <p>**Scalable to large data sets**. Our core algorithms for clustering, classfication and collaborative filtering are implemented on top of scalable, distributed systems. However, contributions that run on a single machine are welcome as well.</p>
   <p>**Scalable to support your business case**. Mahout is distributed under a commercially friendly Apache Software
     license.</p>
   <p>**Scalable community**. The goal of Mahout is to build a vibrant, responsive, diverse community to facilitate
     discussions not only on the project itself but also on potential use cases. Come to the mailing lists to find out
     more.</p>
-
   <p>Currently Mahout supports mainly three use cases: Recommendation mining takes users' behavior and from that tries to
     find items users might like. Clustering takes e.g. text documents and groups them into groups of topically related
     documents. Classification learns from exisiting categorized documents what documents of a specific category look
@@ -36,6 +31,15 @@
   <p>Interested in helping? Join the <a href="https://mahout.apache.org/general/mailing-lists,-irc-and-archives.html">Mailing lists</a>.</p>
 
 # Mahout News
+
+#### 25 April 2014 - Goodbye MapReduce
+
+The Mahout community decided to move its codebase onto modern data processing systems that offer a richer programming model and more efficient execution than Hadoop MapReduce. **Mahout will therefore reject new MapReduce algorithm implementations from now on**. We will however keep our widely used MapReduce algorithms in the codebase and maintain them.
+
+We are building our future implementations on top of a [DSL for linear algebraic operations](https://mahout.apache.org/users/sparkbindings/home.html) which has been developed over the last months. Programs written in this DSL are automatically optimized and executed in parallel on [Apache Spark](http://spark.apache.org). 
+
+Furthermore, there is an experimental contribution undergoing which aims to [integrate the h20 platform](https://issues.apache.org/jira/browse/MAHOUT-1500) into Mahout.
+
 
 #### 1 February 2014 - Apache Mahout 0.9 released
 
@@ -51,7 +55,7 @@ Apache Mahout has reached version 0.9. All developers are encouraged to begin us
  * Online Algorithm for computing accurate Quantiles using 1-dimensional Clustering - See this [pdf](https://github.com/tdunning/t-digest/blob/master/docs/theory/t-digest-paper/histo.pdf) and [MAHOUT-1361](https://issues.apache.org/jira/browse/MAHOUT-1361) 
  * Upgrade to Lucene 4.6.1 - [MAHOUT-1364](https://issues.apache.org/jira/browse/MAHOUT-1364">MAHOUT-1364)
 
-Changes in 0.9 are detailed in the [release notes](http://svn.apache.org/viewvc/mahout/trunk/CHANGELOG?view=markup&pathrev=1563661").
+Changes in 0.9 are detailed in the [release notes](http://svn.apache.org/viewvc/mahout/trunk/CHANGELOG?view=markup&pathrev=1563661).
 
 The following algorithms that were marked deprecated in 0.8 have been removed in 0.9:
 
